@@ -110,6 +110,7 @@ sets['Default'] = {
         },
         ['VarToggles'] = {
             ['Fishing'] = {
+                VarVisible = false,
                 Ammo = '',
                 Range = 'Lu Shang\'s F. Rod',
                 Body = 'Angler\'s Tunica',
@@ -118,6 +119,7 @@ sets['Default'] = {
                 Feet = 'Waders',
             },
             ['Working'] = {
+                VarVisible = false,
                 Body = 'Worker Tunica',
                 Hands = 'Worker Gloves',
                 Legs = 'Worker Hose',
@@ -192,6 +194,11 @@ sets['Default'] = {
             },
         },
     },
+    ['Pet'] = {
+        ['Sheep Song'] = {
+            Head = 'Beast Helm',
+        },
+    },
     ['Omega'] = {   
     },
 }
@@ -227,11 +234,11 @@ sets['Midcast'] = {
     },
 }
 
--- HandlePrecast
+-- HandlePreshot
 sets['Preshot'] = {
 }
 
--- HandlePrecast
+-- HandleMidshot
 sets['Midshot'] = {
 }
 

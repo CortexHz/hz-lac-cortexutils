@@ -109,14 +109,23 @@ sets['Midcast'] = {
 }
 ```
 
-`Default` is a special case where the trigger is not the action (cause there is none), it's the players status (Idle, Engaged, Resting), i.e.
+`Default` is a special case where the trigger is not the action (there is no action), it's the players status (Idle, Engaged, Resting.. etc), i.e.
 ```
 sets['Default'] = {
     ['Idle'] = {...},
     ['Resting'] = {...},
-    ['Engaged'] = {...}.
+    ['Engaged'] = {...},
+    ['Pet] = {
+        ['Sheep Song'] = {
+            Head = 'Beast Helm',
+        },
+    },
 }
 ```
+(these keys can but may find limited use there)
+
+Note: the `Pet` section, can be a pet ability (i.e. macc equip like above) or pet name (like for equiping HQ staffs with summons)..
+
 
 Acceptable gear slots are:
 `{'Main', 'Sub', 'Range', 'Ammo', 'Head', 'Neck', 'Ear1', 'Ear2', 'Body', 'Hands', 'Ring1', 'Ring2', 'Back', 'Waist', 'Legs', 'Feet'}`
@@ -242,7 +251,11 @@ sets['Default'] = {
 ```
 (`/lac fwd Idle` would cycle, `/lac fwd Fishing` would equip/unequip)
 
-Movement - A section for movement gear (usually under `['Default']['Idle']`), equips when you are moving.
+The same named switches can be used in different sections, however the gearsets are local to those sections..
+(i.e. switch for `Sorcerer\'s Ring` in both precast (-hp gear) and midcast (for nuke)..)
+
+
+`'Movement'` - A section for movement gear (usually under `['Default']['Idle']`), equips when you are moving.
 
 ### Strategies
 

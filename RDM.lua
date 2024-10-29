@@ -18,7 +18,7 @@ local sets = {
         Hands = 'Angler\'s Gloves',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Phalanx Ring',
-        Back = 'Rainbow Cape',
+        Back = 'Prism Cape',
         Waist = 'Sorcerer\'s Belt',
         Legs = 'Angler\'s Hose',
         Feet = 'Waders',
@@ -62,12 +62,12 @@ sets['Default'] = {
                     Head = 'Dls. Chapeau +1',
                     Neck = 'Checkered Scarf',
                     Ear1 = 'Moldavite Earring',
-                    Ear2 = 'Phantom Earring',
+                    Ear2 = 'Novio Earring',
                     Body = 'Duelist\'s Tabard',
                     Hands = 'Duelist\'s Gloves',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Phalanx Ring',
-                    Back = 'Rainbow Cape',
+                    Back = 'Prism Cape',
                     Waist = 'Penitent\'s Rope',
                     Legs = 'Blood Cuisses',
                     Feet = 'Dls. Boots +1',
@@ -77,12 +77,12 @@ sets['Default'] = {
                     Head = 'Dls. Chapeau +1',
                     Neck = 'Checkered Scarf',
                     Ear1 = 'Moldavite Earring',
-                    Ear2 = 'Phantom Earring',
+                    Ear2 = 'Novio Earring',
                     Body = 'Duelist\'s Tabard',
                     Hands = 'Duelist\'s Gloves',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Phalanx Ring',
-                    Back = 'Rainbow Cape',
+                    Back = 'Prism Cape',
                     Waist = 'Penitent\'s Rope',
                     Legs = 'Blood Cuisses',
                     Feet = 'Dls. Boots +1',
@@ -91,6 +91,7 @@ sets['Default'] = {
         },
         ['VarToggles'] = {
             ['Fishing'] = {
+                VarVisible = false,
                 Ammo = '',
                 Range = 'Lu Shang\'s F. Rod',
                 Body = 'Angler\'s Tunica',
@@ -99,6 +100,7 @@ sets['Default'] = {
                 Feet = 'Waders',
             },
             ['Working'] = {
+                VarVisible = false,
                 Body = 'Worker Tunica',
                 Hands = 'Worker Gloves',
                 Legs = 'Worker Hose',
@@ -168,7 +170,7 @@ sets['Default'] = {
                     Head = 'Dls. Chapeau +1',
                     Neck = 'Spike Necklace',
                     Ear1 = 'Moldavite Earring',
-                    Ear2 = 'Phantom Earring',
+                    Ear2 = 'Novio Earring',
                     Body = 'Assault Jerkin',
                     Hands = 'Warlock\'s Gloves',
                     Ring1 = 'Toreador\'s Ring',
@@ -182,7 +184,7 @@ sets['Default'] = {
                     Head = 'Dls. Chapeau +1',
                     Neck = 'Spike Necklace',
                     Ear1 = 'Moldavite Earring',
-                    Ear2 = 'Phantom Earring',
+                    Ear2 = 'Novio Earring',
                     Body = 'Assault Jerkin',
                     Hands = 'Warlock\'s Gloves',
                     Ring1 = 'Toreador\'s Ring',
@@ -207,7 +209,7 @@ sets['Precast'] = {
     },
 }
 
--- HandlePrecast
+-- HandleMidcast
 local ElementalDebuff = {
     Ammo = 'Phtm. Tathlum',
     Head = 'Warlock\'s Chapeau',
@@ -218,7 +220,7 @@ local ElementalDebuff = {
     Hands = 'Errant Cuffs',
     Ring1 = 'Tamas Ring',
     Ring2 = 'Diamond Ring',
-    Back = 'Rainbow Cape',
+    Back = 'Prism Cape',
     Waist = 'Penitent\'s Rope',
     Legs = 'Errant Slops',
 }
@@ -242,7 +244,7 @@ sets['Midcast'] = {
             Hands = 'Errant Cuffs',
             Ring1 = 'Tamas Ring',
             Ring2 = 'Diamond Ring',
-            Back = 'Rainbow Cape',
+            Back = 'Prism Cape',
             Waist = 'Penitent\'s Rope',
             Legs = 'Errant Slops',
         },
@@ -255,7 +257,7 @@ sets['Midcast'] = {
             Hands = 'Devotee\'s Mitts',
             Ring1 = 'Tamas Ring',
             Ring2 = 'Sapphire Ring',
-            Back = 'Rainbow Cape',
+            Back = 'Prism Cape',
             Waist = 'Friar\'s Rope',
             Legs = 'Errant Slops',
             Feet = 'Dls. Boots +1',
@@ -268,7 +270,7 @@ sets['Midcast'] = {
         Hands = 'Devotee\'s Mitts',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Sapphire Ring',
-        Back = 'Rainbow Cape',
+        Back = 'Prism Cape',
         Legs = 'Warlock\'s Tights',
         Feet = 'Dls. Boots +1',
     },
@@ -279,7 +281,7 @@ sets['Midcast'] = {
         Hands = 'Duelist\'s Gloves',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Sapphire Ring',
-        Back = 'Rainbow Cape',
+        Back = 'Prism Cape',
         Legs = 'Warlock\'s Tights',
         Feet = 'Dls. Boots +1',
     },
@@ -293,7 +295,7 @@ sets['Midcast'] = {
         Hands = 'Errant Cuffs',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Diamond Ring',
-        Back = 'Rainbow Cape',
+        Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Errant Slops',
         Feet = 'Dls. Boots +1',
@@ -305,7 +307,7 @@ sets['Midcast'] = {
         Hands = 'Devotee\'s Mitts',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Sapphire Ring',
-        Back = 'Rainbow Cape',
+        Back = 'Prism Cape',
         Legs = 'Errant Slops',
         Feet = 'Dls. Boots +1',
     },
@@ -319,12 +321,12 @@ sets['Midcast'] = {
         Head = 'Warlock\'s Chapeau',
         Neck = 'Elemental Torque',
         Ear1 = 'Moldavite Earring',
-        Ear2 = 'Phantom Earring',
+        Ear2 = 'Novio Earring',
         Body = 'Errant Hpl.',
         Hands = 'Zenith Mitts',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Diamond Ring',
-        Back = 'Rainbow Cape',
+        Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Dls. Tights +1',
         Feet = 'Dls. Boots +1',
@@ -350,7 +352,7 @@ sets['Midcast'] = {
                     Main = 'Terra\'s Staff',
                 },
                 ['Water'] = {
-                    Main = 'Water Staff',
+                    Main = 'Neptune\'s Staff',
                 },
                 ['Wind'] = {
                     Main = 'Auster\'s Staff',
@@ -362,7 +364,7 @@ sets['Midcast'] = {
                     Main = 'Jupiter\'s Staff',
                 },
                 ['Light'] = {
-                    Main = 'Light Staff',
+                    Main = 'Apollo\'s Staff',
                 },
                 ['Dark'] = {
                     Main = 'Pluto\'s Staff',
@@ -428,14 +430,15 @@ sets['Midcast'] = {
         ['Regen'] = HasteCast,
         ['Protect IV'] = HasteCast,
         ['Shell IV'] = HasteCast,
+        ['Stun'] = HasteCast,
     },
 }
 
--- HandlePrecast
+-- HandlePreshot
 sets['Preshot'] = {
 }
 
--- HandlePrecast
+-- HandleMidshot
 sets['Midshot'] = {
 }
 

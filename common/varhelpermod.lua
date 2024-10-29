@@ -1,5 +1,8 @@
 local Cycles = {};
+local COrder = {};
 local Toggles = {};
+local TOrder = {};
+local Visibility = {};
 
 local varhelper = {
 	Toggles = {},
@@ -69,7 +72,8 @@ varhelper.SetToggle = function(name, target)
 end
 --name must be a valid lua variable name in string format.
 --default must be a boolean
-varhelper.CreateToggle = function(name, default)
+varhelper.CreateToggle = function(name, default, visible)
+    Visibility[name] = visible
     if Toggles[name] ~= nil then
         return
     end
@@ -83,8 +87,23 @@ end
 --name must be a valid lua variable name in string format.
 --values must be an array style table containing only strings mapped to sequential indices.
 --first value in table will be default.
-varhelper.CreateCycle = function(name, values)
+local function tablelength(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
+end
+varhelper.CreateCycle = function(name, values, visible)
+    Visibility[name] = visible
     if Cycles[name] ~= nil then
+        local temp_table = {}
+        local ind = tablelength(Cycles[name].Array) + 1
+        for i, nm in pairs(Cycles[name].Array) do temp_table[nm] = i end
+        for j, val in ipairs(values) do
+            if temp_table[val] == nil then
+                Cycles[name].Array[ind] = val
+                ind = ind + 1
+            end
+        end
         return
     end
 	local newCycle = {
@@ -98,14 +117,14 @@ varhelper.DestroyCycle = function(name)
 	Cycles[name] = nil;
 end
 
-varhelper.CreateSetCycle = function(name, mapping)
+varhelper.CreateSetCycle = function(name, mapping, visible)
     local t_cycle = {}
     local t_index = 1
     for t, w in pairs(mapping) do
         t_cycle[t_index] = t
         t_index = t_index + 1
     end
-    varhelper.CreateCycle(name, t_cycle);
+    varhelper.CreateCycle(name, t_cycle, visible);
 end
 
 varhelper.GetCycle = function(name)
@@ -134,19 +153,32 @@ varhelper.Destroy = function()
 end
 
 varhelper.Initialize = function()
-	varhelper.FontObject = fonts.new(fontSettings);	
+	varhelper.FontObject = fonts.new(fontSettings);
+    TOrder = {}
+    for t in pairs(Toggles) do table.insert(TOrder, t) end
+    table.sort(TOrder)
+    COrder = {}
+    for c in pairs(Cycles) do table.insert(COrder, c) end
+    table.sort(COrder)
 	ashita.events.register('d3d_present', 'varhelper_present_cb', function ()
 		local outText = 'VarHelper';
-		for key, value in pairs(Toggles) do
-			outText = outText .. '\n' .. key .. ': ';
-			if (value == true) then
-				outText = outText .. '|cFF00FF00|Enabled|r';
-			else
-				outText = outText .. '|cFFFF0000|Disabled|r';
-			end
+		for i, key in ipairs(TOrder) do
+            value = Toggles[key]
+            if Visibility[key] == nil or Visibility[key] then
+                outText = outText .. '\n' .. key .. ': ';
+                if (value == true) then
+                    outText = outText .. '|cFF00FF00|Enabled|r';
+                else
+                    outText = outText .. '|cFFFF0000|Disabled|r';
+                end
+            end
 		end
-		for key, value in pairs(Cycles) do
-			outText = outText .. '\n' .. key .. ': ' .. '|cFF00FF00|' .. value.Array[value.Index] .. '|r';
+        local visible = true
+		for i, key in ipairs(COrder) do
+            value = Cycles[key]
+            if Visibility[key] == nil or Visibility[key] then
+                outText = outText .. '\n' .. key .. ': ' .. '|cFF00FF00|' .. value.Array[value.Index] .. '|r';
+            end
 		end
 		varhelper.FontObject.text = outText;
 	end);
