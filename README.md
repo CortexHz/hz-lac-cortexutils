@@ -127,7 +127,7 @@ sets['Default'] = {
     },
 }
 ```
-(these keys can but may find limited use there)
+(these keys can but may find limited elsewhere)
 
 Note: the `Pet` section, can be a pet ability (i.e. macc equip like above) or pet name (like for equiping HQ staffs with summons)..
 
