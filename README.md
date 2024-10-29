@@ -92,7 +92,7 @@ sets['WeaponSkill'] = {
 }
 ```
 
-All sections, with exception to `Default`, will recognise hierarchy i.e.
+All applicable sections will recognise hierarchy i.e.
 ```
 [action.name] (e.g ['Sleep']) -> [Skill] -> [Type]  So the following are possible placements for `Sleep` spell
 sets['Midcast'] = {
