@@ -125,11 +125,22 @@ sets['Default'] = {
             Head = 'Beast Helm',
         },
     },
+    ['Buff'] = {
+        ['Shock Spikes'] = {
+            Ring2 = 'Opuntia Hoop',
+        },
+        ['Blaze Spikes'] = {
+            Ring2 = 'Opuntia Hoop',
+        },
+        ['Ice Spikes'] = {
+            Ring2 = 'Opuntia Hoop',
+        }, 
+    },
 }
 ```
 (these keys can but may find limited elsewhere)
 
-Note: the `Pet` section, can be a pet ability (i.e. macc equip like above) or pet name (like for equiping HQ staffs with summons)..
+The `Pet` section, can be a pet ability (i.e. macc equip like above) or pet name (like for equiping HQ staffs with summons)..
 
 
 Acceptable gear slots are:
