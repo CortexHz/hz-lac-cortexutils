@@ -2,16 +2,21 @@
 
 Author:  Cortex of HorizonXI
 
-Install:
-...game/config/addons/luashitacast/common/
+Install to:
 
-cortexutils.lua
-varhelpermod.lua
+`...game/config/addons/luashitacast/common/`
 
-...game/config/addons/luashitacast/<username_id>/<job>.lua
+these files:
+
+`cortexutils.lua`
+`varhelpermod.lua`
+
+Setup lua:
+
+`...game/config/addons/luashitacast/<username_id>/<job>.lua`
 
 e.g.
-...game/config/addons/luashitacast/Cortex_103321/BLM.lua
+`...game/config/addons/luashitacast/Cortex_103321/BLM.lua`
 
 Configuring Job Lua:
 
