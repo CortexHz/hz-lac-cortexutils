@@ -251,6 +251,15 @@ sets['Default'] = {
 ```
 (`/lac fwd Idle` would cycle, `/lac fwd Fishing` would equip/unequip)
 
+To hide these switches from the UI list, `VarVisible = false` can be set under `['Var...'][...]`  i.e. 
+```
+        ['VarToggles'] = {
+            ['Fishing'] = {
+                VarVisible = false,
+                ...
+            },
+```
+
 The same named switches can be used in different sections, however the gearsets are local to those sections..
 (i.e. switch for `Sorcerer\'s Ring` in both precast (-hp gear) and midcast (for nuke)..)
 
@@ -377,6 +386,7 @@ sets['Default'] = {
         },
         ['VarToggles'] = {
             ['Fishing'] = {
+                VarVisible = false,
                 Ammo = '',
                 Ranged = '',
                 Body = 'Angler\'s Tunica',
@@ -385,6 +395,7 @@ sets['Default'] = {
                 Feet = 'Waders',
             },
             ['Working'] = {
+                VarVisible = false,
                 Body = 'Worker Tunica',
                 Hands = 'Worker Gloves',
                 Legs = 'Worker Hose',
