@@ -294,6 +294,8 @@ or Set
 
 ### Example Lua
 
+https://github.com/CortexHz/hz-lac-cortexutils/blob/main/BLM.lua
+
 ```
 local profile = gFunc.LoadFile('common/cortexutils.lua');
 
