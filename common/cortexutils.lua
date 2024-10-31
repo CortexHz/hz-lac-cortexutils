@@ -17,10 +17,10 @@ cortexutils.ApplySets = function(equip_set, in_set, action)
     if in_set.Alpha ~= nil then
         equip_set = cortexutils.ApplySets(equip_set, in_set.Alpha, action)
     end
-    equip_set = cortexutils.CombineVarSets(equip_set, in_set, action)
     if in_set ~= nil then
         equip_set = cortexutils.ApplyNativeSet(equip_set, in_set)
     end
+    equip_set = cortexutils.CombineVarSets(equip_set, in_set, action)
     if in_set[player.Status] ~= nil then
         equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Default[player.Status])
     end
