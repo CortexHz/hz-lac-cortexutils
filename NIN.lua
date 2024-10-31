@@ -72,7 +72,7 @@ sets['Weapon'] = {}
 sets['Weapon']['Katana'] = {}
 sets['Weapon']['Katana']['Default'] = {
     Main = 'Yoshimitsu',
-	Sub = 'Unji',
+    Sub = 'Unji',
     Ammo = 'Bomb Core',
 }
 sets['Weapon']['Staff'] = {}
@@ -352,7 +352,7 @@ sets['Midcast'] = {
     },
     ['Utsusemi: Ni'] = {
         Ammo = 'Nokizaru Shuriken',
-		Head = 'Panther Mask +1',
+        Head = 'Panther Mask +1',
         Neck = 'Evasion Torque',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Eris\' Earring',
@@ -367,7 +367,7 @@ sets['Midcast'] = {
     },
     ['Utsusemi: Ichi'] = {
         Ammo = 'Nokizaru Shuriken',
-		Head = 'Yasha Jinpachi', --5%
+        Head = 'Yasha Jinpachi', --5%
         Neck = 'Willpower Torque', --5%
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Eris\' Earring',
@@ -456,7 +456,7 @@ sets['Midcast'] = {
     },
     ['Healing Magic'] = { -- incomplete
         Ammo = 'Nokizaru Shuriken',
-		Head = 'Genbu\'s Kabuto', --5%
+        Head = 'Genbu\'s Kabuto', --5%
         Neck = 'Enhancing Torque', --5%
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Eris\' Earring',
@@ -471,7 +471,7 @@ sets['Midcast'] = {
     },
     ['Enhancing Magic'] = { -- incomplete
         Ammo = 'Nokizaru Shuriken',
-		Head = 'Genbu\'s Kabuto', --5%
+        Head = 'Genbu\'s Kabuto', --5%
         Neck = 'Enhancing Torque', --5%
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Eris\' Earring',
