@@ -201,11 +201,6 @@ sets['Default'] = {
                 },
             },
         },
-        ['Buff'] = {
-            ['Aftermath'] = {
-                Ammo = 'Nokizaru Shuriken',
-            }, 
-        },
     },
     ['Resting'] = {
         ['VarToggles'] = {
@@ -309,6 +304,11 @@ sets['Default'] = {
                     Feet = 'Fuma Sune-Ate', -- 3%
                 },
             },
+        },
+        ['Buff'] = {
+            ['Aftermath'] = {
+                Ammo = 'Nokizaru Shuriken',
+            }, 
         },
     },
     ['Omega'] = {   
