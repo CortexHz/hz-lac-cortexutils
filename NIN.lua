@@ -698,7 +698,7 @@ sets['WeaponSkill'] = {
     ['Blade: Jin'] = {
         Neck = 'Breeze Gorget',
         ['VarCycles'] = {
-            ['WSVar'] = {
+            ['WSBase'] = {
                 ['Default'] = {
                     Neck = 'Hope Torque',
                 },
