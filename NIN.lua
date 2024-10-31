@@ -214,7 +214,6 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['TP'] = {
                 ['Default'] = {
-                    Ammo = 'Nokizaru Shuriken',
                     Head = 'Panther Mask +1', -- 3%
                     Neck = 'Peacock Amulet',
                     Ear1 = 'Brutal Earring', 
@@ -229,7 +228,6 @@ sets['Default'] = {
                     Feet = 'Fuma Sune-Ate', -- 3%
                 },
                 ['ACC'] = {
-                    Ammo = 'Nokizaru Shuriken',
                     Head = 'Panther Mask +1', -- 3%
                     Neck = 'Peacock Amulet',
                     Ear1 = 'Brutal Earring', 
@@ -244,7 +242,6 @@ sets['Default'] = {
                     Feet = 'Fuma Sune-Ate', -- 3%
                 },
                 ['PDT'] = {
-                    Ammo = 'Bomb Core',
                     Head = 'Genbu\'s Kabuto',
                     Neck = 'Peacock Amulet',
                     Ear1 = 'Pigeon Earring',
@@ -259,7 +256,6 @@ sets['Default'] = {
                     Feet = 'Fuma Sune-Ate',
                 },
                 ['MDT'] = {
-                    Ammo = 'Bomb Core',
                     Head = 'Genbu\'s Kabuto',
                     Neck = 'Rep.Gold Medal',
                     Ear1 = 'Merman\'s Earring',
@@ -274,7 +270,6 @@ sets['Default'] = {
                     Feet = 'Suzaku\'s sune-ate',
                 },
                 ['EVA'] = {
-                    Ammo = 'Bomb Core',
                     Head = 'Emperor Hairpin',
                     Neck = 'Evasion Torque',
                     Ear1 = 'Ethereal Earring',
@@ -289,7 +284,6 @@ sets['Default'] = {
                     Feet = 'Rasetsu Sune-Ate',
                 },
                 ['MACC'] = {
-                    Ammo = 'Bomb Core',
                     Head = 'Panther Mask +1', -- 2%
                     Neck = 'Peacock Amulet', 
                     Ear1 = 'Brutal Earring',
