@@ -51,7 +51,8 @@ local sets = {
 
 Allows for `/lac addset <name>` to easily export ingame gear to LAC (luahitacast) format.
 
-### Weapons
+### Weapons 
+
 -  `sets['Weapon'] = {}`  to generate weapon options, e.g
 ```
 sets['Weapon'] = {}
@@ -71,14 +72,25 @@ sets['Weapon']['Axe']['PetAcc'] = {
 
 This will generate VarHelper Switches Weapon and W.Variant..  `/lac fwd Weapon`, `/lac fwd W.Variant`
 
+Note: Optional, can just use `Default` section to create weapon selection,
+however this section allows non-selected options to be hidden from the UI.
+
 ### Handler Sections:
+
 -- Default
+
 -- Precast
+
 -- Midcast
+
 -- Preshot
+
 -- Midshot
+
 -- Ability
+
 -- WeaponSkill
+
 -- Item
 
 e.g.
@@ -313,7 +325,27 @@ To Cycle between
 or Set
 `/lac fwd Strategy L65`
 
+-----------------------------------------------------------
+### Order of Evaluation
 
+Each of the following can be defined in any section, 
+however they are applied in the following order:
+
+Alpha
+Native (i.e. Head, Neck ...etc)
+VarSets (VarToggles, VarCycles)
+Status
+Elemental
+Thresholds
+Buff
+Movement
+Pet
+Action/Hierarchy (`['Black Magic']['Enfeebling Magic']...`)
+Omega
+
+
+When combined the latter will overwrite the slots of the fomer. (i.e `Head` slot in Alpha is overwritten by `Head` in Omega)
+The resultant set is equiped (only one call to gfunc.EquipSet).
 
 -----------------------------------------------------------
 
