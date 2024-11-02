@@ -332,15 +332,25 @@ Each of the following can be defined in any section,
 however they are applied in the following order:
 
 Alpha
+
 Native (i.e. Head, Neck ...etc)
+
 VarSets (VarToggles, VarCycles)
+
 Status
+
 Elemental
+
 Thresholds
+
 Buff
+
 Movement
+
 Pet
+
 Action/Hierarchy (`['Black Magic']['Enfeebling Magic']...`)
+
 Omega
 
 
