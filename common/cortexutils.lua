@@ -230,7 +230,7 @@ cortexutils.ApplyElementalSets = function(equip_set, in_set, action)
     return equip_set
 end
 
-local PlayerThresholds = T{'HP', 'HPP', 'MP', 'MPP', 'MaxHP', 'MaxMP', 'TP'}
+local PlayerThresholds = T{'HP', 'HPP', 'MP', 'MPP', 'MaxHP', 'MaxMP', 'TP', 'MainJob', 'SubJob'}
 local ActionThresholds = T{'MpAftercast', 'MppAftercast', 'MpCost'}
 local EnvironmentThresholds = T{'Area', 'Time', 'MoonPhase', 'MoonPercent'}
 cortexutils.ApplyThresholdSets = function(equip_set, in_set, action)

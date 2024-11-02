@@ -198,7 +198,7 @@ so we need to avoid using day obi when weather is it's weakness (might as well w
 
 ### Thresholds 
 Equip gear according to some player, action, environmental.. i.e. Sorcerer's Ring, or Movement
-`PlayerThresholds = T{'HP', 'HPP', 'MP', 'MPP', 'MaxHP', 'MaxMP', 'TP'}`
+`PlayerThresholds = T{'HP', 'HPP', 'MP', 'MPP', 'MaxHP', 'MaxMP', 'TP', 'MainJob', 'SubJob'}`
 `ActionThresholds = T{'MpAftercast', 'MppAftercast', 'MpCost'}`
 `EnvironmentThresholds = T{'Area', 'Time', 'MoonPhase', 'MoonPercent'}`
 e.g

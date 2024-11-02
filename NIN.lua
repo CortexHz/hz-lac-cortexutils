@@ -93,6 +93,13 @@ sets['Weapon']['Club']['Warp'] = {
 -- HandleDefault
 -- /lac fwd Idle
 -- /lac fwd TP
+local Shinobi = {
+    Head = '',
+    Ear1 = '',
+    Hands = '', 
+    Waist = '',
+    Feet = '',
+}
 sets['Default'] = {
     ['Idle'] = {
         ['VarCycles'] = {
@@ -173,6 +180,17 @@ sets['Default'] = {
                 Feet = 'Worker Boots',
             },
         },
+        ['Thresholds'] = {
+            ['HPP'] = {
+                ['LOW'] = {
+                    threshold = 50,
+                    operator = '<',
+                    ['gear'] = {
+                        Waist = 'Muscle Belt',
+                    },
+                },
+            },
+        },
         ['Movement'] = {
             Hands = 'Kog. Tekko +1',
             ['Thresholds'] = {
@@ -181,14 +199,14 @@ sets['Default'] = {
                         threshold = 17,
                         operator = '>',
                         ['gear'] = {
-                            Feet = 'Nin. Kyahan +1'
+                            Feet = 'Nin. Kyahan +1',
                         },
                     },
                     ['Dawn'] = {
                         threshold = 7,
                         operator = '<',
                         ['gear'] = {
-                            Feet = 'Nin. Kyahan +1'
+                            Feet = 'Nin. Kyahan +1',
                         },
                     },
                 },
@@ -254,6 +272,17 @@ sets['Default'] = {
                     Waist = 'Warwolf Belt',
                     Legs = 'Byakko\'s haidate',
                     Feet = 'Fuma Sune-Ate',
+                    ['Thresholds'] = {
+                        ['HPP'] = {
+                            ['LOW'] = {
+                                threshold = 50,
+                                operator = '<',
+                                ['gear'] = {
+                                    Waist = 'Muscle Belt',
+                                },
+                            },
+                        },
+                    },
                 },
                 ['MDT'] = {
                     Head = 'Genbu\'s Kabuto',
@@ -268,6 +297,17 @@ sets['Default'] = {
                     Waist = 'Warwolf Belt',
                     Legs = 'Byakko\'s haidate',
                     Feet = 'Suzaku\'s sune-ate',
+                    ['Thresholds'] = {
+                        ['HPP'] = {
+                            ['LOW'] = {
+                                threshold = 50,
+                                operator = '<',
+                                ['gear'] = {
+                                    Waist = 'Muscle Belt',
+                                },
+                            },
+                        },
+                    },
                 },
                 ['EVA'] = {
                     Head = 'Emperor Hairpin',
@@ -299,10 +339,81 @@ sets['Default'] = {
                 },
             },
         },
+        ['Thresholds'] = {
+            ['HPP'] = {
+                ['NLow'] = {
+                    threshold = 25,
+                    operator = '>',
+                    ['gear'] = {
+                        ['Thresholds'] = {
+                            ['Time'] = {
+                                ['Dusk'] = {
+                                    threshold = 17,
+                                    operator = '>',
+                                    ['gear'] = {
+                                        Hands = 'Kog. Tekko +1',
+                                    },
+                                },
+                                ['Dawn'] = {
+                                    threshold = 7,
+                                    operator = '<',
+                                    ['gear'] = {
+                                        Hands = 'Kog. Tekko +1',
+                                    },
+                                },
+                            },
+                            ['HPP'] = {
+                                ['NHi'] = {
+                                    threshold = 75,
+                                    operator = '<',
+                                    ['gear'] = {
+                                        Ring2 = 'Shinobi Ring',
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+                ['NLow'] = {
+                    threshold = 25,
+                    operator = '<',
+                    ['gear'] = {
+                        ['VarCycles'] = {
+                            ['TP'] = {
+                                ['Default'] = Shinobi,
+                                ['ACC'] = Shinobi,
+                                ['EVA'] = Shinobi,
+                            },
+                        },
+                    },
+                },
+            },
+        },
         ['Buff'] = {
             ['Aftermath'] = {
                 Ammo = 'Nokizaru Shuriken',
             }, 
+        },
+    },
+    ['Thresholds'] = {
+        ['SubJob'] = {
+            ['Mage'] ={
+                threshold = T{'RDM','BLM', 'WHM', 'BLU', 'SMN'},
+                operator = 'contains',
+                ['gear'] = {
+                    ['Thresholds'] = {
+                        ['MP'] = {
+                            ['Refresh'] ={
+                                threshold = 41,
+                                operator = '<',
+                                ['gear'] = {
+                                    Body = 'Blue Cotehardie',
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
     },
     ['Omega'] = {   
