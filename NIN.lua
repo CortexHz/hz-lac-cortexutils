@@ -374,7 +374,7 @@ sets['Default'] = {
                         },
                     },
                 },
-                ['NLow'] = {
+                ['Low'] = {
                     threshold = 25,
                     operator = '<',
                     ['gear'] = {
