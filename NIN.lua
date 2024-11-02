@@ -20,7 +20,7 @@ sets['Strategy'] = {
     ['Default'] = {
         Idle = 'Default',
         TP = 'Default',
-        WS = 'Default',
+        WSBase = 'Default',
         TPSwaps = false,
         Weapon = 'Katana',
         ['W.Variant'] = 'Default',
@@ -28,7 +28,7 @@ sets['Strategy'] = {
     ['ACC'] = {
         Idle = 'Default',
         TP = 'ACC',
-        WS = 'ACC',
+        WSBase = 'ACC',
         TPSwaps = false,
         Weapon = 'Katana',
         ['W.Variant'] = 'Default',
@@ -36,7 +36,7 @@ sets['Strategy'] = {
     ['EVA'] = {
         Idle = 'EVA',
         TP = 'EVA',
-        WS = 'Default',
+        WSBase = 'Default',
         TPSwaps = false,
         Weapon = 'Katana',
         ['W.Variant'] = 'Default',
@@ -44,7 +44,7 @@ sets['Strategy'] = {
     ['PDT'] = {
         Idle = 'PDT',
         TP = 'PDT',
-        WS = 'MACC',
+        WSBase = 'MACC',
         TPSwaps = true,
         Weapon = 'Staff',
         ['W.Variant'] = 'PDT',
@@ -52,7 +52,7 @@ sets['Strategy'] = {
     ['MDT'] = {
         Idle = 'MDT',
         TP = 'MDT',
-        WS = 'MACC',
+        WSBase = 'MACC',
         TPSwaps = true,
         Weapon = 'Staff',
         ['W.Variant'] = 'PDT',
@@ -60,7 +60,7 @@ sets['Strategy'] = {
     ['EVA2'] = {
         Idle = 'EVA',
         TP = 'EVA',
-        WS = 'Default',
+        WSBase = 'MACC',
         TPSwaps = true,
         Weapon = 'Staff',
         ['W.Variant'] = 'Evasion',
@@ -191,34 +191,6 @@ sets['Default'] = {
                 },
             },
         },
-        ['Movement'] = {
-            Hands = 'Kog. Tekko +1',
-            ['Thresholds'] = {
-                ['Time'] = {
-                    ['Dusk'] = {
-                        threshold = 17,
-                        operator = '>',
-                        ['gear'] = {
-                            Feet = 'Nin. Kyahan +1',
-                        },
-                    },
-                    ['Dawn'] = {
-                        threshold = 7,
-                        operator = '<',
-                        ['gear'] = {
-                            Feet = 'Nin. Kyahan +1',
-                        },
-                    },
-                },
-            },
-            ['Elemental'] = {
-                ['Weather'] = {
-                    ['Earth'] = {
-                        --Feet = 'Desert Boots',
-                    },
-                },
-            },
-        },
     },
     ['Resting'] = {
         ['VarToggles'] = {
@@ -306,6 +278,23 @@ sets['Default'] = {
                                     Waist = 'Muscle Belt',
                                 },
                             },
+                            ['NHi'] = {
+                                threshold = 75,
+                                operator = '<',
+                                ['gear'] = {
+                                    ['Thresholds'] = {
+                                        ['HPP'] = {
+                                            ['NLow'] = {
+                                                threshold = 25,
+                                                operator = '>',
+                                                ['gear'] = {
+                                                    Ring2 = 'Shinobi Ring',
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
                         },
                     },
                 },
@@ -362,15 +351,6 @@ sets['Default'] = {
                                     },
                                 },
                             },
-                            ['HPP'] = {
-                                ['NHi'] = {
-                                    threshold = 75,
-                                    operator = '<',
-                                    ['gear'] = {
-                                        Ring2 = 'Shinobi Ring',
-                                    },
-                                },
-                            },
                         },
                     },
                 },
@@ -393,6 +373,34 @@ sets['Default'] = {
             ['Aftermath'] = {
                 Ammo = 'Nokizaru Shuriken',
             }, 
+        },
+    },
+    ['Movement'] = {
+        Hands = 'Kog. Tekko +1',
+        ['Thresholds'] = {
+            ['Time'] = {
+                ['Dusk'] = {
+                    threshold = 17,
+                    operator = '>',
+                    ['gear'] = {
+                        Feet = 'Nin. Kyahan +1',
+                    },
+                },
+                ['Dawn'] = {
+                    threshold = 7,
+                    operator = '<',
+                    ['gear'] = {
+                        Feet = 'Nin. Kyahan +1',
+                    },
+                },
+            },
+        },
+        ['Elemental'] = {
+            ['Weather'] = {
+                ['Earth'] = {
+                    --Feet = 'Desert Boots',
+                },
+            },
         },
     },
     ['Thresholds'] = {
