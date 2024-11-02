@@ -216,6 +216,27 @@ sets['Default'] = {
                     Waist = 'Swift Belt', -- 4%
                     Legs = 'Byakko\'s haidate', -- 5%
                     Feet = 'Fuma Sune-Ate', -- 3%
+                    ['Thresholds'] = {
+                        ['HPP'] = {
+                            ['NHi'] = {
+                                threshold = 75,
+                                operator = '<',
+                                ['gear'] = {
+                                    ['Thresholds'] = {
+                                        ['HPP'] = {
+                                            ['NLow'] = {
+                                                threshold = 25,
+                                                operator = '>',
+                                                ['gear'] = {
+                                                    Ring2 = 'Shinobi Ring',
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
                 ['ACC'] = {
                     Head = 'Panther Mask +1', -- 3%
@@ -230,6 +251,27 @@ sets['Default'] = {
                     Waist = 'Swift Belt', -- 4%
                     Legs = 'Byakko\'s haidate', -- 5%
                     Feet = 'Fuma Sune-Ate', -- 3%
+                    ['Thresholds'] = {
+                        ['HPP'] = {
+                            ['NHi'] = {
+                                threshold = 75,
+                                operator = '<',
+                                ['gear'] = {
+                                    ['Thresholds'] = {
+                                        ['HPP'] = {
+                                            ['NLow'] = {
+                                                threshold = 25,
+                                                operator = '>',
+                                                ['gear'] = {
+                                                    Ring2 = 'Shinobi Ring',
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
                 ['PDT'] = {
                     Head = 'Genbu\'s Kabuto',
@@ -276,23 +318,6 @@ sets['Default'] = {
                                 operator = '<',
                                 ['gear'] = {
                                     Waist = 'Muscle Belt',
-                                },
-                            },
-                            ['NHi'] = {
-                                threshold = 75,
-                                operator = '<',
-                                ['gear'] = {
-                                    ['Thresholds'] = {
-                                        ['HPP'] = {
-                                            ['NLow'] = {
-                                                threshold = 25,
-                                                operator = '>',
-                                                ['gear'] = {
-                                                    Ring2 = 'Shinobi Ring',
-                                                },
-                                            },
-                                        },
-                                    },
                                 },
                             },
                         },
