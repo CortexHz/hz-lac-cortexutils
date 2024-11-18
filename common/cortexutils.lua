@@ -12,38 +12,46 @@ local varhelper = gFunc.LoadFile('common/varhelpermod.lua');
 
 cortexutils = {};
 
-cortexutils.ApplySets = function(equip_set, in_set, action)
-    local player = gData.GetPlayer()
+cortexutils.ApplySets = function(equip_set, in_set, action, is_pet)
+    local status
+    if is_pet ~= nil then
+        petinfo = gData.GetPet()
+        if petinfo ~= nil then
+            status = petinfo.Status
+        end
+    else
+        status = gData.GetPlayer().Status
+    end
     if in_set.Alpha ~= nil then
-        equip_set = cortexutils.ApplySets(equip_set, in_set.Alpha, action)
+        equip_set = cortexutils.ApplySets(equip_set, in_set.Alpha, action, is_pet)
     end
     if in_set ~= nil then
         equip_set = cortexutils.ApplyNativeSet(equip_set, in_set)
     end
-    equip_set = cortexutils.CombineVarSets(equip_set, in_set, action)
-    if in_set[player.Status] ~= nil then
-        equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Default[player.Status])
+    equip_set = cortexutils.CombineVarSets(equip_set, in_set, action, is_pet)
+    if in_set[status] ~= nil then
+        equip_set = cortexutils.ApplySets(equip_set, in_set[status], nil, is_pet)
     end
     if in_set.Elemental ~= nil then
-        equip_set = cortexutils.ApplyElementalSets(equip_set, in_set.Elemental, action)
+        equip_set = cortexutils.ApplyElementalSets(equip_set, in_set.Elemental, action, is_pet)
     end
     if in_set.Thresholds ~= nil then
-        equip_set = cortexutils.ApplyThresholdSets(equip_set, in_set.Thresholds, action)
+        equip_set = cortexutils.ApplyThresholdSets(equip_set, in_set.Thresholds, action, is_pet)
     end
     if in_set.Buff ~= nil then
-        equip_set = cortexutils.ApplyBuffSet(equip_set, in_set.Buff, action)
+        equip_set = cortexutils.ApplyBuffSet(equip_set, in_set.Buff, action, is_pet)
     end
     if in_set.Movement ~= nil then
-        equip_set = cortexutils.ApplyMovementSet(equip_set, in_set.Movement, action)
+        equip_set = cortexutils.ApplyMovementSet(equip_set, in_set.Movement, action, is_pet)
     end
     if in_set.Pet ~= nil then
         equip_set = cortexutils.ApplyPetSet(equip_set, in_set.Pet, action)
     end
     if action ~= nil then
-        equip_set = cortexutils.ApplyHierarchySets(equip_set, in_set, action)
+        equip_set = cortexutils.ApplyHierarchySets(equip_set, in_set, action, is_pet)
     end
     if in_set.Omega ~= nil then
-        equip_set = cortexutils.ApplySets(equip_set, in_set.Omega, action)
+        equip_set = cortexutils.ApplySets(equip_set, in_set.Omega, action, is_pet)
     end
     return equip_set
 end
@@ -59,58 +67,45 @@ cortexutils.ApplyNativeSet = function(equip_set, in_set)
     return equip_set
 end
 
-cortexutils.ApplyHierarchySets = function(equip_set, in_set, action)
+cortexutils.ApplyHierarchySets = function(equip_set, in_set, action, is_pet)
     if in_set[action.Name] then
-        equip_set = cortexutils.ApplySets(equip_set, in_set[action.Name], action)
+        equip_set = cortexutils.ApplySets(equip_set, in_set[action.Name], action, is_pet)
     elseif in_set[action.Skill] then
-        equip_set = cortexutils.ApplySets(equip_set, in_set[action.Skill], action)
-        if in_set[action.Skill][action.Name] then
-            equip_set = cortexutils.ApplySets(
-                equip_set, in_set[action.Skill][action.Name], action)
-        end
+        equip_set = cortexutils.ApplySets(equip_set, in_set[action.Skill], action, is_pet)
     elseif in_set[action.Type] then
-        equip_set = cortexutils.ApplySets(equip_set, in_set[action.Type], action)
-        if in_set[action.Type][action.Name] then
-            equip_set = cortexutils.ApplySets(
-                equip_set, in_set[action.Type][action.Name], action)
-        elseif in_set[action.Type][action.Skill] then
-            equip_set = cortexutils.ApplySets(
-                    equip_set, in_set[action.Type][action.Skill], action)
-            if in_set[action.Type][action.Skill][action.Name] then
-                equip_set = cortexutils.ApplySets(
-                    equip_set,in_set[action.Type][action.Skill][action.Name], action)
-            end
-        end
+        equip_set = cortexutils.ApplySets(equip_set, in_set[action.Type], action, is_pet)
+    elseif in_set[action.ActionType] then
+        equip_set = cortexutils.ApplySets(equip_set, in_set[action.ActionType], action, is_pet)
     end
     return equip_set
 end
 
-cortexutils.CombineVarSets = function(equip_set, in_set, action)
+cortexutils.CombineVarSets = function(equip_set, in_set, action, is_pet)
     if in_set.VarCycles ~= nil then
         for varcycle, varsets in pairs(in_set.VarCycles) do
             if varsets[varhelper.GetCycle(varcycle)] ~= nil then
                 equip_set = cortexutils.ApplySets(
-                    equip_set, varsets[varhelper.GetCycle(varcycle)], action)
+                    equip_set, varsets[varhelper.GetCycle(varcycle)], action, is_pet)
             end
         end
     end
     if in_set.VarToggles ~= nil then
         for vartoggle, varset in pairs(in_set.VarToggles) do
             if varhelper.GetToggle(vartoggle) then
-                equip_set = cortexutils.ApplySets(equip_set, varset, action)
+                equip_set = cortexutils.ApplySets(equip_set, varset, action, is_pet)
             end
         end
     end
     return equip_set
 end
 
-cortexutils.ApplyMovementSet = function(equip_set, in_set, action)
+cortexutils.ApplyMovementSet = function(equip_set, in_set, action, is_pet)
     local env = gData.GetEnvironment()
     local player = gData.GetPlayer()
     
     if player.IsMoving then
         if next(in_set) ~= nil then
-            equip_set = cortexutils.ApplySets(equip_set, in_set, action)
+            equip_set = cortexutils.ApplySets(equip_set, in_set, action, is_pet)
         end
     end
     return equip_set
@@ -126,7 +121,7 @@ local elementalWeakness = {
     Light = 'Dark',
     Dark = 'Light',
 }
-cortexutils.ApplyElementalSets = function(equip_set, in_set, action)
+cortexutils.ApplyElementalSets = function(equip_set, in_set, action, is_pet)
     local environment = gData.GetEnvironment()
     local element
     if action ~= nil then
@@ -147,7 +142,7 @@ cortexutils.ApplyElementalSets = function(equip_set, in_set, action)
             in_set.Element ~= nil
             and in_set.Element[element] ~= nil
         ) then
-            equip_set = cortexutils.ApplySets(equip_set, in_set.Element[element], action)
+            equip_set = cortexutils.ApplySets(equip_set, in_set.Element[element], action, is_pet)
         end
         -- if day is weak to weather, avoid.
         if (
@@ -164,7 +159,7 @@ cortexutils.ApplyElementalSets = function(equip_set, in_set, action)
                 not ClashCheck
                 or elementalWeakness[environment.DayElement] ~= environment.WeatherElement
             ) then
-                equip_set = cortexutils.ApplySets(equip_set, in_set.Day[elementDay], action)
+                equip_set = cortexutils.ApplySets(equip_set, in_set.Day[elementDay], action, is_pet, is_pet)
             end
         end
         -- if weather is weak to day, and weather is not double, avoid.
@@ -185,7 +180,7 @@ cortexutils.ApplyElementalSets = function(equip_set, in_set, action)
                     or environment.WeatherElement ~= environment.Weather
                 )
             ) then
-                equip_set = cortexutils.ApplySets(equip_set, in_set.Weather[elementWeather], action)
+                equip_set = cortexutils.ApplySets(equip_set, in_set.Weather[elementWeather], action, is_pet)
             end
         end
     else
@@ -203,7 +198,7 @@ cortexutils.ApplyElementalSets = function(equip_set, in_set, action)
                 not ClashCheck
                 or elementalWeakness[environment.DayElement] ~= environment.WeatherElement
             ) then
-                equip_set = cortexutils.ApplySets(equip_set, in_set.Day[elementDay], action)
+                equip_set = cortexutils.ApplySets(equip_set, in_set.Day[elementDay], action, is_pet)
             end
         end
         if (
@@ -223,17 +218,17 @@ cortexutils.ApplyElementalSets = function(equip_set, in_set, action)
                     or environment.WeatherElement ~= environment.Weather
                 )
             ) then
-                equip_set = cortexutils.ApplySets(equip_set, in_set.Weather[elementWeather], action)
+                equip_set = cortexutils.ApplySets(equip_set, in_set.Weather[elementWeather], action, is_pet)
             end
         end
     end
     return equip_set
 end
 
-local PlayerThresholds = T{'HP', 'HPP', 'MP', 'MPP', 'MaxHP', 'MaxMP', 'TP', 'MainJob', 'SubJob'}
+local PlayerThresholds = T{'HP', 'HPP', 'MP', 'MPP', 'MaxHP', 'MaxMP', 'TP', 'MainJob', 'MainJobLevel', 'MainJobSync', 'SubJob', 'SubJobLevel', 'SubJobSync'}
 local ActionThresholds = T{'MpAftercast', 'MppAftercast', 'MpCost'}
 local EnvironmentThresholds = T{'Area', 'Time', 'MoonPhase', 'MoonPercent'}
-cortexutils.ApplyThresholdSets = function(equip_set, in_set, action)
+cortexutils.ApplyThresholdSets = function(equip_set, in_set, action, is_pet)
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
     local data = action
@@ -291,7 +286,7 @@ cortexutils.ApplyThresholdSets = function(equip_set, in_set, action)
                         apply_set = true
                     end
                     if apply_set then
-                        equip_set = cortexutils.ApplySets(equip_set, info.gear, action)
+                        equip_set = cortexutils.ApplySets(equip_set, info.gear, action, is_pet)
                     end
                 end
             end
@@ -300,10 +295,10 @@ cortexutils.ApplyThresholdSets = function(equip_set, in_set, action)
     return equip_set
 end
 
-cortexutils.ApplyBuffSet = function(equip_set, in_set, action)
+cortexutils.ApplyBuffSet = function(equip_set, in_set, action, is_pet)
     for key, val in pairs(in_set) do
         if val ~= nil and ( gData.GetBuffCount(key) > 0 ) then
-            equip_set = cortexutils.ApplySets(equip_set, val, action)
+            equip_set = cortexutils.ApplySets(equip_set, val, action, is_pet)
         end
     end
     return equip_set
@@ -314,17 +309,22 @@ cortexutils.ApplyPetSet = function(equip_set, in_set, action)
     if pet == nil or pet.Name == nil then
         return equip_set
     end
-    if in_set[pet.Name] ~= nil then
-        equip_set = cortexutils.ApplySets(equip_set, in_set[pet.Name], action)
-    end
     local petAction = gData.GetPetAction()
     if (
         petAction ~= nil
         and petAction.Name ~= nil
-        and in_set[petAction.Name] ~= nil
     ) then
-        equip_set = cortexutils.ApplySets(equip_set, in_set[petAction.Name], action)
+        action = petAction
+        -- print(action.Name)
+        -- print(action.Element)
+        -- print(action.ActionType)
+        -- print(action.Skill)
+        -- print(action.Ability)
     end
+    if in_set[pet.Name] ~= nil then
+        equip_set = cortexutils.ApplySets(equip_set, in_set[pet.Name], action, true)
+    end
+    equip_set = cortexutils.ApplySets(equip_set, in_set, action, true)
     return equip_set
 end
 

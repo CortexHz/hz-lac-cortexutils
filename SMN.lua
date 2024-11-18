@@ -8,20 +8,20 @@ local profile = gFunc.LoadFile('common/cortexutils.lua');
 
 local sets = {
     ['export'] = {
-        Main = 'Bastokan Staff',
-        Range = 'Lu Shang\'s F. Rod',
-        Ammo = 'Minnow',
+        Main = 'Kukulcan\'s Staff',
+        Ammo = 'Fortune Egg',
+        Head = 'Austere Hat',
         Neck = 'Justice Badge',
         Ear1 = 'Energy Earring +1',
         Ear2 = 'Energy Earring +1',
-        Body = 'Black Tunic',
-        Hands = 'Asbestos Mitts',
-        Ring1 = 'Saintly Ring',
+        Body = 'Austere Robe',
+        Hands = 'Austere Cuffs',
+        Ring1 = 'Tamas Ring',
         Ring2 = 'Astral Ring',
         Back = 'Mist Silk Cape',
         Waist = 'Friar\'s Rope',
-        Legs = 'Angler\'s Hose',
-        Feet = 'Waders',
+        Legs = 'Austere Slops',
+        Feet = 'Austere Sabots',
     },
 };
 
@@ -47,19 +47,20 @@ sets['Strategy'] = {
 sets['Weapon'] = {}
 sets['Weapon']['Staff'] = {}
 sets['Weapon']['Staff']['Defense'] = {
-    Main = "Bastokan Staff",
-    --Main = 'Terra\'s Staff',
+    Main = 'Terra\'s Staff',
 }
 sets['Weapon']['Staff']['Treat'] = {
-    Main = "Treat Staff II",
-    --Main = 'Terra\'s Staff',
+    Main = 'Treat Staff II',
+}
+sets['Weapon']['Staff']['Trick'] = {
+    Main = 'Kukulcan\'s Staff',
 }
 sets['Weapon']['Club'] = {}
 sets['Weapon']['Club']['Warp'] = {
-    Main = "Warp Cudgel",
+    Main = 'Warp Cudgel',
 }
 sets['Weapon']['Club']['Hammer'] = {
-    Main = "Club Hammer",
+    Main = 'Club Hammer',
 }
 
 -- HandleDefault
@@ -68,32 +69,32 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['Idle'] = {
                 ['Default'] = {
-                    Ammo = 'Fortune Egg',
+                    Head = 'Austere Hat',
                     Neck = 'Justice Badge',
                     Ear1 = 'Energy Earring +1',
                     Ear2 = 'Energy Earring +1',
-                    Body = 'Black Tunic',
-                    Hands = 'Asbestos Mitts',
-                    Ring1 = 'Saintly Ring',
+                    Body = 'Austere Robe',
+                    Hands = 'Austere Cuffs',
+                    Ring1 = 'Tamas Ring',
                     Ring2 = 'Astral Ring',
                     Back = 'Mist Silk Cape',
                     Waist = 'Friar\'s Rope',
-                    Legs = 'Baron\'s Slops',
-                    Feet = 'Waders',
+                    Legs = 'Evoker\'s Spats',
+                    Feet = 'Austere Sabots',
                 },
                 ['Defense'] = {
-                    Ammo = 'Fortune Egg',
+                    Head = 'Austere Hat',
                     Neck = 'Justice Badge',
                     Ear1 = 'Energy Earring +1',
                     Ear2 = 'Energy Earring +1',
-                    Body = 'Black Tunic',
-                    Hands = 'Asbestos Mitts',
-                    Ring1 = 'Saintly Ring',
+                    Body = 'Austere Robe',
+                    Hands = 'Austere Cuffs',
+                    Ring1 = 'Tamas Ring',
                     Ring2 = 'Astral Ring',
                     Back = 'Mist Silk Cape',
                     Waist = 'Friar\'s Rope',
-                    Legs = 'Baron\'s Slops',
-                    Feet = 'Waders',
+                    Legs = 'Evoker\'s Spats',
+                    Feet = 'Austere Sabots',
                 },
                 ['L65'] = {
 
@@ -118,37 +119,24 @@ sets['Default'] = {
                 Feet = 'Worker Boots',
             },
         },
-        ['Movement'] = {
-            --Feet = 'Herald\'s Gaiters',
-            ['Thresholds'] = {
-                ['Time'] = {
-                    ['Dusk'] = {
-                        threshold = 17,
-                        operator = '>',
-                        ['gear'] = {
-                            --Feet = 'Ninja Kyahan +1'
-                        },
-                    },
-                    ['Dawn'] = {
-                        threshold = 7,
-                        operator = '<',
-                        ['gear'] = {
-                            --Feet = 'Ninja Kyahan +1'
-                        },
-                    },
-                },
-            },
-            ['Elemental'] = {
-                ['Weather'] = {
-                    ['Earth'] = {
-                        --Feet = 'Desert Boots',
+
+    },
+    ['Movement'] = {
+        --Feet = 'Herald\'s Gaiters',
+        ['Thresholds'] = {
+            ['Area'] = {
+                ['Windurst'] = {
+                    threshold = T{'Heavens Tower', 'Port Windurst', 'Windurst Waters', 'Windurst Walls', 'Windurst Woods'},
+                    operator = 'contains',
+                    ['gear'] = {
+                        Body = 'Federation Aketon',
                     },
                 },
             },
         },
     },
     ['Resting'] = {
-        --Main = 'Pluto\'s Staff',
+        Main = 'Pluto\'s Staff',
         --Neck = 'Checkered Scarf',
         --Ear1 = 'Sanative Earring',
         --Ear2 = 'Relaxing Earring',
@@ -171,11 +159,69 @@ sets['Default'] = {
         },
     },
     ['Pet'] = {
-        ['Carbuncle'] = {
-            Hands = 'Angler\'s Gloves',
+        Head = 'Austere Hat',
+        Body = 'Austere Robe',
+        Hands = 'Austere Cuffs',
+        ['Engaged'] = {
+            Legs = 'Evoker\'s Spats',
         },
-        ['Healing Ruby'] = {
-            Body = 'Worker Tunica',
+        ['MobSkill'] = {
+            Legs = 'Evoker\'s Spats',
+            Feet = 'Austere Sabots',
+            ['Earthen Ward'] = {
+                Legs = 'Austere Slops',
+            },
+        },
+        ['Ifrit'] = {
+            Main = 'Vulcan\'s Staff',
+        },
+        ['Fire Spirit'] = {
+            Main = 'Vulcan\'s Staff',
+        },
+        ['Titan'] = {
+            Main = 'Terra\'s Staff',
+        },
+        ['Earth Spirit'] = {
+            Main = 'Terra\'s Staff',
+        },
+        ['Leviathan'] = {
+            Main = 'Neptune\'s Staff',
+        },
+        ['Water Spirit'] = {
+            Main = 'Neptune\'s Staff',
+        },
+        ['Garuda'] = {
+            Main = 'Auster\'s Staff',
+        },
+        ['Wind Spirit'] = {
+            Main = 'Auster\'s Staff',
+        },
+        ['Shiva'] = {
+            Main = 'Aquilo\'s Staff',
+        },
+        ['Ice Spirit'] = {
+            Main = 'Aquilo\'s Staff',
+        },
+        ['Ramuh'] = {
+            Main = 'Jupiter\'s Staff',
+        },
+        ['Thunder Spirit'] = {
+            Main = 'Jupiter\'s Staff',
+        },
+        ['Carbuncle'] = {
+            Main = 'Apollo\'s Staff',
+        },
+        ['Light Spirit'] = {
+            Main = 'Apollo\'s Staff',
+        },
+        ['Fenrir'] = {
+            Main = 'Pluto\'s Staff',
+        },
+        ['Diabolos'] = {
+            Main = 'Pluto\'s Staff',
+        },
+        ['Dark Spirit'] = {
+            Main = 'Pluto\'s Staff',
         },
     },
     ['Omega'] = {
@@ -194,12 +240,15 @@ sets['Precast'] = {
 sets['Midcast'] = {
     ['Alpha'] = {
     },
+    ['Summoning'] = {
+        Body = 'Austere Robe',
+    },
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
             Ammo = 'Phtm. Tathlum',
             Neck = 'Enfeebling Torque',
             --Ring1 = 'Tamas Ring',
-            Ring1 = 'Eremite\'s Ring +1',
+            Ring1 = 'Tamas Ring',
         },
     },
     ['White Magic'] = {
@@ -207,20 +256,20 @@ sets['Midcast'] = {
             Neck = 'Enfeebling Torque',
             Hands = 'Devotee\'s Mitts',
             --Ring1 = 'Tamas Ring',
-            Ring1 = 'Saintly Ring',
+            Ring1 = 'Tamas Ring',
         },
     },
     ['Healing Magic'] = {
         Neck = 'Justice Badge',
         Hands = 'Devotee\'s Mitts',
         --Ring1 = 'Tamas Ring',
-        Ring1 = 'Saintly Ring',
+        Ring1 = 'Tamas Ring',
     },
     ['Enhancing Magic'] = {
         Neck = 'Justice Badge',
         Hands = 'Devotee\'s Mitts',
         --Ring1 = 'Tamas Ring',
-        Ring1 = 'Saintly Ring',
+        Ring1 = 'Tamas Ring',
     },
     ['Omega'] = {
         -- ['Elemental'] = {
@@ -318,7 +367,19 @@ sets['Midshot'] = {
 
 -- HandleAbility
 sets['Ability'] = {
-    ['Healing Ruby'] = {
+    ['Blood Pact: Rage'] = {
+        Head = 'Austere Hat',
+        Body = 'Austere Robe',
+        Hands = 'Austere Cuffs',
+        Legs = 'Austere Slops',
+        Feet = 'Austere Sabots',
+    },
+    ['Blood Pact: Ward'] = {
+        Head = 'Austere Hat',
+        Body = 'Austere Robe',
+        Hands = 'Austere Cuffs',
+        Legs = 'Austere Slops',
+        Feet = 'Austere Sabots',
     },
 }
 
