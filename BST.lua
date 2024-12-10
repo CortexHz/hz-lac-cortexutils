@@ -82,7 +82,7 @@ sets['Default'] = {
                     Head = 'Panther Mask',
                     Neck = 'Ryl.Grd. Collar',
                     Ear1 = 'Spike Earring',
-                    Ear2 = 'Spike Earring',
+                    Ear2 = 'Beastly Earring',
                     Body = 'Haubergeon',
                     Hands = 'Monster Gloves',
                     Ring1 = 'Toreador\'s Ring',
@@ -96,7 +96,7 @@ sets['Default'] = {
                     Head = 'Panther Mask',
                     Neck = 'Ryl.Grd. Collar',
                     Ear1 = 'Spike Earring',
-                    Ear2 = 'Spike Earring',
+                    Ear2 = 'Beastly Earring',
                     Body = 'Haubergeon',
                     Hands = 'Monster Gloves',
                     Ring1 = 'Toreador\'s Ring',
@@ -155,6 +155,20 @@ sets['Default'] = {
             },
         },
     },
+    ['Movement'] = {
+        --Feet = 'Herald\'s Gaiters',
+        ['Thresholds'] = {
+            ['Area'] = {
+                ['Windurst'] = {
+                    threshold = T{'Heavens Tower', 'Port Windurst', 'Windurst Waters', 'Windurst Walls', 'Windurst Woods'},
+                    operator = 'contains',
+                    ['gear'] = {
+                        Body = 'Federation Aketon',
+                    },
+                },
+            },
+        },
+    },
     ['Resting'] = {
         Ear1 = 'Sanative Earring',
         Ear2 = 'Relaxing Earring',
@@ -167,7 +181,7 @@ sets['Default'] = {
                     Head = 'Panther Mask',
                     Neck = 'Ryl.Grd. Collar',
                     Ear1 = 'Spike Earring',
-                    Ear2 = 'Spike Earring',
+                    Ear2 = 'Beastly Earring',
                     Body = 'Haubergeon',
                     Hands = 'Dusk Gloves',
                     Ring1 = 'Toreador\'s Ring',
@@ -181,7 +195,7 @@ sets['Default'] = {
                     Head = 'Panther Mask',
                     Neck = 'Ryl.Grd. Collar',
                     Ear1 = 'Spike Earring',
-                    Ear2 = 'Spike Earring',
+                    Ear2 = 'Beastly Earring',
                     Body = 'Haubergeon',
                     Hands = 'Ryl.Kgt. Mufflers',
                     Ring1 = 'Toreador\'s Ring',
@@ -217,7 +231,7 @@ sets['Midcast'] = {
             Ear1 = 'Phantom Earring',
             Ear2 = 'Phantom Earring',
             Ring1 = 'Tamas Ring',
-            Ring2 = 'Diamond Ring',
+            Ring2 = 'Snow Ring',
         },
     },
     ['White Magic'] = {

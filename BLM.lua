@@ -72,32 +72,32 @@ sets['Default'] = {
             ['Idle'] = {
                 ['Default'] = {
                     Ammo = 'Phtm. Tathlum',
-                    Head = 'Sorcerer\'s Petas.',
+                    Head = 'Src. Petasos +1',
                     Neck = 'Elemental Torque',
                     Ear1 = 'Novia Earring',
                     Ear2 = 'Novio Earring',
                     Body = 'Sorcerer\'s Coat',
-                    Hands = 'Zenith Mitts',
+                    Hands = 'Src. Gloves +1',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Phalanx Ring',
                     Back = 'Hexerei Cape',
                     Waist = 'Sorcerer\'s Belt',
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                     Feet = 'Sorcerer\'s Sabots',
                 },
                 ['Defense'] = {
                     Ammo = 'Phtm. Tathlum',
-                    Head = 'Sorcerer\'s Petas.',
+                    Head = 'Src. Petasos +1',
                     Neck = 'Elemental Torque',
                     Ear1 = 'Novia Earring',
                     Ear2 = 'Novio Earring',
                     Body = 'Sorcerer\'s Coat',
-                    Hands = 'Zenith Mitts',
+                    Hands = 'Src. Gloves +1',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Phalanx Ring',
                     Back = 'Hexerei Cape',
                     Waist = 'Sorcerer\'s Belt',
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                     Feet = 'Sorcerer\'s Sabots',
                 },
                 ['L65'] = {
@@ -210,12 +210,12 @@ sets['Default'] = {
                     Ear1 = 'Novia Earring',
                     Ear2 = 'Novio Earring',
                     Body = 'Sorcerer\'s Coat',
-                    Hands = 'Zenith Mitts',
+                    Hands = 'Src. Gloves +1',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Phalanx Ring',
                     Back = 'Hexerei Cape',
                     Waist = 'Swift Belt',
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                     Feet = 'Sorcerer\'s Sabots',
                 },
                 ['Acc'] = {
@@ -225,12 +225,12 @@ sets['Default'] = {
                     Ear1 = 'Novia Earring',
                     Ear2 = 'Novio Earring',
                     Body = 'Sorcerer\'s Coat',
-                    Hands = 'Zenith Mitts',
+                    Hands = 'Src. Gloves +1',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Phalanx Ring',
                     Back = 'Hexerei Cape',
                     Waist = 'Swift Belt',
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                     Feet = 'Sorcerer\'s Sabots',
                 },
             },
@@ -243,13 +243,20 @@ sets['Default'] = {
 -- HandlePrecast
 sets['Precast'] = {
     ['Alpha'] = {
-        Hands = 'Sorcerer\'s Gloves',
+        Hands = 'Src. Gloves +1',
         Feet = 'Rostrum Pumps',
     },
     ['Elemental Magic'] = {
         ['VarToggles'] = {
             ['SorcRing'] = {
                 -- put -hp gear here
+                Head = 'Zenith Crown',
+                Neck = 'Checkered Scarf',
+                Ring1 = 'Ether Ring',
+                Ring2 = 'Astral Ring',
+                Waist = 'Penitent\'s Rope',
+                Legs = 'Zenith Slacks',
+                Feet = 'Rostrum Pumps',
             },
         },
     },
@@ -267,7 +274,7 @@ local ElementalDebuff = {
     Ring2 = 'Snow Ring',
     Back = 'Prism Cape',
     Waist = 'Sorcerer\'s Belt',
-    Legs = 'Errant Slops',
+    Legs = 'Mahatma Slops',
     Feet = 'Sorcerer\'s Sabots',
 }
 sets['Midcast'] = {
@@ -283,7 +290,7 @@ sets['Midcast'] = {
             Ring1 = 'Tamas Ring',
             Ring2 = 'Snow Ring',
             Waist = 'Sorcerer\'s Belt',
-            Legs = 'Errant Slops',
+            Legs = 'Mahatma Slops',
             Feet = 'Sorcerer\'s Sabots',
         },
     },
@@ -296,7 +303,7 @@ sets['Midcast'] = {
             Ring1 = 'Tamas Ring',
             Ring2 = 'Sapphire Ring',
             Waist = 'Penitent\'s Rope',
-            Legs = 'Errant Slops',
+            Legs = 'Mahatma Slops',
         },
     },
     ['Healing Magic'] = {
@@ -307,7 +314,7 @@ sets['Midcast'] = {
         Ring1 = 'Tamas Ring',
         Ring2 = 'Sapphire Ring',
         Waist = 'Penitent\'s Rope',
-        Legs = 'Errant Slops',
+        Legs = 'Mahatma Slops',
     },
     ['Enhancing Magic'] = {
         Feet = 'Wizard\'s Sabots',
@@ -319,7 +326,7 @@ sets['Midcast'] = {
         Ear1 = 'Phantom Earring',
         Ear2 = 'Phantom Earring',
         Body = 'Errant Hpl.',
-        Hands = 'Sorcerer\'s Gloves',
+        Hands = 'Src. Gloves +1',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Snow Ring',
         Back = 'Prism Cape',
@@ -344,7 +351,7 @@ sets['Midcast'] = {
             ['Nuke'] = {
                 ['Default'] = {
                     Ammo = 'Phtm. Tathlum',
-                    Head = 'Sorcerer\'s Petas.',
+                    Head = 'Src. Petasos +1',
                     Neck = 'Elemental Torque',
                     Ear1 = 'Moldavite Earring',
                     Ear2 = 'Novio Earring',
@@ -354,7 +361,7 @@ sets['Midcast'] = {
                     Ring2 = 'Snow Ring',
                     Back = 'Prism Cape',
                     Waist = 'Sorcerer\'s Belt',
-                    Legs = 'Errant Slops',
+                    Legs = 'Mahatma Slops',
                     Feet = 'Sorcerer\'s Sabots',
                 },
                 ['MAtt'] = {
@@ -369,7 +376,7 @@ sets['Midcast'] = {
                     Ring2 = 'Snow Ring',
                     Back = 'Prism Cape',
                     Waist = 'Sorcerer\'s Belt',
-                    Legs = 'Errant Slops',
+                    Legs = 'Mahatma Slops',
                     Feet = 'Sorcerer\'s Sabots',
                 },
                 ['Max'] = {
@@ -384,12 +391,12 @@ sets['Midcast'] = {
                     Ring2 = 'Snow Ring',
                     Back = 'Prism Cape',
                     Waist = 'Sorcerer\'s Belt',
-                    Legs = 'Errant Slops',
+                    Legs = 'Mahatma Slops',
                     Feet = 'Sorcerer\'s Sabots',
                 },
                 ['MAcc'] = {
                     Ammo = 'Phtm. Tathlum',
-                    Head = 'Wizard\'s Petasos',
+                    Head = 'Src. Petasos +1',
                     Neck = 'Elemental Torque',
                     Ear1 = 'Moldavite Earring',
                     Ear2 = 'Novio Earring',
@@ -399,7 +406,7 @@ sets['Midcast'] = {
                     Ring2 = 'Snow Ring',
                     Back = 'Prism Cape',
                     Waist = 'Sorcerer\'s Belt',
-                    Legs = 'Errant Slops',
+                    Legs = 'Mahatma Slops',
                     Feet = 'Sorcerer\'s Sabots',
                 },
                 ['L65'] = {
@@ -411,7 +418,7 @@ sets['Midcast'] = {
                     Body = 'Justaucorps +1',
                     Hands = 'Wizard\'s Gloves',
                     Ring1 = 'Tamas Ring',
-                    Ring2 = 'Eremite\'s Ring +1',
+                    Ring2 = 'Genius Ring',
                     Back = 'Black Cape +1',
                     Waist = 'Penitent\'s Rope',
                     Legs = 'Seer\'s Slacks +1',
@@ -426,7 +433,7 @@ sets['Midcast'] = {
                     Body = 'Justaucorps +1',
                     Hands = 'Wizard\'s Gloves',
                     Ring1 = 'Tamas Ring',
-                    Ring2 = 'Eremite\'s Ring +1',
+                    Ring2 = 'Genius Ring',
                     Back = 'Black Cape +1',
                     Waist = 'Penitent\'s Rope',
                     Legs = 'Seer\'s Slacks +1',
@@ -436,7 +443,7 @@ sets['Midcast'] = {
         },
         ['VarToggles'] = {
             ['Burst'] = {
-                Hands = 'Sorcerer\'s Gloves',
+                Hands = 'Src. Gloves +1',
             },
             ['Nation'] = {
                 Head = 'Republic Circlet',
@@ -445,28 +452,28 @@ sets['Midcast'] = {
         ['Elemental'] = {
             ['Day'] = {
                 ['Fire'] = {
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                 },
                 ['Earth'] = {
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                 },
                 ['Water'] = {
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                 },
                 ['Wind'] = {
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                 },
                 ['Ice'] = {
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                 },
                 ['Thunder'] = {
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                 },
                 ['Light'] = {
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                 },
                 ['Dark'] = {
-                    Legs = 'Sorcerer\'s Tonban',
+                    Legs = 'Src. Tonban +1',
                 },
             },
         },

@@ -10,16 +10,16 @@ local sets = {
     ['export'] = {
         Main = 'Kukulcan\'s Staff',
         Ammo = 'Fortune Egg',
-        Head = 'Austere Hat',
+        Head = 'Penance Hat',
         Neck = 'Justice Badge',
-        Ear1 = 'Energy Earring +1',
-        Ear2 = 'Energy Earring +1',
+        Ear1 = 'Phantom Earring',
+        Ear2 = 'Phantom Earring',
         Body = 'Austere Robe',
         Hands = 'Austere Cuffs',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Astral Ring',
-        Back = 'Mist Silk Cape',
-        Waist = 'Friar\'s Rope',
+        Ring2 = 'Ether Ring',
+        Back = 'Aurora Mantle',
+        Waist = 'Penitent\'s Rope',
         Legs = 'Austere Slops',
         Feet = 'Austere Sabots',
     },
@@ -69,30 +69,32 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['Idle'] = {
                 ['Default'] = {
-                    Head = 'Austere Hat',
-                    Neck = 'Justice Badge',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
+                    Ammo = 'Fortune Egg',
+                    Head = 'Penance Hat',
+                    Neck = 'Smn. Torque',
+                    Ear1 = 'Phantom Earring',
+                    Ear2 = 'Phantom Earring',
                     Body = 'Austere Robe',
                     Hands = 'Austere Cuffs',
                     Ring1 = 'Tamas Ring',
-                    Ring2 = 'Astral Ring',
-                    Back = 'Mist Silk Cape',
-                    Waist = 'Friar\'s Rope',
+                    Ring2 = 'Ether Ring',
+                    Back = 'Aurora Mantle',
+                    Waist = 'Penitent\'s Rope',
                     Legs = 'Evoker\'s Spats',
                     Feet = 'Austere Sabots',
                 },
                 ['Defense'] = {
-                    Head = 'Austere Hat',
-                    Neck = 'Justice Badge',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
+                    Ammo = 'Fortune Egg',
+                    Head = 'Penance Hat',
+                    Neck = 'Smn. Torque',
+                    Ear1 = 'Phantom Earring',
+                    Ear2 = 'Phantom Earring',
                     Body = 'Austere Robe',
                     Hands = 'Austere Cuffs',
                     Ring1 = 'Tamas Ring',
-                    Ring2 = 'Astral Ring',
-                    Back = 'Mist Silk Cape',
-                    Waist = 'Friar\'s Rope',
+                    Ring2 = 'Ether Ring',
+                    Back = 'Aurora Mantle',
+                    Waist = 'Penitent\'s Rope',
                     Legs = 'Evoker\'s Spats',
                     Feet = 'Austere Sabots',
                 },
@@ -137,7 +139,7 @@ sets['Default'] = {
     },
     ['Resting'] = {
         Main = 'Pluto\'s Staff',
-        --Neck = 'Checkered Scarf',
+        Neck = 'Checkered Scarf',
         --Ear1 = 'Sanative Earring',
         --Ear2 = 'Relaxing Earring',
         Body = 'Seer\'s Tunic +1',
@@ -159,13 +161,16 @@ sets['Default'] = {
         },
     },
     ['Pet'] = {
-        Head = 'Austere Hat',
+        Head = 'Penance Hat',
+        Neck = 'Smn. Torque',
         Body = 'Austere Robe',
         Hands = 'Austere Cuffs',
         ['Engaged'] = {
             Legs = 'Evoker\'s Spats',
         },
         ['MobSkill'] = {
+            Head = 'Evoker\'s Horn',
+            Neck = 'Smn. Torque',
             Legs = 'Evoker\'s Spats',
             Feet = 'Austere Sabots',
             ['Earthen Ward'] = {
@@ -272,33 +277,33 @@ sets['Midcast'] = {
         Ring1 = 'Tamas Ring',
     },
     ['Omega'] = {
-        -- ['Elemental'] = {
-            -- ['Element'] = {
-                -- ['Fire'] = {
-                    -- Main = 'Vulcan\'s Staff',
-                -- },
-                -- ['Earth'] = {
-                    -- Main = 'Terra\'s Staff',
-                -- },
-                -- ['Water'] = {
-                    -- Main = 'Neptune\'s Staff',
-                -- },
-                -- ['Wind'] = {
-                    -- Main = 'Auster\'s Staff',
-                -- },
-                -- ['Ice'] = {
-                    -- Main = 'Aquilo\'s Staff',
-                -- },
-                -- ['Thunder'] = {
-                    -- Main = 'Jupiter\'s Staff',
-                -- },
-                -- ['Light'] = {
-                    -- Main = 'Apollo\'s Staff',
-                -- },
-                -- ['Dark'] = {
-                    -- Main = 'Pluto\'s Staff',
-                -- },
-            -- },
+        ['Elemental'] = {
+            ['Element'] = {
+                ['Fire'] = {
+                    Main = 'Vulcan\'s Staff',
+                },
+                ['Earth'] = {
+                    Main = 'Terra\'s Staff',
+                },
+                ['Water'] = {
+                    Main = 'Neptune\'s Staff',
+                },
+                ['Wind'] = {
+                    Main = 'Auster\'s Staff',
+                },
+                ['Ice'] = {
+                    Main = 'Aquilo\'s Staff',
+                },
+                ['Thunder'] = {
+                    Main = 'Jupiter\'s Staff',
+                },
+                ['Light'] = {
+                    Main = 'Apollo\'s Staff',
+                },
+                ['Dark'] = {
+                    Main = 'Pluto\'s Staff',
+                },
+            },
             -- ['Day'] = {
                 -- ClashCheck = true,
                 -- ['Fire'] = {
@@ -353,7 +358,7 @@ sets['Midcast'] = {
                     -- Waist = 'Anrin Obi',
                 -- },
             -- },
-        -- },
+        },
     },
 }
 
@@ -368,14 +373,14 @@ sets['Midshot'] = {
 -- HandleAbility
 sets['Ability'] = {
     ['Blood Pact: Rage'] = {
-        Head = 'Austere Hat',
+        Head = 'Penance Hat',
         Body = 'Austere Robe',
         Hands = 'Austere Cuffs',
         Legs = 'Austere Slops',
         Feet = 'Austere Sabots',
     },
     ['Blood Pact: Ward'] = {
-        Head = 'Austere Hat',
+        Head = 'Penance Hat',
         Body = 'Austere Robe',
         Hands = 'Austere Cuffs',
         Legs = 'Austere Slops',
