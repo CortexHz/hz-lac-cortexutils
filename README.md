@@ -100,13 +100,18 @@ local WS_STR = {
     Ring2 = 'Sun Ring',
 }
 sets['WeaponSkill'] = {
+    ['Savage Blade'] = {
+        Neck = 'Spike Necklace',
+        Ring2 = 'Sun Ring',
+    },
     ['Heavy Swing'] = WS_STR,
 }
 ```
 
 All applicable sections will recognise hierarchy i.e.
+
+`[action.name]` (e.g `['Sleep']`) -> `[Skill]` -> `[Type]`  So the following are possible placements for `Sleep` spell
 ```
-[action.name] (e.g ['Sleep']) -> [Skill] -> [Type]  So the following are possible placements for `Sleep` spell
 sets['Midcast'] = {
     Head = 'Party Hat',
     ['Black Magic'] = {...},
@@ -233,6 +238,15 @@ sets['Default'] = {
                         operator = '<',
                         ['gear'] = {
                             Feet = 'Ninja Kyahan +1'
+                        },
+                    },
+                },
+                ['Area'] = {
+                    ['Sandy'] = {
+                        threshold = T{'Southern San d\'Oria', 'Northern San d\'Oria', 'Port San d\'Oria', 'Chateau d\'Oraguille'},
+                        operator = 'contains',
+                        ['gear'] = {
+                            Body = 'Kingdom Aketon',
                         },
                     },
                 },
