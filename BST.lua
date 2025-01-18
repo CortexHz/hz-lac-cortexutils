@@ -242,7 +242,7 @@ sets['Midcast'] = {
         },
     },
     ['Healing Magic'] = {
-        Neck = 'Justice Badge',
+        Neck = 'Promise Badge',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Sapphire Ring',
     },
@@ -272,7 +272,7 @@ sets['Ability'] = {
     ['Reward'] = {
         ['Alpha'] = {
             Head = 'Bison Warbonnet',
-            Neck = 'Justice Badge',
+            Neck = 'Promise Badge',
             --Body = 'Monster Jackcoat',
             --Body = 'Beast Jackcoat',
             Hands = 'Ogre Gloves',

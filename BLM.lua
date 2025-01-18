@@ -83,7 +83,7 @@ sets['Default'] = {
                     Back = 'Hexerei Cape',
                     Waist = 'Sorcerer\'s Belt',
                     Legs = 'Src. Tonban +1',
-                    Feet = 'Sorcerer\'s Sabots',
+                    Feet = 'Src. Sabots +1',
                 },
                 ['Defense'] = {
                     Ammo = 'Phtm. Tathlum',
@@ -98,7 +98,7 @@ sets['Default'] = {
                     Back = 'Hexerei Cape',
                     Waist = 'Sorcerer\'s Belt',
                     Legs = 'Src. Tonban +1',
-                    Feet = 'Sorcerer\'s Sabots',
+                    Feet = 'Src. Sabots +1',
                 },
                 ['L65'] = {
                     Ammo = 'Phtm. Tathlum',
@@ -216,7 +216,7 @@ sets['Default'] = {
                     Back = 'Hexerei Cape',
                     Waist = 'Swift Belt',
                     Legs = 'Src. Tonban +1',
-                    Feet = 'Sorcerer\'s Sabots',
+                    Feet = 'Src. Sabots +1',
                 },
                 ['Acc'] = {
                     Ammo = 'Phtm. Tathlum',
@@ -231,7 +231,7 @@ sets['Default'] = {
                     Back = 'Hexerei Cape',
                     Waist = 'Swift Belt',
                     Legs = 'Src. Tonban +1',
-                    Feet = 'Sorcerer\'s Sabots',
+                    Feet = 'Src. Sabots +1',
                 },
             },
         },
@@ -243,6 +243,7 @@ sets['Default'] = {
 -- HandlePrecast
 sets['Precast'] = {
     ['Alpha'] = {
+        Ear2 = 'Loquac. Earring',
         Hands = 'Src. Gloves +1',
         Feet = 'Rostrum Pumps',
     },
@@ -254,6 +255,7 @@ sets['Precast'] = {
                 Neck = 'Checkered Scarf',
                 Ring1 = 'Ether Ring',
                 Ring2 = 'Astral Ring',
+                Back = 'Blue Cape +1',
                 Waist = 'Penitent\'s Rope',
                 Legs = 'Zenith Slacks',
                 Feet = 'Rostrum Pumps',
@@ -275,7 +277,7 @@ local ElementalDebuff = {
     Back = 'Prism Cape',
     Waist = 'Sorcerer\'s Belt',
     Legs = 'Mahatma Slops',
-    Feet = 'Sorcerer\'s Sabots',
+    Feet = 'Src. Sabots +1',
 }
 sets['Midcast'] = {
     ['Alpha'] = {
@@ -291,7 +293,7 @@ sets['Midcast'] = {
             Ring2 = 'Snow Ring',
             Waist = 'Sorcerer\'s Belt',
             Legs = 'Mahatma Slops',
-            Feet = 'Sorcerer\'s Sabots',
+            Feet = 'Src. Sabots +1',
         },
     },
     ['White Magic'] = {
@@ -307,7 +309,7 @@ sets['Midcast'] = {
         },
     },
     ['Healing Magic'] = {
-        Neck = 'Justice Badge',
+        Neck = 'Promise Badge',
         Ear1 = 'Novia Earring',
         Body = 'Wizard\'s Coat',
         Hands = 'Devotee\'s Mitts',
@@ -332,7 +334,7 @@ sets['Midcast'] = {
         Back = 'Prism Cape',
         Waist = 'Sorcerer\'s Belt',
         Legs = 'Wizard\'s Tonban',
-        Feet = 'Sorcerer\'s Sabots',
+        Feet = 'Src. Sabots +1',
         ['Aspir'] = {
             Ring2 = 'Overlord\'s Ring',
         },
@@ -362,7 +364,7 @@ sets['Midcast'] = {
                     Back = 'Prism Cape',
                     Waist = 'Sorcerer\'s Belt',
                     Legs = 'Mahatma Slops',
-                    Feet = 'Sorcerer\'s Sabots',
+                    Feet = 'Src. Sabots +1',
                 },
                 ['MAtt'] = {
                     Ammo = 'Phtm. Tathlum',
@@ -377,7 +379,7 @@ sets['Midcast'] = {
                     Back = 'Prism Cape',
                     Waist = 'Sorcerer\'s Belt',
                     Legs = 'Mahatma Slops',
-                    Feet = 'Sorcerer\'s Sabots',
+                    Feet = 'Src. Sabots +1',
                 },
                 ['Max'] = {
                     Ammo = 'Phtm. Tathlum',
@@ -392,7 +394,7 @@ sets['Midcast'] = {
                     Back = 'Prism Cape',
                     Waist = 'Sorcerer\'s Belt',
                     Legs = 'Mahatma Slops',
-                    Feet = 'Sorcerer\'s Sabots',
+                    Feet = 'Src. Sabots +1',
                 },
                 ['MAcc'] = {
                     Ammo = 'Phtm. Tathlum',
@@ -407,7 +409,7 @@ sets['Midcast'] = {
                     Back = 'Prism Cape',
                     Waist = 'Sorcerer\'s Belt',
                     Legs = 'Mahatma Slops',
-                    Feet = 'Sorcerer\'s Sabots',
+                    Feet = 'Src. Sabots +1',
                 },
                 ['L65'] = {
                     Ammo = 'Phtm. Tathlum',
@@ -483,11 +485,7 @@ sets['Midcast'] = {
                     threshold = 76,
                     operator = '<',
                     ['gear'] = {
-                        ['VarToggles'] = {
-                            ['SorcRing'] = {
-                                Ring2 = 'Sorcerer\'s Ring',
-                            },
-                        },
+                        Ring2 = 'Sorcerer\'s Ring',
                     },
                 },
             },
@@ -596,6 +594,7 @@ sets['Midcast'] = {
             },
         },
         ['Stun'] = {
+            Ear2 = 'Loquac. Earring',
             Feet = 'Rostrum Pumps',
         },
     },
