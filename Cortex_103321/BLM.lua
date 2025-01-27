@@ -246,11 +246,9 @@ sets['Precast'] = {
             },
         },
     },
-    ['Alpha'] = {
-        Ear2 = 'Loquac. Earring',
-        Hands = 'Src. Gloves +1',
-        Feet = 'Rostrum Pumps',
-    },
+    Ear2 = 'Loquac. Earring',
+    Hands = 'Src. Gloves +1',
+    Feet = 'Rostrum Pumps',
 }
 
 -- MidcastIdle (set to equip until just before casting)
