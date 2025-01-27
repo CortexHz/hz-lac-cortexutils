@@ -212,7 +212,7 @@ e.g.
                 .
 ```
 Note on ClashCheck: 
-Day bonus is the same as single weather bonus (so if they are oposite then cancel),
+Day bonus is the same as single weather bonus (so if they are opposite then cancel),
 double weather will dominate day weakness to confer some reduced bonus.
 i.e. Obi will ensure the positive or negative (!) day/weather bonus,
 so we need to avoid using day obi when weather is it's weakness (might as well wear something else).
