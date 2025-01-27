@@ -219,10 +219,10 @@ sets['Default'] = {
 
 -- HandlePrecast
 sets['Precast'] = {
-    ['Force'] = {
-        ['Elemental Magic'] = {
-            ['VarToggles'] = {
-                ['SorcRing'] = {
+    ['VarToggles'] = {
+        ['SorcRing'] = {
+            ['Force'] = {
+                ['Elemental Magic'] = {
                     ['Thresholds'] = {
                         ['HPP'] = {
                             ['HPDown'] = {
