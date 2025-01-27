@@ -232,6 +232,7 @@ local HasteCast = {
     Ear2 = 'Loquac. Earring',
     Body = 'Dls. Tabard +1',
     Waist = 'Swift Belt',
+    Legs = 'Nashira Seraweels',
 }
 sets['Midcast'] = {
     ['Alpha'] = {
@@ -249,7 +250,7 @@ sets['Midcast'] = {
             Ring2 = 'Snow Ring',
             Back = 'Prism Cape',
             Waist = 'Penitent\'s Rope',
-            Legs = 'Mahatma Slops',
+            Legs = 'Nashira Seraweels',
         },
     },
     ['White Magic'] = {
@@ -262,7 +263,7 @@ sets['Midcast'] = {
             Ring2 = 'Sapphire Ring',
             Back = 'Prism Cape',
             Waist = 'Friar\'s Rope',
-            Legs = 'Mahatma Slops',
+            Legs = 'Nashira Seraweels',
             Feet = 'Dls. Boots +1',
         },
     },
@@ -294,7 +295,7 @@ sets['Midcast'] = {
     ['Dark Magic'] = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Wise Cap',
-        Neck = 'Checkered Scarf',
+        Neck = 'Dark Torque',
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Phantom Earring',
         Body = 'Errant Hpl.',

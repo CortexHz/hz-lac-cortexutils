@@ -49,6 +49,7 @@ sets['Strategy'] = {
     },
 }
 
+
 -- Weapons
 sets['Weapon'] = {}
 sets['Weapon']['Scythe'] = {}
@@ -64,6 +65,7 @@ sets['Weapon']['Club']['None'] = {}
 sets['Weapon']['Club']['Warp'] = {
     Main = 'Warp Cudgel',
 }
+
 
 -- HandleDefault
 sets['Default'] = {
@@ -137,31 +139,6 @@ sets['Default'] = {
         },
         ['Movement'] = {
             --Feet = 'Herald\'s Gaiters',
-            ['Thresholds'] = {
-                ['Time'] = {
-                    ['Dusk'] = {
-                        threshold = 17,
-                        operator = '>',
-                        ['gear'] = {
-                            --Feet = 'Ninja Kyahan +1'
-                        },
-                    },
-                    ['Dawn'] = {
-                        threshold = 7,
-                        operator = '<',
-                        ['gear'] = {
-                            --Feet = 'Ninja Kyahan +1'
-                        },
-                    },
-                },
-            },
-            ['Elemental'] = {
-                ['Weather'] = {
-                    ['Earth'] = {
-                        --Feet = 'Desert Boots',
-                    },
-                },
-            },
         },
         ['Buff'] = {
             ['Shock Spikes'] = {
@@ -242,26 +219,48 @@ sets['Default'] = {
 
 -- HandlePrecast
 sets['Precast'] = {
+    ['Force'] = {
+        ['Elemental Magic'] = {
+            ['VarToggles'] = {
+                ['SorcRing'] = {
+                    ['Thresholds'] = {
+                        ['HPP'] = {
+                            ['HPDown'] = {
+                                threshold = 75,
+                                operator = '>',     
+                                ['gear'] = {
+                                    -- put -hp gear here
+                                    Head = 'Zenith Crown',
+                                    Neck = 'Checkered Scarf',
+                                    Ring1 = 'Ether Ring',
+                                    Ring2 = 'Astral Ring',
+                                    Back = 'Blue Cape +1',
+                                    Waist = 'Penitent\'s Rope',
+                                    Legs = 'Zenith Slacks',
+                                    Feet = 'Rostrum Pumps',
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    },
     ['Alpha'] = {
         Ear2 = 'Loquac. Earring',
         Hands = 'Src. Gloves +1',
         Feet = 'Rostrum Pumps',
     },
-    ['Elemental Magic'] = {
-        ['VarToggles'] = {
-            ['SorcRing'] = {
-                -- put -hp gear here
-                Head = 'Zenith Crown',
-                Neck = 'Checkered Scarf',
-                Ring1 = 'Ether Ring',
-                Ring2 = 'Astral Ring',
-                Back = 'Blue Cape +1',
-                Waist = 'Penitent\'s Rope',
-                Legs = 'Zenith Slacks',
-                Feet = 'Rostrum Pumps',
-            },
-        },
-    },
+}
+
+-- MidcastIdle (set to equip until just before casting)
+-- i.e. SIRD ..etc
+sets['MidcastIdle'] = {
+    Main = 'Terra\'s Staff',
+    Body = 'Igqira Weskit',
+    Ring2 = 'Phalanx Ring',
+    Back = 'Hexerei Cape',
+    Feet = 'Wizard\'s Sabots',
 }
 
 -- HandleMidcast
@@ -279,6 +278,13 @@ local ElementalDebuff = {
     Legs = 'Mahatma Slops',
     Feet = 'Src. Sabots +1',
 }
+-- Hastecast
+local HasteCast = {
+    Ear2 = 'Loquac. Earring',
+    Waist = 'Swift Belt',
+    Legs = 'Nashira Seraweels',
+    Feet = 'Rostrum Pumps',
+}
 sets['Midcast'] = {
     ['Alpha'] = {
     },
@@ -292,7 +298,7 @@ sets['Midcast'] = {
             Ring1 = 'Tamas Ring',
             Ring2 = 'Snow Ring',
             Waist = 'Sorcerer\'s Belt',
-            Legs = 'Mahatma Slops',
+            Legs = 'Nashira Seraweels',
             Feet = 'Src. Sabots +1',
         },
     },
@@ -305,7 +311,7 @@ sets['Midcast'] = {
             Ring1 = 'Tamas Ring',
             Ring2 = 'Sapphire Ring',
             Waist = 'Penitent\'s Rope',
-            Legs = 'Mahatma Slops',
+            Legs = 'Nashira Seraweels',
         },
     },
     ['Healing Magic'] = {
@@ -324,7 +330,7 @@ sets['Midcast'] = {
     ['Dark Magic'] = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Wizard\'s Petasos',
-        Neck = 'Checkered Scarf',
+        Neck = 'Dark Torque',
         Ear1 = 'Phantom Earring',
         Ear2 = 'Phantom Earring',
         Body = 'Errant Hpl.',
@@ -595,6 +601,7 @@ sets['Midcast'] = {
         },
         ['Stun'] = {
             Ear2 = 'Loquac. Earring',
+            Waist = 'Swift Belt',
             Feet = 'Rostrum Pumps',
         },
     },
@@ -602,6 +609,10 @@ sets['Midcast'] = {
 
 -- HandlePreshot
 sets['Preshot'] = {
+}
+
+-- MidshotIdle
+sets['MidshotIdle'] = {
 }
 
 -- HandleMidshot

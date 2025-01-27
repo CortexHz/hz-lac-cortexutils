@@ -8,6 +8,10 @@ https://github.com/CortexHz/hz-lac-cortexutils
 
 
 local profile = {};
+local force_set = {};
+local function ForceEquipSet()
+    gFunc.ForceEquipSet(force_set)
+end
 local varhelper = gFunc.LoadFile('common/varhelpermod.lua');
 
 cortexutils = {};
@@ -21,6 +25,18 @@ cortexutils.ApplySets = function(equip_set, in_set, action, is_pet)
         end
     else
         status = gData.GetPlayer().Status
+    end
+    if in_set.Force ~= nil then
+        if (
+            in_set.Force['Delay'] ~= nil
+            and (
+                force_set['Delay'] == nil
+                or (force_set['Delay'] > in_set.Force['Delay'])
+            )
+        ) then
+            force_set['Delay'] = in_set.Force['Delay']
+        end  
+        force_set = cortexutils.ApplySets(force_set, in_set.Force, action, is_pet)
     end
     if in_set.Alpha ~= nil then
         equip_set = cortexutils.ApplySets(equip_set, in_set.Alpha, action, is_pet)
@@ -397,6 +413,57 @@ cortexutils.ApplyStrategy = function(strat_set)
     end
 end
 
+local FastCastValues = {
+    ['Loquac. Earring'] = 0.02,
+    ['Rostrum Pumps'] = 0.02,
+    ['Homam Cosciales'] = 0.05,
+    ['Duelist\'s Tabard'] = 0.1,
+    ['Dls. Tabard +1'] = 0.1,
+    ['Warlock\'s Chapeau'] = 0.1,
+    ['Wlk. Chapeau +1'] = 0.1,
+    ['Warlock\'s Mantle'] = 0.02,
+    ['Marduk\'s Jubbah'] = 0.05,
+    ['Pi Ring'] = 0.02,
+}
+local CureCastValues = {
+    ['Cure Clogs'] = 0.15,
+    ['Rucke\'s Rung'] = 0.1,
+}
+cortexutils.GetCastDelay = function(action)
+    local player = gData.GetPlayer()
+    local cast_time = action.CastTime
+    local cast_reduction = 0.0
+    local equip_data = gData.GetEquipment()
+    if player.SubJob == "RDM" then
+        cast_reduction = cast_reduction + 0.15
+    elseif player.MainJob == "RDM" then
+        cast_reduction = cast_reduction + 0.2
+    end
+    if player.MainJob == "WHM" then
+        if (string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga')) then
+            for key, val in pairs(equip_data) do
+                --print(key..": "..val.Name)
+                if CureCastValues[val.Name] ~= nil then
+                    cast_reduction = cast_reduction + CureCastValues[val.Name]
+                end
+            end
+        end
+    end
+    for key, val in pairs(equip_data) do
+        --print(key..": "..val.Name)
+        if FastCastValues[val.Name] ~= nil then
+            cast_reduction = cast_reduction + FastCastValues[val.Name]
+        end
+    end
+    local minimum_buffer = 0.25
+    local packet_delay = 0.3
+    local cast_delay = ((cast_time * (1 - cast_reduction)) / 1000) - minimum_buffer
+    if cast_delay >= packet_delay then
+        return cast_delay
+    else
+        return 0.0
+    end
+end
 
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
@@ -449,7 +516,6 @@ profile.HandleCommand = function(args)
             varhelper.AdvanceCycle('Strategy');
         end
         cortexutils.ApplyStrategy(profile.Sets['Strategy'][varhelper.GetCycle('Strategy')])
-
     end
 end
 
@@ -465,7 +531,12 @@ profile.HandleDefault = function()
             profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]
         );
     end
+    force_set = {}
     equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Default)
+    if force_set ~= nil and next(force_set) ~= nil then
+        ForceEquipSet()
+        force_set = {}
+    end
     -- if profile.Sets.Default[player.Status] ~= nil then
         -- equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Default[player.Status])
         -- if player.Status ~= 'Resting' then
@@ -489,8 +560,12 @@ profile.HandleAbility = function()
     end
     local action = gData.GetAction();
     local equip_set = {};
+    force_set = {}
     equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Ability, action)
-
+    if force_set ~= nil and next(force_set) ~= nil then
+        ForceEquipSet()
+        force_set = {}
+    end
     if next(equip_set) ~= nil then
         gFunc.EquipSet(equip_set);
     end
@@ -501,9 +576,13 @@ profile.HandleItem = function()
         return
     end
     local action = gData.GetAction();
+    force_set = {}
     local equip_set = {};
     equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Item, action)
-
+    if force_set ~= nil and next(force_set) ~= nil then
+        ForceEquipSet()
+        force_set = {}
+    end
     if next(equip_set) ~= nil then
         gFunc.EquipSet(equip_set);
     end
@@ -515,22 +594,72 @@ profile.HandlePrecast = function()
     end
     local action = gData.GetAction();
     local equip_set = {};
+    force_set = {}
     equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Precast, action)
-
+    if force_set ~= nil and next(force_set) ~= nil then
+        ForceEquipSet()
+        force_set = {}
+    end
     if next(equip_set) ~= nil then
         gFunc.EquipSet(equip_set);
     end
 end
 
-
 profile.HandleMidcast = function()
+    force_set = {}
+    local action = gData.GetAction()
+    local cast_time = 0.0
+    if action.CastTime ~= nil and gData.GetBuffCount('Chainspell') == 0 then
+        cast_time = action.CastTime / 1000
+    end
+    local interim_set = {}
+    local cast_delay = 0.0
+    local force_delay = 0.0
+    if profile.Sets.MidcastIdle ~= nil and cast_time > 0 then
+        cast_delay = cortexutils.GetCastDelay(action)
+        --print(cast_delay)
+        if cast_delay > 0.0 then
+            gFunc.SetMidDelay(cast_delay)
+            interim_set = cortexutils.ApplySets(interim_set, profile.Sets.MidcastIdle, action)
+            if next(interim_set) ~= nil then
+                gFunc.InterimEquipSet(interim_set)
+            end
+        end
+    end
+
+    if force_set ~= nil and next(force_set) ~= nil then
+        if force_set['Delay'] ~= nil then
+            force_delay = force_set['Delay']
+        else
+            force_delay = cast_delay - 1
+        end
+        if force_delay <= 0 or force_delay > action.CastTime then
+            ForceEquipSet()
+        else
+            --print(force_delay)
+            --ForceEquipSet:once(2)
+            ForceEquipSet()
+        end
+        force_set = {}
+    end
     if profile.Sets.Midcast == nil then
         return
     end
-    local action = gData.GetAction();
     local equip_set = {};
     equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Midcast, action)
-
+    if force_set ~= nil and next(force_set) ~= nil then
+        if force_set['Delay'] ~= nil then
+            force_delay = cast_time - force_set['Delay']
+        else
+            force_delay = 0
+        end
+        if force_delay <= 0 then
+            ForceEquipSet()
+        else
+            ForceEquipSet:once(force_delay)
+        end
+        force_set = {}
+    end
     if next(equip_set) ~= nil then
         gFunc.EquipSet(equip_set);
     end
@@ -541,22 +670,42 @@ profile.HandlePreshot = function()
         return
     end
     local action = gData.GetAction();
+    force_set = {}
     local equip_set = {};
     equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Preshot, action)
-
+    if force_set ~= nil and next(force_set) ~= nil then
+        ForceEquipSet()
+        force_set = {}
+    end
     if next(equip_set) ~= nil then
         gFunc.EquipSet(equip_set);
     end
 end
 
 profile.HandleMidshot = function()
+    force_set = {}
+    if (
+        profile.Sets.MidshotIdle ~= nil
+        and profile.Sets.MidshotIdle.MidshotDelay ~= nil
+        and profile.Sets.MidshotIdle.MidshotDelay > 0
+    ) then
+        interim_set = {}
+        gFunc.SetMidDelay(profile.Sets.MidshotDelay)
+        interim_set = cortexutils.ApplySets(interim_set, profile.Sets.MidshotIdle, action)
+        if next(interim_set) ~= nil then
+            gFunc.InterimEquipSet(interim_set)
+        end
+    end
     if profile.Sets.Midshot == nil then
         return
     end
     local action = gData.GetAction();
     local equip_set = {};
     equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Midshot, action)
-
+    if force_set ~= nil and next(force_set) ~= nil then
+        ForceEquipSet()
+        force_set = {}
+    end
     if next(equip_set) ~= nil then
         gFunc.EquipSet(equip_set);
     end
@@ -568,9 +717,13 @@ profile.HandleWeaponskill = function()
         return
     end
     local action = gData.GetAction();
+    force_set = {}
     local equip_set = {};
     equip_set = cortexutils.ApplySets(equip_set, profile.Sets.WeaponSkill, action)
-
+    if force_set ~= nil and next(force_set) ~= nil then
+        ForceEquipSet()
+        force_set = {}
+    end
     if next(equip_set) ~= nil then
         gFunc.EquipSet(equip_set);
     end

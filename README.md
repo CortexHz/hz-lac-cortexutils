@@ -81,9 +81,13 @@ however this section allows non-selected options to be hidden from the UI.
 
 -- Precast
 
+-- MidcastIdle
+
 -- Midcast
 
 -- Preshot
+
+-- MidshotIdle  (requires sets.MidshotIdle.MidshotDelay = number)
 
 -- Midshot
 
@@ -339,6 +343,48 @@ To Cycle between
 or Set
 `/lac fwd Strategy L65`
 
+
+### Force
+
+A section to Force a set early, i.e. for HP down
+
+```
+sets['Precast'] = {
+    ['Force'] = {
+        ['Elemental Magic'] = {
+            ['VarToggles'] = {
+                ['SorcRing'] = {
+                    ['Thresholds'] = {
+                        ['HPP'] = {
+                            ['HPDown'] = {
+                                threshold = 75,
+                                operator = '>',     
+                                ['gear'] = {
+                                    -- put -HP gear here
+                                    Head = 'Zenith Crown',
+                                    Neck = 'Checkered Scarf',
+                                    Ring1 = 'Ether Ring',
+                                    Ring2 = 'Astral Ring',
+                                    Back = 'Blue Cape +1',
+                                    Waist = 'Penitent\'s Rope',
+                                    Legs = 'Zenith Slacks',
+                                    Feet = 'Rostrum Pumps',
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    },
+    ['Alpha'] = {
+        Ear2 = 'Loquac. Earring',
+        Hands = 'Src. Gloves +1',
+        Feet = 'Rostrum Pumps',
+    },
+}
+```
+
 -----------------------------------------------------------
 ### Order of Evaluation
 
@@ -531,15 +577,48 @@ sets['Default'] = {
 
 -- HandlePrecast
 sets['Precast'] = {
-    ['Alpha'] = {
-    },
-    ['Elemental Magic'] = {
-        ['VarToggles'] = {
-            ['SorcRing'] = {
-                -- put -hp gear here
+    ['Force'] = {
+        ['Elemental Magic'] = {
+            ['VarToggles'] = {
+                ['SorcRing'] = {
+                    ['Thresholds'] = {
+                        ['HPP'] = {
+                            ['HPDown'] = {
+                                threshold = 75,
+                                operator = '>',     
+                                ['gear'] = {
+                                    -- put -hp gear here
+                                    Head = 'Zenith Crown',
+                                    Neck = 'Checkered Scarf',
+                                    Ring1 = 'Ether Ring',
+                                    Ring2 = 'Astral Ring',
+                                    Back = 'Blue Cape +1',
+                                    Waist = 'Penitent\'s Rope',
+                                    Legs = 'Zenith Slacks',
+                                    Feet = 'Rostrum Pumps',
+                                },
+                            },
+                        },
+                    },
+                },
             },
         },
     },
+    ['Alpha'] = {
+        Ear2 = 'Loquac. Earring',
+        Hands = 'Src. Gloves +1',
+        Feet = 'Rostrum Pumps',
+    },
+}
+
+-- MidcastIdle (set to equip until just before casting)
+-- i.e. SIRD ..etc
+sets['MidcastIdle'] = {
+    Main = 'Terra\'s Staff',
+    Body = 'Igqira Weskit',
+    Ring2 = 'Phalanx Ring',
+    Back = 'Hexerei Cape',
+    Feet = 'Wizard\'s Sabots',
 }
 
 -- HandlePrecast
