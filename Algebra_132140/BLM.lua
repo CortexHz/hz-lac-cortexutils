@@ -329,7 +329,7 @@ sets['Midcast'] = {
         -- Body = 'Wizard\'s Coat',
         -- Hands = 'Devotee\'s Mitts',
         -- Ring1 = 'Tamas Ring',
-        -- Ring2 = 'Sapphire Ring',
+        -- Ring2 = 'Aqua Ring',
         -- Waist = 'Penitent\'s Rope',
         -- Legs = 'Errant Slops',
     },

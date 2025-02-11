@@ -219,10 +219,10 @@ sets['Default'] = {
 
 -- HandlePrecast
 sets['Precast'] = {
-    ['VarToggles'] = {
-        ['SorcRing'] = {
-            ['Force'] = {
-                ['Elemental Magic'] = {
+    ['Elemental Magic'] = {
+        ['VarToggles'] = {
+            ['SorcRing'] = {
+                ['Force'] = {
                     ['Thresholds'] = {
                         ['HPP'] = {
                             ['HPDown'] = {
@@ -307,7 +307,7 @@ sets['Midcast'] = {
             Body = 'Wizard\'s Coat',
             Hands = 'Devotee\'s Mitts',
             Ring1 = 'Tamas Ring',
-            Ring2 = 'Sapphire Ring',
+            Ring2 = 'Aqua Ring',
             Waist = 'Penitent\'s Rope',
             Legs = 'Nashira Seraweels',
         },
@@ -318,7 +318,7 @@ sets['Midcast'] = {
         Body = 'Wizard\'s Coat',
         Hands = 'Devotee\'s Mitts',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Sapphire Ring',
+        Ring2 = 'Aqua Ring',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
     },

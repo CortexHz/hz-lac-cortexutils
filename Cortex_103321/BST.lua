@@ -238,13 +238,13 @@ sets['Midcast'] = {
         ['Enfeebling Magic'] = {
             Neck = 'Enfeebling Torque',
             Ring1 = 'Tamas Ring',
-            Ring2 = 'Sapphire Ring',
+            Ring2 = 'Aqua Ring',
         },
     },
     ['Healing Magic'] = {
         Neck = 'Promise Badge',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Sapphire Ring',
+        Ring2 = 'Aqua Ring',
     },
 }
 
@@ -277,7 +277,7 @@ sets['Ability'] = {
             --Body = 'Beast Jackcoat',
             Hands = 'Ogre Gloves',
             Ring1 = 'Tamas Ring',
-            Ring2 = 'Sapphire Ring',
+            Ring2 = 'Aqua Ring',
             Feet = 'Beast Gaiters',
         },
         ['VarCycles'] = {

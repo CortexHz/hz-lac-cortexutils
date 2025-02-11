@@ -8,31 +8,50 @@ local profile = gFunc.LoadFile('common/cortexutils.lua');
 
 local sets = {
     ['export'] = {
-        Main = 'Republic Axe',
-        Sub = 'Lauan Shield +1',
-        Head = 'Bone Mask +1',
-        Neck = 'Justice Badge',
-        Ear1 = 'Energy Earring +1',
-        Ear2 = 'Energy Earring +1',
-        Body = 'Bone Harness +1',
+        Main = 'War Pick +1',
+        Sub = 'Warrior\'s Axe',
+        Ammo = 'Pet Food Beta',
+        Head = 'Centurion\'s Visor',
+        Neck = 'Van Pendant',
+        Ear1 = 'Dodge Earring',
+        Ear2 = 'Dodge Earring',
+        Body = 'Shade Harness +1',
         Hands = 'Battle Gloves',
         Ring1 = 'Balance Ring',
         Ring2 = 'Balance Ring',
+        Back = 'Traveler\'s Mantle',
         Waist = 'Warrior\'s Belt +1',
-        Legs = 'Bone Subligar +1',
+        Legs = 'Republic Subligar',
         Feet = 'Leaping Boots',
+    },
+    ['Empty'] = {
+        Main = 'Battleaxe +1',
+        Sub = 'Battleaxe +1',
+        Ammo = 'Pet Food Beta',
+        Head = 'Shade Tiara',
+        Neck = 'Van Pendant',
+        Ear1 = 'Beetle Earring +1',
+        Ear2 = 'Beetle Earring +1',
+        Body = 'Shade Harness +1',
+        Hands = 'Battle Gloves',
+        Ring1 = 'Balance Ring',
+        Ring2 = 'Balance Ring',
+        Back = 'Traveler\'s Mantle',
+        Waist = 'Warrior\'s Belt +1',
+        Legs = 'Republic Subligar',
+        Feet = 'Shade Leggings +1',
     },
 };
 
 -- Strategies
 sets['Strategy'] = {
     ['Default'] = {
-        Idle = 'Default',
-        TP = 'Default',
+        Idle = 'L30',
+        TP = 'L30',
         TPSwaps = false,
         ['R.Type'] = 'BPP',
         Weapon = 'Axe',
-        ['W.Variant'] = 'L08',
+        ['W.Variant'] = 'L32',
     },
 }
 
@@ -46,17 +65,17 @@ sets['Weapon']['Scythe']['Outrance'] = {
     Main = 'A L\'Outrance',
 }
 sets['Weapon']['Axe'] = {}
-sets['Weapon']['Axe']['L08'] = {
-    Main = 'Brass Axe +1',
-    Sub = 'Lauan Shield +1',
+sets['Weapon']['Axe']['L32'] = {
+    Main = 'War Pick +1',
+    Sub = 'Warrior\'s Axe',
 }
-sets['Weapon']['Axe']['L13'] = {
-    Main = 'Bone Axe +1',
-    Sub = 'Lauan Shield +1',
+sets['Weapon']['Axe']['L20'] = {
+    Main = 'Battleaxe +1',
+    Sub = 'Battleaxe +1',
 }
 sets['Weapon']['Axe']['L15'] = {
     Main = 'Republic Axe',
-    Sub = 'Lauan Shield +1',
+    Sub = 'Tropical Shield',
 }
 sets['Weapon']['Axe']['L73'] = {
     Main = 'Maneater',
@@ -87,9 +106,9 @@ sets['Default'] = {
             ['Idle'] = {
                 ['Default'] = {
                     Head = 'Bone Mask +1',
-                    Neck = 'Justice Badge',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Bone Earring +1',
+                    Ear2 = 'Bone Earring +1',
                     Body = 'Bone Harness +1',
                     Hands = 'Battle Gloves',
                     Ring1 = 'Balance Ring',
@@ -98,18 +117,75 @@ sets['Default'] = {
                     Legs = 'Bone Subligar +1',
                     Feet = 'Leaping Boots',
                 },
-                ['Defense'] = {
-                    Head = 'Bone Mask +1',
-                    Neck = 'Justice Badge',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
-                    Body = 'Bone Harness +1',
+                ['L21'] = {
+                    Head = 'Beetle Mask +1',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Beetle Harness +1',
                     Hands = 'Battle Gloves',
                     Ring1 = 'Balance Ring',
                     Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt +1',
                     Legs = 'Bone Subligar +1',
                     Feet = 'Leaping Boots',
+                },
+                ['L25'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Shade Harness +1',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L30'] = {
+                    Head = 'Centurion\'s Visor',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Shade Harness +1',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['Empty'] = {
+                    Head = 'Shade Tiara',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Dodge Earring',
+                    Ear2 = 'Dodge Earring',
+                    Body = 'Shade Harness +1',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Shade Leggings +1',
+                },
+                ['Empty2'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Dodge Earring',
+                    Ear2 = 'Dodge Earring',
+                    Body = 'Shade Harness +1',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Shade Leggings +1',
                 },
             },
         },
@@ -134,27 +210,13 @@ sets['Default'] = {
         ['Movement'] = {
             --Feet = 'Herald\'s Gaiters',
             ['Thresholds'] = {
-                ['Time'] = {
-                    ['Dusk'] = {
-                        threshold = 17,
-                        operator = '>',
+                ['Area'] = {
+                    ['Sandy'] = {
+                        threshold = T{'Southern San d\'Oria', 'Northern San d\'Oria', 'Port San d\'Oria', 'Chateau d\'Oraguille'},
+                        operator = 'contains',
                         ['gear'] = {
-                            --Feet = 'Ninja Kyahan +1'
+                            Body = 'Kingdom Aketon',
                         },
-                    },
-                    ['Dawn'] = {
-                        threshold = 7,
-                        operator = '<',
-                        ['gear'] = {
-                            --Feet = 'Ninja Kyahan +1'
-                        },
-                    },
-                },
-            },
-            ['Elemental'] = {
-                ['Weather'] = {
-                    ['Earth'] = {
-                        --Feet = 'Desert Boots',
                     },
                 },
             },
@@ -189,9 +251,9 @@ sets['Default'] = {
             ['TP'] = {
                 ['Default'] = {
                     Head = 'Bone Mask +1',
-                    Neck = 'Justice Badge',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Bone Earring +1',
+                    Ear2 = 'Bone Earring +1',
                     Body = 'Bone Harness +1',
                     Hands = 'Battle Gloves',
                     Ring1 = 'Balance Ring',
@@ -200,18 +262,75 @@ sets['Default'] = {
                     Legs = 'Bone Subligar +1',
                     Feet = 'Leaping Boots',
                 },
-                ['Acc'] = {
-                    Head = 'Bone Mask +1',
-                    Neck = 'Justice Badge',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
-                    Body = 'Bone Harness +1',
+                ['L21'] = {
+                    Head = 'Beetle Mask +1',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Beetle Harness +1',
                     Hands = 'Battle Gloves',
                     Ring1 = 'Balance Ring',
                     Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt +1',
                     Legs = 'Bone Subligar +1',
                     Feet = 'Leaping Boots',
+                },
+                ['L25'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Shade Harness +1',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L30'] = {
+                    Head = 'Centurion\'s Visor',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Shade Harness +1',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['Empty'] = {
+                    Head = 'Shade Tiara',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Dodge Earring',
+                    Ear2 = 'Dodge Earring',
+                    Body = 'Shade Harness +1',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Shade Leggings +1',
+                },
+                ['Empty2'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Dodge Earring',
+                    Ear2 = 'Dodge Earring',
+                    Body = 'Shade Harness +1',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Shade Leggings +1',
                 },
             },
         },
@@ -246,13 +365,13 @@ sets['Midcast'] = {
         ['Enfeebling Magic'] = {
             Neck = 'Enfeebling Torque',
             Ring1 = 'Tamas Ring',
-            Ring2 = 'Sapphire Ring',
+            Ring2 = 'Aqua Ring',
         },
     },
     ['Healing Magic'] = {
         Neck = 'Justice Badge',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Sapphire Ring',
+        Ring2 = 'Aqua Ring',
     },
 }
 
@@ -285,7 +404,7 @@ sets['Ability'] = {
             --Body = 'Beast Jackcoat',
             Hands = 'Ogre Gloves',
             Ring1 = 'Tamas Ring',
-            Ring2 = 'Sapphire Ring',
+            Ring2 = 'Aqua Ring',
             Feet = 'Beast Gaiters',
         },
         ['VarCycles'] = {
@@ -308,7 +427,7 @@ sets['Ability'] = {
 
 -- HandleWeaponSkill
 local WS_STR = {
-    Head = 'Wyvern Helm',
+    Head = 'Mrc.Cpt. Headgear',
     Neck = 'Spike Necklace',
     Body = 'Haubergeon',
     --Hands = 'Wonder Mitts',

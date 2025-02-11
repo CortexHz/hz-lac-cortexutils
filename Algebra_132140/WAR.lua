@@ -8,15 +8,21 @@ local profile = gFunc.LoadFile('common/cortexutils.lua');
 
 local sets = {
     ['export'] = {
-        Main = 'Butterfly Axe +1',
-        Head = 'Bronze Cap',
-        Neck = 'Justice Badge',
-        Body = 'Kingdom Aketon',
-        Hands = 'Elvaan Gloves',
-        Ring1 = 'San d\'Orian Ring',
-        Ring2 = 'Emperor Band',
-        Legs = 'Elv. M Chausses',
-        Feet = 'Leaping Boots',
+        Main = 'Neckchopper',
+        Range = 'Light Crossbow +1',
+        Ammo = 'Acid Bolt',
+        Head = 'Beetle Mask +1',
+        Neck = 'Van Pendant',
+        Ear1 = 'Beetle Earring +1',
+        Ear2 = 'Beetle Earring +1',
+        Body = 'Beetle Harness +1',
+        Hands = 'Beetle Mittens +1',
+        Ring1 = 'Balance Ring',
+        Ring2 = 'Balance Ring',
+        Back = 'Traveler\'s Mantle',
+        Waist = 'Warrior\'s Belt +1',
+        Legs = 'Republic Subligar',
+        Feet = 'Btl. Leggings +1',
     },
 };
 
@@ -27,46 +33,31 @@ sets['Strategy'] = {
         TP = 'Default',
         TPSwaps = false,
         Weapon = 'Great Axe',
-        ['W.Variant'] = 'L05',
+        ['W.Variant'] = 'L20',
     },
 }
 
 -- Weapons
 sets['Weapon'] = {}
-sets['Weapon']['Scythe'] = {}
-sets['Weapon']['Scythe']['Suzaku'] = {
-    Main = 'Suzaku\'s Scythe',
-}
-sets['Weapon']['Scythe']['Outrance'] = {
-    Main = 'A L\'Outrance',
-}
 sets['Weapon']['Great Axe'] = {}
-sets['Weapon']['Great Axe']['Default'] = {
-    Main = 'Rusty Greataxe',
+sets['Weapon']['Great Axe']['L20'] = {
+    Main = 'Neckchopper',
 }
-sets['Weapon']['Great Axe']['L05'] = {
-    Main = 'Butterfly Axe +1',
+sets['Weapon']['Great Axe']['L16'] = {
+    Main = 'Moth Axe',
 }
 sets['Weapon']['Axe'] = {}
-sets['Weapon']['Axe']['PetAcc'] = {
-    Main = 'Maneater',
-    Sub = 'Barbaroi Axe',
+sets['Weapon']['Axe']['L32'] = {
+    Main = 'War Pick +1',
+    Sub = 'Warrior\'s Axe',
 }
-sets['Weapon']['Axe']['L73'] = {
-    Main = 'Maneater',
-    Sub = 'Leopard Axe',
+sets['Weapon']['Axe']['L20'] = {
+    Main = 'Battleaxe +1',
+    Sub = 'Battleaxe +1',
 }
-sets['Weapon']['Axe']['PetAcc60'] = {
-    Main = 'Darksteel Axe +1',
-    Sub = 'Barbaroi Axe',
-}
-sets['Weapon']['Axe']['L50'] = {
-    Main = 'Mythril Pick +1',
-    Sub = 'Barbaroi Axe',
-}
-sets['Weapon']['Axe']['Shield'] = {
-    Main = 'Maneater',
-    Sub = 'Msk.Cmd. Shield',
+sets['Weapon']['Axe']['L15'] = {
+    Main = 'Republic Axe',
+    Sub = 'Tropical Shield',
 }
 sets['Weapon']['Club'] = {}
 sets['Weapon']['Club']['None'] = {}
@@ -80,22 +71,32 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['Idle'] = {
                 ['Default'] = {
-                    Head = 'Bronze Cap',
-                    Body = 'Kingdom Aketon',
-                    Hands = 'Elvaan Gloves',
-                    Ring1 = 'San d\'Orian Ring',
-                    Ring2 = 'Emperor Band',
-                    Legs = 'Elv. M Chausses',
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Beetle Harness +1',
+                    Hands = 'Kingdom Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
                 ['Defense'] = {
-                    Head = 'Bronze Cap',
-                    Body = 'Kingdom Aketon',
-                    Hands = 'Elvaan Gloves',
-                    Ring1 = 'San d\'Orian Ring',
-                    Ring2 = 'Emperor Band',
-                    Legs = 'Elv. M Chausses',
-                    Feet = 'Leaping Boots',
+                    Head = 'Beetle Mask +1',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Beetle Harness +1',
+                    Hands = 'Beetle Mittens +1',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Btl. Leggings +1',
                 },
             },
         },
@@ -174,22 +175,32 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['TP'] = {
                 ['Default'] = {
-                    Head = 'Bronze Cap',
-                    Body = 'Kingdom Aketon',
-                    Hands = 'Elvaan Gloves',
-                    Ring1 = 'San d\'Orian Ring',
-                    Ring2 = 'Emperor Band',
-                    Legs = 'Elv. M Chausses',
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Beetle Harness +1',
+                    Hands = 'Kingdom Gloves',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
-                ['Acc'] = {
-                    Head = 'Bronze Cap',
-                    Body = 'Kingdom Aketon',
-                    Hands = 'Elvaan Gloves',
-                    Ring1 = 'San d\'Orian Ring',
-                    Ring2 = 'Emperor Band',
-                    Legs = 'Elv. M Chausses',
-                    Feet = 'Leaping Boots',
+                ['Defense'] = {
+                    Head = 'Beetle Mask +1',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Beetle Harness +1',
+                    Hands = 'Beetle Mittens +1',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Btl. Leggings +1',
                 },
             },
         },
@@ -224,13 +235,13 @@ sets['Midcast'] = {
         ['Enfeebling Magic'] = {
             Neck = 'Enfeebling Torque',
             Ring1 = 'Tamas Ring',
-            Ring2 = 'Sapphire Ring',
+            Ring2 = 'Aqua Ring',
         },
     },
     ['Healing Magic'] = {
         Neck = 'Justice Badge',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Sapphire Ring',
+        Ring2 = 'Aqua Ring',
     },
 }
 
@@ -263,7 +274,7 @@ sets['Ability'] = {
             --Body = 'Beast Jackcoat',
             Hands = 'Ogre Gloves',
             Ring1 = 'Tamas Ring',
-            Ring2 = 'Sapphire Ring',
+            Ring2 = 'Aqua Ring',
             Feet = 'Beast Gaiters',
         },
     },
@@ -274,29 +285,14 @@ sets['Ability'] = {
 
 -- HandleWeaponSkill
 local WS_STR = {
-    Head = 'Wyvern Helm',
     Neck = 'Spike Necklace',
-    Body = 'Haubergeon',
-    --Hands = 'Wonder Mitts',
-    Hands = 'Ogre Gloves',
-    --Ring1 = 'Courage Ring',
-    --Ring2 = 'Courage Ring',
-    Ring1 = 'Sun Ring',
-    Ring2 = 'Sun Ring',
-    Waist = 'Ryl.Kgt. Belt',
-    Legs = 'Ryl.Kgt. Breeches',
-    Feet = 'Alumine Sollerets',
+    Ring1 = 'Courage Ring',
+    Ring2 = 'Courage Ring',
 }
 local WS_STR_VIT = {
-    Head = 'Wyvern Helm',
     Neck = 'Spike Necklace',
-    Body = 'Haubergeon',
-    Hands = 'Ogre Gloves',
-    Ring1 = 'Sun Ring',
-    Ring2 = 'Sun Ring',
-    Waist = 'Ryl.Kgt. Belt',
-    Legs = 'Ryl.Kgt. Breeches',
-    Feet = 'Alumine Sollerets',
+    Ring1 = 'Courage Ring',
+    Ring2 = 'Courage Ring',
 }
 sets['WeaponSkill'] = {
     ['Alpha'] = WS_STR,

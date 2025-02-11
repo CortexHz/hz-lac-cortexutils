@@ -8,20 +8,20 @@ local profile = gFunc.LoadFile('common/cortexutils.lua');
 
 local sets = {
     ['export'] = {
-        Main = 'Kukulcan\'s Staff',
+        Main = 'Terra\'s Staff',
         Ammo = 'Fortune Egg',
         Head = 'Penance Hat',
-        Neck = 'Promise Badge',
+        Neck = 'Smn. Torque',
         Ear1 = 'Phantom Earring',
-        Ear2 = 'Phantom Earring',
+        Ear2 = 'Beastly Earring',
         Body = 'Austere Robe',
-        Hands = 'Austere Cuffs',
+        Hands = 'Summoner\'s Brcr.',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Ether Ring',
-        Back = 'Aurora Mantle',
+        Ring2 = 'Emperor Band',
+        Back = 'Summoner\'s Cape',
         Waist = 'Penitent\'s Rope',
-        Legs = 'Austere Slops',
-        Feet = 'Austere Sabots',
+        Legs = 'Summoner\'s Spats',
+        Feet = 'Summoner\'s Pgch.',
     },
 };
 
@@ -30,16 +30,16 @@ sets['Strategy'] = {
     ['Default'] = {
         Idle = 'Defense',
         TP = 'Default',
+        SmnGear = 'Default',
         Weapon = 'Staff',
         ['W.Variant'] = 'Defense',
-        Burst = false,
     },
     ['L65'] = {
         Idle = 'L65',
         TP = 'Default',
+        SmnGear = 'L65',
         Weapon = 'Staff',
         ['W.Variant'] = 'Defense',
-        Burst = false,
     },
 }
 
@@ -71,19 +71,36 @@ sets['Default'] = {
                 ['Default'] = {
                     Ammo = 'Fortune Egg',
                     Head = 'Penance Hat',
+                    --Head = 'Summoner\'s Horn',
                     Neck = 'Smn. Torque',
-                    Ear1 = 'Phantom Earring',
-                    Ear2 = 'Phantom Earring',
+                    Ear1 = 'Novia Earring',
+                    Ear2 = 'Beastly Earring',
                     Body = 'Austere Robe',
-                    Hands = 'Austere Cuffs',
+                    Hands = 'Summoner\'s Brcr.',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Ether Ring',
-                    Back = 'Aurora Mantle',
-                    Waist = 'Penitent\'s Rope',
+                    Back = 'Summoner\'s Cape',
+                    Waist = 'Hierarch Belt',
                     Legs = 'Evoker\'s Spats',
-                    Feet = 'Austere Sabots',
+                    Feet = 'Summoner\'s Pgch.',
                 },
                 ['Defense'] = {
+                    Ammo = 'Fortune Egg',
+                    Head = 'Penance Hat',
+                    --Head = 'Summoner\'s Horn',
+                    Neck = 'Smn. Torque',
+                    Ear1 = 'Novia Earring',
+                    Ear2 = 'Beastly Earring',
+                    Body = 'Austere Robe',
+                    Hands = 'Summoner\'s Brcr.',
+                    Ring1 = 'Tamas Ring',
+                    Ring2 = 'Ether Ring',
+                    Back = 'Summoner\'s Cape',
+                    Waist = 'Hierarch Belt',
+                    Legs = 'Summoner\'s Spats',
+                    Feet = 'Summoner\'s Pgch.',
+                },
+                ['L65'] = {
                     Ammo = 'Fortune Egg',
                     Head = 'Penance Hat',
                     Neck = 'Smn. Torque',
@@ -93,13 +110,9 @@ sets['Default'] = {
                     Hands = 'Austere Cuffs',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Ether Ring',
-                    Back = 'Aurora Mantle',
                     Waist = 'Penitent\'s Rope',
-                    Legs = 'Evoker\'s Spats',
+                    Legs = 'Summoner\'s Spats',
                     Feet = 'Austere Sabots',
-                },
-                ['L65'] = {
-
                 },
             },
         },
@@ -145,7 +158,7 @@ sets['Default'] = {
         Body = 'Seer\'s Tunic +1',
         --Body = 'Errant Hpl.',
         --Body = 'Black Cloak',
-        --Waist = 'Hierarch Belt',
+        Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
     },
     ['Engaged'] = {
@@ -161,76 +174,221 @@ sets['Default'] = {
         },
     },
     ['Pet'] = {
-        Head = 'Penance Hat',
-        Neck = 'Smn. Torque',
-        Body = 'Austere Robe',
-        Hands = 'Austere Cuffs',
-        ['Engaged'] = {
-            Legs = 'Evoker\'s Spats',
-        },
-        ['MobSkill'] = {
-            Head = 'Evoker\'s Horn',
-            Neck = 'Smn. Torque',
-            Legs = 'Evoker\'s Spats',
-            Feet = 'Austere Sabots',
-            ['Earthen Ward'] = {
-                Legs = 'Austere Slops',
-            },
-        },
         ['Ifrit'] = {
             Main = 'Vulcan\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Fire'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Fire Spirit'] = {
             Main = 'Vulcan\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Fire'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Titan'] = {
             Main = 'Terra\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Earth'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Earth Spirit'] = {
             Main = 'Terra\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Earth'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Leviathan'] = {
             Main = 'Neptune\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Water'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Water Spirit'] = {
             Main = 'Neptune\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Water'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Garuda'] = {
             Main = 'Auster\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Wind'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Wind Spirit'] = {
             Main = 'Auster\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Wind'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Shiva'] = {
             Main = 'Aquilo\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Ice'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Ice Spirit'] = {
             Main = 'Aquilo\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Ice'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Ramuh'] = {
             Main = 'Jupiter\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Thunder'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Thunder Spirit'] = {
             Main = 'Jupiter\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Thunder'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Carbuncle'] = {
             Main = 'Apollo\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Light'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Light Spirit'] = {
             Main = 'Apollo\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Light'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Fenrir'] = {
             Main = 'Pluto\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Dark'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Diabolos'] = {
             Main = 'Pluto\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Dark'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
         },
         ['Dark Spirit'] = {
             Main = 'Pluto\'s Staff',
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Dark'] = {
+                        Head = 'Summoner\'s Horn',
+                    },
+                },
+            },
+        },
+        ['VarCycles'] = {
+            ['SmnGear'] = {
+                ['Default'] = {
+                    Head = 'Penance Hat',
+                    Neck = 'Smn. Torque',
+                    Body = 'Austere Robe',
+                    Hands = 'Summoner\'s Brcr.',
+                    ['Engaged'] = {
+                        Legs = 'Evoker\'s Spats',
+                        Feet = 'Summoner\'s Pgch.',
+                    },
+                    ['MobSkill'] = {
+                        Head = 'Evoker\'s Horn',
+                        Neck = 'Smn. Torque',
+                        Ear2 = 'Beastly Earring',
+                        Legs = 'Evoker\'s Spats',
+                        Feet = 'Summoner\'s Pgch.',
+                        ['Earthen Ward'] = {
+                            Legs = 'Austere Slops',
+                            Feet = 'Austere Sabots',
+                        },
+                    },
+                },
+                ['L65'] = {
+                    Head = 'Penance Hat',
+                    Neck = 'Smn. Torque',
+                    Body = 'Austere Robe',
+                    Hands = 'Austere Cuffs',
+                    ['Engaged'] = {
+                        Legs = 'Evoker\'s Spats',
+                    },
+                    ['MobSkill'] = {
+                        Head = 'Evoker\'s Horn',
+                        Neck = 'Smn. Torque',
+                        Legs = 'Evoker\'s Spats',
+                        Feet = 'Austere Sabots',
+                        ['Earthen Ward'] = {
+                            Legs = 'Austere Slops',
+                        },
+                    },
+                },
+            },
         },
     },
     ['Omega'] = {
-
     },
 }
 
@@ -262,6 +420,7 @@ sets['Midcast'] = {
             Hands = 'Devotee\'s Mitts',
             --Ring1 = 'Tamas Ring',
             Ring1 = 'Tamas Ring',
+            Ring2 = 'Aqua Ring',
         },
     },
     ['Healing Magic'] = {
@@ -269,12 +428,14 @@ sets['Midcast'] = {
         Hands = 'Devotee\'s Mitts',
         --Ring1 = 'Tamas Ring',
         Ring1 = 'Tamas Ring',
+        Ring2 = 'Aqua Ring',
     },
     ['Enhancing Magic'] = {
         Neck = 'Promise Badge',
         Hands = 'Devotee\'s Mitts',
         --Ring1 = 'Tamas Ring',
         Ring1 = 'Tamas Ring',
+        Ring2 = 'Aqua Ring',
     },
     ['Omega'] = {
         ['Elemental'] = {
@@ -372,20 +533,43 @@ sets['Midshot'] = {
 
 -- HandleAbility
 sets['Ability'] = {
-    ['Blood Pact: Rage'] = {
-        Head = 'Penance Hat',
-        Body = 'Austere Robe',
-        Hands = 'Austere Cuffs',
-        Legs = 'Austere Slops',
-        Feet = 'Austere Sabots',
+    ['VarCycles'] = {
+        ['SmnGear'] = {
+            ['Default'] = {
+                ['Blood Pact: Rage'] = {
+                    Head = 'Penance Hat',
+                    Body = 'Austere Robe',
+                    Hands = 'Summoner\'s Brcr.',
+                    Legs = 'Summoner\'s Spats',
+                    Feet = 'Summoner\'s Pgch.',
+                },
+                ['Blood Pact: Ward'] = {
+                    Head = 'Penance Hat',
+                    Body = 'Austere Robe',
+                    Hands = 'Summoner\'s Brcr.',
+                    Legs = 'Summoner\'s Spats',
+                    Feet = 'Summoner\'s Pgch.',
+                },
+            },
+            ['L65'] = {
+                ['Blood Pact: Rage'] = {
+                    Head = 'Penance Hat',
+                    Body = 'Austere Robe',
+                    Hands = 'Austere Cuffs',
+                    Legs = 'Summoner\'s Spats',
+                    Feet = 'Austere Sabots',
+                },
+                ['Blood Pact: Ward'] = {
+                    Head = 'Penance Hat',
+                    Body = 'Austere Robe',
+                    Hands = 'Austere Cuffs',
+                    Legs = 'Summoner\'s Spats',
+                    Feet = 'Austere Sabots',
+                },
+            },
+        },
     },
-    ['Blood Pact: Ward'] = {
-        Head = 'Penance Hat',
-        Body = 'Austere Robe',
-        Hands = 'Austere Cuffs',
-        Legs = 'Austere Slops',
-        Feet = 'Austere Sabots',
-    },
+
 }
 
 -- HandleWeaponSkill

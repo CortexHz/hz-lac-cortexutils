@@ -211,6 +211,21 @@ sets['Precast'] = {
     },
 }
 
+-- MidcastIdle (set to equip until just before casting)
+-- i.e. SIRD ..etc
+sets['MidcastIdle'] = {
+    Main = 'Terra\'s Staff',
+    Head = 'Dls. Chapeau +1',
+    Neck = 'Promise Badge',
+    Ear1 = 'Novia Earring',
+    Body = 'Dls. Tabard +1',
+    Hands = 'Blood Fng. Gnt.',
+    Ring2 = 'Phalanx Ring',
+    Back = 'Hexerei Cape',
+    Legs = 'Blood Cuisses',
+    Feet = 'Dls. Boots +1',
+}
+
 -- HandleMidcast
 local ElementalDebuff = {
     Ammo = 'Phtm. Tathlum',
@@ -260,7 +275,7 @@ sets['Midcast'] = {
             Body = 'Warlock\'s Tabard',
             Hands = 'Devotee\'s Mitts',
             Ring1 = 'Tamas Ring',
-            Ring2 = 'Sapphire Ring',
+            Ring2 = 'Aqua Ring',
             Back = 'Prism Cape',
             Waist = 'Friar\'s Rope',
             Legs = 'Nashira Seraweels',
@@ -275,7 +290,7 @@ sets['Midcast'] = {
         Body = 'Errant Hpl.',
         Hands = 'Devotee\'s Mitts',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Sapphire Ring',
+        Ring2 = 'Aqua Ring',
         Back = 'Prism Cape',
         Legs = 'Warlock\'s Tights',
         Feet = 'Dls. Boots +1',
@@ -287,7 +302,7 @@ sets['Midcast'] = {
         Body = 'Dls. Tabard +1',
         Hands = 'Dls. Gloves +1',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Sapphire Ring',
+        Ring2 = 'Aqua Ring',
         Back = 'Prism Cape',
         Legs = 'Warlock\'s Tights',
         Feet = 'Dls. Boots +1',
@@ -319,7 +334,7 @@ sets['Midcast'] = {
         Body = 'Errant Hpl.',
         Hands = 'Devotee\'s Mitts',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Sapphire Ring',
+        Ring2 = 'Aqua Ring',
         Back = 'Prism Cape',
         Legs = 'Mahatma Slops',
         Feet = 'Dls. Boots +1',
