@@ -9,18 +9,19 @@ local profile = gFunc.LoadFile('common/cortexutils.lua');
 local sets = {
     ['export'] = {
         Main = 'Yew Wand +1',
-        Head = 'Silver Hairpin +1',
-        Neck = 'Justice Badge',
-        Ear1 = 'Energy Earring +1',
-        Ear2 = 'Energy Earring +1',
-        Body = 'Baron\'s Saio',
-        Hands = 'Baron\'s Cuffs',
+        Sub = 'Yew Wand +1',
+        Head = 'Seer\'s Crown +1',
+        Neck = 'Black Neckerchief',
+        Ear1 = 'Morion Earring',
+        Ear2 = 'Morion Earring',
+        Body = 'Seer\'s Tunic +1',
+        Hands = 'Seer\'s Mitts +1',
         Ring1 = 'Astral Ring',
         Ring2 = 'Astral Ring',
-        Back = 'Mist Silk Cape',
-        Waist = 'Friar\'s Rope',
-        Legs = 'Baron\'s Slops',
-        Feet = 'Mage\'s Sandals',
+        Back = 'Black Cape +1',
+        Waist = 'Shaman\'s Belt',
+        Legs = 'Seer\'s Slacks +1',
+        Feet = 'Mgn. M Ledelsens',
     },
 };
 
@@ -33,7 +34,7 @@ sets['Strategy'] = {
         SorcRing = false,
         Nation = false,
         Weapon = 'Club',
-        ['W.Variant'] = 'L18',
+        ['W.Variant'] = 'Dual',
         Burst = false,
     },
     ['L65'] = {
@@ -65,6 +66,13 @@ sets['Weapon']['Club']['L09'] = {
 sets['Weapon']['Club']['L18'] = {
     Main = 'Yew Wand +1',
 }
+sets['Weapon']['Club']['L32'] = {
+    Main = 'Solid Wand',
+}
+sets['Weapon']['Club']['Dual'] = {
+    Main = 'Solid Wand',
+    Sub = 'Solid Wand',
+}
 sets['Weapon']['Club']['Warp'] = {
     Main = 'Warp Cudgel',
 }
@@ -75,61 +83,19 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['Idle'] = {
                 ['Default'] = {
-                    Head = 'Silver Hairpin +1',
-                    Neck = 'Justice Badge',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
-                    Body = 'Baron\'s Saio',
-                    Hands = 'Baron\'s Cuffs',
-                    Ring1 = 'Astral Ring',
-                    Ring2 = 'Astral Ring',
-                    Back = 'Mist Silk Cape',
-                    Waist = 'Friar\'s Rope',
-                    Legs = 'Baron\'s Slops',
-                    Feet = 'Mage\'s Sandals',
-                    -- Ammo = 'Phtm. Tathlum',
-                    -- Head = 'Src. Petasos +1',
-                    -- Neck = 'Elemental Torque',
-                    -- Ear1 = 'Novia Earring',
-                    -- Ear2 = 'Novio Earring',
-                    -- Body = 'Sorcerer\'s Coat',
-                    -- Hands = 'Zenith Mitts',
-                    -- Ring1 = 'Tamas Ring',
-                    -- Ring2 = 'Phalanx Ring',
-                    -- Back = 'Hexerei Cape',
-                    -- Waist = 'Sorcerer\'s Belt',
-                    -- Legs = 'Sorcerer\'s Tonban',
-                    -- Feet = 'Sorcerer\'s Sabots',
-                -- },
-                -- ['Defense'] = {
-                    -- Ammo = 'Phtm. Tathlum',
-                    -- Head = 'Src. Petasos +1',
-                    -- Neck = 'Elemental Torque',
-                    -- Ear1 = 'Novia Earring',
-                    -- Ear2 = 'Novio Earring',
-                    -- Body = 'Sorcerer\'s Coat',
-                    -- Hands = 'Zenith Mitts',
-                    -- Ring1 = 'Tamas Ring',
-                    -- Ring2 = 'Phalanx Ring',
-                    -- Back = 'Hexerei Cape',
-                    -- Waist = 'Sorcerer\'s Belt',
-                    -- Legs = 'Sorcerer\'s Tonban',
-                    -- Feet = 'Sorcerer\'s Sabots',
-                -- },
-                -- ['L65'] = {
-                    -- Ammo = 'Phtm. Tathlum',
-                    -- Head = 'Wizard\'s Petasos',
-                    -- Neck = 'Elemental Torque',
-                    -- Ear1 = 'Moldavite Earring',
-                    -- Ear2 = 'Phantom Earring',
-                    -- Body = 'Wizard\'s Coat',
-                    -- Hands = 'Wizard\'s Gloves',
-                    -- Ring1 = 'Tamas Ring',
-                    -- Ring2 = 'Phalanx Ring',
-                    -- Back = 'Black Cape +1',
-                    -- Waist = 'Penitent\'s Rope',
-                    -- Legs = 'Wizard\'s Tonban',
-                    -- Feet = 'Wizard\'s Sabots',
+                    Ammo = 'Morion Tathlum',
+                    Head = 'Seer\'s Crown +1',
+                    Neck = 'Black Neckerchief',
+                    Ear1 = 'Morion Earring',
+                    Ear2 = 'Morion Earring',
+                    Body = 'Seer\'s Tunic +1',
+                    Hands = 'Seer\'s Mitts +1',
+                    Ring1 = 'Eremite\'s Ring +1',
+                    Ring2 = 'Eremite\'s Ring +1',
+                    Back = 'Black Cape +1',
+                    Waist = 'Shaman\'s Belt',
+                    Legs = 'Seer\'s Slacks +1',
+                    Feet = 'Mgn. M Ledelsens',
                 },
             },
         },
@@ -153,31 +119,6 @@ sets['Default'] = {
         },
         ['Movement'] = {
             --Feet = 'Herald\'s Gaiters',
-            ['Thresholds'] = {
-                ['Time'] = {
-                    ['Dusk'] = {
-                        threshold = 17,
-                        operator = '>',
-                        ['gear'] = {
-                            --Feet = 'Ninja Kyahan +1'
-                        },
-                    },
-                    ['Dawn'] = {
-                        threshold = 7,
-                        operator = '<',
-                        ['gear'] = {
-                            --Feet = 'Ninja Kyahan +1'
-                        },
-                    },
-                },
-            },
-            ['Elemental'] = {
-                ['Weather'] = {
-                    ['Earth'] = {
-                        --Feet = 'Desert Boots',
-                    },
-                },
-            },
         },
         ['Buff'] = {
             ['Shock Spikes'] = {
@@ -258,31 +199,13 @@ sets['Default'] = {
 
 -- HandlePrecast
 sets['Precast'] = {
-    ['Alpha'] = {
-        Hands = 'Sorcerer\'s Gloves',
-        Feet = 'Rostrum Pumps',
-    },
-    ['Elemental Magic'] = {
-        ['VarToggles'] = {
-            ['SorcRing'] = {
-                -- put -hp gear here
-                Head = 'Zenith Crown',
-                Neck = 'Checkered Scarf',
-                Ring1 = 'Ether Ring',
-                Ring2 = 'Astral Ring',
-                Back = 'Blue Cape +1',
-                Waist = 'Penitent\'s Rope',
-                Legs = 'Zenith Slacks',
-                Feet = 'Rostrum Pumps',
-            },
-        },
-    },
+
 }
 
 -- HandleMidcast
 local ElementalDebuff = {
     -- Ammo = 'Phtm. Tathlum',
-    -- Neck = 'Elemental Torque',
+    Neck = 'Black Neckerchief',
     -- Ear1 = 'Phantom Earring',
     -- Ear2 = 'Phantom Earring',
     -- Body = 'Black Cloak',
@@ -299,28 +222,37 @@ sets['Midcast'] = {
         ['Thresholds'] = {
             ['MP'] = {
                 ['MP1'] = {
-                    threshold = 265,
+                    threshold = 330,
                     operator = '<',
                     ['gear'] = {
-                        Ring1 = 'Eremite\'s Ring +1',
+                        Body = 'Baron\'s Saio',
                     },
                 },
-                ['MP2'] = {
-                    threshold = 240,
-                    operator = '<',
-                    ['gear'] = {
-                        Ring2 = 'Eremite\'s Ring +1',
-                    },
-                },
+                -- ['MP2'] = {
+                    -- threshold = 305,
+                    -- operator = '<',
+                    -- ['gear'] = {
+                        -- Ring1 = 'Eremite\'s Ring +1',
+                    -- },
+                -- },
+                -- ['MP3'] = {
+                    -- threshold = 280,
+                    -- operator = '<',
+                    -- ['gear'] = {
+                        -- Ring2 = 'Eremite\'s Ring +1',
+                    -- },
+                -- },
             },
         },
     },
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
+            Neck = 'Black Neckerchief',
         },
     },
     ['White Magic'] = {
         ['Enfeebling Magic'] = {
+            Neck = 'Justice Badge',
         },
     },
     ['Healing Magic'] = {
@@ -334,12 +266,11 @@ sets['Midcast'] = {
         -- Legs = 'Errant Slops',
     },
     ['Enhancing Magic'] = {
-        Feet = 'Wizard\'s Sabots',
     },
     ['Dark Magic'] = {
         -- Ammo = 'Phtm. Tathlum',
         -- Head = 'Wizard\'s Petasos',
-        -- Neck = 'Checkered Scarf',
+        Neck = 'Black Neckerchief',
         -- Ear1 = 'Phantom Earring',
         -- Ear2 = 'Phantom Earring',
         -- Body = 'Errant Hpl.',
@@ -367,6 +298,8 @@ sets['Midcast'] = {
         ['VarCycles'] = {
             ['Nuke'] = {
                 ['Default'] = {
+                    Ammo = 'Morion Tathlum',
+                    Neck = 'Black Neckerchief',
                     -- Ammo = 'Phtm. Tathlum',
                     -- Head = 'Src. Petasos +1',
                     -- Neck = 'Elemental Torque',

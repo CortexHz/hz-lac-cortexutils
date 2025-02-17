@@ -10,18 +10,18 @@ local sets = {
     ['export'] = {
         Main = 'Terra\'s Staff',
         Ammo = 'Fortune Egg',
-        Head = 'Penance Hat',
+        Head = 'Smn. Horn +1',
         Neck = 'Smn. Torque',
-        Ear1 = 'Phantom Earring',
+        Ear1 = 'Novia Earring',
         Ear2 = 'Beastly Earring',
         Body = 'Austere Robe',
-        Hands = 'Summoner\'s Brcr.',
+        Hands = 'Smn. Bracers +1',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Emperor Band',
+        Ring2 = 'Ether Ring',
         Back = 'Summoner\'s Cape',
-        Waist = 'Penitent\'s Rope',
+        Waist = 'Hierarch Belt',
         Legs = 'Summoner\'s Spats',
-        Feet = 'Summoner\'s Pgch.',
+        Feet = 'Smn. Pigaches +1',
     },
 };
 
@@ -70,35 +70,33 @@ sets['Default'] = {
             ['Idle'] = {
                 ['Default'] = {
                     Ammo = 'Fortune Egg',
-                    Head = 'Penance Hat',
-                    --Head = 'Summoner\'s Horn',
+                    Head = 'Smn. Horn +1',
                     Neck = 'Smn. Torque',
                     Ear1 = 'Novia Earring',
                     Ear2 = 'Beastly Earring',
                     Body = 'Austere Robe',
-                    Hands = 'Summoner\'s Brcr.',
+                    Hands = 'Smn. Bracers +1',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Ether Ring',
                     Back = 'Summoner\'s Cape',
                     Waist = 'Hierarch Belt',
                     Legs = 'Evoker\'s Spats',
-                    Feet = 'Summoner\'s Pgch.',
+                    Feet = 'Smn. Pigaches +1',
                 },
                 ['Defense'] = {
                     Ammo = 'Fortune Egg',
-                    Head = 'Penance Hat',
-                    --Head = 'Summoner\'s Horn',
+                    Head = 'Smn. Horn +1',
                     Neck = 'Smn. Torque',
                     Ear1 = 'Novia Earring',
                     Ear2 = 'Beastly Earring',
                     Body = 'Austere Robe',
-                    Hands = 'Summoner\'s Brcr.',
+                    Hands = 'Smn. Bracers +1',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Ether Ring',
                     Back = 'Summoner\'s Cape',
                     Waist = 'Hierarch Belt',
                     Legs = 'Summoner\'s Spats',
-                    Feet = 'Summoner\'s Pgch.',
+                    Feet = 'Smn. Pigaches +1',
                 },
                 ['L65'] = {
                     Ammo = 'Fortune Egg',
@@ -179,7 +177,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Fire'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -189,7 +187,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Fire'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -199,7 +197,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Earth'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -209,7 +207,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Earth'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -219,7 +217,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Water'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -229,7 +227,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Water'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -239,7 +237,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Wind'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -249,7 +247,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Wind'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -259,7 +257,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Ice'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -269,7 +267,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Ice'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -279,7 +277,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Thunder'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -289,7 +287,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Thunder'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -299,7 +297,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Light'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -309,7 +307,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Light'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -319,7 +317,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Dark'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -329,7 +327,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Dark'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -339,7 +337,7 @@ sets['Default'] = {
             ['Elemental'] = {
                 ['Weather'] = {
                     ['Dark'] = {
-                        Head = 'Summoner\'s Horn',
+                        Head = 'Smn. Horn +1',
                     },
                 },
             },
@@ -347,20 +345,20 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['SmnGear'] = {
                 ['Default'] = {
-                    Head = 'Penance Hat',
+                    --Head = 'Penance Hat',
                     Neck = 'Smn. Torque',
                     Body = 'Austere Robe',
-                    Hands = 'Summoner\'s Brcr.',
+                    Hands = 'Smn. Bracers +1',
                     ['Engaged'] = {
                         Legs = 'Evoker\'s Spats',
-                        Feet = 'Summoner\'s Pgch.',
+                        Feet = 'Smn. Pigaches +1',
                     },
                     ['MobSkill'] = {
                         Head = 'Evoker\'s Horn',
                         Neck = 'Smn. Torque',
                         Ear2 = 'Beastly Earring',
                         Legs = 'Evoker\'s Spats',
-                        Feet = 'Summoner\'s Pgch.',
+                        Feet = 'Smn. Pigaches +1',
                         ['Earthen Ward'] = {
                             Legs = 'Austere Slops',
                             Feet = 'Austere Sabots',
@@ -368,11 +366,11 @@ sets['Default'] = {
                     },
                 },
                 ['L65'] = {
-                    Head = 'Penance Hat',
                     Neck = 'Smn. Torque',
                     Body = 'Austere Robe',
                     Hands = 'Austere Cuffs',
                     ['Engaged'] = {
+                        Head = 'Evoker\'s Horn',
                         Legs = 'Evoker\'s Spats',
                     },
                     ['MobSkill'] = {
@@ -395,6 +393,7 @@ sets['Default'] = {
 -- HandlePrecast
 sets['Precast'] = {
     ['Alpha'] = {
+        Ear2 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
     },
 }
@@ -539,16 +538,16 @@ sets['Ability'] = {
                 ['Blood Pact: Rage'] = {
                     Head = 'Penance Hat',
                     Body = 'Austere Robe',
-                    Hands = 'Summoner\'s Brcr.',
+                    Hands = 'Smn. Bracers +1',
                     Legs = 'Summoner\'s Spats',
-                    Feet = 'Summoner\'s Pgch.',
+                    Feet = 'Smn. Pigaches +1',
                 },
                 ['Blood Pact: Ward'] = {
                     Head = 'Penance Hat',
                     Body = 'Austere Robe',
-                    Hands = 'Summoner\'s Brcr.',
+                    Hands = 'Smn. Bracers +1',
                     Legs = 'Summoner\'s Spats',
-                    Feet = 'Summoner\'s Pgch.',
+                    Feet = 'Smn. Pigaches +1',
                 },
             },
             ['L65'] = {

@@ -454,6 +454,9 @@ sets['Midcast'] = {
             ['Nation'] = {
                 Head = 'Republic Circlet',
             },
+            ['SorcRing'] = {
+                Ring2 = 'Sorcerer\'s Ring',
+            }
         },
         ['Elemental'] = {
             ['Day'] = {

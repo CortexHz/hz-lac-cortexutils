@@ -8,21 +8,21 @@ local profile = gFunc.LoadFile('common/cortexutils.lua');
 
 local sets = {
     ['export'] = {
-        Main = 'Neckchopper',
+        Main = 'Horror Voulge',
         Range = 'Light Crossbow +1',
-        Ammo = 'Acid Bolt',
-        Head = 'Beetle Mask +1',
+        Ammo = 'Blind Bolt',
+        Head = 'Emperor Hairpin',
         Neck = 'Van Pendant',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
-        Body = 'Beetle Harness +1',
-        Hands = 'Beetle Mittens +1',
+        Body = 'Ryl.Sqr. Chainmail',
+        Hands = 'Kingdom Mufflers',
         Ring1 = 'Balance Ring',
         Ring2 = 'Balance Ring',
-        Back = 'Traveler\'s Mantle',
+        Back = 'Nomad\'s Mantle +1',
         Waist = 'Warrior\'s Belt +1',
-        Legs = 'Republic Subligar',
-        Feet = 'Btl. Leggings +1',
+        Legs = 'Ryl.Sqr. Breeches',
+        Feet = 'Leaping Boots',
     },
 };
 
@@ -33,31 +33,20 @@ sets['Strategy'] = {
         TP = 'Default',
         TPSwaps = false,
         Weapon = 'Great Axe',
-        ['W.Variant'] = 'L20',
+        ['W.Variant'] = 'L37',
     },
 }
 
 -- Weapons
 sets['Weapon'] = {}
 sets['Weapon']['Great Axe'] = {}
-sets['Weapon']['Great Axe']['L20'] = {
-    Main = 'Neckchopper',
-}
-sets['Weapon']['Great Axe']['L16'] = {
-    Main = 'Moth Axe',
+sets['Weapon']['Great Axe']['L37'] = {
+    Main = 'Horror Voulge',
 }
 sets['Weapon']['Axe'] = {}
 sets['Weapon']['Axe']['L32'] = {
     Main = 'War Pick +1',
     Sub = 'Warrior\'s Axe',
-}
-sets['Weapon']['Axe']['L20'] = {
-    Main = 'Battleaxe +1',
-    Sub = 'Battleaxe +1',
-}
-sets['Weapon']['Axe']['L15'] = {
-    Main = 'Republic Axe',
-    Sub = 'Tropical Shield',
 }
 sets['Weapon']['Club'] = {}
 sets['Weapon']['Club']['None'] = {}
@@ -75,13 +64,13 @@ sets['Default'] = {
                     Neck = 'Van Pendant',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
-                    Body = 'Beetle Harness +1',
-                    Hands = 'Kingdom Gloves',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Kingdom Mufflers',
                     Ring1 = 'Balance Ring',
                     Ring2 = 'Balance Ring',
-                    Back = 'Traveler\'s Mantle',
+                    Back = 'Nomad\'s Mantle +1',
                     Waist = 'Warrior\'s Belt +1',
-                    Legs = 'Republic Subligar',
+                    Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Leaping Boots',
                 },
                 ['Defense'] = {
@@ -89,13 +78,13 @@ sets['Default'] = {
                     Neck = 'Van Pendant',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
-                    Body = 'Beetle Harness +1',
-                    Hands = 'Beetle Mittens +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Kingdom Mufflers',
                     Ring1 = 'Balance Ring',
                     Ring2 = 'Balance Ring',
-                    Back = 'Traveler\'s Mantle',
+                    Back = 'Nomad\'s Mantle +1',
                     Waist = 'Warrior\'s Belt +1',
-                    Legs = 'Republic Subligar',
+                    Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Btl. Leggings +1',
                 },
             },
@@ -179,13 +168,13 @@ sets['Default'] = {
                     Neck = 'Spike Necklace',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
-                    Body = 'Beetle Harness +1',
-                    Hands = 'Kingdom Gloves',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Kingdom Mufflers',
                     Ring1 = 'Balance Ring',
                     Ring2 = 'Balance Ring',
-                    Back = 'Traveler\'s Mantle',
+                    Back = 'Nomad\'s Mantle +1',
                     Waist = 'Warrior\'s Belt +1',
-                    Legs = 'Republic Subligar',
+                    Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Leaping Boots',
                 },
                 ['Defense'] = {
@@ -193,13 +182,13 @@ sets['Default'] = {
                     Neck = 'Spike Necklace',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
-                    Body = 'Beetle Harness +1',
-                    Hands = 'Beetle Mittens +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Kingdom Mufflers',
                     Ring1 = 'Balance Ring',
                     Ring2 = 'Balance Ring',
-                    Back = 'Traveler\'s Mantle',
+                    Back = 'Nomad\'s Mantle +1',
                     Waist = 'Warrior\'s Belt +1',
-                    Legs = 'Republic Subligar',
+                    Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Btl. Leggings +1',
                 },
             },
@@ -286,13 +275,19 @@ sets['Ability'] = {
 -- HandleWeaponSkill
 local WS_STR = {
     Neck = 'Spike Necklace',
+    Hands = 'Gigas Bracelets',
     Ring1 = 'Courage Ring',
     Ring2 = 'Courage Ring',
+    Waist = 'Brave Belt',
+    Legs = 'Republic Subligar',
 }
 local WS_STR_VIT = {
     Neck = 'Spike Necklace',
+    Hands = 'Gigas Bracelets',
     Ring1 = 'Courage Ring',
     Ring2 = 'Courage Ring',
+    Waist = 'Brave Belt',
+    Legs = 'Republic Subligar',
 }
 sets['WeaponSkill'] = {
     ['Alpha'] = WS_STR,
