@@ -385,7 +385,6 @@ cortexutils.FindVarCycles = function(c_set, destroy)
                 visible = mapping.VarVisible
             end
             if destroy then
-                print(name)
                 varhelper.DestroyCycle(name)
             else
                 varhelper.CreateSetCycle(name, mapping, visible)
