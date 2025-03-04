@@ -68,12 +68,32 @@ sets['Weapon']['Axe']['PetAcc'] = {
     Main = 'Maneater',
     Sub = 'Barbaroi Axe',
 }
+
+sets['Ranged'] = {}
+sets['Ranged']['Throwing'] = {}
+sets['Ranged']['Throwing']['Pebble'] = {
+    Ammo = 'Pebble',
+}
+sets['Ranged']['Bow'] = {}
+sets['Ranged']['Bow']['Default'] = {
+    Range = 'Composite Bow +1',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Scorp'] = {
+                Ammo = 'Scorpion Arrow',
+            },
+            ['Horn'] = {
+                Ammo = 'Horn Arrow',
+            },
+        },
+    },
+}
 ```
 
-This will generate VarHelper Switches Weapon and W.Variant..  `/lac fwd Weapon`, `/lac fwd W.Variant`
+This will generate VarHelper Switches Weapon/Ranged and W.Variant/R.Variant.. i.e.  `/lac fwd Weapon`, `/lac fwd W.Variant`
 
-Note: Optional, can just use `Default` section to create weapon selection,
-however this section allows non-selected options to be hidden from the UI.
+Note: Optional, can just use `Default` handler section to create weapon selection,
+however this section allows non-selected options to be hidden from the UI (including VarToggles/VarCycles).
 
 ### Handler Sections:
 

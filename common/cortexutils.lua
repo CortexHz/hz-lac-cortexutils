@@ -345,7 +345,7 @@ cortexutils.ApplyPetSet = function(equip_set, in_set, action)
 end
 
 cortexutils.VarToggles = {}
-cortexutils.FindVarToggles = function(t_set)
+cortexutils.FindVarToggles = function(t_set, destroy)
     if next(t_set) == nil then
         return
     end
@@ -356,20 +356,24 @@ cortexutils.FindVarToggles = function(t_set)
                 visible = gear.VarVisible
             end
             if name ~= 'VarVisible' then
-                varhelper.CreateToggle(name, false, visible)
-                cortexutils.VarToggles[name] = true
+                if destroy then
+                    varhelper.DestroyToggle(name)
+                else
+                    varhelper.CreateToggle(name, false, visible)
+                    cortexutils.VarToggles[name] = true
+                end
             end
         end
     end
     for key, val in pairs(t_set) do
         if type(val) == 'table' then
-            cortexutils.FindVarToggles(val)
+            cortexutils.FindVarToggles(val, destroy)
         end
     end
 end
 
 cortexutils.VarCycles = {}
-cortexutils.FindVarCycles = function(c_set)
+cortexutils.FindVarCycles = function(c_set, destroy)
     if next(c_set) == nil then
         return
     end
@@ -380,13 +384,18 @@ cortexutils.FindVarCycles = function(c_set)
             if mapping.VarVisible ~= nil and type(mapping.VarVisible) == 'boolean' then
                 visible = mapping.VarVisible
             end
-            varhelper.CreateSetCycle(name, mapping, visible)
-            cortexutils.VarCycles[name] = true
+            if destroy then
+                print(name)
+                varhelper.DestroyCycle(name)
+            else
+                varhelper.CreateSetCycle(name, mapping, visible)
+                cortexutils.VarCycles[name] = true
+            end
         end
     end
     for key, val in pairs(c_set) do
         if type(val) == 'table' then
-            cortexutils.FindVarCycles(val)
+            cortexutils.FindVarCycles(val, destroy)
         end
     end
 end
@@ -400,13 +409,28 @@ cortexutils.ApplyStrategy = function(strat_set)
             varhelper.SetToggle(name, target)
         elseif cortexutils.VarCycles[name] ~= nil then
             if name == 'Weapon' then
+                cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
+                cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
                 varhelper.DestroyCycle('W.Variant')
                 varhelper.SetCycle(name, target)
                 varhelper.CreateSetCycle('W.Variant', profile.Sets['Weapon'][varhelper.GetCycle('Weapon')])
                 if strat_set['W.Variant'] ~= nil then
                     varhelper.SetCycle('W.Variant', strat_set['W.Variant'])
                 end
-            elseif name ~= 'W.Variant' then
+                cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
+                cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
+            elseif name == 'Ranged' then
+                cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
+                cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
+                varhelper.DestroyCycle('R.Variant')
+                varhelper.SetCycle(name, target)
+                varhelper.CreateSetCycle('R.Variant', profile.Sets['Ranged'][varhelper.GetCycle('Ranged')])
+                if strat_set['R.Variant'] ~= nil then
+                    varhelper.SetCycle('R.Variant', strat_set['R.Variant'])
+                end
+                cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
+                cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
+            elseif name ~= 'W.Variant' and name ~= 'R.Variant' then
                 varhelper.SetCycle(name, target)
             end
         end
@@ -470,10 +494,26 @@ profile.OnLoad = function()
     varhelper.CreateSetCycle('Strategy', profile.Sets['Strategy']);
     cortexutils.FindVarToggles(profile.Sets);
     cortexutils.FindVarCycles(profile.Sets);
-    varhelper.CreateSetCycle('Weapon', profile.Sets['Weapon']);
-    cortexutils.VarCycles['Weapon'] = true
-    varhelper.CreateSetCycle('W.Variant', profile.Sets['Weapon'][varhelper.GetCycle('Weapon')]);
-    cortexutils.VarCycles['W.Variant'] = true
+    if profile.Sets['Weapon'] ~= nil then
+        cortexutils.FindVarToggles(profile.Sets['Weapon'], true);
+        cortexutils.FindVarCycles(profile.Sets['Weapon'], true);
+        varhelper.CreateSetCycle('Weapon', profile.Sets['Weapon']);
+        cortexutils.VarCycles['Weapon'] = true
+        varhelper.CreateSetCycle('W.Variant', profile.Sets['Weapon'][varhelper.GetCycle('Weapon')]);
+        cortexutils.VarCycles['W.Variant'] = true
+        cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
+        cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
+    end
+    if profile.Sets['Ranged'] ~= nil then
+        cortexutils.FindVarToggles(profile.Sets['Ranged'], true);
+        cortexutils.FindVarCycles(profile.Sets['Ranged'], true);
+        varhelper.CreateSetCycle('Ranged', profile.Sets['Ranged']);
+        cortexutils.VarCycles['Ranged'] = true
+        varhelper.CreateSetCycle('R.Variant', profile.Sets['Ranged'][varhelper.GetCycle('Ranged')]);
+        cortexutils.VarCycles['R.Variant'] = true
+        cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
+        cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
+    end
     if profile.Sets.Strategy.Default ~= nil then
         varhelper.SetCycle('Strategy', 'Default')
         cortexutils.ApplyStrategy(profile.Sets.Strategy.Default)
@@ -486,22 +526,49 @@ profile.OnUnload = function()
 end
 
 local WVarMemory = {};
+local RVarMemory = {};
 profile.HandleCommand = function(args)
     --local player = gData.GetPlayer();
     --for k, v in pairs(player) do
     --    print(tostring(k))
     --end
     --print(player.SubJob)
-    if (args[1] == 'Weapon') then
+    if (args[1] == 'Weapon' and profile.Sets['Weapon'] ~= nil) then
         WVarMemory[varhelper.GetCycle('Weapon')] = varhelper.GetCycle('W.Variant')
+        cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
+        cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
         varhelper.DestroyCycle('W.Variant')
         varhelper.AdvanceCycle('Weapon');
         varhelper.CreateSetCycle('W.Variant', profile.Sets['Weapon'][varhelper.GetCycle('Weapon')]);
         if WVarMemory[varhelper.GetCycle('Weapon')] ~= nil then
             varhelper.SetCycle('W.Variant', WVarMemory[varhelper.GetCycle('Weapon')])
         end
-    elseif (args[1] == 'W.Variant') then
+        cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
+        cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
+    elseif (args[1] == 'W.Variant' and profile.Sets['Weapon'] ~= nil) then
+        cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
+        cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
         varhelper.AdvanceCycle('W.Variant');
+        cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
+        cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
+    elseif (args[1] == 'Ranged' and profile.Sets['Ranged'] ~= nil) then
+        RVarMemory[varhelper.GetCycle('Ranged')] = varhelper.GetCycle('R.Variant')
+        cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
+        cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
+        varhelper.DestroyCycle('R.Variant')
+        varhelper.AdvanceCycle('Ranged');
+        varhelper.CreateSetCycle('R.Variant', profile.Sets['Ranged'][varhelper.GetCycle('Ranged')]);
+        if RVarMemory[varhelper.GetCycle('Ranged')] ~= nil then
+            varhelper.SetCycle('R.Variant', RVarMemory[varhelper.GetCycle('Ranged')])
+        end
+        cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
+        cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
+    elseif (args[1] == 'R.Variant' and profile.Sets['Ranged'] ~= nil) then
+        cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
+        cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
+        varhelper.AdvanceCycle('R.Variant');
+        cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
+        cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
     elseif cortexutils.VarToggles[args[1]] ~= nil then
         varhelper.AdvanceToggle(args[1]);
     elseif cortexutils.VarCycles[args[1]] ~= nil then
@@ -526,10 +593,18 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer()
     local equip_set = {}
     if player.Status ~= 'Resting' then
-        equip_set = cortexutils.ApplySets(
-            equip_set,
-            profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]
-        );
+        if profile.Sets['Weapon'] ~= nil then
+            equip_set = cortexutils.ApplySets(
+                equip_set,
+                profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]
+            );
+        end
+        if profile.Sets['Ranged'] ~= nil then
+            equip_set = cortexutils.ApplySets(
+                equip_set,
+                profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]
+            );
+        end
     end
     force_set = {}
     equip_set = cortexutils.ApplySets(equip_set, profile.Sets.Default)

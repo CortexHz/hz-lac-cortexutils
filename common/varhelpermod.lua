@@ -81,7 +81,7 @@ varhelper.CreateToggle = function(name, default, visible)
 end
 
 varhelper.DestroyToggle = function(name)
-	Toggles[name] = nil;
+    Toggles[name] = nil;
 end
 
 --name must be a valid lua variable name in string format.
@@ -114,7 +114,7 @@ varhelper.CreateCycle = function(name, values, visible)
 end
 
 varhelper.DestroyCycle = function(name)
-	Cycles[name] = nil;
+    Cycles[name] = nil;
 end
 
 varhelper.CreateSetCycle = function(name, mapping, visible)
@@ -164,7 +164,7 @@ varhelper.Initialize = function()
 		local outText = 'VarHelper';
 		for i, key in ipairs(TOrder) do
             value = Toggles[key]
-            if Visibility[key] == nil or Visibility[key] then
+            if value ~= nil and (Visibility[key] == nil or Visibility[key]) then
                 outText = outText .. '\n' .. key .. ': ';
                 if (value == true) then
                     outText = outText .. '|cFF00FF00|Enabled|r';
@@ -176,7 +176,7 @@ varhelper.Initialize = function()
         local visible = true
 		for i, key in ipairs(COrder) do
             value = Cycles[key]
-            if Visibility[key] == nil or Visibility[key] then
+            if value ~= nil and (Visibility[key] == nil or Visibility[key]) then
                 outText = outText .. '\n' .. key .. ': ' .. '|cFF00FF00|' .. value.Array[value.Index] .. '|r';
             end
 		end

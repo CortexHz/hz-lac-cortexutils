@@ -8,19 +8,70 @@ local profile = gFunc.LoadFile('common/cortexutils.lua');
 
 local sets = {
     ['export'] = {
-        Main = 'Mokuto +1',
-        Sub = 'Mokuto +1',
-        Head = 'Beetle Mask +1',
+        Main = 'Ohaguro',
+        Sub = 'Nikkariaoe',
+        Range = 'Wingedge',
+        Head = 'Emperor Hairpin',
+        Neck = 'Van Pendant',
+        Ear1 = 'Dodge Earring',
+        Ear2 = 'Dodge Earring',
+        Body = 'Ryl.Sqr. Chainmail',
+        Hands = 'Horomusha Kote',
+        Ring1 = 'Woodsman Ring',
+        Ring2 = 'Woodsman Ring',
+        Back = 'Nomad\'s Mantle +1',
+        Waist = 'Warrior\'s Belt +1',
+        Legs = 'Ryl.Sqr. Breeches',
+        Feet = 'Leaping Boots',
+    },
+    ['sword'] = {
+        Main = 'Flame Sword',
+        Sub = 'Flame Sword',
+        Range = 'Wingedge',
+        Head = 'Emperor Hairpin',
         Neck = 'Van Pendant',
         Ear1 = 'Energy Earring +1',
         Ear2 = 'Energy Earring +1',
-        Body = 'Beetle Harness +1',
-        Hands = 'Beetle Mittens +1',
+        Body = 'Federation Gi',
+        Hands = 'Horomusha Kote',
         Ring1 = 'Balance Ring',
         Ring2 = 'Balance Ring',
-        Back = 'Traveler\'s Mantle',
+        Back = 'Nomad\'s Mantle +1',
         Waist = 'Warrior\'s Belt +1',
-        Legs = 'Beetle Subligar +1',
+        Legs = 'Republic Subligar',
+        Feet = 'Leaping Boots',
+    },
+    ['katana'] = {
+        Main = 'Busuto +1',
+        Sub = 'Fukuro',
+        Range = 'Wingedge',
+        Head = 'Emperor Hairpin',
+        Neck = 'Van Pendant',
+        Ear1 = 'Energy Earring +1',
+        Ear2 = 'Energy Earring +1',
+        Body = 'Federation Gi',
+        Hands = 'Horomusha Kote',
+        Ring1 = 'Balance Ring',
+        Ring2 = 'Balance Ring',
+        Back = 'Nomad\'s Mantle +1',
+        Waist = 'Warrior\'s Belt +1',
+        Legs = 'Republic Subligar',
+        Feet = 'Leaping Boots',
+    },
+    ['L21'] = {
+        Main = 'Flame Sword',
+        Sub = 'Flame Sword',
+        Head = 'Emperor Hairpin',
+        Neck = 'Van Pendant',
+        Ear1 = 'Energy Earring +1',
+        Ear2 = 'Energy Earring +1',
+        Body = 'Federation Gi',
+        Hands = 'Horomusha Kote',
+        Ring1 = 'Balance Ring',
+        Ring2 = 'Balance Ring',
+        Back = 'Nomad\'s Mantle +1',
+        Waist = 'Warrior\'s Belt +1',
+        Legs = 'Republic Subligar',
         Feet = 'Leaping Boots',
     },
 };
@@ -32,21 +83,45 @@ sets['Strategy'] = {
         TP = 'Default',
         TPSwaps = false,
         Weapon = 'Katana',
-        ['W.Variant'] = 'L16',
+        ['W.Variant'] = 'L39',
     },
 }
 
 -- Weapons
 sets['Weapon'] = {}
 sets['Weapon']['Katana'] = {}
-sets['Weapon']['Katana']['L16'] = {
-    Main = 'Mokuto +1',
-    Sub = 'Mokuto +1',
+sets['Weapon']['Katana']['L24'] = {
+    Main = 'Hibari +1',
+    Sub = 'Hibari +1',
+}
+sets['Weapon']['Katana']['L26'] = {
+    Main = 'Busuto +1',
+    Sub = 'Hibari +1',
+}
+sets['Weapon']['Katana']['L28'] = {
+    Main = 'Busuto +1',
+    Sub = 'Fukuro',
+}
+sets['Weapon']['Katana']['L30'] = {
+    Main = 'Nikkariaoe',
+    Sub = 'Fukuro',
+}
+sets['Weapon']['Katana']['L32'] = {
+    Main = 'Kodachi +1',
+    Sub = 'Nikkariaoe',
+}
+sets['Weapon']['Katana']['L39'] = {
+    Main = 'Ohaguro',
+    Sub = 'Nikkariaoe',
 }
 sets['Weapon']['Sword'] = {}
-sets['Weapon']['Sword']['L01'] = {
-    Main = 'Wax Sword +1',
-    Sub = 'Kunai +1',
+sets['Weapon']['Sword']['L18'] = {
+    Main = 'Flame Sword',
+    Sub = 'Flame Sword',
+}
+sets['Weapon']['Sword']['L30'] = {
+    Main = 'Centurion\'s Sword',
+    Sub = 'Fukuro',
 }
 sets['Weapon']['Club'] = {}
 sets['Weapon']['Club']['None'] = {}
@@ -60,31 +135,31 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['Idle'] = {
                 ['Default'] = {
-                    Head = 'Beetle Mask +1',
+                    Head = 'Emperor Hairpin',
                     Neck = 'Van Pendant',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
-                    Body = 'Beetle Harness +1',
-                    Hands = 'Beetle Mittens +1',
-                    Ring1 = 'Balance Ring',
-                    Ring2 = 'Balance Ring',
-                    Back = 'Traveler\'s Mantle',
+                    Ear1 = 'Dodge Earring',
+                    Ear2 = 'Dodge Earring',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Horomusha Kote',
+                    Ring1 = 'Woodsman Ring',
+                    Ring2 = 'Woodsman Ring',
+                    Back = 'Nomad\'s Mantle +1',
                     Waist = 'Warrior\'s Belt +1',
-                    Legs = 'Beetle Subligar +1',
+                    Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Leaping Boots',
                 },
                 ['Defense'] = {
-                    Head = 'Beetle Mask +1',
+                    Head = 'Emperor Hairpin',
                     Neck = 'Van Pendant',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
-                    Body = 'Beetle Harness +1',
-                    Hands = 'Beetle Mittens +1',
-                    Ring1 = 'Balance Ring',
-                    Ring2 = 'Balance Ring',
-                    Back = 'Traveler\'s Mantle',
+                    Ear1 = 'Dodge Earring',
+                    Ear2 = 'Dodge Earring',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Horomusha Kote',
+                    Ring1 = 'Woodsman Ring',
+                    Ring2 = 'Woodsman Ring',
+                    Back = 'Nomad\'s Mantle +1',
                     Waist = 'Warrior\'s Belt +1',
-                    Legs = 'Beetle Subligar +1',
+                    Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Leaping Boots',
                 },
             },
@@ -164,31 +239,31 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['TP'] = {
                 ['Default'] = {
-                    Head = 'Beetle Mask +1',
-                    Neck = 'Spike Necklace',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
-                    Body = 'Beetle Harness +1',
-                    Hands = 'Beetle Mittens +1',
-                    Ring1 = 'Balance Ring',
-                    Ring2 = 'Balance Ring',
-                    Back = 'Traveler\'s Mantle',
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Ryl.Sqr. Collar',
+                    Ear1 = 'Dodge Earring',
+                    Ear2 = 'Dodge Earring',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Horomusha Kote',
+                    Ring1 = 'Woodsman Ring',
+                    Ring2 = 'Woodsman Ring',
+                    Back = 'Nomad\'s Mantle +1',
                     Waist = 'Warrior\'s Belt +1',
-                    Legs = 'Beetle Subligar +1',
+                    Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Leaping Boots',
                 },
                 ['Acc'] = {
-                    Head = 'Beetle Mask +1',
-                    Neck = 'Spike Necklace',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
-                    Body = 'Beetle Harness +1',
-                    Hands = 'Beetle Mittens +1',
-                    Ring1 = 'Balance Ring',
-                    Ring2 = 'Balance Ring',
-                    Back = 'Traveler\'s Mantle',
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Ryl.Sqr. Collar',
+                    Ear1 = 'Dodge Earring',
+                    Ear2 = 'Dodge Earring',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Horomusha Kote',
+                    Ring1 = 'Woodsman Ring',
+                    Ring2 = 'Woodsman Ring',
+                    Back = 'Nomad\'s Mantle +1',
                     Waist = 'Warrior\'s Belt +1',
-                    Legs = 'Beetle Subligar +1',
+                    Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Leaping Boots',
                 },
             },
@@ -273,33 +348,37 @@ sets['Ability'] = {
 -- HandleWeaponSkill
 local WS_STR = {
     Neck = 'Spike Necklace',
+    Ear1 = 'Beetle Earring +1',
+    Ear2 = 'Beetle Earring +1',
     Hands = 'Gigas Bracelets',
     Ring1 = 'Courage Ring',
     Ring2 = 'Courage Ring',
-    Waist = 'Brave Belt',
     Legs = 'Republic Subligar',
 }
 local WS_STR_DEX = {
     Neck = 'Spike Necklace',
+    Ear1 = 'Beetle Earring +1',
+    Ear2 = 'Beetle Earring +1',
     Ring1 = 'Courage Ring',
     Ring2 = 'Courage Ring',
-    Waist = 'Brave Belt',
     Legs = 'Republic Subligar',
 }
 local WS_HYBRID = {
     Neck = 'Spike Necklace',
+    Ear1 = 'Beetle Earring +1',
+    Ear2 = 'Beetle Earring +1',
     Hands = 'Gigas Bracelets',
     Ring1 = 'Courage Ring',
     Ring2 = 'Courage Ring',
-    Waist = 'Brave Belt',
     Legs = 'Republic Subligar',
 }
 local WS_ELE = {
     Neck = 'Spike Necklace',
+    Ear1 = 'Beetle Earring +1',
+    Ear2 = 'Beetle Earring +1',
     Hands = 'Gigas Bracelets',
     Ring1 = 'Courage Ring',
     Ring2 = 'Courage Ring',
-    Waist = 'Brave Belt',
     Legs = 'Republic Subligar',
 }
 sets['WeaponSkill'] = {
