@@ -441,57 +441,85 @@ The resultant set is equiped (only one call to gfunc.EquipSet).
 
 ### Example Lua
 
-https://github.com/CortexHz/hz-lac-cortexutils/blob/main/BLM.lua
+https://github.com/CortexHz/hz-lac-cortexutils/blob/main/Cortex_103321/BLM.lua
+
+### Basic starter lua
 
 ```
+--[===[
+
+SEE cortexutils.lua FOR FULL Documentation
+
+]===]--
+
 local profile = gFunc.LoadFile('common/cortexutils.lua');
 
 local sets = {
     ['export'] = {
-        Main = 'Earth Staff',
-        .
-        .
-        .
-        Feet = 'Wizard\'s Sabots',
+        Main = 'Horror Voulge',
+        Range = 'Light Crossbow +1',
+        Ammo = 'Blind Bolt',
+        Head = 'Emperor Hairpin',
+        Neck = 'Van Pendant',
+        Ear1 = 'Beetle Earring +1',
+        Ear2 = 'Beetle Earring +1',
+        Body = 'Ryl.Sqr. Chainmail',
+        Hands = 'Kingdom Mufflers',
+        Ring1 = 'Balance Ring',
+        Ring2 = 'Balance Ring',
+        Back = 'Nomad\'s Mantle +1',
+        Waist = 'Warrior\'s Belt +1',
+        Legs = 'Ryl.Sqr. Breeches',
+        Feet = 'Leaping Boots',
     },
 };
 
 -- Strategies
 sets['Strategy'] = {
     ['Default'] = {
-        Idle = 'Defense',
+        Idle = 'Default',
         TP = 'Default',
-        Nuke = 'MAtt',
-        SorcRing = true,
-        Weapon = 'Staff',
-        ['W.Variant'] = 'Defense',
-        Burst = false,
-    },
-    ['L65'] = {
-        Idle = 'L65',
-        TP = 'Default',
-        Nuke = 'L65',
-        SorcRing = false,
-        Weapon = 'Staff',
-        ['W.Variant'] = 'Defense',
-        Burst = false,
+        TPSwaps = false,
+        Weapon = 'Great Axe',
+        ['W.Variant'] = 'L37',
     },
 }
 
 -- Weapons
 sets['Weapon'] = {}
-sets['Weapon']['Scythe'] = {}
-sets['Weapon']['Scythe']['Outrance'] = {
-    main = 'A L\'Outrance',
+sets['Weapon']['Great Axe'] = {}
+sets['Weapon']['Great Axe']['L37'] = {
+    Main = 'Horror Voulge',
 }
-sets['Weapon']['Staff'] = {}
-sets['Weapon']['Staff']['Defense'] = {
-    main = 'Earth Staff',
+sets['Weapon']['Axe'] = {}
+sets['Weapon']['Axe']['L32'] = {
+    Main = 'War Pick +1',
+    Sub = 'Warrior\'s Axe',
 }
 sets['Weapon']['Club'] = {}
 sets['Weapon']['Club']['None'] = {}
 sets['Weapon']['Club']['Warp'] = {
-    main = 'Warp Cudgel',
+    Main = 'Warp Cudgel',
+}
+
+sets['Ranged'] = {}
+sets['Ranged']['Throwing'] = {}
+sets['Ranged']['Throwing']['Pebble'] = {
+    Ammo = 'Pebble',
+}
+sets['Ranged']['Bow'] = {}
+sets['Ranged']['Bow']['Default'] = {
+    Range = 'Composite Bow +1',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Scorp'] = {
+                Ammo = 'Scorpion Arrow',
+            },
+            ['Horn'] = {
+                Ammo = 'Horn Arrow',
+            },
+        },
+    },
 }
 
 -- HandleDefault
@@ -500,25 +528,32 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['Idle'] = {
                 ['Default'] = {
-                    Ammo = 'Phtm. Tathlum',
-                    .
-                    .
-                    .
-                    Feet = 'Wizard\'s Sabots',
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Kingdom Mufflers',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Nomad\'s Mantle +1',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Leaping Boots',
                 },
                 ['Defense'] = {
-                    Ammo = 'Phtm. Tathlum',
-                    .
-                    .
-                    .
-                    Feet = 'Wizard\'s Sabots',
-                },
-                ['L65'] = {
-                    Ammo = 'Phtm. Tathlum',
-                    .
-                    .
-                    .
-                    Feet = 'Wizard\'s Sabots',
+                    Head = 'Beetle Mask +1',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Kingdom Mufflers',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Nomad\'s Mantle +1',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Btl. Leggings +1',
                 },
             },
         },
@@ -526,7 +561,7 @@ sets['Default'] = {
             ['Fishing'] = {
                 VarVisible = false,
                 Ammo = '',
-                Ranged = '',
+                Range = 'Lu Shang\'s F. Rod',
                 Body = 'Angler\'s Tunica',
                 Hands = 'Angler\'s Gloves',
                 Legs = 'Angler\'s Hose',
@@ -541,276 +576,166 @@ sets['Default'] = {
             },
         },
         ['Movement'] = {
-            --Feet = 'Waders',
+            --Feet = 'Herald\'s Gaiters',
             ['Thresholds'] = {
                 ['Time'] = {
                     ['Dusk'] = {
                         threshold = 17,
                         operator = '>',
                         ['gear'] = {
-                            --Feet = 'Seer\'s Pumps +1'
+                            --Feet = 'Ninja Kyahan +1'
                         },
                     },
                     ['Dawn'] = {
                         threshold = 7,
                         operator = '<',
                         ['gear'] = {
-                            --Feet = 'Seer\'s Pumps +1'
+                            --Feet = 'Ninja Kyahan +1'
                         },
+                    },
+                },
+            },
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Earth'] = {
+                        --Feet = 'Desert Boots',
+                    },
+                },
+            },
+        },
+    },
+    ['Movement'] = {
+        --Feet = 'Herald\'s Gaiters',
+        ['Thresholds'] = {
+            ['Area'] = {
+                ['Sandy'] = {
+                    threshold = T{'Southern San d\'Oria', 'Northern San d\'Oria', 'Port San d\'Oria', 'Chateau d\'Oraguille'},
+                    operator = 'contains',
+                    ['gear'] = {
+                        Body = 'Kingdom Aketon',
                     },
                 },
             },
         },
     },
     ['Resting'] = {
-        Main = 'Pluto\'s Staff',
-        Neck = 'Checkered Scarf',
-        --Body = 'Seer\'s Tunic +1',
-        Body = 'Errant Hpl.',
-        --Body = 'Black Cloak',
-        Waist = 'Hierarch Belt',
-        Legs = 'Baron\'s Slops',
+        ['VarToggles'] = {
+            ['TPSwaps'] = {
+                Main = 'Gelong Staff',
+            },
+        },
+        Ear1 = 'Sanative Earring',
+        Ear2 = 'Relaxing Earring',
+        Legs = 'Monster Trousers',
     },
     ['Engaged'] = {
         ['VarCycles'] = {
             ['TP'] = {
                 ['Default'] = {
-                    Ammo = 'Phtm. Tathlum',
-                    .
-                    .
-                    .
-                    Feet = 'Wizard\'s Sabots',
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Kingdom Mufflers',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Nomad\'s Mantle +1',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Leaping Boots',
                 },
-                ['Acc'] = {
-                    Ammo = 'Phtm. Tathlum',
-                    .
-                    .
-                    .
-                    Feet = 'Wizard\'s Sabots',
+                ['Defense'] = {
+                    Head = 'Beetle Mask +1',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Kingdom Mufflers',
+                    Ring1 = 'Balance Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Nomad\'s Mantle +1',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Btl. Leggings +1',
                 },
             },
         },
-    },
-    ['Omega'] = {   
     },
 }
 
 -- HandlePrecast
 sets['Precast'] = {
-    ['Force'] = {
-        ['Elemental Magic'] = {
-            ['VarToggles'] = {
-                ['SorcRing'] = {
-                    ['Thresholds'] = {
-                        ['HPP'] = {
-                            ['HPDown'] = {
-                                threshold = 75,
-                                operator = '>',     
-                                ['gear'] = {
-                                    -- put -hp gear here
-                                    Head = 'Zenith Crown',
-                                    Neck = 'Checkered Scarf',
-                                    Ring1 = 'Ether Ring',
-                                    Ring2 = 'Astral Ring',
-                                    Back = 'Blue Cape +1',
-                                    Waist = 'Penitent\'s Rope',
-                                    Legs = 'Zenith Slacks',
-                                    Feet = 'Rostrum Pumps',
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-    },
     ['Alpha'] = {
-        Ear2 = 'Loquac. Earring',
-        Hands = 'Src. Gloves +1',
-        Feet = 'Rostrum Pumps',
     },
-}
-
--- MidcastIdle (set to equip until just before casting)
--- i.e. SIRD ..etc
-sets['MidcastIdle'] = {
-    Main = 'Terra\'s Staff',
-    Body = 'Igqira Weskit',
-    Ring2 = 'Phalanx Ring',
-    Back = 'Hexerei Cape',
-    Feet = 'Wizard\'s Sabots',
 }
 
 -- HandlePrecast
-local ElementalDebuff = {
-        Ammo = 'Phtm. Tathlum',
-        Neck = 'Elemental Torque',
-        .
-        .
-        .
-}
 sets['Midcast'] = {
-    ['Alpha'] = {
-    },
-    ['Elemental'] = {
-        ['Element'] = {
-            ['Fire'] = {
-                Main = 'Vulcan\'s Staff',
-            },
-            .
-            .
-            .
-            ['Dark'] = {
-                Main = 'Pluto\'s Staff',
-            },
-        },
-        ['Day'] = {
-            ClashCheck = true,
-            ['Fire'] = {
-            },
-            .
-            .
-            .
-            ['Dark'] = {
-            },
-        },
-        ['Weather'] = {
-            ClashCheck = true,
-            ['Fire'] = {
-            },
-            .
-            .
-            .
-            ['Dark'] = {
-            },
-        },
-    },
-    ['Omega'] = {
-    },
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
-            Ammo = 'Phtm. Tathlum',
-            .
-            .
-            .
         },
     },
     ['White Magic'] = {
         ['Enfeebling Magic'] = {
-            Head = 'Igqira Tiara',
-            .
-            .
-            .
         },
     },
-    ['Enhancing Magic'] = {
-    },
-    ['Dark Magic'] = {
-        Ammo = 'Phtm. Tathlum',
-        .
-        .
-        .
-    },
-    ['Rasp'] = ElementalDebuff,
-    ['Choke'] = ElementalDebuff,
-    ['Frost'] = ElementalDebuff,
-    ['Burn'] = ElementalDebuff,
-    ['Drown'] = ElementalDebuff,
-    ['Shock'] = ElementalDebuff,
-    ['Elemental Magic'] = {
-        ['VarCycles'] = {
-            ['Nuke'] = {
-                ['MAtt'] = {
-                    Ammo = 'Phtm. Tathlum',
-                    .
-                    .
-                    .
-                    Feet = 'Wizard\'s Sabots',
-                },
-                ['MAcc'] = {
-                    Ammo = 'Phtm. Tathlum',
-                    .
-                    .
-                    .
-                    Feet = 'Wizard\'s Sabots',
-                },
-                ['L65'] = {
-                    Ammo = 'Phtm. Tathlum',
-                    Head = 'Wizard\'s Petasos',
-                    .
-                    .
-                    .
-                    Feet = 'Wizard\'s Sabots',
-                },
-            },
-        },
-        ['VarToggles'] = {
-            ['Burst'] = {
-                Hands = 'Sorcerer\'s Gloves',
-            },
-        },
-        ['Elemental'] = {
-            ['Day'] = {
-                ['Fire'] = {
-                    Legs = 'Sorcerer\'s Tonban',
-                },
-                .
-                .
-                .
-                },
-                ['Dark'] = {
-                    Legs = 'Sorcerer\'s Tonban',
-                },
-            },
-        },
-        ['Thresholds'] = {
-            ['HPP'] = {
-                ['SRing'] = {
-                    threshold = 76,
-                    operator = '<',
-                    ['gear'] = {
-                        ['VarToggles'] = {
-                            ['SorcRing'] = {
-                                --Ring2 = 'Sorcerer\'s Ring',
-                            },
-                        },
-                    },
-                },
-            },
-            ['MppAftercast'] = {
-                ['UNeck'] = {
-                    threshold = 51,
-                    operator = '<',
-                    ['gear'] = {
-                        --Neck = 'Uggalepih Pendant',
-                    },
-                },
-            },
-        },
+    ['Healing Magic'] = {
+        Neck = 'Justice Badge',
     },
 }
 
--- HandlePrecast
+-- HandlePreshot
 sets['Preshot'] = {
 }
--- HandlePrecast
+
+-- HandleMidshot
 sets['Midshot'] = {
 }
+
 -- HandleAbility
 sets['Ability'] = {
+    ['Charm'] = {
+        Neck = 'Bird Whistle',
+        Ring1 = 'Hope Ring',
+        Ring2 = 'Hope Ring',
+    },
+    ['Reward'] = {
+        Neck = 'Justice Badge',
+    },
+    ['Provoke'] = {
+        Head = 'Cache-nez',
+    },
 }
+
 -- HandleWeaponSkill
 local WS_STR = {
     Neck = 'Spike Necklace',
-    Ring2 = 'Sun Ring',
+    Hands = 'Gigas Bracelets',
+    Ring1 = 'Courage Ring',
+    Ring2 = 'Courage Ring',
+    Waist = 'Brave Belt',
+    Legs = 'Republic Subligar',
+}
+local WS_STR_VIT = {
+    Neck = 'Spike Necklace',
+    Hands = 'Gigas Bracelets',
+    Ring1 = 'Courage Ring',
+    Ring2 = 'Courage Ring',
+    Waist = 'Brave Belt',
+    Legs = 'Republic Subligar',
 }
 sets['WeaponSkill'] = {
-    ['Heavy Swing'] = WS_STR,
+    ['Alpha'] = WS_STR,
+    ['Calamity'] = WS_STR_VIT,
 }
+
 -- HandleItem
 sets['Item'] = {
 }
+
 profile.Sets = sets;
+
 profile.Packer = {
 };
 

@@ -90,18 +90,6 @@ sets['Strategy'] = {
 -- Weapons
 sets['Weapon'] = {}
 sets['Weapon']['Katana'] = {}
-sets['Weapon']['Katana']['L24'] = {
-    Main = 'Hibari +1',
-    Sub = 'Hibari +1',
-}
-sets['Weapon']['Katana']['L26'] = {
-    Main = 'Busuto +1',
-    Sub = 'Hibari +1',
-}
-sets['Weapon']['Katana']['L28'] = {
-    Main = 'Busuto +1',
-    Sub = 'Fukuro',
-}
 sets['Weapon']['Katana']['L30'] = {
     Main = 'Nikkariaoe',
     Sub = 'Fukuro',
@@ -233,7 +221,6 @@ sets['Default'] = {
         },
         Ear1 = 'Sanative Earring',
         Ear2 = 'Relaxing Earring',
-        Legs = 'Monster Trousers',
     },
     ['Engaged'] = {
         ['VarCycles'] = {

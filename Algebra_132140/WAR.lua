@@ -54,6 +54,26 @@ sets['Weapon']['Club']['Warp'] = {
     Main = 'Warp Cudgel',
 }
 
+sets['Ranged'] = {}
+sets['Ranged']['Throwing'] = {}
+sets['Ranged']['Throwing']['Pebble'] = {
+    Ammo = 'Pebble',
+}
+sets['Ranged']['Bow'] = {}
+sets['Ranged']['Bow']['Default'] = {
+    Range = 'Composite Bow +1',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Scorp'] = {
+                Ammo = 'Scorpion Arrow',
+            },
+            ['Horn'] = {
+                Ammo = 'Horn Arrow',
+            },
+        },
+    },
+}
+
 -- HandleDefault
 sets['Default'] = {
     ['Idle'] = {
@@ -194,13 +214,6 @@ sets['Default'] = {
             },
         },
     },
-    ['Pet'] = {
-        ['Sheep Song'] = {
-            Head = 'Beast Helm',
-        },
-    },
-    ['Omega'] = {   
-    },
 }
 
 -- HandlePrecast
@@ -213,24 +226,14 @@ sets['Precast'] = {
 sets['Midcast'] = {
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
-            Neck = 'Enfeebling Torque',
-            Ear1 = 'Phantom Earring',
-            Ear2 = 'Phantom Earring',
-            Ring1 = 'Tamas Ring',
-            Ring2 = 'Snow Ring',
         },
     },
     ['White Magic'] = {
         ['Enfeebling Magic'] = {
-            Neck = 'Enfeebling Torque',
-            Ring1 = 'Tamas Ring',
-            Ring2 = 'Aqua Ring',
         },
     },
     ['Healing Magic'] = {
         Neck = 'Justice Badge',
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Aqua Ring',
     },
 }
 
@@ -245,27 +248,12 @@ sets['Midshot'] = {
 -- HandleAbility
 sets['Ability'] = {
     ['Charm'] = {
-        Head = 'Beast Helm',
         Neck = 'Bird Whistle',
-        Body = 'Beast Jackcoat',
-        Hands = 'Beast Gloves',
         Ring1 = 'Hope Ring',
         Ring2 = 'Hope Ring',
-        Waist = 'Monster Belt',
-        Legs = 'Beast Trousers',
-        Feet = 'Beast Gaiters',
     },
     ['Reward'] = {
-        ['Alpha'] = {
-            Head = 'Bison Warbonnet',
-            Neck = 'Justice Badge',
-            --Body = 'Monster Jackcoat',
-            --Body = 'Beast Jackcoat',
-            Hands = 'Ogre Gloves',
-            Ring1 = 'Tamas Ring',
-            Ring2 = 'Aqua Ring',
-            Feet = 'Beast Gaiters',
-        },
+        Neck = 'Justice Badge',
     },
     ['Provoke'] = {
         Head = 'Cache-nez',
