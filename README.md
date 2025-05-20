@@ -1,6 +1,6 @@
 # A system for LuAshitaCast
 
-Author:  Cortex of HorizonXI
+Author:  Cortex of Eventide/HorizonXI
 
 Install to:
 
