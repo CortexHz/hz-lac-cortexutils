@@ -490,7 +490,9 @@ end
 
 profile.OnLoad = function()
     gSettings.AllowAddSet = true;
-    varhelper.CreateSetCycle('Strategy', profile.Sets['Strategy']);
+    if profile.Sets.Strategy ~= nil then
+        varhelper.CreateSetCycle('Strategy', profile.Sets['Strategy']);
+    end
     cortexutils.FindVarToggles(profile.Sets);
     cortexutils.FindVarCycles(profile.Sets);
     if profile.Sets['Weapon'] ~= nil then
@@ -513,7 +515,7 @@ profile.OnLoad = function()
         cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
         cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
     end
-    if profile.Sets.Strategy.Default ~= nil then
+    if profile.Sets.Strategy ~= nil and profile.Sets.Strategy.Default ~= nil then
         varhelper.SetCycle('Strategy', 'Default')
         cortexutils.ApplyStrategy(profile.Sets.Strategy.Default)
     end
@@ -537,17 +539,36 @@ profile.HandleCommand = function(args)
         cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
         cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
         varhelper.DestroyCycle('W.Variant')
-        varhelper.AdvanceCycle('Weapon');
-        varhelper.CreateSetCycle('W.Variant', profile.Sets['Weapon'][varhelper.GetCycle('Weapon')]);
-        if WVarMemory[varhelper.GetCycle('Weapon')] ~= nil then
-            varhelper.SetCycle('W.Variant', WVarMemory[varhelper.GetCycle('Weapon')])
+        if (
+            args[2] ~= nil
+            and profile.Sets['Weapon'][args[2]] ~= nil
+        ) then
+            varhelper.SetCycle('Weapon', args[2])
+        else
+            varhelper.AdvanceCycle('Weapon');
         end
+        varhelper.CreateSetCycle('W.Variant', profile.Sets['Weapon'][varhelper.GetCycle('Weapon')]);
+        if (
+            args[3] ~= nil
+            and profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][args[3]] ~= nil
+        ) then
+            varhelper.SetCycle('W.Variant', args[3])
+        elseif WVarMemory[varhelper.GetCycle('Weapon')] ~= nil then
+            varhelper.SetCycle('W.Variant', WVarMemory[varhelper.GetCycle('Weapon')])
+        end      
         cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
         cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
     elseif (args[1] == 'W.Variant' and profile.Sets['Weapon'] ~= nil) then
         cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
         cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
-        varhelper.AdvanceCycle('W.Variant');
+        if (
+            args[2] ~= nil
+            and profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][args[2]] ~= nil
+        ) then
+            varhelper.SetCycle('W.Variant', args[2])
+        else
+            varhelper.AdvanceCycle('W.Variant');
+        end
         cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
         cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]);
     elseif (args[1] == 'Ranged' and profile.Sets['Ranged'] ~= nil) then
@@ -555,9 +576,21 @@ profile.HandleCommand = function(args)
         cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
         cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
         varhelper.DestroyCycle('R.Variant')
-        varhelper.AdvanceCycle('Ranged');
+        if (
+            args[2] ~= nil
+            and profile.Sets['Ranged'][args[2]] ~= nil
+        ) then
+            varhelper.SetCycle('Ranged', args[2])
+        else
+            varhelper.AdvanceCycle('Ranged');
+        end
         varhelper.CreateSetCycle('R.Variant', profile.Sets['Ranged'][varhelper.GetCycle('Ranged')]);
-        if RVarMemory[varhelper.GetCycle('Ranged')] ~= nil then
+        if (
+            args[3] ~= nil
+            and profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][args[3]] ~= nil
+        ) then
+            varhelper.SetCycle('R.Variant', args[3])
+        elseif RVarMemory[varhelper.GetCycle('Ranged')] ~= nil then
             varhelper.SetCycle('R.Variant', RVarMemory[varhelper.GetCycle('Ranged')])
         end
         cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
@@ -565,7 +598,14 @@ profile.HandleCommand = function(args)
     elseif (args[1] == 'R.Variant' and profile.Sets['Ranged'] ~= nil) then
         cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
         cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')], true);
-        varhelper.AdvanceCycle('R.Variant');
+        if (
+            args[2] ~= nil
+            and profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][args[2]] ~= nil
+        ) then
+            varhelper.SetCycle('R.Variant', args[2])
+        else
+            varhelper.AdvanceCycle('R.Variant');
+        end
         cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
         cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
     elseif cortexutils.VarToggles[args[1]] ~= nil then

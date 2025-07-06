@@ -46,56 +46,104 @@ sets['Strategy'] = {
     ['Default'] = {
         Idle = 'Default',
         TP = 'Default',
+        SIRD = true,
+        Weapon = 'Sword',
+        ['W.Variant'] = 'JoyToy',
+        Ranged = 'Bow',
+        ['R.Variant'] = 'Default',
+        Refresh = true,
+    },
+    ['L60'] = {
+        Idle = 'L60',
+        TP = 'L60',
+        SIRD = true,
         Weapon = 'Club',
         ['W.Variant'] = 'L55',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Bibiki',
+        Refresh = true,
     },
     ['L55'] = {
         Idle = 'L55',
         TP = 'L55',
         Weapon = 'Club',
         ['W.Variant'] = 'L55',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Bibiki',
+    },
+    ['L52'] = {
+        Idle = 'L52',
+        TP = 'L52',
+        Weapon = 'Club',
+        ['W.Variant'] = 'L50',
+        Ranged = 'Bow',
+        ['R.Variant'] = 'Empty',
     },
     ['L50'] = {
         Idle = 'L50',
         TP = 'L50',
         Weapon = 'Club',
         ['W.Variant'] = 'L50',
+        Ranged = 'Bow',
+        ['R.Variant'] = 'Empty',
     },
     ['L40'] = {
         Idle = 'L40',
         TP = 'L40',
         Weapon = 'Club',
         ['W.Variant'] = 'L34',
+        Ranged = 'Bow',
+        ['R.Variant'] = 'Empty',
     },
     ['L30'] = {
         Idle = 'L30',
         TP = 'L30',
         Weapon = 'Club',
         ['W.Variant'] = 'L30',
+        Ranged = 'Bow',
+        ['R.Variant'] = 'Empty',
     },
     ['L25'] = {
         Idle = 'L25',
         TP = 'L25',
         Weapon = 'Club',
         ['W.Variant'] = 'L20',
+        Ranged = 'Bow',
+        ['R.Variant'] = 'Empty',
     },
     ['L20'] = {
         Idle = 'L21',
         TP = 'L21',
         Weapon = 'Club',
         ['W.Variant'] = 'L20',
+        Ranged = 'Bow',
+        ['R.Variant'] = 'Empty',
     },
     ['L15'] = {
         Idle = 'L15',
         TP = 'L15',
         Weapon = 'Club',
         ['W.Variant'] = 'L10',
+        Ranged = 'Bow',
+        ['R.Variant'] = 'Empty',
     },
 }
 
 -- Weapons
 sets['Weapon'] = {}
 sets['Weapon']['Sword'] = {}
+sets['Weapon']['Sword']['Dual'] = {
+    Main = 'Espadon',
+    Sub = 'Joyeuse',
+}
+sets['Weapon']['Sword']['JoyToy'] = {
+    Main = 'Joyeuse',
+    Sub = 'Palmerin\'s Shield',
+}
+sets['Weapon']['Sword']['L71'] = {
+    Main = 'Durandal',
+    Sub = 'Palmerin\'s Shield',
+}
 sets['Weapon']['Sword']['L66'] = {
     Main = 'Espadon',
     Sub = 'Ryl.Grd. Shield',
@@ -117,6 +165,14 @@ sets['Weapon']['Sword']['L09'] = {
     Sub = 'Lauan Shield',
 }
 sets['Weapon']['Club'] = {}
+sets['Weapon']['Club']['Dual'] = {
+    Main = 'Club of Trials',
+    Sub = 'Joyeuse',
+}
+sets['Weapon']['Club']['L71'] = {
+    Main = 'Club of Trials',
+    Sub = 'Palmerin\'s Shield',
+}
 sets['Weapon']['Club']['L55'] = {
     Main = 'Kingdom Mace',
     Sub = 'Ryl.Grd. Shield',
@@ -143,11 +199,11 @@ sets['Weapon']['Club']['L20'] = {
 }
 sets['Weapon']['Club']['L16'] = {
     Main = 'Chestnut Club',
-    Sub = 'Lauan Shield',
+    Sub = 'Pelte',
 }
 sets['Weapon']['Club']['L10'] = {
     Main = 'Freesword\'s Club',
-    Sub = 'Lauan Shield',
+    Sub = 'Pelte',
 }
 --sets['Weapon']['Club']['Warp'] = {
 --    Main = 'Warp Cudgel',
@@ -159,6 +215,23 @@ sets['Weapon']['Staff']['Defense'] = {
 sets['Weapon']['Staff']['Signet'] = {
     Main = 'Kgd. Signet Staff',
 }
+sets['Weapon']['Polearm'] = {}
+sets['Weapon']['Polearm']['L53'] = {
+    Main = 'Thundercloud',
+}
+
+sets['Ranged'] = {}
+sets['Ranged']['Throwing'] = {}
+sets['Ranged']['Throwing']['Empty'] = {}
+sets['Ranged']['Throwing']['Bibiki'] = {
+    Ammo = 'Bibiki Seashell',
+}
+sets['Ranged']['Bow'] = {}
+sets['Ranged']['Bow']['Empty'] = {}
+sets['Ranged']['Bow']['Default'] = {
+    Range = 'Lamian Kaman',
+    Ammo = 'Platinum Arrow',
+}
 
 -- HandleDefault
 sets['Default'] = {
@@ -168,39 +241,67 @@ sets['Default'] = {
                 ['Default'] = {
                     Head = 'Gallant Coronet',
                     Neck = 'Van Pendant',
-                    Ear1 = 'Wing Earring',
-                    Ear2 = 'Wing Earring',
-                    Body = 'Ryl.Kgt. Chainmail',
-                    Hands = 'Ryl.Kgt. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ear1 = 'Crimson Earring',
+                    Ear2 = 'Ethereal Earring',
+                    Body = 'Gallant Surcoat',
+                    Hands = 'Gallant Gauntlets',
+                    Ring1 = 'Phalanx Ring',
                     Ring2 = 'Phalanx Ring',
-                    Back = 'Amemet Mantle',
+                    Back = 'Lamia Mantle',
+                    Waist = 'Marid Belt',
+                    Legs = 'Gallant Breeches',
+                    Feet = 'Gallant Leggings',
+                },
+                ['L60'] = {
+                    Head = 'Gallant Coronet',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Wing Earring',
+                    Ear2 = 'Knightly Earring',
+                    Body = 'Gallant Surcoat',
+                    Hands = 'Gallant Gauntlets',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Phalanx Ring',
+                    Back = 'Ram Mantle +1',
                     Waist = 'Ryl.Kgt. Belt',
                     Legs = 'Gallant Breeches',
                     Feet = 'Gallant Leggings',
                 },
                 ['L55'] = {
-                    Head = 'Ryl. Squire\'s Helm',
+                    Head = 'Ryl.Kgt. Bascinet',
                     Neck = 'Van Pendant',
                     Ear1 = 'Wing Earring',
                     Ear2 = 'Wing Earring',
                     Body = 'Ryl.Kgt. Chainmail',
-                    Hands = 'Ryl.Kgt. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Hands = 'Gallant Gauntlets',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Phalanx Ring',
                     Back = 'Ram Mantle +1',
                     Waist = 'Ryl.Kgt. Belt',
                     Legs = 'Ryl.Kgt. Breeches',
                     Feet = 'Gallant Leggings',
                 },
+                ['L52'] = {
+                    Head = 'Ryl. Squire\'s Helm',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Wing Earring',
+                    Ear2 = 'Wing Earring',
+                    Body = 'Parade Cuirass',
+                    Hands = 'Ryl.Kgt. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Phalanx Ring',
+                    Back = 'Ram Mantle +1',
+                    Waist = 'Ryl.Kgt. Belt',
+                    Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Gallant Leggings',
+                },
                 ['L50'] = {
                     Head = 'Ryl. Squire\'s Helm',
                     Neck = 'Van Pendant',
-                    Ear1 = 'Beetle Earring +1',
-                    Ear2 = 'Beetle Earring +1',
-                    Body = 'Ryl.Sqr. Chainmail',
+                    Ear1 = 'Wing Earring',
+                    Ear2 = 'Wing Earring',
+                    Body = 'Parade Cuirass',
                     Hands = 'Ryl.Kgt. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Phalanx Ring',
                     Back = 'Ram Mantle +1',
                     Waist = 'Ryl.Kgt. Belt',
@@ -214,7 +315,7 @@ sets['Default'] = {
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ryl.Sqr. Chainmail',
                     Hands = 'Ryl.Sqr. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Ram Mantle +1',
                     Waist = 'Warrior\'s Belt',
@@ -228,11 +329,11 @@ sets['Default'] = {
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ctr. Scale Mail',
                     Hands = 'Ryl.Sqr. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Ryl.Ftm. Trousers',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
                 ['L25'] = {
@@ -246,7 +347,7 @@ sets['Default'] = {
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Ryl.Ftm. Trousers',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
                 ['L21'] = {
@@ -266,7 +367,7 @@ sets['Default'] = {
                 ['L15'] = {
                     Head = 'Ryl.Ftm. Bandana',
                     Neck = 'Van Pendant',
-                    Body = 'Ryl.Ftm. Vest',
+                    Body = 'Worker Tunica',
                     Hands = 'Battle Gloves',
                     Ring1 = 'San d\'Orian Ring',
                     Ring2 = 'Balance Ring',
@@ -300,11 +401,16 @@ sets['Default'] = {
             },
             ['Working'] = {
                 VarVisible = false,
-                --Body = 'Worker Tunica',
+                Body = 'Worker Tunica',
                 Hands = 'Field Gloves',
                 Legs = 'Field Hose',
                 Feet = 'Worker Boots',
             },
+            ['Refresh'] = {
+                VarVisible = true,
+                Head = '',
+                Body = 'Vermillion Cloak',
+            }
         },
         ['Movement'] = {
             -- Legs = 'Blood Cuisses',
@@ -361,9 +467,9 @@ sets['Default'] = {
         -- Head = 'Dls. Chapeau +1',
         -- Neck = 'Checkered Scarf',
         -- Ear1 = 'Sanative Earring',
-        -- Ear2 = 'Relaxing Earring',
+        Ear2 = 'Boroka Earring',
         -- Body = 'Errant Hpl.',
-        --Body = 'Seer\'s Tunic +1',
+        Body = 'Vermillion Cloak',
         --Legs = 'Baron\'s Slops',
         -- ['Thresholds'] = {
             -- ['MP'] ={
@@ -390,43 +496,85 @@ sets['Default'] = {
                 ['Default'] = {
                     Head = 'Gallant Coronet',
                     Neck = 'Van Pendant',
-                    Ear1 = 'Wing Earring',
-                    Ear2 = 'Wing Earring',
-                    Body = 'Ryl.Kgt. Chainmail',
-                    Hands = 'Ryl.Kgt. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ear1 = 'Crimson Earring',
+                    Ear2 = 'Ethereal Earring',
+                    Body = 'Gallant Surcoat',
+                    Hands = 'Gallant Gauntlets',
+                    Ring1 = 'Phalanx Ring',
+                    Ring2 = 'Phalanx Ring',
+                    Back = 'Lamia Mantle',
+                    Waist = 'Marid Belt',
+                    Legs = 'Gallant Breeches',
+                    Feet = 'Gallant Leggings',                   
+                },
+                ['Balanced'] = {
+                    Head = 'Gallant Coronet',
+                    Neck = 'Chivalrous Chain',
+                    Ear1 = 'Suppanomimi',
+                    Ear2 = 'Ethereal Earring',
+                    Body = 'Gallant Surcoat',
+                    Hands = 'Gallant Gauntlets',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Phalanx Ring',
                     Back = 'Amemet Mantle',
-                    Waist = 'Ryl.Kgt. Belt',
-                    Legs = 'Gallant Breeches',
+                    Waist = 'Marid Belt',
+                    Legs = 'Ryl.Kgt. Breeches',
                     Feet = 'Gallant Leggings',                   
                 },
                 ['DD'] = {
                     Head = 'Ryl.Kgt. Bascinet',
-                    Neck = 'Spike Necklace',
-                    Ear1 = 'Beetle Earring +1',
-                    Ear2 = 'Beetle Earring +1',
-                    Body = 'Ryl.Kgt. Chainmail',
+                    Neck = 'Chivalrous Chain',
+                    Ear1 = 'Suppanomimi',
+                    Ear2 = 'Ethereal Earring',
+                    Body = 'Haubergeon',
                     Hands = 'Ryl.Kgt. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
-                    Back = 'Ram Mantle +1',
+                    Back = 'Amemet Mantle',
                     Waist = 'Ryl.Kgt. Belt',
                     Legs = 'Ryl.Kgt. Breeches',
-                    Feet = 'Leaping Boots',                   
+                    Feet = 'Gallant Leggings',                 
+                },
+                ['L60'] = {
+                    Head = 'Gallant Coronet',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Wing Earring',
+                    Ear2 = 'Knightly Earring',
+                    Body = 'Gallant Surcoat',
+                    Hands = 'Gallant Gauntlets',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Phalanx Ring',
+                    Back = 'Ram Mantle +1',
+                    Waist = 'Ryl.Kgt. Belt',
+                    Legs = 'Gallant Breeches',
+                    Feet = 'Gallant Leggings',
                 },
                 ['L55'] = {
-                    Head = 'Ryl. Squire\'s Helm',
+                    Head = 'Ryl.Kgt. Bascinet',
                     Neck = 'Van Pendant',
                     Ear1 = 'Wing Earring',
                     Ear2 = 'Wing Earring',
                     Body = 'Ryl.Kgt. Chainmail',
-                    Hands = 'Ryl.Kgt. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Hands = 'Gallant Gauntlets',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Phalanx Ring',
                     Back = 'Ram Mantle +1',
                     Waist = 'Ryl.Kgt. Belt',
                     Legs = 'Ryl.Kgt. Breeches',
+                    Feet = 'Gallant Leggings',
+                },
+                ['L52'] = {
+                    Head = 'Ryl. Squire\'s Helm',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Wing Earring',
+                    Ear2 = 'Wing Earring',
+                    Body = 'Parade Cuirass',
+                    Hands = 'Ryl.Kgt. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Phalanx Ring',
+                    Back = 'Ram Mantle +1',
+                    Waist = 'Ryl.Kgt. Belt',
+                    Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Gallant Leggings',
                 },
                 ['L50'] = {
@@ -434,9 +582,9 @@ sets['Default'] = {
                     Neck = 'Van Pendant',
                     Ear1 = 'Wing Earring',
                     Ear2 = 'Wing Earring',
-                    Body = 'Ryl.Sqr. Chainmail',
+                    Body = 'Parade Cuirass',
                     Hands = 'Ryl.Kgt. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Phalanx Ring',
                     Back = 'Ram Mantle +1',
                     Waist = 'Ryl.Kgt. Belt',
@@ -450,7 +598,7 @@ sets['Default'] = {
                     Ear2 = 'Wing Earring',
                     Body = 'Ryl.Sqr. Chainmail',
                     Hands = 'Ryl.Sqr. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Ram Mantle +1',
                     Waist = 'Warrior\'s Belt',
@@ -464,11 +612,11 @@ sets['Default'] = {
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ctr. Scale Mail',
                     Hands = 'Ryl.Sqr. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Ryl.Ftm. Trousers',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',                   
                 },
                 ['L25'] = {
@@ -482,7 +630,7 @@ sets['Default'] = {
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Ryl.Ftm. Trousers',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
                 ['L21'] = {
@@ -502,7 +650,7 @@ sets['Default'] = {
                 ['L15'] = {
                     Head = 'Ryl.Ftm. Bandana',
                     Neck = 'Van Pendant',
-                    Body = 'Ryl.Ftm. Vest',
+                    Body = 'Worker Tunica',
                     Hands = 'Battle Gloves',
                     Ring1 = 'San d\'Orian Ring',
                     Ring2 = 'Balance Ring',
@@ -523,6 +671,12 @@ sets['Default'] = {
                     Legs = 'Brass Subligar',
                     Feet = 'Leaping Boots',                    
                 },
+            },
+        },
+        ['VarToggles'] = {
+            ['BRefresh'] = {
+                Head = '',
+                Body = 'Vermillion Cloak',
             },
         },
     },
@@ -551,11 +705,30 @@ sets['Default'] = {
 
 -- HandlePrecast
 sets['Precast'] = {
+    ['Alpha'] = {
+        Head = 'Walahra Turban',
+    },
+    ['Healing Magic'] = {
+        Head = 'Gallant Coronet',
+        Body = 'Gallant Surcoat',
+    }
 }
 
 -- HandleMidcast
 sets['MidcastIdle'] = {
-    ['Alpha'] = sets['Default']['Idle']
+    ['Alpha'] = sets['Default'],
+    ['Omega'] = {
+        Head = 'Gallant Coronet',
+        Body = 'Gallant Surcoat',
+        Hands = 'Gallant Gauntlets',
+        Legs = 'Gallant Breeches',
+        Feet = 'Gallant Leggings',
+        ['VarToggles'] = {
+            ['SIRD'] = {
+                Ear2 = 'Knightly Earring',
+            },
+        },
+    },
 }
 
 -- Hastecast
@@ -566,6 +739,11 @@ local HasteCast = {
 }
 sets['Midcast'] = {
     ['Alpha'] = {
+        Head = 'Walahra Turban',
+        Body = 'Gallant Surcoat',
+        Hands = 'Gallant Gauntlets',
+        Legs = 'Gallant Breeches',
+        Feet = 'Gallant Leggings',
     },
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
@@ -581,11 +759,11 @@ sets['Midcast'] = {
     ['Healing Magic'] = {
         Head = 'Gallant Coronet',
         Neck = 'Justice Badge',
-        Hands = 'Zealot\'s Mitts',
+        --Hands = 'Zealot\'s Mitts',
     },
     ['Enhancing Magic'] = {
         Neck = 'Justice Badge',
-        Hands = 'Zealot\'s Mitts',
+        --Hands = 'Zealot\'s Mitts',
         Legs = 'Gallant Breeches',
     },
     ['Dark Magic'] = {
@@ -597,88 +775,6 @@ sets['Midcast'] = {
     ['Elemental Magic'] = {
     },
     ['Omega'] = {
-        ['Elemental'] = {
-            -- ['Element'] = {
-                -- ['Fire'] = {
-                    -- Main = 'Vulcan\'s Staff',
-                -- },
-                -- ['Earth'] = {
-                    -- Main = 'Terra\'s Staff',
-                -- },
-                -- ['Water'] = {
-                    -- Main = 'Neptune\'s Staff',
-                -- },
-                -- ['Wind'] = {
-                    -- Main = 'Auster\'s Staff',
-                -- },
-                -- ['Ice'] = {
-                    -- Main = 'Aquilo\'s Staff',
-                -- },
-                -- ['Thunder'] = {
-                    -- Main = 'Jupiter\'s Staff',
-                -- },
-                -- ['Light'] = {
-                    -- Main = 'Apollo\'s Staff',
-                -- },
-                -- ['Dark'] = {
-                    -- Main = 'Pluto\'s Staff',
-                -- },
-            -- },
-            -- ['Day'] = {
-                -- ClashCheck = true,
-                -- ['Fire'] = {
-                    -- Waist = 'Karin Obi',
-                -- },
-                -- ['Earth'] = {
-                    -- Waist = 'Dorin Obi',
-                -- },
-                -- ['Water'] = {
-                    -- Waist = 'Suirin Obi',
-                -- },
-                -- ['Wind'] = {
-                    -- Waist = 'Furin Obi',
-                -- },
-                -- ['Ice'] = {
-                    -- Waist = 'Hyorin Obi',
-                -- },
-                -- ['Thunder'] = {
-                    -- Waist = 'Rairin Obi',
-                -- },
-                -- ['Light'] = {
-                    -- Waist = 'Korin Obi',
-                -- },
-                -- ['Dark'] = {
-                    -- Waist = 'Anrin Obi',
-                -- },
-            -- },
-            -- ['Weather'] = {
-                -- ClashCheck = true,
-                -- ['Fire'] = {
-                    -- Waist = 'Karin Obi',
-                -- },
-                -- ['Earth'] = {
-                    -- Waist = 'Dorin Obi',
-                -- },
-                -- ['Water'] = {
-                    -- Waist = 'Suirin Obi',
-                -- },
-                -- ['Wind'] = {
-                    -- Waist = 'Furin Obi',
-                -- },
-                -- ['Ice'] = {
-                    -- Waist = 'Hyorin Obi',
-                -- },
-                -- ['Thunder'] = {
-                    -- Waist = 'Rairin Obi',
-                -- },
-                -- ['Light'] = {
-                    -- Waist = 'Korin Obi',
-                -- },
-                -- ['Dark'] = {
-                    -- Waist = 'Anrin Obi',
-                -- },
-            -- },
-        },
         ['Haste'] = HasteCast,
         ['Refresh'] = HasteCast,
         ['Regen'] = HasteCast,
@@ -697,17 +793,58 @@ sets['Midshot'] = {
 }
 
 -- HandleAbility
+local EnmityBase = {
+    Head = 'Gallant Coronet',
+    Body = 'Gallant Surcoat',
+    Hands = 'Gallant Gauntlets',
+    Legs = 'Gallant Breeches',
+    Feet = 'Gallant Leggings',
+}
 sets['Ability'] = {
+    ['Alpha'] = EnmityBase,
+    ['Provoke'] = EnmityBase,
+    ['Holy Circle'] = {
+        Feet = 'Gallant Leggings',
+    },
+    ['Shield Bash'] = {
+        Ear2 = 'Knightly Earring',
+    },
 }
 
 -- HandleWeaponSkill
+local WS_STR_LT60 = {
+    Head = 'Ryl.Kgt. Bascinet',
+    Neck = 'Spike Necklace',
+    Ear1 = 'Beetle Earring +1',
+    Ear2 = 'Beetle Earring +1',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
+    Back = 'Traveler\'s Mantle',
+    Waist = 'Brave Belt',
+    Legs = 'Ryl.Kgt. Breeches',
+    Feet = 'Leaping Boots',
+}
+local WS_STR_MND_LT60 = {
+    Head = 'Gallant Coronet',
+    Ear1 = 'Beetle Earring +1',
+    Ear2 = 'Beetle Earring +1',
+    Hands = 'Lgn. Mittens',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
+    Back = 'Traveler\'s Mantle',
+    Waist = 'Brave Belt',
+    Legs = 'Ryl.Kgt. Breeches',
+    Feet = 'Leaping Boots',
+}
 local WS_STR = {
     Head = 'Ryl.Kgt. Bascinet',
     Neck = 'Spike Necklace',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
-    Ring1 = 'San d\'Orian Ring',
+    Body = 'Haubergeon',
+    Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
+    Back = 'Amemet Mantle',
     Waist = 'Brave Belt',
     Legs = 'Ryl.Kgt. Breeches',
     Feet = 'Leaping Boots',
@@ -716,20 +853,44 @@ local WS_STR_MND = {
     Head = 'Gallant Coronet',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
+    Body = 'Haubergeon',
     Hands = 'Lgn. Mittens',
-    Ring1 = 'San d\'Orian Ring',
+    Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
+    Back = 'Amemet Mantle',
     Waist = 'Brave Belt',
     Legs = 'Ryl.Kgt. Breeches',
     Feet = 'Leaping Boots',
 }
 sets['WeaponSkill'] = {
-    ['Alpha'] = WS_STR,
-    ['Moonlight'] = WS_STR_MND,
-    ['Seraph Strike'] = WS_STR_MND,
+    ['Thresholds'] = {
+        ['MainJobSync'] = {
+            ['LE60'] = {
+                threshold = 60,
+                operator = '<=',
+                ['gear'] = {
+                    ['Alpha'] = WS_STR_LT60,
+                    ['Moonlight'] = WS_STR_MND_LT60,
+                    ['Seraph Strike'] = WS_STR_MND_LT60,
+                },
+            },
+            ['GT60'] = {
+                threshold = 60,
+                operator = '>',
+                ['gear'] = {
+                    ['Alpha'] = WS_STR,
+                    ['Moonlight'] = WS_STR_MND,
+                    ['Seraph Strike'] = WS_STR_MND,
+                },
+            },
+        },
+    },
 }
 -- HandleItem
 sets['Item'] = {
+    ['Orange Juice'] = {
+        Legs = 'Dream Trousers +1',
+    }
 }
 
 profile.Sets = sets;

@@ -42,22 +42,70 @@ sets['Strategy'] = {
         TP = 'Default',
         TPSwaps = false,
         Weapon = 'Katana',
+        ['W.Variant'] = 'L26',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Shuriken',
+    },
+    ['L24'] = {
+        Idle = 'L24',
+        TP = 'L24',
+        TPSwaps = false,
+        Weapon = 'Katana',
+        ['W.Variant'] = 'L24',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Shuriken',
+    },
+    ['L21'] = {
+        Idle = 'L21',
+        TP = 'L21',
+        TPSwaps = false,
+        Weapon = 'Katana',
+        ['W.Variant'] = 'L19',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Shuriken',
+    },
+    ['L19'] = {
+        Idle = 'L17',
+        TP = 'L17',
+        TPSwaps = false,
+        Weapon = 'Katana',
+        ['W.Variant'] = 'L19',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Shuriken',
+    },
+    ['L15'] = {
+        Idle = 'L15',
+        TP = 'L15',
+        TPSwaps = false,
+        Weapon = 'Katana',
         ['W.Variant'] = 'L13',
         Ranged = 'Throwing',
-        ['R.Variant'] = 'Dart',
+        ['R.Variant'] = 'Shuriken',
     },
 }
 
 -- Weapons
 sets['Weapon'] = {}
 sets['Weapon']['Katana'] = {}
-sets['Weapon']['Katana']['L07'] = {
-    Main = 'Wakizashi',
-    Sub = 'Wakizashi',
+sets['Weapon']['Katana']['L26'] = {
+    Main = 'Busuto',
+    Sub = 'Busuto',
+}
+sets['Weapon']['Katana']['L24'] = {
+    Main = 'Hibari',
+    Sub = 'Hibari',
+}
+sets['Weapon']['Katana']['L19'] = {
+    Main = 'Suzume',
+    Sub = 'Suzume',
 }
 sets['Weapon']['Katana']['L13'] = {
     Main = 'Shinobi-Gatana',
     Sub = 'Shinobi-Gatana',
+}
+sets['Weapon']['Katana']['L07'] = {
+    Main = 'Wakizashi',
+    Sub = 'Wakizashi',
 }
 sets['Weapon']['H2H'] = {}
 sets['Weapon']['H2H']['L10'] = {
@@ -71,6 +119,10 @@ sets['Weapon']['Club']['None'] = {}
 sets['Weapon']['Club']['Warp'] = {
     Main = 'Warp Cudgel',
 }
+sets['Weapon']['Club']['L19'] = {
+    Main = 'Chestnut Club',
+    Sub = 'Suzume',
+}
 sets['Weapon']['Staff'] = {}
 sets['Weapon']['Staff']['None'] = {}
 sets['Weapon']['Staff']['Signet'] = {
@@ -79,6 +131,9 @@ sets['Weapon']['Staff']['Signet'] = {
 
 sets['Ranged'] = {}
 sets['Ranged']['Throwing'] = {}
+sets['Ranged']['Throwing']['Shuriken'] = {
+    Ammo = 'Shuriken',
+}
 sets['Ranged']['Throwing']['Pebble'] = {
     Ammo = 'Pebble',
 }
@@ -106,21 +161,57 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['Idle'] = {
                 ['Default'] = {
-                    Head = 'Ryl.Ftm. Bandana',
+                    Head = 'Emperor Hairpin',
                     Neck = 'Van Pendant',
-                    Body = 'Ryl.Ftm. Vest',
+                    Body = 'Chainmail',
+                    Hands = 'Ryl.Sqr. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L24'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Van Pendant',
+                    Body = 'Chainmail',
                     Hands = 'Guerilla Gloves',
                     Ring1 = 'San d\'Orian Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Brass Subligar',
+                    Legs = 'Ryl.Ftm. Trousers',
+                    Feet = 'Leaping Boots',
+                },
+                ['L21'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Van Pendant',
+                    Body = 'Beetle Harness',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt',
+                    Legs = 'Ryl.Ftm. Trousers',
+                    Feet = 'Leaping Boots',
+                },
+                ['L17'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Van Pendant',
+                    Body = 'Worker Tunica',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt',
+                    Legs = 'Lizard Trousers',
                     Feet = 'Leaping Boots',
                 },
                 ['L15'] = {
                     Head = 'Ryl.Ftm. Bandana',
                     Neck = 'Van Pendant',
-                    Body = 'Ryl.Ftm. Vest',
+                    Body = 'Worker Tunica',
                     Hands = 'Guerilla Gloves',
                     Ring1 = 'San d\'Orian Ring',
                     Ring2 = 'Balance Ring',
@@ -153,7 +244,7 @@ sets['Default'] = {
             },
             ['Working'] = {
                 VarVisible = false,
-                --Body = 'Worker Tunica',
+                Body = 'Worker Tunica',
                 Hands = 'Field Gloves',
                 Legs = 'Field Hose',
                 Feet = 'Worker Boots',
@@ -216,21 +307,57 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['TP'] = {
                 ['Default'] = {
-                    Head = 'Ryl.Ftm. Bandana',
-                    Neck = 'Van Pendant',
-                    Body = 'Ryl.Ftm. Vest',
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Spike Necklace',
+                    Body = 'Chainmail',
+                    Hands = 'Ryl.Sqr. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L24'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Spike Necklace',
+                    Body = 'Chainmail',
                     Hands = 'Guerilla Gloves',
                     Ring1 = 'San d\'Orian Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Brass Subligar',
+                    Legs = 'Ryl.Ftm. Trousers',
+                    Feet = 'Leaping Boots',
+                },
+                ['L21'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Van Pendant',
+                    Body = 'Beetle Harness',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt',
+                    Legs = 'Ryl.Ftm. Trousers',
+                    Feet = 'Leaping Boots',
+                },
+                ['L17'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Van Pendant',
+                    Body = 'Worker Tunica',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt',
+                    Legs = 'Lizard Trousers',
                     Feet = 'Leaping Boots',
                 },
                 ['L15'] = {
                     Head = 'Ryl.Ftm. Bandana',
                     Neck = 'Van Pendant',
-                    Body = 'Ryl.Ftm. Vest',
+                    Body = 'Worker Tunica',
                     Hands = 'Guerilla Gloves',
                     Ring1 = 'San d\'Orian Ring',
                     Ring2 = 'Balance Ring',
@@ -276,18 +403,40 @@ sets['Precast'] = {
     },
 }
 
--- HandlePrecast
+-- HandleMidcast
+sets['MidcastIdle'] = {
+    ['Alpha'] = sets['Default']['Idle']
+}
+
+-- HandleMidcast
+local NinNuke = {
+    Ring1 = 'Eremite\'s Ring',
+    Ring2 = 'Eremite\'s Ring',
+}
 sets['Midcast'] = {
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
+            Ring1 = 'Eremite\'s Ring',
+            Ring2 = 'Eremite\'s Ring',
         },
     },
     ['White Magic'] = {
         ['Enfeebling Magic'] = {
+            Neck = 'Justice Badge',
         },
     },
     ['Healing Magic'] = {
         Neck = 'Justice Badge',
+    },
+    ['Utsesumi: Ichi'] = {
+        Ring1 = 'San d\'Orian Ring',
+    },
+    ['Utsesumi: Ni'] = {
+        Ring1 = 'San d\'Orian Ring',
+    },
+    ['Ninjutsu'] = {
+        Ring1 = 'Eremite\'s Ring',
+        Ring2 = 'Eremite\'s Ring',
     },
 }
 
@@ -320,20 +469,24 @@ local WS_STR = {
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
     Hands = 'Lgn. Mittens',
-    Ring1 = 'Courage Ring',
+    Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
+    Back = 'Traveler\'s Mantle',
     Waist = 'Brave Belt',
     Legs = 'Republic Subligar',
+    Feet = 'Leaping Boots',
 }
 local WS_STR_VIT = {
     Neck = 'Spike Necklace',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
     Hands = 'Lgn. Mittens',
-    Ring1 = 'Courage Ring',
+    Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
+    Back = 'Traveler\'s Mantle',
     Waist = 'Brave Belt',
     Legs = 'Republic Subligar',
+    Feet = 'Leaping Boots',
 }
 sets['WeaponSkill'] = {
     ['Alpha'] = WS_STR,

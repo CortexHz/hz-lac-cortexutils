@@ -176,7 +176,7 @@ varhelper.Initialize = function()
         local visible = true
 		for i, key in ipairs(COrder) do
             value = Cycles[key]
-            if value ~= nil and (Visibility[key] == nil or Visibility[key]) then
+            if value ~= nil and (Visibility[key] == nil or Visibility[key]) and value.Array[value.Index] ~= nil then
                 outText = outText .. '\n' .. key .. ': ' .. '|cFF00FF00|' .. value.Array[value.Index] .. '|r';
             end
 		end

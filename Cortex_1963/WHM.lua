@@ -368,6 +368,9 @@ sets['WeaponSkill'] = {
 
 -- HandleItem
 sets['Item'] = {
+    ['Orange Juice'] = {
+        Legs = 'Dream Trousers +1',
+    }
 }
 
 profile.Sets = sets;

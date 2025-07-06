@@ -48,7 +48,7 @@ sets['Strategy'] = {
         TP = 'Default',
         TPSwaps = false,
         Weapon = 'GreatAxe',
-        ['W.Variant'] = 'L50',
+        ['W.Variant'] = 'L56',
         Ranged = 'XBow',
         ['R.Variant'] = 'Default',
     },
@@ -57,26 +57,31 @@ sets['Strategy'] = {
 -- Weapons
 sets['Weapon'] = {}
 sets['Weapon']['GreatAxe'] = {}
-sets['Weapon']['GreatAxe']['L05'] = {
-    Main = 'Butterfly Axe',
-    Sub = 'Tenax Strap',
-}
-sets['Weapon']['GreatAxe']['L12'] = {
-    Main = 'Greataxe',
-    Sub = 'Tenax Strap',
-}
-sets['Weapon']['GreatAxe']['L30'] = {
-    Main = 'Centurion\'s Axe',
-    Sub = 'Tenax Strap',
-}
-sets['Weapon']['GreatAxe']['L39'] = {
-    Main = 'Huge Moth Axe',
+sets['Weapon']['GreatAxe']['L56'] = {
+    Main = 'Schwarz Axt',
     Sub = 'Tenax Strap',
 }
 sets['Weapon']['GreatAxe']['L50'] = {
     Main = 'Gigant Axe',
     Sub = 'Tenax Strap',
 }
+sets['Weapon']['GreatAxe']['L39'] = {
+    Main = 'Huge Moth Axe',
+    Sub = 'Tenax Strap',
+}
+sets['Weapon']['GreatAxe']['L30'] = {
+    Main = 'Centurion\'s Axe',
+    Sub = 'Tenax Strap',
+}
+sets['Weapon']['GreatAxe']['L12'] = {
+    Main = 'Greataxe',
+    Sub = 'Tenax Strap',
+}
+sets['Weapon']['GreatAxe']['L05'] = {
+    Main = 'Butterfly Axe',
+    Sub = 'Tenax Strap',
+}
+
 sets['Weapon']['Axe'] = {}
 sets['Weapon']['Axe']['L32'] = {
     Main = 'Warrior\'s Axe',
@@ -91,12 +96,15 @@ sets['Weapon']['Axe']['L10'] = {
     Sub = 'Lauan Shield',
 }
 sets['Weapon']['Polearm'] = {}
-sets['Weapon']['Polearm']['L18'] = {
-    Main = 'Ryl.Spr. Spear',
-    Sub = 'Tenax Strap',
+sets['Weapon']['Polearm']['L53'] = {
+    Main = 'Thundercloud',
 }
 sets['Weapon']['Polearm']['L30'] = {
     Main = 'Ryl.Sqr. Halberd',
+    Sub = 'Tenax Strap',
+}
+sets['Weapon']['Polearm']['L18'] = {
+    Main = 'Ryl.Spr. Spear',
     Sub = 'Tenax Strap',
 }
 sets['Weapon']['GreatSword'] = {}
@@ -149,13 +157,13 @@ sets['Default'] = {
                     Neck = 'Spike Necklace',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
-                    Body = 'Ryl.Sqr. Chainmail',
+                    Body = 'Ryl.Kgt. Chainmail',
                     Hands = 'Ryl.Kgt. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
-                    Back = 'Ram Mantle +1',
-                    Waist = 'Ryl.Kgt. Belt',
-                    Legs = 'Ryl.Sqr. Breeches',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Life Belt',
+                    Legs = 'Ryl.Kgt. Breeches',
                     Feet = 'Leaping Boots',
                 },
                 ['Defense'] = {
@@ -163,13 +171,13 @@ sets['Default'] = {
                     Neck = 'Spike Necklace',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
-                    Body = 'Ryl.Sqr. Chainmail',
-                    Hands = 'Ryl.Sqr. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Body = 'Ryl.Kgt. Chainmail',
+                    Hands = 'Ryl.Kgt. Mufflers',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Ryl.Sqr. Breeches',
+                    Legs = 'Ryl.Kgt. Breeches',
                     Feet = 'Leaping Boots',
                 },
                 ['L40'] = {
@@ -179,7 +187,7 @@ sets['Default'] = {
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ryl.Sqr. Chainmail',
                     Hands = 'Ryl.Sqr. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
@@ -193,11 +201,11 @@ sets['Default'] = {
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ctr. Scale Mail',
                     Hands = 'Ryl.Sqr. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Ryl.Ftm. Trousers',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
                 ['L21'] = {
@@ -309,13 +317,13 @@ sets['Default'] = {
                     Neck = 'Spike Necklace',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
-                    Body = 'Ryl.Sqr. Chainmail',
+                    Body = 'Ryl.Kgt. Chainmail',
                     Hands = 'Ryl.Kgt. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
-                    Back = 'Ram Mantle +1',
-                    Waist = 'Ryl.Kgt. Belt',
-                    Legs = 'Ryl.Sqr. Breeches',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Life Belt',
+                    Legs = 'Ryl.Kgt. Breeches',
                     Feet = 'Leaping Boots',
                 },
                 ['L40'] = {
@@ -325,11 +333,11 @@ sets['Default'] = {
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ryl.Sqr. Chainmail',
                     Hands = 'Ryl.Sqr. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Ryl.Sqr. Breeches',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
                 ['L30'] = {
@@ -339,11 +347,11 @@ sets['Default'] = {
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ctr. Scale Mail',
                     Hands = 'Ryl.Sqr. Mufflers',
-                    Ring1 = 'San d\'Orian Ring',
+                    Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt',
-                    Legs = 'Ryl.Ftm. Trousers',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
                 ['L21'] = {
@@ -437,20 +445,22 @@ local WS_STR = {
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
     Hands = 'Lgn. Mittens',
-    Ring1 = 'Courage Ring',
+    Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
-    Waist = 'Brave Belt',
-    Legs = 'Republic Subligar',
+    Back = 'Traveler\'s Mantle',
+    Waist = 'Ryl.Kgt. Belt',
+    Legs = 'Ryl.Kgt. Breeches',
 }
 local WS_STR_VIT = {
     Neck = 'Spike Necklace',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
     Hands = 'Lgn. Mittens',
-    Ring1 = 'Courage Ring',
+    Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
-    Waist = 'Brave Belt',
-    Legs = 'Republic Subligar',
+    Back = 'Traveler\'s Mantle',
+    Waist = 'Ryl.Kgt. Belt',
+    Legs = 'Ryl.Kgt. Breeches',
 }
 sets['WeaponSkill'] = {
     ['Alpha'] = WS_STR,

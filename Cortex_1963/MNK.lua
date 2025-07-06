@@ -323,6 +323,7 @@ local WS_STR = {
     Hands = 'Lgn. Mittens',
     Ring1 = 'Courage Ring',
     Ring2 = 'Courage Ring',
+    Back = 'Traveler\'s Mantle',
     Waist = 'Brave Belt',
     Legs = 'Republic Subligar',
 }
@@ -333,6 +334,7 @@ local WS_STR_VIT = {
     Hands = 'Lgn. Mittens',
     Ring1 = 'Courage Ring',
     Ring2 = 'Courage Ring',
+    Back = 'Traveler\'s Mantle',
     Waist = 'Brave Belt',
     Legs = 'Republic Subligar',
 }
