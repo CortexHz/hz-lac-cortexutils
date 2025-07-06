@@ -2,6 +2,15 @@
 
 Author:  Cortex of Eventide/HorizonXI
 
+With LuAshitaCast loaded:
+https://github.com/ThornyFFXI/LuAshitacast/tree/main
+
+```
+/addon load luashitacast
+/lac newlua
+```
+(this will setup the config dir for your user)
+
 Install to:
 
 `...game/config/addons/luashitacast/common/`
@@ -179,7 +188,7 @@ sets['Default'] = {
     },
 }
 ```
-(these keys can but may find limited elsewhere)
+(these keys can but may find limited use elsewhere)
 
 The `Pet` section, can be a pet ability (i.e. macc equip like above) or pet name (like for equiping HQ staffs with summons)..
 
@@ -372,25 +381,21 @@ A section to Force a set early, i.e. for HP down
 sets['Precast'] = {
     ['Force'] = {
         ['Elemental Magic'] = {
-            ['VarToggles'] = {
-                ['SorcRing'] = {
-                    ['Thresholds'] = {
-                        ['HPP'] = {
-                            ['HPDown'] = {
-                                threshold = 75,
-                                operator = '>',     
-                                ['gear'] = {
-                                    -- put -HP gear here
-                                    Head = 'Zenith Crown',
-                                    Neck = 'Checkered Scarf',
-                                    Ring1 = 'Ether Ring',
-                                    Ring2 = 'Astral Ring',
-                                    Back = 'Blue Cape +1',
-                                    Waist = 'Penitent\'s Rope',
-                                    Legs = 'Zenith Slacks',
-                                    Feet = 'Rostrum Pumps',
-                                },
-                            },
+            ['Thresholds'] = {
+                ['HPP'] = {
+                    ['HPDown'] = {
+                        threshold = 75,
+                        operator = '>',     
+                        ['gear'] = {
+                            -- put -HP gear here
+                            Head = 'Zenith Crown',
+                            Neck = 'Checkered Scarf',
+                            Ring1 = 'Ether Ring',
+                            Ring2 = 'Astral Ring',
+                            Back = 'Blue Cape +1',
+                            Waist = 'Penitent\'s Rope',
+                            Legs = 'Zenith Slacks',
+                            Feet = 'Rostrum Pumps',
                         },
                     },
                 },
