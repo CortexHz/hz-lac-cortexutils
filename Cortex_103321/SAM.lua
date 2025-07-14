@@ -173,15 +173,15 @@ sets['Precast'] = {
     },
 }
 
--- HandlePrecast
+-- HandleMidcast
 sets['Midcast'] = {
 }
 
--- HandlePrecast
+-- HandlePreshot
 sets['Preshot'] = {
 }
 
--- HandlePrecast
+-- HandleMidshot
 sets['Midshot'] = {
     Ring1 = 'Beetle Ring +1',
     Ring2 = 'Beetle Ring +1',

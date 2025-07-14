@@ -462,7 +462,7 @@ cortexutils.GetCastDelay = function(action)
     elseif player.MainJob == "RDM" then
         cast_reduction = cast_reduction + 0.2
     end
-    if player.MainJob == "WHM" then
+    if player.MainJob == "WHM" or player.MainJob == "PLD" then
         if (string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga')) then
             for key, val in pairs(equip_data) do
                 --print(key..": "..val.Name)
@@ -631,7 +631,7 @@ profile.HandleDefault = function()
     end
     local player = gData.GetPlayer()
     local equip_set = {}
-    if player.Status ~= 'Resting' then
+    if player.Status == 'Engaged' or player.Status == 'Idle' then
         if profile.Sets['Weapon'] ~= nil then
             equip_set = cortexutils.ApplySets(
                 equip_set,

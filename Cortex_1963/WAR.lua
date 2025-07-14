@@ -401,7 +401,7 @@ sets['Precast'] = {
     },
 }
 
--- HandlePrecast
+-- HandleMidcast
 sets['Midcast'] = {
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
