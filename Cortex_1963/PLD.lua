@@ -46,12 +46,14 @@ sets['Strategy'] = {
     ['Default'] = {
         Idle = 'Default',
         TP = 'Default',
-        SIRD = true,
         Weapon = 'Sword',
         ['W.Variant'] = 'JoyToy',
         Ranged = 'Bow',
         ['R.Variant'] = 'Default',
+        Resist = 'None',
+        SIRD = true,
         Refresh = true,
+        BQRing = true,
     },
     ['L60'] = {
         Idle = 'L60',
@@ -61,7 +63,10 @@ sets['Strategy'] = {
         ['W.Variant'] = 'L55',
         Ranged = 'Throwing',
         ['R.Variant'] = 'Bibiki',
+        Resist = 'None',
+        SIRD = true,
         Refresh = true,
+        BQRing = true,
     },
     ['L55'] = {
         Idle = 'L55',
@@ -70,6 +75,10 @@ sets['Strategy'] = {
         ['W.Variant'] = 'L55',
         Ranged = 'Throwing',
         ['R.Variant'] = 'Bibiki',
+        Resist = 'None',
+        SIRD = false,
+        Refresh = false,
+        BQRing = true,
     },
     ['L52'] = {
         Idle = 'L52',
@@ -78,6 +87,10 @@ sets['Strategy'] = {
         ['W.Variant'] = 'L50',
         Ranged = 'Bow',
         ['R.Variant'] = 'Empty',
+        Resist = 'None',
+        SIRD = false,
+        Refresh = false,
+        BQRing = false,
     },
     ['L50'] = {
         Idle = 'L50',
@@ -86,6 +99,10 @@ sets['Strategy'] = {
         ['W.Variant'] = 'L50',
         Ranged = 'Bow',
         ['R.Variant'] = 'Empty',
+        Resist = 'None',
+        SIRD = false,
+        Refresh = false,
+        BQRing = false,
     },
     ['L40'] = {
         Idle = 'L40',
@@ -94,6 +111,10 @@ sets['Strategy'] = {
         ['W.Variant'] = 'L34',
         Ranged = 'Bow',
         ['R.Variant'] = 'Empty',
+        Resist = 'None',
+        SIRD = false,
+        Refresh = false,
+        BQRing = false,
     },
     ['L30'] = {
         Idle = 'L30',
@@ -102,6 +123,10 @@ sets['Strategy'] = {
         ['W.Variant'] = 'L30',
         Ranged = 'Bow',
         ['R.Variant'] = 'Empty',
+        Resist = 'None',
+        SIRD = false,
+        Refresh = false,
+        BQRing = false,
     },
     ['L25'] = {
         Idle = 'L25',
@@ -110,6 +135,10 @@ sets['Strategy'] = {
         ['W.Variant'] = 'L20',
         Ranged = 'Bow',
         ['R.Variant'] = 'Empty',
+        Resist = 'None',
+        SIRD = false,
+        Refresh = false,
+        BQRing = false,
     },
     ['L20'] = {
         Idle = 'L21',
@@ -118,6 +147,10 @@ sets['Strategy'] = {
         ['W.Variant'] = 'L20',
         Ranged = 'Bow',
         ['R.Variant'] = 'Empty',
+        Resist = 'None',
+        SIRD = false,
+        Refresh = false,
+        BQRing = false,
     },
     ['L15'] = {
         Idle = 'L15',
@@ -126,6 +159,10 @@ sets['Strategy'] = {
         ['W.Variant'] = 'L10',
         Ranged = 'Bow',
         ['R.Variant'] = 'Empty',
+        Resist = 'None',
+        SIRD = false,
+        Refresh = false,
+        BQRing = false,
     },
 }
 
@@ -232,6 +269,33 @@ sets['Ranged']['Bow']['Default'] = {
     Range = 'Lamian Kaman',
     Ammo = 'Platinum Arrow',
 }
+sets['Ranged']['Fishing'] = {}
+sets['Ranged']['Fishing']['Tarutaru'] = {
+    Range = 'Tarutaru F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Hume'] = {
+    Range = 'Hume Fishing Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+        },
+    },
+}
 
 -- HandleDefault
 sets['Default'] = {
@@ -250,7 +314,7 @@ sets['Default'] = {
                     Back = 'Lamia Mantle',
                     Waist = 'Marid Belt',
                     Legs = 'Gallant Breeches',
-                    Feet = 'Gallant Leggings',
+                    Feet = 'Glt. Leggings +1',
                 },
                 ['L60'] = {
                     Head = 'Gallant Coronet',
@@ -392,8 +456,6 @@ sets['Default'] = {
         ['VarToggles'] = {
             ['Fishing'] = {
                 VarVisible = false,
-                Ammo = '',
-                Range = 'Tarutaru F. Rod',
                 Body = 'Fsh. Tunica',
                 Hands = 'Fsh. Gloves',
                 Legs = 'Angler\'s Hose',
@@ -505,7 +567,7 @@ sets['Default'] = {
                     Back = 'Lamia Mantle',
                     Waist = 'Marid Belt',
                     Legs = 'Gallant Breeches',
-                    Feet = 'Gallant Leggings',                   
+                    Feet = 'Glt. Leggings +1',                   
                 },
                 ['Balanced'] = {
                     Head = 'Gallant Coronet',
@@ -519,7 +581,7 @@ sets['Default'] = {
                     Back = 'Amemet Mantle',
                     Waist = 'Marid Belt',
                     Legs = 'Ryl.Kgt. Breeches',
-                    Feet = 'Gallant Leggings',                   
+                    Feet = 'Glt. Leggings +1',                   
                 },
                 ['DD'] = {
                     Head = 'Ryl.Kgt. Bascinet',
@@ -533,7 +595,7 @@ sets['Default'] = {
                     Back = 'Amemet Mantle',
                     Waist = 'Ryl.Kgt. Belt',
                     Legs = 'Ryl.Kgt. Breeches',
-                    Feet = 'Gallant Leggings',                 
+                    Feet = 'Glt. Leggings +1',                 
                 },
                 ['L60'] = {
                     Head = 'Gallant Coronet',
@@ -675,6 +737,7 @@ sets['Default'] = {
         },
         ['VarToggles'] = {
             ['BRefresh'] = {
+                VarVisible = false,
                 Head = '',
                 Body = 'Vermillion Cloak',
             },
@@ -693,6 +756,33 @@ sets['Default'] = {
             ['Sneak'] = {
                 VarVisible = false,
                 Feet = 'Dream Boots +1',
+            },
+            ['BQRing'] = {
+                VarVisible = false,
+                Ring2 = 'Bomb Queen Ring',
+            },
+        },
+        ['VarCycles'] = {
+            ['Resist'] = {
+                ['None'] = {},
+                ['Earth'] = {
+                },
+                ['Wind'] = {
+                },
+                ['Ice'] = {
+                    Ear1 = 'Crimson Earring',
+                },
+                ['Fire'] = {
+                    Ear1 = 'Crimson Earring',
+                },
+                ['Water'] = {
+                },
+                ['Thunder'] = {
+                },
+                ['Light'] = {
+                },
+                ['Dark'] = {
+                },
             },
         },
         ['Buff'] = {
@@ -722,10 +812,11 @@ sets['MidcastIdle'] = {
     ['Alpha'] = sets['Default'],
     ['Omega'] = {
         Head = 'Gallant Coronet',
+        Ear1 = 'Buckler Earring',
         Body = 'Gallant Surcoat',
         Hands = 'Kng. Handschuhs',
         Legs = 'Gallant Breeches',
-        Feet = 'Gallant Leggings',
+        Feet = 'Glt. Leggings +1',
         ['VarToggles'] = {
             ['SIRD'] = {
                 Ear2 = 'Knightly Earring',
@@ -741,9 +832,9 @@ sets['Midcast'] = {
         Head = 'Walahra Turban',
         Ear1 = 'Loquac. Earring',
         Body = 'Gallant Surcoat',
-        Hands = 'Gallant Gauntlets',
+        Hands = 'Kng. Handschuhs',
         Legs = 'Gallant Breeches',
-        Feet = 'Gallant Leggings',
+        Feet = 'Glt. Leggings +1',
     },
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
@@ -843,7 +934,6 @@ local WS_STR = {
     Back = 'Amemet Mantle',
     Waist = 'Brave Belt',
     Legs = 'Ryl.Kgt. Breeches',
-    Feet = 'Leaping Boots',
 }
 local WS_STR_MND = {
     Head = 'Gallant Coronet',
@@ -856,7 +946,6 @@ local WS_STR_MND = {
     Back = 'Amemet Mantle',
     Waist = 'Brave Belt',
     Legs = 'Ryl.Kgt. Breeches',
-    Feet = 'Leaping Boots',
 }
 sets['WeaponSkill'] = {
     ['Thresholds'] = {

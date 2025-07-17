@@ -127,6 +127,7 @@ sets['Weapon']['Staff']['Signet'] = {
 
 sets['Ranged'] = {}
 sets['Ranged']['Throwing'] = {}
+sets['Ranged']['Throwing']['None'] = {}
 sets['Ranged']['Throwing']['L15'] = {
     Range = 'Rogetsurin',
 }

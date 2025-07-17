@@ -14,6 +14,13 @@ local function ForceEquipSet()
 end
 local varhelper = gFunc.LoadFile('common/varhelpermod.lua');
 
+local StringToBool = {
+    ['true'] = true,
+    ['True'] = true,
+    ['false'] = false,
+    ['False'] = false,
+}
+
 cortexutils = {};
 
 cortexutils.ApplySets = function(equip_set, in_set, action, is_pet)
@@ -609,9 +616,22 @@ profile.HandleCommand = function(args)
         cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
         cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
     elseif cortexutils.VarToggles[args[1]] ~= nil then
-        varhelper.AdvanceToggle(args[1]);
+        if (
+            args[2] ~= nil
+            and type(StringToBool[args[2]]) == 'boolean'
+        ) then
+            varhelper.SetToggle(args[1], StringToBool[args[2]])
+        else
+            varhelper.AdvanceToggle(args[1]);
+        end
     elseif cortexutils.VarCycles[args[1]] ~= nil then
-        varhelper.AdvanceCycle(args[1]);
+        if (
+            args[2] ~= nil
+        ) then
+            varhelper.SetCycle(args[1], args[2])
+        else
+            varhelper.AdvanceCycle(args[1]);
+        end
     elseif (args[1] == 'Strategy') then
         if (
             args[2] ~= nil
