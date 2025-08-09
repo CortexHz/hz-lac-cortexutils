@@ -277,7 +277,7 @@ sets['Midcast'] = {
             Ring1 = 'Tamas Ring',
             Ring2 = 'Aqua Ring',
             Back = 'Prism Cape',
-            Waist = 'Friar\'s Rope',
+            Waist = 'Penitent\'s Rope',
             Legs = 'Nashira Seraweels',
             Feet = 'Dls. Boots +1',
         },
