@@ -8,21 +8,21 @@ local profile = gFunc.LoadFile('common/cortexutils.lua');
 
 local sets = {
     ['export'] = {
-        Main = 'Shellbuster',
-        Sub = 'Msk.Cmd. Falchion',
-        Range = 'Rogetsurin',
-        Head = { Name = 'Emperor Hairpin', Augment = { [1] = 'Accuracy+3', [2] = 'DEX+5' } },
-        Neck = { Name = 'Spike Necklace', Augment = { [1] = 'STR+5', [2] = 'Accuracy+3' } },
-        Ear1 = { Name = 'Beetle Earring +1', Augment = 'STR+5' },
-        Ear2 = { Name = 'Beetle Earring +1', Augment = 'STR+5' },
-        Body = 'Ryl.Kgt. Aketon',
-        Hands = 'Battle Gloves',
-        Ring1 = { Name = 'Rajas Ring', Augment = { [1] = 'STR+5', [2] = 'Accuracy+3' } },
-        Ring2 = { Name = 'Balance Ring', Augment = 'DEX+5' },
-        Back = { Name = 'Traveler\'s Mantle', Augment = { [1] = 'STR+5', [2] = 'Evasion+3' } },
-        Waist = 'Warrior\'s Belt +1',
-        Legs = 'Republic Subligar',
-        Feet = { Name = 'Leaping Boots', Augment = { [1] = 'Accuracy+3', [2] = 'DEX+5' } },
+        Main = 'Caliburn',
+        Sub = { Name = 'Genbu\'s Shield', Augment = { [1] = 'STR+5', [2] = 'Accuracy+3' } },
+        Range = { Name = 'Rogetsurin', Augment = 'STR+5' },
+        Head = { Name = 'Homam Zucchetto', Augment = 'STR+5' },
+        Neck = { Name = 'Chivalrous Chain', Augment = { [1] = 'STR+5', [2] = 'Accuracy+3' } },
+        Ear1 = { Name = 'Ethereal Earring', Augment = 'VIT+5' },
+        Ear2 = { Name = 'Brutal Earring', Augment = { [1] = 'STR+5', [2] = 'Accuracy+3' } },
+        Body = 'Mirage Jubbah',
+        Hands = { Name = 'Homam Manopolas', Augment = { [1] = 'STR+5', [2] = 'Accuracy+3' } },
+        Ring1 = { Name = 'Phalanx Ring', Augment = { [1] = 'VIT+5', [2] = 'Accuracy+3' } },
+        Ring2 = { Name = 'Phalanx Ring', Augment = { [1] = 'VIT+5', [2] = 'Accuracy+3' } },
+        Back = { Name = 'Lamia Mantle', Augment = { [1] = 'VIT+5', [2] = '"Cure" spellcasting time -3%' } },
+        Waist = { Name = 'Marid Belt', Augment = 'VIT+5' },
+        Legs = 'Crimson Cuisses',
+        Feet = { Name = 'Crimson Greaves', Augment = { [1] = 'VIT+5', [2] = 'Accuracy+3' } },
     },
     ['Export'] = {
         Main = 'Brass Dagger',
@@ -128,11 +128,11 @@ sets['Strategy'] = {
 sets['Weapon'] = {}
 sets['Weapon']['Sword'] = {}
 sets['Weapon']['Sword']['Shield'] = {
-    Main = 'Ifrit\'s Blade',
+    Main = 'Caliburn',
     Sub = 'Genbu\'s Shield',
 }
 sets['Weapon']['Sword']['L71'] = {
-    Main = 'Sapara of Trials',
+    Main = 'Caliburn',
     Sub = 'Ifrit\'s Blade',
 }
 sets['Weapon']['Sword']['SL55'] = {
@@ -815,7 +815,7 @@ BluMids['Physical'] = {
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Magus Jubbah +1',
-        Hands = 'Lgn. Mittens',
+        Hands = 'Homam Manopolas',
         Ring1 = 'Hope Ring',
         Ring2 = 'Hope Ring',
         Back = 'Amemet Mantle +1',
@@ -829,7 +829,7 @@ BluMids['Physical'] = {
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Magus Jubbah +1',
-        Hands = 'Lgn. Mittens',
+        Hands = 'Homam Manopolas',
         Ring1 = 'Rajas Ring',
         Ring2 = 'Courage Ring',
         Back = 'Amemet Mantle +1',
@@ -857,7 +857,7 @@ BluMids['Physical'] = {
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Magus Jubbah +1',
-        Hands = 'Lgn. Mittens',
+        Hands = 'Mirage Bazubands',
         Ring1 = 'Rajas Ring',
         Ring2 = 'Courage Ring',
         Back = 'Amemet Mantle +1',
@@ -871,7 +871,7 @@ BluMids['Physical'] = {
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Magus Jubbah +1',
-        Hands = 'Lgn. Mittens',
+        Hands = 'Homam Manopolas',
         Ring1 = 'Rajas Ring',
         Ring2 = 'Courage Ring',
         Back = 'Amemet Mantle +1',

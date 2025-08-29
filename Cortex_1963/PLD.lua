@@ -55,6 +55,18 @@ sets['Strategy'] = {
         Refresh = false,
         BQRing = true,
     },
+    ['Kite'] = {
+        Idle = 'Kite',
+        TP = 'Default',
+        Weapon = 'Staff',
+        ['W.Variant'] = 'Defense',
+        Ranged = 'Bow',
+        ['R.Variant'] = 'Default',
+        Resist = 'None',
+        SIRD = true,
+        Refresh = false,
+        BQRing = true,
+    },
     ['Merit'] = {
         Idle = 'Default',
         TP = 'Balanced',
@@ -182,7 +194,7 @@ sets['Strategy'] = {
 sets['Weapon'] = {}
 sets['Weapon']['Sword'] = {}
 sets['Weapon']['Sword']['Dual'] = {
-    Main = 'Hrotti',
+    Main = 'Caliburn',
     Sub = 'Joyeuse',
 }
 sets['Weapon']['Sword']['JoyToy'] = {
@@ -263,7 +275,8 @@ sets['Weapon']['Club']['L10'] = {
 --}
 sets['Weapon']['Staff'] = {}
 sets['Weapon']['Staff']['Defense'] = {
-    Main = 'Terra\'s Staff',
+    Main = 'Earth Staff',
+    Sub = 'Spear Strap',
 }
 sets['Weapon']['Staff']['Signet'] = {
     Main = 'Kgd. Signet Staff',
@@ -347,6 +360,20 @@ sets['Default'] = {
                     Waist = 'Marid Belt',
                     Legs = 'Glt. Breeches +1',
                     Feet = 'Glt. Leggings +1',
+                },
+                ['Kite'] = {
+                    Head = 'Koenig Schaller',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Loquac. Earring',
+                    Ear2 = 'Ethereal Earring',
+                    Body = 'Koenig Cuirass',
+                    Hands = 'Kng. Handschuhs',
+                    Ring1 = 'Phalanx Ring',
+                    Ring2 = 'Phalanx Ring',
+                    Back = 'Lamia Mantle',
+                    Waist = 'Marid Belt',
+                    Legs = 'Crimson Cuisses',
+                    Feet = 'Crimson Greaves',
                 },
                 ['L60'] = {
                     Head = 'Gallant Coronet',
@@ -909,7 +936,7 @@ local JAEnmityBase = {
     Head = 'Aegishjalmr',
     Body = 'Gallant Surcoat',
     Hands = 'Valor Gauntlets',
-    Legs = 'Glt. Breeches +1',
+    Legs = 'Valor Breeches',
     Feet = 'Valor Leggings',
 }
 sets['Ability'] = {
