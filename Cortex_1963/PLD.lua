@@ -54,6 +54,7 @@ sets['Strategy'] = {
         SIRD = true,
         Refresh = false,
         BQRing = true,
+        JellyRing = true,
     },
     ['Kite'] = {
         Idle = 'Kite',
@@ -66,6 +67,7 @@ sets['Strategy'] = {
         SIRD = true,
         Refresh = false,
         BQRing = true,
+        JellyRing = true,
     },
     ['Merit'] = {
         Idle = 'Default',
@@ -78,6 +80,7 @@ sets['Strategy'] = {
         SIRD = true,
         Refresh = true,
         BQRing = false,
+        JellyRing = false,
     },
     ['L60'] = {
         Idle = 'L60',
@@ -90,7 +93,8 @@ sets['Strategy'] = {
         Resist = 'None',
         SIRD = true,
         Refresh = true,
-        BQRing = true,
+        BQRing = false,
+        JellyRing = false,
     },
     ['L55'] = {
         Idle = 'L55',
@@ -102,7 +106,8 @@ sets['Strategy'] = {
         Resist = 'None',
         SIRD = false,
         Refresh = false,
-        BQRing = true,
+        BQRing = false,
+        JellyRing = false,
     },
     ['L52'] = {
         Idle = 'L52',
@@ -115,6 +120,7 @@ sets['Strategy'] = {
         SIRD = false,
         Refresh = false,
         BQRing = false,
+        JellyRing = false,
     },
     ['L50'] = {
         Idle = 'L50',
@@ -127,6 +133,7 @@ sets['Strategy'] = {
         SIRD = false,
         Refresh = false,
         BQRing = false,
+        JellyRing = false,
     },
     ['L40'] = {
         Idle = 'L40',
@@ -139,6 +146,7 @@ sets['Strategy'] = {
         SIRD = false,
         Refresh = false,
         BQRing = false,
+        JellyRing = false,
     },
     ['L30'] = {
         Idle = 'L30',
@@ -151,6 +159,7 @@ sets['Strategy'] = {
         SIRD = false,
         Refresh = false,
         BQRing = false,
+        JellyRing = false,
     },
     ['L25'] = {
         Idle = 'L25',
@@ -163,6 +172,7 @@ sets['Strategy'] = {
         SIRD = false,
         Refresh = false,
         BQRing = false,
+        JellyRing = false,
     },
     ['L20'] = {
         Idle = 'L21',
@@ -175,6 +185,7 @@ sets['Strategy'] = {
         SIRD = false,
         Refresh = false,
         BQRing = false,
+        JellyRing = false,
     },
     ['L15'] = {
         Idle = 'L15',
@@ -187,6 +198,7 @@ sets['Strategy'] = {
         SIRD = false,
         Refresh = false,
         BQRing = false,
+        JellyRing = false,
     },
 }
 
@@ -309,6 +321,15 @@ sets['Ranged']['Fishing']['Tarutaru'] = {
         },
     },
 }
+sets['Ranged']['Zeni'] = {}
+sets['Ranged']['Zeni']['Normal'] = {
+    Range = 'Soultrapper',
+    Ammo = 'Blank Soulplate',
+}
+sets['Ranged']['Zeni']['2000'] = {
+    Range = 'Soultrapper 2000',
+    Ammo = 'Blank Soulplate',
+}
 sets['Ranged']['Fishing']['Hume'] = {
     Range = 'Hume Fishing Rod',
     ['VarCycles'] = {
@@ -358,7 +379,7 @@ sets['Default'] = {
                     Ring2 = 'Phalanx Ring',
                     Back = 'Lamia Mantle',
                     Waist = 'Marid Belt',
-                    Legs = 'Glt. Breeches +1',
+                    Legs = 'Koenig Diechlings',
                     Feet = 'Glt. Leggings +1',
                 },
                 ['Kite'] = {
@@ -553,9 +574,11 @@ sets['Default'] = {
         -- Head = 'Dls. Chapeau +1',
         -- Neck = 'Checkered Scarf',
         -- Ear1 = 'Sanative Earring',
+        Ear1 = 'Relaxing Earring',
         Ear2 = 'Boroka Earring',
         -- Body = 'Errant Hpl.',
         -- Body = 'Vermillion Cloak',
+        Waist = 'Hierarch Belt',
         --Legs = 'Baron\'s Slops',
         -- ['Thresholds'] = {
             -- ['MP'] ={
@@ -590,7 +613,7 @@ sets['Default'] = {
                     Ring2 = 'Phalanx Ring',
                     Back = 'Lamia Mantle',
                     Waist = 'Marid Belt',
-                    Legs = 'Glt. Breeches +1',
+                    Legs = 'Koenig Diechlings',
                     Feet = 'Glt. Leggings +1',                   
                 },
                 ['Balanced'] = {
@@ -785,35 +808,53 @@ sets['Default'] = {
                 VarVisible = false,
                 Ring2 = 'Bomb Queen Ring',
             },
+            ['JellyRing'] = {
+                VarVisible = false,
+                Ring1 = 'Jelly Ring',
+            },
+            ['Trials'] = {
+                Main = 'Sapara of Trials',
+            }
         },
         ['VarCycles'] = {
             ['Resist'] = {
                 ['None'] = {},
                 ['Earth'] = {
+                    Body = 'Crm. Scale Mail',
                     Feet = 'Crimson Greaves',
                 },
                 ['Wind'] = {
+                    Body = 'Crm. Scale Mail',
                     Feet = 'Crimson Greaves',
                 },
                 ['Ice'] = {
                     Ear1 = 'Crimson Earring',
+                    Body = 'Crm. Scale Mail',
                     Feet = 'Crimson Greaves',
                 },
                 ['Fire'] = {
                     Ear1 = 'Crimson Earring',
+                    Body = 'Crm. Scale Mail',
                     Legs = 'Crimson Cuisses',
                 },
                 ['Water'] = {
+                    Body = 'Crm. Scale Mail',
                     Legs = 'Crimson Cuisses',
                 },
                 ['Thunder'] = {
+                    Body = 'Crm. Scale Mail',
                     Legs = 'Crimson Cuisses',
                 },
                 ['Light'] = {
+                    Body = 'Crm. Scale Mail',
                     Feet = 'Crimson Greaves',
                 },
                 ['Dark'] = {
+                    Body = 'Crm. Scale Mail',
                     Legs = 'Crimson Cuisses',
+                },
+                ['Breath'] = {
+                    Body = 'Crm. Scale Mail',
                 },
             },
         },
@@ -871,11 +912,12 @@ local BluMids = {}
 BluMids['Physical'] = {}
 BluMids['Physical']['CHR'] = {
     Head = 'Koenig Schaller',
-    --Body = 'Koenig Cuirass',
+    Body = 'Koenig Cuirass',
     Hands = 'Kng. Handschuhs',
     Ring1 = 'Hope Ring',
     Ring2 = 'Hope Ring',
     Waist = 'Ryl.Kgt. Belt',
+    Legs = 'Koenig Diechlings',
 }
 sets['Midcast'] = {
     ['Alpha'] = {
@@ -884,7 +926,7 @@ sets['Midcast'] = {
         Body = 'Koenig Cuirass',
         Hands = 'Homam Manopolas',
         Waist = 'Speed Belt',
-        Legs = 'Glt. Breeches +1',
+        Legs = 'Koenig Diechlings',
         Feet = 'Valor Leggings',
     },
     ['Black Magic'] = {

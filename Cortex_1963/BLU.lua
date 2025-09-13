@@ -51,6 +51,7 @@ sets['Strategy'] = {
         Ranged = 'Throwing',
         ['R.Variant'] = 'L15',
         Refresh = false,
+        TPSwaps = true,
     },
     ['Shield'] = {
         Idle = 'Default',
@@ -61,6 +62,7 @@ sets['Strategy'] = {
         Ranged = 'Throwing',
         ['R.Variant'] = 'L15',
         Refresh = false,
+        TPSwaps = true,
     },
     ['L55'] = {
         Idle = 'L55',
@@ -71,6 +73,7 @@ sets['Strategy'] = {
         Ranged = 'Throwing',
         ['R.Variant'] = 'L15',
         Refresh = false,
+        TPSwaps = true,
     },
     ['L30'] = {
         Idle = 'L30',
@@ -81,6 +84,7 @@ sets['Strategy'] = {
         Ranged = 'Throwing',
         ['R.Variant'] = 'L15',
         Refresh = false,
+        TPSwaps = false,
     },
     ['L25'] = {
         Idle = 'L25',
@@ -91,6 +95,7 @@ sets['Strategy'] = {
         Ranged = 'Throwing',
         ['R.Variant'] = 'L15',
         Refresh = false,
+        TPSwaps = false,
     },
     ['L21'] = {
         Idle = 'L21',
@@ -101,6 +106,7 @@ sets['Strategy'] = {
         Ranged = 'Throwing',
         ['R.Variant'] = 'L15',
         Refresh = false,
+        TPSwaps = false,
     },
     ['L15'] = {
         Idle = 'L15',
@@ -111,6 +117,7 @@ sets['Strategy'] = {
         Ranged = 'Throwing',
         ['R.Variant'] = 'L15',
         Refresh = false,
+        TPSwaps = false,
     },
     ['L12'] = {
         Idle = 'L13',
@@ -121,6 +128,7 @@ sets['Strategy'] = {
         Ranged = 'Throwing',
         ['R.Variant'] = 'None',
         Refresh = false,
+        TPSwaps = false,
     },
 }
 
@@ -172,11 +180,11 @@ sets['Weapon']['Sword']['L01'] = {
 }
 sets['Weapon']['Club'] = {}
 sets['Weapon']['Club']['Shield'] = {
-    Main = 'Titan\'s Cudgel',
+    Main = 'Kerykeion',
     Sub = 'Genbu\'s Shield',
 }
 sets['Weapon']['Club']['L71'] = {
-    Main = 'Titan\'s Cudgel',
+    Main = 'Kerykeion',
     Sub = 'Ifrit\'s Blade',
 }
 sets['Weapon']['Club']['L55'] = {
@@ -489,9 +497,17 @@ sets['Default'] = {
         },
     },
     ['Resting'] = {
+        ['VarToggles'] = {
+            ['TPSwaps'] = {
+                Main = 'Dark Staff',
+                Sub = 'Spear Strap',
+            },
+        },
+        Ear1 = 'Relaxing Earring',
         Ear2 = 'Boroka Earring',
         -- Body = 'Errant Hpl.',
         Body = 'Mirage Jubbah',
+        Waist = 'Hierarch Belt',
     },
     ['Engaged'] = {
         ['VarCycles'] = {
@@ -746,11 +762,11 @@ local BluMids = {}
 BluMids['Physical'] = {
     ['CHR_LE60'] = {
         Head = 'Noble\'s Ribbon',
-        Neck = 'Bird Whistle',
+        Neck = 'Spike Necklace',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Hands = 'Lgn. Mittens',
-        Ring1 = 'Hope Ring',
+        Ring1 = 'Rajas Ring',
         Ring2 = 'Hope Ring',
         Back = 'Traveler\'s Mantle',
         Waist = 'Corsette +1',
@@ -810,7 +826,7 @@ BluMids['Physical'] = {
         Feet = 'Leaping Boots',
     },
     ['CHR'] = {
-        Head = 'Homam Zucchetto',
+        Head = 'Mirage Keffiyeh',
         Neck = 'Bird Whistle',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
@@ -824,7 +840,7 @@ BluMids['Physical'] = {
         Feet = 'Mirage Charuqs',
     },
     ['STR'] = {
-        Head = 'Homam Zucchetto',
+        Head = 'Mirage Keffiyeh',
         Neck = 'Spike Necklace',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
@@ -838,7 +854,7 @@ BluMids['Physical'] = {
         Feet = 'Mirage Charuqs',
     },
     ['STRMND'] = {
-        Head = 'Homam Zucchetto',
+        Head = 'Mirage Keffiyeh',
         Neck = 'Justice Badge',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
@@ -852,7 +868,7 @@ BluMids['Physical'] = {
         Feet = 'Mirage Charuqs',
     },
     ['DEX'] = {
-        Head = 'Homam Zucchetto',
+        Head = 'Mirage Keffiyeh',
         Neck = 'Spike Necklace',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
@@ -866,7 +882,7 @@ BluMids['Physical'] = {
         Feet = 'Mirage Charuqs',
     },
     ['AGI'] = {
-        Head = 'Emperor Hairpin',
+        Head = 'Mirage Keffiyeh',
         Neck = 'Spike Necklace',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
@@ -880,7 +896,7 @@ BluMids['Physical'] = {
         Feet = 'Mirage Charuqs',
     },
     ['STRVITDEF'] = {
-        Head = 'Homam Zucchetto',
+        Head = 'Mirage Keffiyeh',
         Neck = 'Chivalrous Chain',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
@@ -898,10 +914,13 @@ BluMids['Physical'] = {
 BluMids['Magical'] = {
     ['Healing'] = {
         Neck = 'Justice Badge',
+        Body = 'Crm. Scale Mail',
         Hands = 'Mirage Bazubands',
     },
     ['MAttMND'] = {
+        Head = 'Mirage Keffiyeh',
         Neck = 'Justice Badge',
+        Body = 'Magus Jubbah +1',
         Hands = 'Mirage Bazubands',
         Ear2 = 'Moldavite Earring',
         Legs = 'Mirage Shalwar',
@@ -954,6 +973,7 @@ sets['Midcast'] = {
                     ['Bludgeon'] = BluMids['Physical']['CHR'],
                     ['Cannonball'] = BluMids['Physical']['STRVITDEF'],
                     ['Death Scissors'] = BluMids['Physical']['STR'],
+                    ['Disseverment'] = BluMids['Physical']['STR'],
                     ['Frenetic Rip'] = BluMids['Physical']['STR'],
                     ['Head Butt'] = BluMids['Physical']['STR'],
                     ['Jet Stream'] = BluMids['Physical']['AGI'],
@@ -963,6 +983,102 @@ sets['Midcast'] = {
                     ['Sickle Slash'] = BluMids['Physical']['DEX'],
                     ['Uppercut'] = BluMids['Physical']['STR'],
                     ['Vertical Cleave'] = BluMids['Physical']['STR'],
+                },
+            },
+        },
+    },
+    ['Omega'] = {
+        ['VarToggles'] = {
+            ['TPSwaps'] = {
+                ['Elemental'] = {
+                    ['Element'] = {
+                        ['Fire'] = {
+                            --Main = 'Vulcan\'s Staff',
+                            --Sub = 'Spear Strap',
+                        },
+                        ['Earth'] = {
+                            Main = 'Earth Staff',
+                            Sub = 'Spear Strap',
+                        },
+                        ['Water'] = {
+                            --Main = 'Neptune\'s Staff',
+                            --Sub = 'Spear Strap',
+                        },
+                        ['Wind'] = {
+                            --Main = 'Auster\'s Staff',
+                            --Sub = 'Spear Strap',
+                        },
+                        ['Ice'] = {
+                            --Main = 'Aquilo\'s Staff',
+                            --Sub = 'Spear Strap',
+                        },
+                        ['Thunder'] = {
+                            --Main = 'Jupiter\'s Staff',
+                            --Sub = 'Spear Strap',
+                        },
+                        ['Light'] = {
+                            --Main = 'Apollo\'s Staff',
+                            --Sub = 'Spear Strap',
+                        },
+                        ['Dark'] = {
+                            Main = 'Dark Staff',
+                            Sub = 'Spear Strap',
+                        },
+                    },
+                    ['Day'] = {
+                        ClashCheck = true,
+                        ['Fire'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Earth'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Water'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Wind'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Ice'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Thunder'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Light'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Dark'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                    },
+                    ['Weather'] = {
+                        ClashCheck = true,
+                        ['Fire'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Earth'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Water'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Wind'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Ice'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Thunder'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Light'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                        ['Dark'] = {
+                            Waist = 'Hachirin-no-Obi',
+                        },
+                    },
                 },
             },
         },
