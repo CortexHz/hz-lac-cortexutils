@@ -31,7 +31,7 @@ sets['Strategy'] = {
         Idle = 'Default',
         TP = 'Default',
         Weapon = 'Club',
-        ['W.Variant'] = 'L32',
+        ['W.Variant'] = 'L27',
     },
 }
 
@@ -42,54 +42,127 @@ sets['Weapon']['Staff']['Defense'] = {
     Main = 'Terra\'s Staff',
 }
 sets['Weapon']['Club'] = {}
+sets['Weapon']['Club']['L36'] = {
+    Main = 'Oak Cudgel +1',
+    Sub = "Centurion\'s Sword",
+}
+sets['Weapon']['Club']['L30'] = {
+    Main = 'Ryl.Sqr. Mace',
+    Sub = 'Ryl.Sqr. Mace',
+}
+sets['Weapon']['Club']['L27'] = {
+    Main = 'Mace',
+    Sub = 'Bone Cudgel',
+}
+sets['Weapon']['Club']['L20'] = {
+    Main = 'Mace',
+    Sub = 'Yew Wand',
+}
 sets['Weapon']['Club']['L18'] = {
-    Main = 'Yew Wand +1',
-    Sub = 'Tropical Shield',
+    Main = 'Yew Wand',
+    Sub = 'Pelte',
 }
-sets['Weapon']['Club']['L32'] = {
-    Main = 'Solid Wand',
-    Sub = 'Tropical Shield',
+sets['Weapon']['Club']['L09'] = {
+    Main = 'Willow Wand',
+    Sub = 'Pelte',
 }
-sets['Weapon']['Club']['Attack'] = {
-    Main = 'Bronze Hammer +1',
-    Sub = 'Tropical Shield',
+
+sets['Ranged'] = {}
+sets['Ranged']['Fishing'] = {}
+sets['Ranged']['Fishing']['Tarutaru'] = {
+    Range = 'Tarutaru F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+        },
+    },
 }
---sets['Weapon']['Club']['Warp'] = {
---    Main = 'Warp Cudgel',
---}
+sets['Ranged']['Fishing']['Hume'] = {
+    Range = 'Hume Fishing Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Halcyon'] = {
+    Range = 'Halcyon Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+        },
+    },
+}
 
 -- HandleDefault
 sets['Default'] = {
     ['Idle'] = {
         ['VarCycles'] = {
             ['Idle'] = {
-                ['Defense'] = {
-                    Head = 'Silver Hairpin +1',
+                ['Default'] = {
+                    Head = 'Silver Hairpin',
                     Neck = 'Justice Badge',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
-                    Body = 'Seer\'s Tunic +1',
-                    Hands = 'Devotee\'s Mitts',
-                    Ring1 = 'Astral Ring',
+                    Body = 'Worker Tunica',
+                    Hands = 'Zealot\'s Mitts',
+                    Ring1 = 'Tamas Ring',
                     Ring2 = 'Astral Ring',
-                    Back = 'Mist Silk Cape',
+                    Back = 'Cape',
                     Waist = 'Friar\'s Rope',
-                    Legs = 'Seer\'s Slacks +1',
-                    Feet = 'Mgn. M Ledelsens',
+                    Legs = 'Linen Slops',
+                    Feet = 'Worker Boots',  
                 },
                 ['L20'] = {
-                    Head = 'Silver Hairpin +1',
+                    Head = 'Silver Hairpin',
                     Neck = 'Justice Badge',
-                    Ear1 = 'Energy Earring +1',
-                    Ear2 = 'Energy Earring +1',
-                    Body = 'Baron\'s Saio',
-                    Hands = 'Baron\'s Cuffs',
+                    Body = 'Worker Tunica',
+                    Hands = 'Zealot\'s Mitts',
                     Ring1 = 'Astral Ring',
                     Ring2 = 'Astral Ring',
-                    Back = 'Mist Silk Cape',
+                    Back = 'Cape',
                     Waist = 'Friar\'s Rope',
-                    Legs = 'Baron\'s Slops',
-                    Feet = 'Mage\'s Sandals',
+                    Legs = 'Linen Slops',
+                    Feet = 'Worker Boots', 
+                },
+                ['L15'] = {
+                    Head = 'Silver Hairpin',
+                    Neck = 'Justice Badge',
+                    Body = 'Worker Tunica',
+                    Hands = 'Zealot\'s Mitts',
+                    Ring1 = 'Astral Ring',
+                    Ring2 = 'Astral Ring',
+                    Back = 'Cape',
+                    Waist = 'Friar\'s Rope',
+                    Legs = 'Linen Slops',
+                    Feet = 'Worker Boots',                     
+                },
+                ['L13'] = {
+                    Neck = 'Justice Badge',
+                    Body = 'Ryl.Ftm. Tunic',
+                    Hands = 'Zealot\'s Mitts',
+                    Ring1 = 'Astral Ring',
+                    Ring2 = 'Astral Ring',
+                    Back = 'Cape',
+                    Waist = 'Friar\'s Rope',
+                    Legs = 'Dream Trousers +1',
+                    Feet = 'Dream Boots +1',                   
                 },
             },
         },
@@ -193,12 +266,70 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['TP'] = {
                 ['Default'] = {
-                    
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Justice Badge',
+                    Body = 'Worker Tunica',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Tamas Ring',
+                    Ring1 = 'Rajas Ring',
+                    Back = 'Mist Silk Cape',
+                    Waist = 'Friar\'s Rope',
+                    Legs = 'Linen Slops',
+                    Feet = 'Worker Boots',
+                },
+                ['L20'] = {
+                    Head = 'Silver Hairpin',
+                    Neck = 'Justice Badge',
+                    Body = 'Worker Tunica',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Astral Ring',
+                    Ring2 = 'Astral Ring',
+                    Back = 'Mist Silk Cape',
+                    Waist = 'Friar\'s Rope',
+                    Legs = 'Linen Slops',
+                    Feet = 'Worker Boots',
+                },
+                ['L15'] = {
+                    Head = 'Silver Hairpin',
+                    Neck = 'Justice Badge',
+                    Body = 'Worker Tunica',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Astral Ring',
+                    Ring2 = 'Astral Ring',
+                    Back = 'Mist Silk Cape',
+                    Waist = 'Friar\'s Rope',
+                    Legs = 'Linen Slops',
+                    Feet = 'Worker Boots',                       
+                },
+                ['L13'] = {
+                    Neck = 'Justice Badge',
+                    Body = 'Ryl.Ftm. Tunic',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Astral Ring',
+                    Back = 'Mist Silk Cape',
+                    Waist = 'Friar\'s Rope',
+                    Legs = 'Dream Trousers +1',
+                    Feet = 'Dream Boots +1',                   
                 },
             },
         },
     },
-    ['Omega'] = {   
+    ['Omega'] = {
+        ['VarToggles'] = {
+            ['Warp'] = {
+                VarVisible = false,
+                Ring2 = 'Warp Ring',
+            },
+            ['ExpRing'] = {
+                VarVisible = false,
+                Ring2 = 'Empress Band',
+            },
+            ['Sneak'] = {
+                VarVisible = false,
+                Feet = 'Dream Boots +1',
+            },
+        },
     },
 }
 
@@ -228,10 +359,12 @@ sets['Midcast'] = {
     ['White Magic'] = {
         ['Enfeebling Magic'] = {
             Neck = 'Justice Badge',
+            Hands = 'Zealot\'s Mitts',
         },
     },
     ['Healing Magic'] = {
         Neck = 'Justice Badge',
+        Hands = 'Zealot\'s Mitts',
     },
     ['Enhancing Magic'] = {
         Neck = 'Justice Badge',
@@ -342,6 +475,8 @@ sets['Midcast'] = {
         ['Protect IV'] = HasteCast,
         ['Shell IV'] = HasteCast,
         ['Stun'] = HasteCast,
+        ['Sneak'] = {Back = 'Skulker\'s Cape'},
+        ['Invisible'] = {Back = 'Skulker\'s Cape'},
     },
 }
 

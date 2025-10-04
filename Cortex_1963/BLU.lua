@@ -8,7 +8,7 @@ local profile = gFunc.LoadFile('common/cortexutils.lua');
 
 local sets = {
     ['export'] = {
-        Main = 'Caliburn',
+        Main = 'Excalibur',
         Sub = { Name = 'Genbu\'s Shield', Augment = { [1] = 'STR+5', [2] = 'Accuracy+3' } },
         Range = { Name = 'Rogetsurin', Augment = 'STR+5' },
         Head = { Name = 'Homam Zucchetto', Augment = 'STR+5' },
@@ -44,21 +44,21 @@ local sets = {
 sets['Strategy'] = {
     ['Default'] = {
         Idle = 'Default',
-        TP = 'Default',
+        TP = 'Shield',
         TPSwaps = false,
-        Weapon = 'Club',
-        ['W.Variant'] = 'L71',
+        Weapon = 'Sword',
+        ['W.Variant'] = 'Shield',
         Ranged = 'Throwing',
         ['R.Variant'] = 'L15',
         Refresh = false,
         TPSwaps = true,
     },
-    ['Shield'] = {
+    ['Dual'] = {
         Idle = 'Default',
-        TP = 'Shield',
+        TP = 'Default',
         TPSwaps = false,
-        Weapon = 'Sword',
-        ['W.Variant'] = 'Shield',
+        Weapon = 'Club',
+        ['W.Variant'] = 'L71',
         Ranged = 'Throwing',
         ['R.Variant'] = 'L15',
         Refresh = false,
@@ -136,11 +136,11 @@ sets['Strategy'] = {
 sets['Weapon'] = {}
 sets['Weapon']['Sword'] = {}
 sets['Weapon']['Sword']['Shield'] = {
-    Main = 'Caliburn',
+    Main = 'Excalibur',
     Sub = 'Genbu\'s Shield',
 }
 sets['Weapon']['Sword']['L71'] = {
-    Main = 'Caliburn',
+    Main = 'Excalibur',
     Sub = 'Ifrit\'s Blade',
 }
 sets['Weapon']['Sword']['SL55'] = {
@@ -307,7 +307,7 @@ sets['Default'] = {
                     Body = 'Mirage Jubbah',
                     Hands = 'Homam Manopolas',
                     Ring1 = 'Phalanx Ring',
-                    Ring2 = 'Phalanx Ring',
+                    Ring2 = 'Defending Ring',
                     Back = 'Lamia Mantle',
                     Waist = 'Marid Belt',
                     Legs = 'Crimson Cuisses',
@@ -520,10 +520,10 @@ sets['Default'] = {
                     Body = 'Mirage Jubbah',
                     Hands = 'Homam Manopolas',
                     Ring1 = 'Rajas Ring',
-                    Ring2 = 'Balance Ring',
+                    Ring2 = 'Defending Ring',
                     Back = 'Amemet Mantle +1',
                     Waist = 'Speed Belt',
-                    Legs = 'Mirage Shalwar',
+                    Legs = 'Homam Cosciales',
                     Feet = 'Mirage Charuqs',
                 },
                 ['Shield'] = {
@@ -534,10 +534,10 @@ sets['Default'] = {
                     Body = 'Mirage Jubbah',
                     Hands = 'Homam Manopolas',
                     Ring1 = 'Rajas Ring',
-                    Ring2 = 'Balance Ring',
+                    Ring2 = 'Defending Ring',
                     Back = 'Amemet Mantle +1',
                     Waist = 'Speed Belt',
-                    Legs = 'Mirage Shalwar',
+                    Legs = 'Homam Cosciales',
                     Feet = 'Mirage Charuqs',
                 },
                 ['DD'] = {
@@ -551,7 +551,7 @@ sets['Default'] = {
                     Ring2 = 'Balance Ring',
                     Back = 'Amemet Mantle +1',
                     Waist = 'Speed Belt',
-                    Legs = 'Mirage Shalwar',
+                    Legs = 'Homam Cosciales',
                     Feet = 'Mirage Charuqs',
                 },
                 ['L65'] = {
@@ -744,6 +744,7 @@ sets['Precast'] = {
     },
     ['Omega'] = {
         Ear1 = 'Loquac. Earring',
+        Legs = 'Homam Cosciales',
     }
 }
 
@@ -934,6 +935,7 @@ sets['Midcast'] = {
         Body = 'Magus Jubbah +1',
         Hands = 'Homam Manopolas',
         Waist = 'Speed Belt',
+        Legs = 'Homam Cosciales',
     },
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
