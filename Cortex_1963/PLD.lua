@@ -47,14 +47,14 @@ sets['Strategy'] = {
         Idle = 'Default',
         TP = 'Default',
         Weapon = 'Sword',
-        ['W.Variant'] = 'Dragon',
+        ['W.Variant'] = 'Excalibur',
         Ranged = 'Bow',
         ['R.Variant'] = 'Default',
         Resist = 'None',
         SIRD = true,
         Refresh = false,
-        BQRing = true,
-        JellyRing = true,
+        BQRing = false,
+        JellyRing = false,
     },
     ['Kite'] = {
         Idle = 'Kite',
@@ -66,13 +66,13 @@ sets['Strategy'] = {
         Resist = 'None',
         SIRD = true,
         Refresh = false,
-        BQRing = true,
-        JellyRing = true,
+        BQRing = false,
+        JellyRing = false,
     },
     ['Merit'] = {
         Idle = 'Default',
         TP = 'Dual',
-        Weapon = 'Club',
+        Weapon = 'Sword',
         ['W.Variant'] = 'Dual',
         Ranged = 'Bow',
         ['R.Variant'] = 'Default',
@@ -205,6 +205,10 @@ sets['Strategy'] = {
 -- Weapons
 sets['Weapon'] = {}
 sets['Weapon']['Sword'] = {}
+sets['Weapon']['Sword']['Excalibur'] = {
+    Main = 'Excalibur',
+    Sub = 'Palmerin\'s Shield',
+}
 sets['Weapon']['Sword']['Dual'] = {
     Main = 'Excalibur',
     Sub = 'Joyeuse',
@@ -376,7 +380,7 @@ sets['Default'] = {
                     Body = 'Koenig Cuirass',
                     Hands = 'Kng. Handschuhs',
                     Ring1 = 'Sattva Ring',
-                    Ring2 = 'Phalanx Ring',
+                    Ring2 = 'Defending Ring',
                     Back = 'Lamia Mantle',
                     Waist = 'Marid Belt',
                     Legs = 'Koenig Diechlings',
@@ -390,7 +394,7 @@ sets['Default'] = {
                     Body = 'Koenig Cuirass',
                     Hands = 'Kng. Handschuhs',
                     Ring1 = 'Sattva Ring',
-                    Ring2 = 'Phalanx Ring',
+                    Ring2 = 'Defending Ring',
                     Back = 'Lamia Mantle',
                     Waist = 'Marid Belt',
                     Legs = 'Crimson Cuisses',
@@ -610,7 +614,7 @@ sets['Default'] = {
                     Body = 'Koenig Cuirass',
                     Hands = 'Kng. Handschuhs',
                     Ring1 = 'Sattva Ring',
-                    Ring2 = 'Phalanx Ring',
+                    Ring2 = 'Defending Ring',
                     Back = 'Lamia Mantle',
                     Waist = 'Marid Belt',
                     Legs = 'Koenig Diechlings',
@@ -623,8 +627,8 @@ sets['Default'] = {
                     Ear2 = 'Ethereal Earring',
                     Body = 'Haubergeon',
                     Hands = 'Homam Manopolas',
-                    Ring1 = 'Sattva Ring',
-                    Ring2 = 'Rajas Ring',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Defending Ring',
                     Back = 'Amemet Mantle +1',
                     Waist = 'Speed Belt',
                     Legs = 'Homam Cosciales',
@@ -637,8 +641,8 @@ sets['Default'] = {
                     Ear2 = 'Brutal Earring',
                     Body = 'Homam Corazza',
                     Hands = 'Homam Manopolas',
-                    Ring1 = 'Sattva Ring',
-                    Ring2 = 'Rajas Ring',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Defending Ring',
                     Back = 'Amemet Mantle +1',
                     Waist = 'Speed Belt',
                     Legs = 'Homam Cosciales',
@@ -820,11 +824,11 @@ sets['Default'] = {
             },
             ['JellyRing'] = {
                 VarVisible = false,
-                Ring2 = 'Jelly Ring',
+                Ring1 = 'Jelly Ring',
             },
             ['BQRing'] = {
                 VarVisible = false,
-                Ring2 = 'Bomb Queen Ring',
+                Ring1 = 'Bomb Queen Ring',
             },
             ['Trials'] = {
                 Main = 'Sapara of Trials',
@@ -875,6 +879,7 @@ sets['Default'] = {
         ['Buff'] = {
             ['Cover'] = {
                 Head = 'Gallant Coronet',
+                Body = 'Valor Surcoat',
             },
         },
     },
@@ -1010,56 +1015,63 @@ sets['Ability'] = {
     ['Sentinel'] = {
         Feet = 'Valor Leggings',
     },
+    ['Rampart'] = {
+        Feet = 'Valor Coronet',
+    },
 }
 
 -- HandleWeaponSkill
 local WS_STR_LT60 = {
     Head = 'Ryl.Kgt. Bascinet',
+    Neck = 'Fotia Gorget',
     Neck = 'Spike Necklace',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
     Ring1 = 'Courage Ring',
     Ring2 = 'Rajas Ring',
     Back = 'Traveler\'s Mantle',
-    Waist = 'Brave Belt',
+    Waist = 'Ryl.Kgt. Belt',
     Legs = 'Ryl.Kgt. Breeches',
     Feet = 'Angler\'s Boots',
 }
 local WS_STR_MND_LT60 = {
     Head = 'Gallant Coronet',
+    Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
     Hands = 'Lgn. Mittens',
     Ring1 = 'Courage Ring',
     Ring2 = 'Rajas Ring',
     Back = 'Traveler\'s Mantle',
-    Waist = 'Brave Belt',
+    Waist = 'Ryl.Kgt. Belt',
     Legs = 'Ryl.Kgt. Breeches',
     Feet = 'Angler\'s Boots',
 }
 local WS_STR = {
     Head = 'Ryl.Kgt. Bascinet',
-    Neck = 'Spike Necklace',
+    Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
-    Ear2 = 'Beetle Earring +1',
+    Ear2 = 'Brutal Earring',
     Body = 'Haubergeon',
-    Ring1 = 'Courage Ring',
-    Ring2 = 'Rajas Ring',
+    Hands = 'Homam Manopolas',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
     Back = 'Amemet Mantle +1',
-    Waist = 'Brave Belt',
-    Legs = 'Ryl.Kgt. Breeches',
+    Waist = 'Ryl.Kgt. Belt',
+    Legs = 'Valor Breeches',
 }
 local WS_STR_MND = {
     Head = 'Gallant Coronet',
+    Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
-    Ear2 = 'Beetle Earring +1',
+    Ear2 = 'Brutal Earring',
     Body = 'Haubergeon',
-    Hands = 'Lgn. Mittens',
-    Ring1 = 'Courage Ring',
-    Ring2 = 'Rajas Ring',
+    Hands = 'Homam Manopolas',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
     Back = 'Amemet Mantle +1',
-    Waist = 'Brave Belt',
-    Legs = 'Ryl.Kgt. Breeches',
+    Waist = 'Ryl.Kgt. Belt',
+    Legs = 'Valor Breeches',
 }
 sets['WeaponSkill'] = {
     ['Thresholds'] = {
@@ -1080,6 +1092,7 @@ sets['WeaponSkill'] = {
                     ['Alpha'] = WS_STR,
                     ['Moonlight'] = sets['Default'],
                     ['Seraph Strike'] = WS_STR_MND,
+                    ['Knights of Round'] = WS_STR_MND,
                     ['Spirits Within'] = sets['Default'],
                 },
             },

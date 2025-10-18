@@ -484,17 +484,17 @@ sets['Default'] = {
     },
     ['Movement'] = {
         Legs = 'Crimson Cuisses',
-        ['Thresholds'] = {
-            ['Area'] = {
-                ['Sandy'] = {
-                    threshold = T{'Southern San d\'Oria', 'Northern San d\'Oria', 'Port San d\'Oria', 'Chateau d\'Oraguille'},
-                    operator = 'contains',
-                    ['gear'] = {
-                        Body = 'Kingdom Aketon',
-                    },
-                },
-            },
-        },
+        -- ['Thresholds'] = {
+            -- ['Area'] = {
+                -- ['Sandy'] = {
+                    -- threshold = T{'Southern San d\'Oria', 'Northern San d\'Oria', 'Port San d\'Oria', 'Chateau d\'Oraguille'},
+                    -- operator = 'contains',
+                    -- ['gear'] = {
+                        -- Body = 'Kingdom Aketon',
+                    -- },
+                -- },
+            -- },
+        -- },
     },
     ['Resting'] = {
         ['VarToggles'] = {
@@ -1139,11 +1139,11 @@ local WS_STR_MND_LT60 = {
 }
 local WS_STR = {
     Head = 'Homam Zucchetto',
-    Neck = 'Spike Necklace',
+    Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
     Body = 'Magus Jubbah +1',
-    Hands = 'Lgn. Mittens',
+    Hands = 'Homam Manopolas',
     Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
     Back = 'Amemet Mantle +1',
@@ -1153,9 +1153,9 @@ local WS_STR = {
 }
 local WS_STR_MND = {
     Head = 'Homam Zucchetto',
-    Neck = 'Justice Badge',
+    Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
-    Ear2 = 'Beetle Earring +1',
+    Ear2 = 'Brutal Earring',
     Body = 'Magus Jubbah +1',
     Hands = 'Mirage Bazubands',
     Ring1 = 'Rajas Ring',
@@ -1184,6 +1184,7 @@ sets['WeaponSkill'] = {
                     ['Alpha'] = WS_STR,
                     ['Moonlight'] = sets['Default'],
                     ['Seraph Strike'] = WS_STR_MND,
+                    ['Knights of Round'] = WS_STR_MND,
                     ['Spirits Within'] = sets['Default'],
                 },
             },
