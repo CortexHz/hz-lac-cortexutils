@@ -143,6 +143,14 @@ sets['Weapon']['Sword']['L71'] = {
     Main = 'Excalibur',
     Sub = 'Ifrit\'s Blade',
 }
+sets['Weapon']['Sword']['STrials'] = {
+    Main = 'Sapara of Trials',
+    Sub = 'Genbu\'s Shield',
+}
+sets['Weapon']['Sword']['DTrials'] = {
+    Main = 'Sapara of Trials',
+    Sub = 'Ifrit\'s Blade',
+}
 sets['Weapon']['Sword']['SL55'] = {
     Main = 'Msk.Cmd. Falchion',
     Sub = "Pelte",
@@ -499,7 +507,7 @@ sets['Default'] = {
     ['Resting'] = {
         ['VarToggles'] = {
             ['TPSwaps'] = {
-                Main = 'Dark Staff',
+                Main = 'Pluto\'s Staff',
                 Sub = 'Spear Strap',
             },
         },
@@ -846,7 +854,7 @@ BluMids['Physical'] = {
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Magus Jubbah +1',
-        Hands = 'Homam Manopolas',
+        Hands = 'Alkyoneus\'s Brc.',
         Ring1 = 'Rajas Ring',
         Ring2 = 'Courage Ring',
         Back = 'Amemet Mantle +1',
@@ -860,7 +868,7 @@ BluMids['Physical'] = {
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Magus Jubbah +1',
-        Hands = 'Mirage Bazubands',
+        Hands = 'Alkyoneus\'s Brc.',
         Ring1 = 'Rajas Ring',
         Ring2 = 'Courage Ring',
         Back = 'Amemet Mantle +1',
@@ -902,13 +910,16 @@ BluMids['Physical'] = {
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Magus Jubbah +1',
-        Hands = 'Homam Manopolas',
+        Hands = 'Alkyoneus\'s Brc.',
         Ring1 = 'Rajas Ring',
         Ring2 = 'Phalanx Ring',
         Back = 'Amemet Mantle +1',
         Waist = 'Marid Belt',
         Legs = 'Mirage Shalwar',
         Feet = 'Crimson Greaves',
+        ['Engaged'] = {
+            Hands = 'Rune Bangles',
+        },
     },
 }
 
@@ -1023,7 +1034,7 @@ sets['Midcast'] = {
                             --Sub = 'Spear Strap',
                         },
                         ['Dark'] = {
-                            Main = 'Dark Staff',
+                            Main = 'Pluto\'s Staff',
                             Sub = 'Spear Strap',
                         },
                     },
@@ -1143,7 +1154,7 @@ local WS_STR = {
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
     Body = 'Magus Jubbah +1',
-    Hands = 'Homam Manopolas',
+    Hands = 'Alkyoneus\'s Brc.',
     Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
     Back = 'Amemet Mantle +1',
@@ -1157,7 +1168,7 @@ local WS_STR_MND = {
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Brutal Earring',
     Body = 'Magus Jubbah +1',
-    Hands = 'Mirage Bazubands',
+    Hands = 'Alkyoneus\'s Brc.',
     Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
     Back = 'Amemet Mantle +1',

@@ -31,7 +31,10 @@ sets['Strategy'] = {
         Idle = 'Default',
         TP = 'Default',
         Weapon = 'Club',
-        ['W.Variant'] = 'L27',
+        ['W.Variant'] = 'L34',
+        Ranged = 'Fishing',
+        ['R.Variant'] = 'Tarutaru',
+        Ammo = 'Worm Lure',
     },
 }
 
@@ -45,6 +48,10 @@ sets['Weapon']['Club'] = {}
 sets['Weapon']['Club']['L36'] = {
     Main = 'Oak Cudgel +1',
     Sub = "Centurion\'s Sword",
+}
+sets['Weapon']['Club']['L34'] = {
+    Main = 'Kingdom Mace',
+    Sub = 'Tortoise Shield',
 }
 sets['Weapon']['Club']['L30'] = {
     Main = 'Ryl.Sqr. Mace',
@@ -75,6 +82,15 @@ sets['Ranged']['Fishing']['Tarutaru'] = {
         ['Ammo'] = {
             ['Insect Ball'] = {
                 Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
             },
         },
     },
@@ -120,10 +136,11 @@ sets['Default'] = {
                 ['Default'] = {
                     Head = 'Silver Hairpin',
                     Neck = 'Justice Badge',
+                    Ear2 = 'Astral Earring',
                     Body = 'Worker Tunica',
                     Hands = 'Zealot\'s Mitts',
                     Ring1 = 'Tamas Ring',
-                    Ring2 = 'Astral Ring',
+                    Ring2 = 'Vilma\'s Ring',
                     Back = 'Cape',
                     Waist = 'Friar\'s Rope',
                     Legs = 'Linen Slops',
@@ -268,6 +285,7 @@ sets['Default'] = {
                 ['Default'] = {
                     Head = 'Emperor Hairpin',
                     Neck = 'Justice Badge',
+                    Ear2 = 'Astral Earring',
                     Body = 'Worker Tunica',
                     Hands = 'Battle Gloves',
                     Ring1 = 'Tamas Ring',
@@ -335,6 +353,11 @@ sets['Default'] = {
 
 -- HandlePrecast
 sets['Precast'] = {
+    ['Healing Magic'] = {
+        Neck = 'Justice Badge',
+        Ear2 = 'Astral Earring',
+        Hands = 'Zealot\'s Mitts',
+    },
 }
 
 -- HandleMidcast
@@ -359,11 +382,13 @@ sets['Midcast'] = {
     ['White Magic'] = {
         ['Enfeebling Magic'] = {
             Neck = 'Justice Badge',
+            Ear2 = 'Astral Earring',
             Hands = 'Zealot\'s Mitts',
         },
     },
     ['Healing Magic'] = {
         Neck = 'Justice Badge',
+        Ear2 = 'Astral Earring',
         Hands = 'Zealot\'s Mitts',
     },
     ['Enhancing Magic'] = {
@@ -378,6 +403,7 @@ sets['Midcast'] = {
     },
     ['Divine Magic'] = {
         Neck = 'Justice Badge',
+        Ear2 = 'Astral Earring',
     },
     ['Elemental Magic'] = {
         Head = 'Seer\'s Crown +1',

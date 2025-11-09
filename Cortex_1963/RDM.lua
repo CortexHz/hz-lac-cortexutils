@@ -29,8 +29,11 @@ sets['Strategy'] = {
         Nation = false,
         Idle = 'Default',
         TP = 'Default',
-        Weapon = 'Club',
-        ['W.Variant'] = 'L18',
+        Weapon = 'Staff',
+        ['W.Variant'] = 'Defense',
+        Ranged = 'Fishing',
+        ['R.Variant'] = 'Tarutaru',
+        Ammo = 'Worm Lure',
     },
 }
 
@@ -43,9 +46,14 @@ sets['Weapon']['Sword']['Default'] = {
 }
 sets['Weapon']['Staff'] = {}
 sets['Weapon']['Staff']['Defense'] = {
-    Main = 'Terra\'s Staff',
+    Main = 'Earth Staff',
+    Sub = 'Tenax Strap',
 }
 sets['Weapon']['Club'] = {}
+sets['Weapon']['Club']['L48'] = {
+    Main = 'Rose Wand +1',
+    Sub = 'Tortoise Shield',
+}
 sets['Weapon']['Club']['L36'] = {
     Main = 'Oak Cudgel +1',
     Sub = "Centurion\'s Sword",
@@ -135,32 +143,46 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['Idle'] = {
                 ['Default'] = {
-                    Head = 'Straw Hat',
-                    Neck = 'Silver Name Tag',
-                    Ear1 = 'Onyx Earring',
-                    Ear2 = 'Onyx Earring',
-                    Body = 'Worker Tunica',
-                    Hands = 'Worker Gloves',
+                    Head = 'Warlock\'s Chapeau',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Moldavite Earring',
+                    Ear2 = 'Astral Earring',
+                    Body = 'Warlock\'s Tabard',
+                    Hands = 'Warlock\'s Gloves',
                     Ring1 = 'Tamas Ring',
-                    Ring2 = 'Eremite\'s Ring',
-                    Back = 'Cape',
+                    Ring2 = 'Serket Ring',
+                    Back = 'Red Cape +1',
+                    Waist = 'Friar\'s Rope',
+                    Legs = 'Warlock\'s Tights',
+                    Feet = 'Warlock\'s Boots',   
+                },
+                ['L40'] = {
+                    Head = 'Straw Hat',
+                    Neck = 'Van Pendant',
+                    Ear1 = 'Onyx Earring',
+                    Ear2 = 'Astral Earring',
+                    Body = 'Ryl.Sqr. Robe',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Tamas Ring',
+                    Ring2 = 'Vilma\'s Ring',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Friar\'s Rope',
                     Legs = 'Linen Slops',
-                    Feet = 'Worker Boots',   
+                    Feet = 'Leaping Boots',   
                 },
                 ['L15'] = {
                     Head = 'Straw Hat',
-                    Neck = 'Silver Name Tag',
+                    Neck = 'Van Pendant',
                     Ear1 = 'Onyx Earring',
                     Ear2 = 'Onyx Earring',
                     Body = 'Worker Tunica',
-                    Hands = 'Worker Gloves',
+                    Hands = 'Battle Gloves',
                     Ring1 = 'Eremite\'s Ring',
                     Ring2 = 'Eremite\'s Ring',
-                    Back = 'Cape',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Friar\'s Rope',
                     Legs = 'Linen Slops',
-                    Feet = 'Worker Boots',   
+                    Feet = 'Leaping Boots',   
                 },
                 ['L13'] = {
                     Head = 'Straw Hat',
@@ -168,13 +190,13 @@ sets['Default'] = {
                     Ear1 = 'Onyx Earring',
                     Ear2 = 'Onyx Earring',
                     Body = 'Robe',
-                    Hands = 'Worker Gloves',
+                    Hands = 'Guerilla Gloves',
                     Ring1 = 'Eremite\'s Ring',
                     Ring2 = 'Eremite\'s Ring',
-                    Back = 'Cape',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Friar\'s Rope',
                     Legs = 'Linen Slops',
-                    Feet = 'Dream Boots +1',                   
+                    Feet = 'Leaping Boots',                   
                 },
             },
         },
@@ -242,32 +264,46 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['TP'] = {
                 ['Default'] = {
+                    Head = 'Warlock\'s Chapeau',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Moldavite Earring',
+                    Ear2 = 'Astral Earring',
+                    Body = 'Warlock\'s Tabard',
+                    Hands = 'Warlock\'s Gloves',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Serket Ring',
+                    Back = 'Red Cape +1',
+                    Waist = 'Speed Belt',
+                    Legs = 'Warlock\'s Tights',
+                    Feet = 'Warlock\'s Boots',  
+                },
+                ['L40'] = {
                     Head = 'Straw Hat',
-                    Neck = 'Silver Name Tag',
+                    Neck = 'Van Pendant',
                     Ear1 = 'Onyx Earring',
-                    Ear2 = 'Onyx Earring',
-                    Body = 'Worker Tunic',
+                    Ear2 = 'Astral Earring',
+                    Body = 'Ryl.Sqr. Robe',
                     Hands = 'Worker Gloves',
                     Ring1 = 'Tamas Ring',
-                    Ring2 = 'Eremite\'s Ring',
-                    Back = 'Cape',
+                    Ring2 = 'Vilma\'s Ring',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Friar\'s Rope',
                     Legs = 'Linen Slops',
                     Feet = 'Worker Boots',  
                 },
                 ['L15'] = {
                     Head = 'Straw Hat',
-                    Neck = 'Silver Name Tag',
+                    Neck = 'Van Pendant',
                     Ear1 = 'Onyx Earring',
                     Ear2 = 'Onyx Earring',
                     Body = 'Worker Tunica',
-                    Hands = 'Worker Gloves',
+                    Hands = 'Battle Gloves',
                     Ring1 = 'Eremite\'s Ring',
                     Ring2 = 'Eremite\'s Ring',
-                    Back = 'Cape',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Friar\'s Rope',
                     Legs = 'Linen Slops',
-                    Feet = 'Worker Boots',                  
+                    Feet = 'Leaping Boots',                  
                 },
                 ['L13'] = {
                     Head = 'Straw Hat',
@@ -275,13 +311,13 @@ sets['Default'] = {
                     Ear1 = 'Onyx Earring',
                     Ear2 = 'Onyx Earring',
                     Body = 'Robe',
-                    Hands = 'Worker Gloves',
+                    Hands = 'Guerilla Gloves',
                     Ring1 = 'Eremite\'s Ring',
                     Ring2 = 'Eremite\'s Ring',
-                    Back = 'Cape',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Friar\'s Rope',
                     Legs = 'Linen Slops',
-                    Feet = 'Worker Boots',                  
+                    Feet = 'Leaping Boots',                  
                 },
             },
         },
@@ -310,6 +346,16 @@ sets['Precast'] = {
         Head = 'Warlock\'s Chapeau',
         Body = 'Dls. Tabard +1',
     },
+    ['Healing Magic'] = {
+        Neck = 'Justice Badge',
+        Ear2 = 'Astral Earring',
+        Hands = 'Zealot\'s Mitts',
+    },
+}
+
+-- HandleMidcastIdle
+sets['MidcastIdle'] = {
+    ['Alpha'] = sets['Default'],
 }
 
 -- HandleMidcast
@@ -331,10 +377,8 @@ sets['Midcast'] = {
             Neck = 'Silver Name Tag',
             Ear1 = 'Onyx Earring',
             Ear2 = 'Onyx Earring',
-            Body = 'Worker Tunic',
+            Body = 'Warlock\'s Tabard',
             Hands = 'Worker Gloves',
-            Ring1 = 'Eremite\'s Ring',
-            Ring2 = 'Eremite\'s Ring',
             Back = 'Cape',
             Waist = 'Friar\'s Rope',
             Legs = 'Linen Slops',
@@ -344,11 +388,14 @@ sets['Midcast'] = {
     ['White Magic'] = {
         ['Enfeebling Magic'] = {
             Neck = 'Justice Badge',
+            Body = 'Warlock\'s Tabard',
+            Ear2 = 'Astral Earring',
             Hands = 'Zealot\'s Mitts',
         },
     },
     ['Healing Magic'] = {
         Neck = 'Justice Badge',
+        Ear2 = 'Astral Earring',
         Hands = 'Zealot\'s Mitts',
     },
     ['Enhancing Magic'] = {
@@ -375,40 +422,46 @@ sets['Midcast'] = {
         Body = 'Worker Tunic',
         Hands = 'Worker Gloves',
         Ring1 = 'Tamas Ring',
-        Ring2 = 'Eremite\'s Ring',
+        Ring2 = 'Vilma\'s Ring',
         Back = 'Cape',
         Waist = 'Friar\'s Rope',
         Legs = 'Linen Slops',
         Feet = 'Worker Boots',
     },
+    ['Invisible'] = {
+        Back = 'Skulker\'s Cape',
+    },
+    ['Sneak'] = {
+        Back = 'Skulker\'s Cape',
+    },
     ['Omega'] = {
-        -- ['Elemental'] = {
-            -- ['Element'] = {
-                -- ['Fire'] = {
-                    -- Main = 'Vulcan\'s Staff',
-                -- },
-                -- ['Earth'] = {
-                    -- Main = 'Terra\'s Staff',
-                -- },
-                -- ['Water'] = {
-                    -- Main = 'Neptune\'s Staff',
-                -- },
-                -- ['Wind'] = {
-                    -- Main = 'Auster\'s Staff',
-                -- },
-                -- ['Ice'] = {
-                    -- Main = 'Aquilo\'s Staff',
-                -- },
-                -- ['Thunder'] = {
-                    -- Main = 'Jupiter\'s Staff',
-                -- },
-                -- ['Light'] = {
-                    -- Main = 'Apollo\'s Staff',
-                -- },
-                -- ['Dark'] = {
-                    -- Main = 'Pluto\'s Staff',
-                -- },
-            -- },
+        ['Elemental'] = {
+            ['Element'] = {
+                ['Fire'] = {
+                    Main = 'Vulcan\'s Staff',
+                },
+                ['Earth'] = {
+                    Main = 'Earth Staff',
+                },
+                ['Water'] = {
+                    Main = 'Neptune\'s Staff',
+                },
+                ['Wind'] = {
+                    Main = 'Auster\'s Staff',
+                },
+                ['Ice'] = {
+                    Main = 'Aquilo\'s Staff',
+                },
+                ['Thunder'] = {
+                    Main = 'Jupiter\'s Staff',
+                },
+                ['Light'] = {
+                    Main = 'Apollo\'s Staff',
+                },
+                ['Dark'] = {
+                    Main = 'Pluto\'s Staff',
+                },
+            },
             -- ['Day'] = {
                 -- ClashCheck = true,
                 -- ['Fire'] = {
@@ -463,7 +516,7 @@ sets['Midcast'] = {
                     -- Waist = 'Anrin Obi',
                 -- },
             -- },
-        -- },
+        },
         -- ['Haste'] = HasteCast,
         -- ['Refresh'] = HasteCast,
         -- ['Regen'] = HasteCast,
@@ -496,6 +549,9 @@ sets['WeaponSkill'] = {
 
 -- HandleItem
 sets['Item'] = {
+    ['Orange Juice'] = {
+        Legs = 'Dream Trousers +1',
+    },
 }
 
 profile.Sets = sets;

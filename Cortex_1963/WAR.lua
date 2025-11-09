@@ -112,6 +112,10 @@ sets['Weapon']['GreatSword']['L20'] = {
     Main = 'Mrc. Greatsword',
     Sub = 'Tenax Strap',
 }
+sets['Weapon']['GreatSword']['DRK'] = {
+    Main = 'Chaosbringer',
+    Sub = 'Sword Strap',
+}
 sets['Weapon']['H2H'] = {}
 sets['Weapon']['H2H']['L10'] = {
     Main = 'Ryl.Arc. Cesti',
@@ -157,12 +161,12 @@ sets['Default'] = {
                     Neck = 'Spike Necklace',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
-                    Body = 'Ryl.Kgt. Chainmail',
+                    Body = 'Haubergeon',
                     Hands = 'Ryl.Kgt. Mufflers',
                     Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
-                    Waist = 'Life Belt',
+                    Waist = 'Speed Belt',
                     Legs = 'Ryl.Kgt. Breeches',
                     Feet = 'Leaping Boots',
                 },
@@ -317,12 +321,12 @@ sets['Default'] = {
                     Neck = 'Spike Necklace',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
-                    Body = 'Ryl.Kgt. Chainmail',
+                    Body = 'Haubergeon',
                     Hands = 'Ryl.Kgt. Mufflers',
                     Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
-                    Waist = 'Life Belt',
+                    Waist = 'Speed Belt',
                     Legs = 'Ryl.Kgt. Breeches',
                     Feet = 'Leaping Boots',
                 },
@@ -469,6 +473,9 @@ sets['WeaponSkill'] = {
 
 -- HandleItem
 sets['Item'] = {
+    ['Orange Juice'] = {
+        Legs = 'Dream Trousers +1',
+    },
 }
 
 profile.Sets = sets;
