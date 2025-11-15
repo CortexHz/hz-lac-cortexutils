@@ -34,6 +34,7 @@ sets['Strategy'] = {
         Ranged = 'Fishing',
         ['R.Variant'] = 'Tarutaru',
         Ammo = 'Worm Lure',
+        TPSwaps = true,
     },
 }
 
@@ -46,8 +47,8 @@ sets['Weapon']['Sword']['Default'] = {
 }
 sets['Weapon']['Staff'] = {}
 sets['Weapon']['Staff']['Defense'] = {
-    Main = 'Earth Staff',
-    Sub = 'Tenax Strap',
+    Main = 'Terra\'s Staff',
+    Sub = 'Staff Strap',
 }
 sets['Weapon']['Club'] = {}
 sets['Weapon']['Club']['L48'] = {
@@ -177,10 +178,10 @@ sets['Default'] = {
                     Ear2 = 'Onyx Earring',
                     Body = 'Worker Tunica',
                     Hands = 'Battle Gloves',
-                    Ring1 = 'Eremite\'s Ring',
-                    Ring2 = 'Eremite\'s Ring',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
-                    Waist = 'Friar\'s Rope',
+                    Waist = 'Warrior\'s Belt +1',
                     Legs = 'Linen Slops',
                     Feet = 'Leaping Boots',   
                 },
@@ -298,10 +299,10 @@ sets['Default'] = {
                     Ear2 = 'Onyx Earring',
                     Body = 'Worker Tunica',
                     Hands = 'Battle Gloves',
-                    Ring1 = 'Eremite\'s Ring',
-                    Ring2 = 'Eremite\'s Ring',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
                     Back = 'Traveler\'s Mantle',
-                    Waist = 'Friar\'s Rope',
+                    Waist = 'Warrior\'s Belt +1',
                     Legs = 'Linen Slops',
                     Feet = 'Leaping Boots',                  
                 },
@@ -421,8 +422,10 @@ sets['Midcast'] = {
         Ear2 = 'Onyx Earring',
         Body = 'Worker Tunic',
         Hands = 'Worker Gloves',
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Vilma\'s Ring',
+        Ring1 = 'Eremite\'s Ring',
+        Ring2 = 'Eremite\'s Ring',
+        --Ring1 = 'Tamas Ring',
+        --Ring2 = 'Vilma\'s Ring',
         Back = 'Cape',
         Waist = 'Friar\'s Rope',
         Legs = 'Linen Slops',
@@ -434,88 +437,128 @@ sets['Midcast'] = {
     ['Sneak'] = {
         Back = 'Skulker\'s Cape',
     },
-    ['Omega'] = {
+    ['Omega'] = {        
         ['Elemental'] = {
             ['Element'] = {
                 ['Fire'] = {
-                    Main = 'Vulcan\'s Staff',
+                    ['VarToggles'] = {
+                        ['TPSwaps'] = {
+                            Main = 'Vulcan\'s Staff',
+                            Sub = 'Staff Strap',
+                        },
+                    },
                 },
                 ['Earth'] = {
-                    Main = 'Earth Staff',
+                    ['VarToggles'] = {
+                        ['TPSwaps'] = {
+                            Main = 'Terra\'s Staff',
+                            Sub = 'Staff Strap',
+                        },
+                    },
                 },
                 ['Water'] = {
-                    Main = 'Neptune\'s Staff',
+                    ['VarToggles'] = {
+                        ['TPSwaps'] = {
+                            Main = 'Neptune\'s Staff',
+                            Sub = 'Staff Strap',
+                        },
+                    },
                 },
                 ['Wind'] = {
-                    Main = 'Auster\'s Staff',
+                    ['VarToggles'] = {
+                        ['TPSwaps'] = {
+                            Main = 'Auster\'s Staff',
+                            Sub = 'Staff Strap',
+                        },
+                    },
                 },
                 ['Ice'] = {
-                    Main = 'Aquilo\'s Staff',
+                    ['VarToggles'] = {
+                        ['TPSwaps'] = {
+                            Main = 'Aquilo\'s Staff',
+                            Sub = 'Staff Strap',
+                        },
+                    },
                 },
                 ['Thunder'] = {
-                    Main = 'Jupiter\'s Staff',
+                    ['VarToggles'] = {
+                        ['TPSwaps'] = {
+                            Main = 'Jupiter\'s Staff',
+                            Sub = 'Staff Strap',
+                        },
+                    },
                 },
                 ['Light'] = {
-                    Main = 'Apollo\'s Staff',
+                    ['VarToggles'] = {
+                        ['TPSwaps'] = {
+                            Main = 'Apollo\'s Staff',
+                            Sub = 'Staff Strap',
+                        },
+                    },
                 },
                 ['Dark'] = {
-                    Main = 'Pluto\'s Staff',
+                    ['VarToggles'] = {
+                        ['TPSwaps'] = {
+                            Main = 'Pluto\'s Staff',
+                            Sub = 'Staff Strap',
+                        },
+                    },
                 },
             },
-            -- ['Day'] = {
-                -- ClashCheck = true,
-                -- ['Fire'] = {
-                    -- Waist = 'Karin Obi',
-                -- },
-                -- ['Earth'] = {
-                    -- Waist = 'Dorin Obi',
-                -- },
-                -- ['Water'] = {
-                    -- Waist = 'Suirin Obi',
-                -- },
-                -- ['Wind'] = {
-                    -- Waist = 'Furin Obi',
-                -- },
-                -- ['Ice'] = {
-                    -- Waist = 'Hyorin Obi',
-                -- },
-                -- ['Thunder'] = {
-                    -- Waist = 'Rairin Obi',
-                -- },
-                -- ['Light'] = {
-                    -- Waist = 'Korin Obi',
-                -- },
-                -- ['Dark'] = {
-                    -- Waist = 'Anrin Obi',
-                -- },
-            -- },
-            -- ['Weather'] = {
-                -- ClashCheck = true,
-                -- ['Fire'] = {
-                    -- Waist = 'Karin Obi',
-                -- },
-                -- ['Earth'] = {
-                    -- Waist = 'Dorin Obi',
-                -- },
-                -- ['Water'] = {
-                    -- Waist = 'Suirin Obi',
-                -- },
-                -- ['Wind'] = {
-                    -- Waist = 'Furin Obi',
-                -- },
-                -- ['Ice'] = {
-                    -- Waist = 'Hyorin Obi',
-                -- },
-                -- ['Thunder'] = {
-                    -- Waist = 'Rairin Obi',
-                -- },
-                -- ['Light'] = {
-                    -- Waist = 'Korin Obi',
-                -- },
-                -- ['Dark'] = {
-                    -- Waist = 'Anrin Obi',
-                -- },
-            -- },
+            ['Day'] = {
+                ClashCheck = true,
+                ['Fire'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Earth'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Water'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Wind'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Ice'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Thunder'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Light'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Dark'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+            },
+            ['Weather'] = {
+                ClashCheck = true,
+                ['Fire'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Earth'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Water'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Wind'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Ice'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Thunder'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Light'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+                ['Dark'] = {
+                    Waist = 'Hachirin-no-Obi',
+                },
+            },
         },
         -- ['Haste'] = HasteCast,
         -- ['Refresh'] = HasteCast,

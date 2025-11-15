@@ -209,6 +209,10 @@ sets['Weapon']['Sword']['Excalibur'] = {
     Main = 'Excalibur',
     Sub = 'Palmerin\'s Shield',
 }
+sets['Weapon']['Sword']['STrials'] = {
+    Main = 'Sapara of Trials',
+    Sub = 'Palmerin\'s Shield',
+}
 sets['Weapon']['Sword']['Dual'] = {
     Main = 'Excalibur',
     Sub = 'Joyeuse',
@@ -291,7 +295,7 @@ sets['Weapon']['Club']['L10'] = {
 --}
 sets['Weapon']['Staff'] = {}
 sets['Weapon']['Staff']['Defense'] = {
-    Main = 'Earth Staff',
+    Main = 'Terra\'s Staff',
     Sub = 'Spear Strap',
 }
 sets['Weapon']['Staff']['Signet'] = {

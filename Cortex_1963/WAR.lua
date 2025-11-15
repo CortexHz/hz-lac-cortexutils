@@ -150,6 +150,58 @@ sets['Ranged']['XBow']['Default'] = {
         },
     },
 }
+sets['Ranged']['Fishing'] = {}
+sets['Ranged']['Fishing']['Tarutaru'] = {
+    Range = 'Tarutaru F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Hume'] = {
+    Range = 'Hume Fishing Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Halcyon'] = {
+    Range = 'Halcyon Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+        },
+    },
+}
 
 -- HandleDefault
 sets['Default'] = {
@@ -444,32 +496,86 @@ sets['Ability'] = {
 }
 
 -- HandleWeaponSkill
-local WS_STR = {
+-- HandleWeaponSkill
+local WS_STR_LT60 = {
+    Head = 'Ryl.Kgt. Bascinet',
+    Neck = 'Fotia Gorget',
     Neck = 'Spike Necklace',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
-    Hands = 'Lgn. Mittens',
-    Ring1 = 'Rajas Ring',
-    Ring2 = 'Courage Ring',
+    Ring1 = 'Courage Ring',
+    Ring2 = 'Rajas Ring',
     Back = 'Traveler\'s Mantle',
     Waist = 'Ryl.Kgt. Belt',
     Legs = 'Ryl.Kgt. Breeches',
+    Feet = 'Angler\'s Boots',
 }
-local WS_STR_VIT = {
-    Neck = 'Spike Necklace',
+local WS_STR_MND_LT60 = {
+    Head = 'Gallant Coronet',
+    Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
     Hands = 'Lgn. Mittens',
-    Ring1 = 'Rajas Ring',
-    Ring2 = 'Courage Ring',
+    Ring1 = 'Courage Ring',
+    Ring2 = 'Rajas Ring',
     Back = 'Traveler\'s Mantle',
     Waist = 'Ryl.Kgt. Belt',
     Legs = 'Ryl.Kgt. Breeches',
+    Feet = 'Angler\'s Boots',
+}
+local WS_STR = {
+    Head = 'Ryl.Kgt. Bascinet',
+    Neck = 'Fotia Gorget',
+    Ear1 = 'Beetle Earring +1',
+    Ear2 = 'Brutal Earring',
+    Body = 'Haubergeon',
+    Hands = 'Alkyoneus\'s Brc.',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
+    Back = 'Amemet Mantle +1',
+    Waist = 'Ryl.Kgt. Belt',
+    Legs = 'Valor Breeches',
+}
+local WS_STR_MND = {
+    Head = 'Gallant Coronet',
+    Neck = 'Fotia Gorget',
+    Ear1 = 'Beetle Earring +1',
+    Ear2 = 'Brutal Earring',
+    Body = 'Haubergeon',
+    Hands = 'Alkyoneus\'s Brc.',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
+    Back = 'Amemet Mantle +1',
+    Waist = 'Ryl.Kgt. Belt',
+    Legs = 'Valor Breeches',
 }
 sets['WeaponSkill'] = {
-    ['Alpha'] = WS_STR,
-    ['Calamity'] = WS_STR_VIT,
+    ['Thresholds'] = {
+        ['MainJobSync'] = {
+            ['LE60'] = {
+                threshold = 60,
+                operator = '<=',
+                ['gear'] = {
+                    ['Alpha'] = WS_STR_LT60,
+                    ['Moonlight'] = WS_STR_MND_LT60,
+                    ['Seraph Strike'] = WS_STR_MND_LT60,
+                },
+            },
+            ['GT60'] = {
+                threshold = 60,
+                operator = '>',
+                ['gear'] = {
+                    ['Alpha'] = WS_STR,
+                    ['Moonlight'] = sets['Default'],
+                    ['Seraph Strike'] = WS_STR_MND,
+                    ['Knights of Round'] = WS_STR_MND,
+                    ['Spirits Within'] = sets['Default'],
+                },
+            },
+        },
+    },
 }
+
 
 -- HandleItem
 sets['Item'] = {
