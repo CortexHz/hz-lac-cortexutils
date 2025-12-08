@@ -43,14 +43,16 @@ local sets = {
 -- Strategies
 sets['Strategy'] = {
     ['Default'] = {
-        Idle = 'L40',
-        TP = 'L40',
+        Idle = 'Default',
+        TP = 'Default',
         TPSwaps = false,
         --['R.Type'] = 'BPP',
         Weapon = 'Axe',
         ['W.Variant'] = 'L40',
         Ranged = 'Throwing',
-        ['R.Variant'] = 'Pebble',
+        ['R.Variant'] = 'None',
+        Ammo = 'Worm Lure',
+        TPSwaps = true,
     },
 }
 
@@ -110,6 +112,7 @@ sets['Weapon']['Club']['Warp'] = {
 
 sets['Ranged'] = {}
 sets['Ranged']['Throwing'] = {}
+sets['Ranged']['Throwing']['None'] = {}
 sets['Ranged']['Throwing']['Pebble'] = {
     Ammo = 'Pebble',
 }
@@ -133,6 +136,83 @@ sets['Ranged']['Bow']['Default'] = {
         },
     },
 }
+sets['Ranged']['Fishing'] = {}
+sets['Ranged']['Fishing']['LuShangs'] = {
+    Range = 'Lu Shang\'s F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
+            ['Shrimp Lure'] = {
+                Ammo = 'Shrimp Lure',
+            },
+            ['Minnow'] = {
+                Ammo = 'Minnow',
+            },
+            ['S.Minnow'] = {
+                Ammo = 'Sinking Minnow',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Tarutaru'] = {
+    Range = 'Tarutaru F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Hume'] = {
+    Range = 'Hume Fishing Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Halcyon'] = {
+    Range = 'Halcyon Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+            ['Shrimp Lure'] = {
+                Ammo = 'Shrimp Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
+        },
+    },
+}
 
 -- HandleDefault
 sets['Default'] = {
@@ -141,14 +221,14 @@ sets['Default'] = {
             ['Idle'] = {
                 ['Default'] = {
                     Head = 'Emperor Hairpin',
-                    Neck = 'Spike Necklace',
+                    Neck = 'Peacock Charm',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ryl.Sqr. Chainmail',
-                    Hands = 'Ryl.Kgt. Mufflers',
+                    Hands = 'Ryl.Sqr. Mufflers',
                     Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
-                    Back = 'Ram Mantle +1',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Ryl.Kgt. Belt',
                     Legs = 'Ryl.Sqr. Breeches',
                     Feet = 'Leaping Boots',
@@ -251,17 +331,15 @@ sets['Default'] = {
         ['VarToggles'] = {
             ['Fishing'] = {
                 VarVisible = false,
-                Ammo = '',
-                Range = 'Lu Shang\'s F. Rod',
                 Body = 'Angler\'s Tunica',
                 Hands = 'Angler\'s Gloves',
-                Legs = 'Angler\'s Hose',
-                Feet = 'Waders',
+                Legs = 'Fisherman\'s Hose',
+                Feet = 'Angler\'s Boots',
             },
             ['Working'] = {
                 VarVisible = false,
                 Body = 'Worker Tunica',
-                Hands = 'Field Gloves',
+                Hands = 'Worker Gloves',
                 Legs = 'Field Hose',
                 Feet = 'Worker Boots',
             },
@@ -324,16 +402,16 @@ sets['Default'] = {
             ['TP'] = {
                 ['Default'] = {
                     Head = 'Emperor Hairpin',
-                    Neck = 'Spike Necklace',
+                    Neck = 'Peacock Charm',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ryl.Sqr. Chainmail',
-                    Hands = 'Ryl.Kgt. Mufflers',
+                    Hands = 'Battle Gloves',
                     Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
-                    Back = 'Ram Mantle +1',
+                    Back = 'Traveler\'s Mantle',
                     Waist = 'Ryl.Kgt. Belt',
-                    Legs = 'Ryl.Sqr. Breeches',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
                 ['L40'] = {

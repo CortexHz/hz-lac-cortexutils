@@ -259,6 +259,34 @@ sets['Ranged']['Throwing']['L15'] = {
 }
 
 sets['Ranged']['Fishing'] = {}
+sets['Ranged']['Fishing']['LuShangs'] = {
+    Range = 'Lu Shang\'s F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
+            ['Shrimp Lure'] = {
+                Ammo = 'Shrimp Lure',
+            },
+            ['Minnow'] = {
+                Ammo = 'Minnow',
+            },
+            ['S.Minnow'] = {
+                Ammo = 'Sinking Minnow',
+            },
+        },
+    },
+}
 sets['Ranged']['Fishing']['Tarutaru'] = {
     Range = 'Tarutaru F. Rod',
     ['VarCycles'] = {
@@ -297,6 +325,12 @@ sets['Ranged']['Fishing']['Halcyon'] = {
             },
             ['Fly Lure'] = {
                 Ammo = 'Fly Lure',
+            },
+            ['Shrimp Lure'] = {
+                Ammo = 'Shrimp Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
             },
         },
     },
@@ -472,8 +506,8 @@ sets['Default'] = {
         ['VarToggles'] = {
             ['Fishing'] = {
                 VarVisible = false,
-                Body = 'Fsh. Tunica',
-                Hands = 'Fsh. Gloves',
+                Body = 'Angler\'s Tunica',
+                Hands = 'Angler\'s Gloves',
                 Legs = 'Fisherman\'s Hose',
                 Feet = 'Angler\'s Boots',
             },
@@ -547,6 +581,20 @@ sets['Default'] = {
                     Waist = 'Speed Belt',
                     Legs = 'Homam Cosciales',
                     Feet = 'Mirage Charuqs',
+                },
+                ['ShieldA'] = {
+                    Head = 'Homam Zucchetto',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Ethereal Earring',
+                    Ear2 = 'Brutal Earring',
+                    Body = 'Mirage Jubbah',
+                    Hands = 'Homam Manopolas',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Defending Ring',
+                    Back = 'Amemet Mantle +1',
+                    Waist = 'Speed Belt',
+                    Legs = 'Homam Cosciales',
+                    Feet = 'Crimson Greaves',
                 },
                 ['DD'] = {
                     Head = 'Homam Zucchetto',

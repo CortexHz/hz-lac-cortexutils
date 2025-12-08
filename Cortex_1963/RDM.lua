@@ -31,8 +31,8 @@ sets['Strategy'] = {
         TP = 'Default',
         Weapon = 'Staff',
         ['W.Variant'] = 'Defense',
-        Ranged = 'Fishing',
-        ['R.Variant'] = 'Tarutaru',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Default',
         Ammo = 'Worm Lure',
         TPSwaps = true,
     },
@@ -41,6 +41,10 @@ sets['Strategy'] = {
 -- Weapons
 sets['Weapon'] = {}
 sets['Weapon']['Sword'] = {}
+sets['Weapon']['Sword']['Shield'] = {
+    Main = 'Excalibur',
+    Sub = 'Genbu\'s Shield',
+}
 sets['Weapon']['Sword']['Default'] = {
     Main = 'Bee Spatha +1',
     Sub = 'Lauan Shield +1',
@@ -85,7 +89,39 @@ sets['Weapon']['Club']['L09'] = {
 }
 
 sets['Ranged'] = {}
+sets['Ranged']['Throwing'] = {}
+sets['Ranged']['Throwing']['Default'] = {
+    Ammo = 'Hedgehog Bomb',
+}
 sets['Ranged']['Fishing'] = {}
+sets['Ranged']['Fishing']['LuShangs'] = {
+    Range = 'Lu Shang\'s F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
+            ['Shrimp Lure'] = {
+                Ammo = 'Shrimp Lure',
+            },
+            ['Minnow'] = {
+                Ammo = 'Minnow',
+            },
+            ['S.Minnow'] = {
+                Ammo = 'Sinking Minnow',
+            },
+        },
+    },
+}
 sets['Ranged']['Fishing']['Tarutaru'] = {
     Range = 'Tarutaru F. Rod',
     ['VarCycles'] = {
@@ -134,6 +170,9 @@ sets['Ranged']['Fishing']['Halcyon'] = {
             ['Fly Lure'] = {
                 Ammo = 'Fly Lure',
             },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
         },
     },
 }
@@ -144,18 +183,18 @@ sets['Default'] = {
         ['VarCycles'] = {
             ['Idle'] = {
                 ['Default'] = {
-                    Head = 'Warlock\'s Chapeau',
+                    Head = 'Duelist\'s Chapeau',
                     Neck = 'Van Pendant',
-                    Ear1 = 'Moldavite Earring',
+                    Ear1 = 'Loquac. Earring',
                     Ear2 = 'Astral Earring',
-                    Body = 'Warlock\'s Tabard',
-                    Hands = 'Warlock\'s Gloves',
+                    Body = 'Dalmatica',
+                    Hands = 'Duelist\'s Gloves',
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Serket Ring',
-                    Back = 'Red Cape +1',
+                    Back = 'Errant Cape',
                     Waist = 'Friar\'s Rope',
-                    Legs = 'Warlock\'s Tights',
-                    Feet = 'Warlock\'s Boots',   
+                    Legs = 'Crimson Cuisses',
+                    Feet = 'Crimson Greaves',
                 },
                 ['L40'] = {
                     Head = 'Straw Hat',
@@ -204,12 +243,10 @@ sets['Default'] = {
         ['VarToggles'] = {
             ['Fishing'] = {
                 VarVisible = false,
-                Ammo = '',
-                Range = 'Lu Shang\'s F. Rod',
                 Body = 'Angler\'s Tunica',
                 Hands = 'Angler\'s Gloves',
-                Legs = 'Angler\'s Hose',
-                Feet = 'Waders',
+                Legs = 'Fisherman\'s Hose',
+                Feet = 'Angler\'s Boots',
             },
             ['Working'] = {
                 VarVisible = false,
@@ -221,62 +258,52 @@ sets['Default'] = {
         },
     },
     ['Movement'] = {
-        --Feet = 'Herald\'s Gaiters',
-        ['Thresholds'] = {
-            ['Area'] = {
-                ['Windurst'] = {
-                    threshold = T{'Southern San d\'Oria', 'Northern San d\'Oria', 'Port San d\'Oria', 'Chateau d\'Oraguille'},
-                    operator = 'contains',
-                    ['gear'] = {
-                        Body = 'Kingdom Aketon',
-                    },
-                },
-            },
-        },
+        Legs = 'Crimson Cuisses',
     },
     ['Resting'] = {
         Main = 'Pluto\'s Staff',
-        Head = 'Dls. Chapeau +1',
-        Neck = 'Checkered Scarf',
+        Head = 'Duelist\'s Chapeau',
+        --Neck = 'Checkered Scarf',
         Ear1 = 'Sanative Earring',
-        Ear2 = 'Relaxing Earring',
-        Body = 'Errant Hpl.',
+        Ear2 = 'Boroka Earring',
+        Body = 'Dalmatica',
+        Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
-        ['Thresholds'] = {
-            ['MP'] ={
-                ['Low'] = {
-                    threshold = 780,
-                    operator = '<',
-                    ['gear'] = {
-                        Waist = 'Duelist\'s Belt',
-                    },
-                },
-                ['High'] = {
-                    threshold = 780,
-                    operator = '>',
-                    ['gear'] = {
-                        Waist = 'Hierarch Belt',
-                    },
-                },
-            },
-        },
+        -- ['Thresholds'] = {
+            -- ['MP'] ={
+                -- ['Low'] = {
+                    -- threshold = 780,
+                    -- operator = '<',
+                    -- ['gear'] = {
+                        -- Waist = 'Duelist\'s Belt',
+                    -- },
+                -- },
+                -- ['High'] = {
+                    -- threshold = 780,
+                    -- operator = '>',
+                    -- ['gear'] = {
+                        -- Waist = 'Hierarch Belt',
+                    -- },
+                -- },
+            -- },
+        -- },
     },
     ['Engaged'] = {
         ['VarCycles'] = {
             ['TP'] = {
                 ['Default'] = {
-                    Head = 'Warlock\'s Chapeau',
+                    Head = 'Duelist\'s Chapeau',
                     Neck = 'Peacock Charm',
-                    Ear1 = 'Moldavite Earring',
+                    Ear1 = 'Loquac. Earring',
                     Ear2 = 'Astral Earring',
-                    Body = 'Warlock\'s Tabard',
-                    Hands = 'Warlock\'s Gloves',
+                    Body = 'Dalmatica',
+                    Hands = 'Duelist\'s Gloves',
                     Ring1 = 'Rajas Ring',
                     Ring2 = 'Serket Ring',
-                    Back = 'Red Cape +1',
+                    Back = 'Errant Cape',
                     Waist = 'Speed Belt',
-                    Legs = 'Warlock\'s Tights',
-                    Feet = 'Warlock\'s Boots',  
+                    Legs = 'Crimson Cuisses',
+                    Feet = 'Crimson Greaves',  
                 },
                 ['L40'] = {
                     Head = 'Straw Hat',
@@ -313,7 +340,7 @@ sets['Default'] = {
                     Ear2 = 'Onyx Earring',
                     Body = 'Robe',
                     Hands = 'Guerilla Gloves',
-                    Ring1 = 'Eremite\'s Ring',
+                    Ring1 = 'San d\'Orian Ring',
                     Ring2 = 'Eremite\'s Ring',
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Friar\'s Rope',
@@ -345,7 +372,7 @@ sets['Default'] = {
 sets['Precast'] = {
     ['Alpha'] = {
         Head = 'Warlock\'s Chapeau',
-        Body = 'Dls. Tabard +1',
+        Ear1 = 'Loquac. Earring',
     },
     ['Healing Magic'] = {
         Neck = 'Justice Badge',
@@ -367,31 +394,26 @@ local ElementalDebuff = {
 local HasteCast = {
     Head = 'Warlock\'s Chapeau',
     Body = 'Dls. Tabard +1',
-    Waist = 'Swift Belt',
+    Waist = 'Speed Belt',
 }
 sets['Midcast'] = {
     ['Alpha'] = {
     },
     ['Black Magic'] = {
         ['Enfeebling Magic'] = {
-            Head = 'Straw Hat',
-            Neck = 'Silver Name Tag',
-            Ear1 = 'Onyx Earring',
-            Ear2 = 'Onyx Earring',
+            Head = 'Duelist\'s Chapeau',
             Body = 'Warlock\'s Tabard',
-            Hands = 'Worker Gloves',
-            Back = 'Cape',
-            Waist = 'Friar\'s Rope',
-            Legs = 'Linen Slops',
-            Feet = 'Worker Boots',
+            Legs = 'Mahatma Slops',
         },
     },
     ['White Magic'] = {
         ['Enfeebling Magic'] = {
+            Head = 'Duelist\'s Chapeau',
             Neck = 'Justice Badge',
             Body = 'Warlock\'s Tabard',
             Ear2 = 'Astral Earring',
             Hands = 'Zealot\'s Mitts',
+            Legs = 'Mahatma Slops',
         },
     },
     ['Healing Magic'] = {
@@ -400,10 +422,13 @@ sets['Midcast'] = {
         Hands = 'Zealot\'s Mitts',
     },
     ['Enhancing Magic'] = {
+        Head = 'Duelist\'s Chapeau',
         Neck = 'Justice Badge',
     },
     ['Dark Magic'] = {
-        Neck = 'Justice Badge',
+        Body = 'Crm. Scale Mail',
+        Hands = 'Duelist\'s Gloves',
+        Legs = 'Mahatma Slops',
     },    
     ['Divine Magic'] = {
         Neck = 'Justice Badge',
@@ -416,20 +441,46 @@ sets['Midcast'] = {
     ['Drown'] = ElementalDebuff,
     ['Shock'] = ElementalDebuff,
     ['Elemental Magic'] = {
-        Head = 'Straw Hat',
-        Neck = 'Silver Name Tag',
-        Ear1 = 'Onyx Earring',
-        Ear2 = 'Onyx Earring',
-        Body = 'Worker Tunic',
-        Hands = 'Worker Gloves',
-        Ring1 = 'Eremite\'s Ring',
-        Ring2 = 'Eremite\'s Ring',
-        --Ring1 = 'Tamas Ring',
-        --Ring2 = 'Vilma\'s Ring',
-        Back = 'Cape',
-        Waist = 'Friar\'s Rope',
-        Legs = 'Linen Slops',
-        Feet = 'Worker Boots',
+        ['Thresholds'] = {
+            ['MainJobSync'] = {
+                ['LE70'] = {
+                    threshold = 70,
+                    operator = '<=',
+                    ['gear'] = {
+                        Head = 'Straw Hat',
+                        Neck = 'Silver Name Tag',
+                        Ear1 = 'Onyx Earring',
+                        Ear2 = 'Onyx Earring',
+                        Body = 'Worker Tunic',
+                        Hands = 'Worker Gloves',
+                        Ring1 = 'Eremite\'s Ring',
+                        Ring2 = 'Eremite\'s Ring',
+                        Back = 'Cape',
+                        Waist = 'Friar\'s Rope',
+                        Legs = 'Linen Slops',
+                        Feet = 'Worker Boots',
+                    },
+                },
+                ['GT70'] = {
+                    threshold = 70,
+                    operator = '>',
+                    ['gear'] = {
+                        Head = 'Warlock\'s Chapeau',
+                        Neck = 'Silver Name Tag',
+                        Ear1 = 'Moldavite Earring',
+                        Ear2 = 'Onyx Earring',
+                        Body = 'Crm. Scale Mail',
+                        Hands = 'Duelist\'s Gloves',
+                        Ring1 = 'Tamas Ring',
+                        Ring2 = 'Vilma\'s Ring',
+                        Back = 'Cape',
+                        Waist = 'Friar\'s Rope',
+                        Legs = 'Duelist\'s Tights',
+                        Feet = 'Duelist\'s Boots',
+                    },
+                },
+            },
+        },
     },
     ['Invisible'] = {
         Back = 'Skulker\'s Cape',

@@ -207,11 +207,11 @@ sets['Weapon'] = {}
 sets['Weapon']['Sword'] = {}
 sets['Weapon']['Sword']['Excalibur'] = {
     Main = 'Excalibur',
-    Sub = 'Palmerin\'s Shield',
+    Sub = 'Aegis',
 }
 sets['Weapon']['Sword']['STrials'] = {
     Main = 'Sapara of Trials',
-    Sub = 'Palmerin\'s Shield',
+    Sub = 'Aegis',
 }
 sets['Weapon']['Sword']['Dual'] = {
     Main = 'Excalibur',
@@ -219,19 +219,15 @@ sets['Weapon']['Sword']['Dual'] = {
 }
 sets['Weapon']['Sword']['JoyToy'] = {
     Main = 'Joyeuse',
-    Sub = 'Palmerin\'s Shield',
+    Sub = 'Aegis',
 }
 sets['Weapon']['Sword']['Dragon'] = {
     Main = 'Hrotti',
-    Sub = 'Palmerin\'s Shield',
+    Sub = 'Aegis',
 }
-sets['Weapon']['Sword']['L71'] = {
-    Main = 'Durandal',
-    Sub = 'Palmerin\'s Shield',
-}
-sets['Weapon']['Sword']['L66'] = {
-    Main = 'Espadon',
-    Sub = 'Ryl.Grd. Shield',
+sets['Weapon']['Sword']['Haute'] = {
+    Main = 'Hauteclaire',
+    Sub = 'Aegis',
 }
 sets['Weapon']['Sword']['L55'] = {
     Main = 'Tct.Mag. Espadon',
@@ -256,7 +252,7 @@ sets['Weapon']['Club']['Dual'] = {
 }
 sets['Weapon']['Club']['L72'] = {
     Main = 'Martial Wand',
-    Sub = 'Palmerin\'s Shield',
+    Sub = 'Aegis',
 }
 sets['Weapon']['Club']['L55'] = {
     Main = 'Kingdom Mace',
@@ -337,6 +333,34 @@ sets['Ranged']['Zeni']['Normal'] = {
 sets['Ranged']['Zeni']['2000'] = {
     Range = 'Soultrapper 2000',
     Ammo = 'Blank Soulplate',
+}
+sets['Ranged']['Fishing']['LuShangs'] = {
+    Range = 'Lu Shang\'s F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
+            ['Shrimp Lure'] = {
+                Ammo = 'Shrimp Lure',
+            },
+            ['Minnow'] = {
+                Ammo = 'Minnow',
+            },
+            ['S.Minnow'] = {
+                Ammo = 'Sinking Minnow',
+            },
+        },
+    },
 }
 sets['Ranged']['Fishing']['Hume'] = {
     Range = 'Hume Fishing Rod',
@@ -565,17 +589,6 @@ sets['Default'] = {
     },
     ['Movement'] = {
         Legs = 'Crimson Cuisses',
-        ['Thresholds'] = {
-            ['Area'] = {
-                ['Sandy'] = {
-                    threshold = T{'Southern San d\'Oria', 'Northern San d\'Oria', 'Port San d\'Oria', 'Chateau d\'Oraguille'},
-                    operator = 'contains',
-                    ['gear'] = {
-                        Body = 'Kingdom Aketon',
-                    },
-                },
-            },
-        },
     },
     ['Resting'] = {
         -- Main = 'Pluto\'s Staff',

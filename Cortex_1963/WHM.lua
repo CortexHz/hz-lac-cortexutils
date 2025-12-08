@@ -124,6 +124,9 @@ sets['Ranged']['Fishing']['Halcyon'] = {
             ['Fly Lure'] = {
                 Ammo = 'Fly Lure',
             },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
         },
     },
 }
@@ -186,12 +189,10 @@ sets['Default'] = {
         ['VarToggles'] = {
             ['Fishing'] = {
                 VarVisible = false,
-                Ammo = '',
-                Range = 'Lu Shang\'s F. Rod',
                 Body = 'Angler\'s Tunica',
                 Hands = 'Angler\'s Gloves',
-                Legs = 'Angler\'s Hose',
-                Feet = 'Waders',
+                Legs = 'Fisherman\'s Hose',
+                Feet = 'Angler\'s Boots',
             },
             ['Working'] = {
                 VarVisible = false,
