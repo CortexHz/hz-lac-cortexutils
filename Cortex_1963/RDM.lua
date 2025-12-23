@@ -173,6 +173,15 @@ sets['Ranged']['Fishing']['Halcyon'] = {
             ['Worm Lure'] = {
                 Ammo = 'Worm Lure',
             },
+            ['Shrimp Lure'] = {
+                Ammo = 'Shrimp Lure',
+            },
+            ['Minnow'] = {
+                Ammo = 'Minnow',
+            },
+            ['S.Minnow'] = {
+                Ammo = 'Sinking Minnow',
+            },
         },
     },
 }
@@ -427,7 +436,7 @@ sets['Midcast'] = {
     },
     ['Dark Magic'] = {
         Body = 'Crm. Scale Mail',
-        Hands = 'Duelist\'s Gloves',
+        Hands = 'Crimson Fng. Gnt.',
         Legs = 'Mahatma Slops',
     },    
     ['Divine Magic'] = {

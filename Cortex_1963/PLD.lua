@@ -856,28 +856,34 @@ sets['Default'] = {
                 ['None'] = {},
                 ['Earth'] = {
                     Body = 'Crm. Scale Mail',
+                    Waist = 'Wind Belt',
                     Feet = 'Crimson Greaves',
                 },
                 ['Wind'] = {
                     Body = 'Crm. Scale Mail',
+                    Waist = 'Ice Belt',
                     Feet = 'Crimson Greaves',
                 },
                 ['Ice'] = {
                     Ear1 = 'Crimson Earring',
                     Body = 'Crm. Scale Mail',
+                    Waist = 'Fire Belt',
                     Feet = 'Crimson Greaves',
                 },
                 ['Fire'] = {
                     Ear1 = 'Crimson Earring',
                     Body = 'Crm. Scale Mail',
+                    Waist = 'Water Belt',
                     Legs = 'Crimson Cuisses',
                 },
                 ['Water'] = {
                     Body = 'Crm. Scale Mail',
+                    Waist = 'Thunder Belt',
                     Legs = 'Crimson Cuisses',
                 },
                 ['Thunder'] = {
                     Body = 'Crm. Scale Mail',
+                    Waist = 'Earth Belt',
                     Legs = 'Crimson Cuisses',
                 },
                 ['Light'] = {
@@ -939,9 +945,10 @@ sets['MidcastIdle'] = {
 --HandleMidcast
 local MAEnmityBase = {
     Head = 'Aegishjalmr',
-    Body = 'Gallant Surcoat',
+    Body = 'Valor Surcoat',
     Hands = 'Valor Gauntlets',
     Ring1 = 'Sattva Ring',
+    Waist = 'Warwolf Belt',
     Legs = 'Valor Breeches',
     Feet = 'Valor Leggings',
 }
@@ -953,7 +960,7 @@ BluMids['Physical']['CHR'] = {
     Hands = 'Kng. Handschuhs',
     Ring1 = 'Hope Ring',
     Ring2 = 'Hope Ring',
-    Waist = 'Ryl.Kgt. Belt',
+    Waist = 'Warwolf Belt',
     Legs = 'Koenig Diechlings',
 }
 sets['Midcast'] = {
@@ -1013,9 +1020,10 @@ sets['Midshot'] = {
 -- HandleAbility
 local JAEnmityBase = {
     Head = 'Aegishjalmr',
-    Body = 'Gallant Surcoat',
+    Body = 'Valor Surcoat',
     Hands = 'Valor Gauntlets',
     Ring1 = 'Sattva Ring',
+    Waist = 'Warwolf Belt',
     Legs = 'Valor Breeches',
     Feet = 'Valor Leggings',
 }
@@ -1040,7 +1048,6 @@ sets['Ability'] = {
 -- HandleWeaponSkill
 local WS_STR_LT60 = {
     Head = 'Ryl.Kgt. Bascinet',
-    Neck = 'Fotia Gorget',
     Neck = 'Spike Necklace',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
@@ -1074,7 +1081,7 @@ local WS_STR = {
     Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
     Back = 'Amemet Mantle +1',
-    Waist = 'Ryl.Kgt. Belt',
+    Waist = 'Warwolf Belt',
     Legs = 'Valor Breeches',
 }
 local WS_STR_MND = {
@@ -1087,7 +1094,7 @@ local WS_STR_MND = {
     Ring1 = 'Rajas Ring',
     Ring2 = 'Courage Ring',
     Back = 'Amemet Mantle +1',
-    Waist = 'Ryl.Kgt. Belt',
+    Waist = 'Warwolf Belt',
     Legs = 'Valor Breeches',
 }
 sets['WeaponSkill'] = {

@@ -247,18 +247,7 @@ sets['Default'] = {
         },
     },
     ['Movement'] = {
-        --Feet = 'Herald\'s Gaiters',
-        ['Thresholds'] = {
-            ['Area'] = {
-                ['Sandy'] = {
-                    threshold = T{'Southern San d\'Oria', 'Northern San d\'Oria', 'Port San d\'Oria', 'Chateau d\'Oraguille'},
-                    operator = 'contains',
-                    ['gear'] = {
-                        Body = 'Kingdom Aketon',
-                    },
-                },
-            },
-        },
+        Feet = 'Trotter Boots',
     },
     ['Resting'] = {
         ['VarToggles'] = {
