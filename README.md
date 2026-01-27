@@ -2,6 +2,9 @@
 
 Author:  Cortex of Eventide/HorizonXI
 
+
+## Setup
+
 With LuAshitaCast loaded:
 https://github.com/ThornyFFXI/LuAshitacast/tree/main
 
@@ -177,7 +180,7 @@ sets['Precast'] = {
 }
 
 -- HandleMidcastIdle
-sets['Midcast'] = {}
+sets['MidcastIdle'] = {}
 
 -- HandleMidcast
 sets['Midcast'] = {
@@ -186,6 +189,11 @@ sets['Midcast'] = {
 
 -- HandlePreshot
 sets['Preshot'] = {
+}
+
+-- HandleMidshotIdle
+sets['MidshotIdle'] = {
+    MidshotDelay = 3
 }
 
 -- HandleMidshot

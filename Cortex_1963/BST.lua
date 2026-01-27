@@ -48,7 +48,67 @@ sets['Strategy'] = {
         TPSwaps = false,
         --['R.Type'] = 'BPP',
         Weapon = 'Axe',
-        ['W.Variant'] = 'L56',
+        ['W.Variant'] = 'L71',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'None',
+        Ammo = 'Worm Lure',
+        TPSwaps = true,
+    },
+    ['L40'] = {
+        Idle = 'L40',
+        TP = 'L40',
+        TPSwaps = false,
+        --['R.Type'] = 'BPP',
+        Weapon = 'Axe',
+        ['W.Variant'] = 'L40',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'None',
+        Ammo = 'Worm Lure',
+        TPSwaps = true,
+    },
+    ['L34'] = {
+        Idle = 'L30',
+        TP = 'L34',
+        TPSwaps = false,
+        --['R.Type'] = 'BPP',
+        Weapon = 'Axe',
+        ['W.Variant'] = 'L32',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'None',
+        Ammo = 'Worm Lure',
+        TPSwaps = true,
+    },
+    ['L30'] = {
+        Idle = 'L30',
+        TP = 'L30',
+        TPSwaps = false,
+        --['R.Type'] = 'BPP',
+        Weapon = 'Axe',
+        ['W.Variant'] = 'L20',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'None',
+        Ammo = 'Worm Lure',
+        TPSwaps = true,
+    },
+    ['L25'] = {
+        Idle = 'L25',
+        TP = 'L25',
+        TPSwaps = false,
+        --['R.Type'] = 'BPP',
+        Weapon = 'Axe',
+        ['W.Variant'] = 'L20',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'None',
+        Ammo = 'Worm Lure',
+        TPSwaps = true,
+    },
+    ['L20'] = {
+        Idle = 'L21',
+        TP = 'L21',
+        TPSwaps = false,
+        --['R.Type'] = 'BPP',
+        Weapon = 'Axe',
+        ['W.Variant'] = 'L20',
         Ranged = 'Throwing',
         ['R.Variant'] = 'None',
         Ammo = 'Worm Lure',
@@ -66,6 +126,10 @@ sets['Weapon']['Scythe']['Outrance'] = {
     Main = 'A L\'Outrance',
 }
 sets['Weapon']['Axe'] = {}
+sets['Weapon']['Axe']['L71'] = {
+    Main = 'Rsv.Cpt. Pick',
+    Sub = 'Ridill',
+}
 sets['Weapon']['Axe']['L56'] = {
     Main = 'Darksteel Axe',
     Sub = 'Mythril Pick +1',
@@ -76,7 +140,7 @@ sets['Weapon']['Axe']['L50'] = {
 }
 sets['Weapon']['Axe']['L40'] = {
     Main = 'Cmb.Cst. Axe',
-    Sub = 'Cmb.Cst. Axe',
+    Sub = 'Barbaroi Axe',
 }
 sets['Weapon']['Axe']['L32'] = {
     Main = 'Warrior\'s Axe',
@@ -244,8 +308,8 @@ sets['Default'] = {
                 ['Default'] = {
                     Head = 'Patroclus\'s Helm',
                     Neck = 'Chivalrous Chain',
-                    Ear1 = 'Beetle Earring +1',
-                    Ear2 = 'Beetle Earring +1',
+                    Ear1 = 'Suppanomimi',
+                    Ear2 = 'Ethereal Earring',
                     Body = 'Haubergeon',
                     Hands = 'Ryl.Kgt. Mufflers',
                     Ring1 = 'Rajas Ring',
@@ -299,7 +363,7 @@ sets['Default'] = {
                 },
                 ['L40'] = {
                     Head = 'Emperor Hairpin',
-                    Neck = 'Spike Necklace',
+                    Neck = 'Peacock Charm',
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ryl.Sqr. Chainmail',
@@ -309,6 +373,20 @@ sets['Default'] = {
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt +1',
                     Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Leaping Boots',
+                },
+                ['L34'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ctr. Scale Mail',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
                     Feet = 'Leaping Boots',
                 },
                 ['L30'] = {
@@ -453,8 +531,8 @@ sets['Default'] = {
                 ['Default'] = {
                     Head = 'Patroclus\'s Helm',
                     Neck = 'Chivalrous Chain',
-                    Ear1 = 'Beetle Earring +1',
-                    Ear2 = 'Beetle Earring +1',
+                    Ear1 = 'Suppanomimi',
+                    Ear2 = 'Ethereal Earring',
                     Body = 'Haubergeon',
                     Hands = 'Ryl.Kgt. Mufflers',
                     Ring1 = 'Rajas Ring',
@@ -479,10 +557,10 @@ sets['Default'] = {
                     Feet = 'Leaping Boots',
                 },
                 ['Eva'] = {
-                    Head = 'Walkure Mask',
-                    Neck = 'Peacock Charm',
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Chivalrous Chain',
                     Ear1 = 'Beetle Earring +1',
-                    Ear2 = 'Beetle Earring +1',
+                    Ear2 = 'Pixie Earring',
                     Body = 'Scorpion Harness',
                     Hands = 'Ryl.Kgt. Mufflers',
                     Ring1 = 'Rajas Ring',
@@ -526,6 +604,20 @@ sets['Default'] = {
                     Ear1 = 'Beetle Earring +1',
                     Ear2 = 'Beetle Earring +1',
                     Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Battle Gloves',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L34'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ctr. Scale Mail',
                     Hands = 'Battle Gloves',
                     Ring1 = 'Rajas Ring',
                     Ring2 = 'Balance Ring',
@@ -668,37 +760,37 @@ sets['Midshot'] = {
 -- HandleAbility
 sets['Ability'] = {
     ['Charm'] = {
-        --Head = 'Beast Helm',
+        Head = 'Beast Helm',
         Neck = 'Bird Whistle',
-        --Body = 'Beast Jackcoat',
-        --Hands = 'Beast Gloves',
+        Body = 'Beast Jackcoat',
+        Hands = 'Beast Gloves',
         Ring1 = 'Hope Ring',
         Ring2 = 'Hope Ring',
         --Waist = 'Monster Belt',
-        --Legs = 'Beast Trousers',
-        --Feet = 'Beast Gaiters',
+        Legs = 'Beast Trousers',
+        Feet = 'Beast Gaiters',
     },
     ['Reward'] = {
         ['Alpha'] = {
             --Head = 'Bison Warbonnet',
             Neck = 'Justice Badge',
             --Body = 'Monster Jackcoat',
-            --Body = 'Beast Jackcoat',
+            Body = 'Beast Jackcoat',
             --Hands = 'Ogre Gloves',
-            --Feet = 'Beast Gaiters',
+            Feet = 'Beast Gaiters',
         },
-        --['VarCycles'] = {
-        --    ['R.Type'] = {
-        --        -- Blind, Paralyzed, Poisoned
-        --        ['BPP'] = {
-        --            Body = 'Beast Jackcoat',
-        --        },
-        --        -- Slowed, Silenced, Weighted
-        --        ['SSW'] = {
-        --            Body = 'Monster Jackcoat',
-        --        },
-        --    },
-        --},
+        ['VarCycles'] = {
+           ['R.Type'] = {
+               -- Blind, Paralyzed, Poisoned
+               ['BPP'] = {
+                   Body = 'Beast Jackcoat',
+               },
+               -- Slowed, Silenced, Weighted
+               ['SSW'] = {
+                   Body = 'Monster Jackcoat',
+               },
+           },
+        },
     },
     ['Provoke'] = {
         Head = 'Cache-nez',
