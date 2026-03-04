@@ -408,12 +408,7 @@ end
 
 cortexutils.ApplyStrategy = function(strat_set)
     for name, target in pairs(strat_set) do
-        if (
-            type(target) == 'boolean'
-            and cortexutils.VarToggles[name] ~= nil
-        ) then
-            varhelper.SetToggle(name, target)
-        elseif cortexutils.VarCycles[name] ~= nil then
+        if cortexutils.VarCycles[name] ~= nil then
             if name == 'Weapon' then
                 cortexutils.FindVarToggles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
                 cortexutils.FindVarCycles(profile.Sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')], true);
@@ -436,7 +431,17 @@ cortexutils.ApplyStrategy = function(strat_set)
                 end
                 cortexutils.FindVarToggles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
                 cortexutils.FindVarCycles(profile.Sets['Ranged'][varhelper.GetCycle('Ranged')][varhelper.GetCycle('R.Variant')]);
-            elseif name ~= 'W.Variant' and name ~= 'R.Variant' then
+            end
+        end
+    end
+    for name, target in pairs(strat_set) do
+        if (
+            type(target) == 'boolean'
+            and cortexutils.VarToggles[name] ~= nil
+        ) then
+            varhelper.SetToggle(name, target)
+        elseif cortexutils.VarCycles[name] ~= nil then
+            if name ~= 'W.Variant' and name ~= 'R.Variant' then
                 varhelper.SetCycle(name, target)
             end
         end

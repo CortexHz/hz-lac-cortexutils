@@ -271,11 +271,11 @@ sets['Weapon']['Club']['L30'] = {
     Sub = 'Kite Shield',
 }
 sets['Weapon']['Club']['L28'] = {
-    Main = 'Mace',
+    Main = 'Bone Cudgel',
     Sub = 'Kite Shield',
 }
 sets['Weapon']['Club']['L20'] = {
-    Main = 'Mace',
+    Main = 'Chestnut Club',
     Sub = 'Mahogany Shield',
 }
 sets['Weapon']['Club']['L16'] = {
@@ -285,6 +285,12 @@ sets['Weapon']['Club']['L16'] = {
 sets['Weapon']['Club']['L10'] = {
     Main = 'Freesword\'s Club',
     Sub = 'Pelte',
+}
+
+sets['Weapon']['GreatSword'] = {}
+sets['Weapon']['GreatSword']['L75'] = {
+    Main = 'Valhalla',
+    Sub = 'Pole Grip',
 }
 --sets['Weapon']['Club']['Warp'] = {
 --    Main = 'Warp Cudgel',
@@ -571,7 +577,7 @@ sets['Default'] = {
                 Body = 'Angler\'s Tunica',
                 Hands = 'Angler\'s Gloves',
                 Legs = 'Fisherman\'s Hose',
-                Feet = 'Angler\'s Boots',
+                Feet = 'Waders',
             },
             ['Working'] = {
                 VarVisible = false,
@@ -1072,7 +1078,7 @@ local WS_STR_MND_LT60 = {
     Feet = 'Angler\'s Boots',
 }
 local WS_STR = {
-    Head = 'Ryl.Kgt. Bascinet',
+    Head = 'Hecatomb Cap',
     Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Brutal Earring',
@@ -1083,9 +1089,10 @@ local WS_STR = {
     Back = 'Amemet Mantle +1',
     Waist = 'Warwolf Belt',
     Legs = 'Valor Breeches',
+    Feet = 'Hct. Leggings',
 }
 local WS_STR_MND = {
-    Head = 'Gallant Coronet',
+    Head = 'Hecatomb Cap',
     Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Brutal Earring',
@@ -1096,6 +1103,7 @@ local WS_STR_MND = {
     Back = 'Amemet Mantle +1',
     Waist = 'Warwolf Belt',
     Legs = 'Valor Breeches',
+    Feet = 'Hct. Leggings',
 }
 sets['WeaponSkill'] = {
     ['Thresholds'] = {

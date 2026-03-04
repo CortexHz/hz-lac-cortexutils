@@ -242,7 +242,7 @@ sets['Default'] = {
                 Body = 'Angler\'s Tunica',
                 Hands = 'Angler\'s Gloves',
                 Legs = 'Fisherman\'s Hose',
-                Feet = 'Angler\'s Boots',
+                Feet = 'Waders',
             },
             ['Working'] = {
                 VarVisible = false,

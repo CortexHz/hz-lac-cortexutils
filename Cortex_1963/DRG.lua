@@ -1,392 +1,762 @@
-local profile = {};
-local varhelper = gFunc.LoadFile('common/varhelper_modded.lua');
+--[===[
+
+SEE cortexutils.lua FOR FULL Documentation
+
+]===]--
+
+local profile = gFunc.LoadFile('common/cortexutils.lua');
+
 local sets = {
-    -- Weapons
-    ['Weapon'] = {},
-    ['Idle'] = {},
-    ['TP'] = {},
-
-
-    -- WS
-    ['WS_STR'] = {
-        Neck = 'Spike Necklace',
-        Hands = 'Wonder Mitts',
-        Ring1 = 'Courage Ring',
-        Ring2 = 'Courage Ring',
-    },
-    ['WS_STR_DEX'] = {
-        Neck = 'Spike Necklace',
-        Hands = 'Wonder Mitts',
-        Ring1 = 'Balance Ring',
-        Ring2 = 'Balance Ring',
-    },
-    ['WS_STR_VIT'] = {
-        Neck = 'Spike Necklace',
-        Hands = 'Wonder Mitts',
-        Ring1 = 'Courage Ring',
-        Ring2 = 'Courage Ring',
-    },
-    ['WS_HYBRID'] = {
-    },
-    ['WS_ELE'] = {
-    },
-
-    ['Resting'] = {
-    },
-    ['Fishing'] = {
-        Ammo = '',
-        Ranged = '',
-        Body = 'Angler\'s Tunica',
-        Hands = 'Angler\'s Gloves',
-        Legs = 'Angler\'s Hose',
-        Feet = 'Waders',
-    },
-    ['Working'] = {
-        Body = 'Worker Tunica',
-        Hands = 'Worker Gloves',
-        Legs = 'Worker Hose',
-        Feet = 'Worker Boots',
-    },
-    ['FastCast'] = {
-    },
-    ['DebuffMND'] = {
-        Ring2 = 'Saintly Ring',
-    },
-    ['DebuffINT'] = {
-        Ring2 = 'Eremite\'s Ring +1',
-    },
-    ['DarkMagic'] = {
-        Ring2 = 'Eremite\'s Ring +1',
-    },
-    ['Enhancing'] = {
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Eremite\'s Ring +1',
-    },
-    ['Cure'] = {
-        Neck = 'Justice Badge',
-        Body = 'Wizard\'s Coat',
-        Hands = 'Errant Cuffs',
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Saintly Ring',
-        Waist = 'Penitent\'s Rope',
-        Legs = 'Errant Slops',
-    },
-    ['Spikes'] = {
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Eremite\'s Ring +1',
-    },
-    ['Nuke'] = {
-
-    },
-    ['Nation'] = {
-        Head = 'Republic Circlet',
-        Ring1 = 'Tamas Ring',
-        Ring2 = 'Eremite\'s Ring +1',
-        Waist = 'Penitent\'s Rope',
-    },
-    ['Burst'] = {
-        Hands = 'Sorcerer\'s Gloves',
-    },
-    ['Elemental'] = {
-    },
     ['export'] = {
-        Main = 'Spear +1',
-        Head = 'Mrc.Cpt. Headgear',
+        Main = 'Gigant Axe',
+        Sub = 'Tenax Strap',
+        Range = 'Lgn. Crossbow',
+        Ammo = 'Crossbow Bolt',
+        Head = 'Emperor Hairpin',
         Neck = 'Spike Necklace',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
-        Body = 'Mrc.Cpt. Doublet',
-        Hands = 'Battle Gloves',
-        Ring1 = 'Balance Ring',
+        Body = 'Ryl.Sqr. Chainmail',
+        Hands = 'Ryl.Kgt. Mufflers',
+        Ring1 = 'San d\'Orian Ring',
         Ring2 = 'Balance Ring',
+        Back = 'Ram Mantle +1',
+        Waist = 'Ryl.Kgt. Belt',
+        Legs = 'Ryl.Sqr. Breeches',
+        Feet = 'Leaping Boots',
+    },
+    ['Export'] = {
+        Main = 'Brass Dagger',
+        Sub = 'Lauan Shield',
+        Range = 'Lgn. Crossbow',
+        Ammo = 'Crossbow Bolt',
+        Head = 'Ryl. Squire\'s Helm',
+        Body = 'Beetle Harness',
+        Hands = 'Ryl.Ftm. Gloves',
+        Ring1 = 'San d\'Orian Ring',
+        Ring2 = 'Warp Ring',
         Back = 'Traveler\'s Mantle',
-        Waist = 'Warrior\'s Belt +1',
-        Legs = 'Republic Subligar',
-        Feet = 'Wonder Clomps',
+        Legs = 'Ryl.Ftm. Trousers',
+        Feet = 'Leaping Boots',
     },
 };
+
+-- Strategies
+sets['Strategy'] = {
+    ['Default'] = {
+        Idle = 'Default',
+        TP = 'Default',
+        TPSwaps = false,
+        Weapon = 'Polearm',
+        ['W.Variant'] = 'L60',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Pebble',
+    },
+    ['L50'] = {
+        Idle = 'L50',
+        TP = 'L50',
+        TPSwaps = false,
+        Weapon = 'Polearm',
+        ['W.Variant'] = 'L50',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Pebble',
+    },
+    ['L34'] = {
+        Idle = 'L34',
+        TP = 'L34',
+        TPSwaps = false,
+        Weapon = 'Polearm',
+        ['W.Variant'] = 'L30',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Pebble',
+    },
+    ['L30'] = {
+        Idle = 'L30',
+        TP = 'L30',
+        TPSwaps = false,
+        Weapon = 'Polearm',
+        ['W.Variant'] = 'L30',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Pebble',
+    },
+    ['L21'] = {
+        Idle = 'L21',
+        TP = 'L21',
+        TPSwaps = false,
+        Weapon = 'Polearm',
+        ['W.Variant'] = 'L12',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Pebble',
+    },
+    ['L15'] = {
+        Idle = 'L15',
+        TP = 'L15',
+        TPSwaps = false,
+        Weapon = 'Polearm',
+        ['W.Variant'] = 'L12',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Pebble',
+    },
+    ['L13'] = {
+        Idle = 'L13',
+        TP = 'L13',
+        TPSwaps = false,
+        Weapon = 'Polearm',
+        ['W.Variant'] = 'L12',
+        Ranged = 'Throwing',
+        ['R.Variant'] = 'Pebble',
+    },
+}
+
 -- Weapons
+sets['Weapon'] = {}
 sets['Weapon']['Polearm'] = {}
-sets['Weapon']['Polearm']['L24'] = {
-    main = 'Spear +1',
+sets['Weapon']['Polearm']['L65'] = {
+    Main = 'Golden Spear',
+    Sub = 'Pole Grip',
+}
+sets['Weapon']['Polearm']['L60'] = {
+    Main = 'Couse',
+    Sub = 'Pole Grip',
+}
+sets['Weapon']['Polearm']['L53'] = {
+    Main = 'Thundercloud',
+    Sub = 'Tenax Strap',
+}
+sets['Weapon']['Polearm']['L49'] = {
+    Main = 'Wind Spear',
+    Sub = 'Tenax Strap',
 }
 sets['Weapon']['Polearm']['L30'] = {
-    main = 'Ryl.Sqr. Halberd',
+    Main = 'Ryl.Sqr. Halberd',
+    Sub = 'Tenax Strap',
 }
-sets['Weapon']['Polearm']['L32'] = {
-    main = 'Lizard Piercer',
+sets['Weapon']['Polearm']['L18'] = {
+    Main = 'Ryl.Spr. Spear',
+    Sub = 'Tenax Strap',
 }
+sets['Weapon']['Polearm']['L07'] = {
+    Main = 'Bronze Spear',
+    Sub = 'Tenax Strap',
+}
+sets['Weapon']['Polearm']['L01'] = {
+    Main = 'Harpoon',
+}
+
 sets['Weapon']['Club'] = {}
 sets['Weapon']['Club']['None'] = {}
 sets['Weapon']['Club']['Warp'] = {
-    main = 'Warp Cudgel',
+    Main = 'Warp Cudgel',
+}
+sets['Weapon']['Club']['L16'] = {
+    Main = 'Chestnut Club',
+    Sub = 'Maple Shield',
+}
+sets['Weapon']['Club']['L10'] = {
+    Main = 'Freesword\'s Club',
+    Sub = 'Maple Shield',
+}
+sets['Weapon']['Staff'] = {}
+sets['Weapon']['Staff']['None'] = {}
+sets['Weapon']['Staff']['Signet'] = {
+    Main = 'Kgd. Signet Staff',
 }
 
--- Armor
-sets['Idle']['Default'] = {
-    Head = 'Mrc.Cpt. Headgear',
+sets['Ranged'] = {}
+sets['Ranged']['Throwing'] = {}
+sets['Ranged']['Throwing']['Pebble'] = {
+    Ammo = 'Pebble',
+}
+
+sets['Ranged']['Fishing'] = {}
+sets['Ranged']['Fishing']['LuShangs'] = {
+    Range = 'Lu Shang\'s F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
+            ['Shrimp Lure'] = {
+                Ammo = 'Shrimp Lure',
+            },
+            ['Minnow'] = {
+                Ammo = 'Minnow',
+            },
+            ['S.Minnow'] = {
+                Ammo = 'Sinking Minnow',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Tarutaru'] = {
+    Range = 'Tarutaru F. Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Hume'] = {
+    Range = 'Hume Fishing Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+        },
+    },
+}
+sets['Ranged']['Fishing']['Halcyon'] = {
+    Range = 'Halcyon Rod',
+    ['VarCycles'] = {
+        ['Ammo'] = {
+            ['Insect Ball'] = {
+                Ammo = 'Insect Ball',
+            },
+            ['Sabiki Rig'] = {
+                Ammo = 'Sabiki Rig',
+            },
+            ['Fly Lure'] = {
+                Ammo = 'Fly Lure',
+            },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
+            ['Shrimp Lure'] = {
+                Ammo = 'Shrimp Lure',
+            },
+            ['Minnow'] = {
+                Ammo = 'Minnow',
+            },
+            ['S.Minnow'] = {
+                Ammo = 'Sinking Minnow',
+            },
+        },
+    },
+}
+
+-- HandleDefault
+sets['Default'] = {
+    ['Idle'] = {
+        ['VarCycles'] = {
+            ['Idle'] = {
+                ['Default'] = {
+                    Head = 'Patroclus\'s Helm',
+                    Neck = 'Chivalrous Chain',
+                    Ear1 = 'Suppanomimi',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Haubergeon',
+                    Hands = 'Ryl.Kgt. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Toreador\'s Ring',
+                    Back = 'Amemet Mantle +1',
+                    Waist = 'Speed Belt',
+                    Legs = 'Ryl.Kgt. Breeches',
+                    Feet = 'Fighter\'s Calligae',
+                },
+                ['Defense'] = {
+                    Head = 'Patroclus\'s Helm',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Kgt. Chainmail',
+                    Hands = 'Ryl.Kgt. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Toreador\'s Ring',
+                    Back = 'Amemet Mantle +1',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Kgt. Breeches',
+                    Feet = 'Fighter\'s Calligae',
+                },
+                ['L55'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Kgt. Chainmail',
+                    Hands = 'Ryl.Kgt. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Toreador\'s Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Fighter\'s Calligae',
+                },
+                ['L50'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Ryl.Kgt. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Leaping Boots',
+                },
+                ['L40'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Ryl.Sqr. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Leaping Boots',
+                },
+                ['L34'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ctr. Scale Mail',
+                    Hands = 'Ryl.Sqr. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L30'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ctr. Scale Mail',
+                    Hands = 'Ryl.Sqr. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L21'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Beetle Harness',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Ftm. Trousers',
+                    Feet = 'Leaping Boots',
+                },
+                ['L15'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Van Pendant',
+                    Body = 'Worker Tunica',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Brass Subligar',
+                    Feet = 'Leaping Boots',                    
+                },
+                ['L13'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Justice Badge',
+                    Body = 'Ryl.Ftm. Vest',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Bastokan Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Brass Subligar',
+                    Feet = 'Leaping Boots',                    
+                },
+            },
+        },
+        ['VarToggles'] = {
+            ['Fishing'] = {
+                VarVisible = false,
+                Body = 'Angler\'s Tunica',
+                Hands = 'Angler\'s Gloves',
+                Legs = 'Fisherman\'s Hose',
+                Feet = 'Waders',
+            },
+            ['Working'] = {
+                VarVisible = false,
+                Body = 'Worker Tunica',
+                Hands = 'Worker Gloves',
+                Legs = 'Field Hose',
+                Feet = 'Worker Boots',
+            },
+        },
+        ['Movement'] = {
+            --Feet = 'Herald\'s Gaiters',
+            ['Thresholds'] = {
+                ['Time'] = {
+                    ['Dusk'] = {
+                        threshold = 17,
+                        operator = '>',
+                        ['gear'] = {
+                            --Feet = 'Ninja Kyahan +1'
+                        },
+                    },
+                    ['Dawn'] = {
+                        threshold = 7,
+                        operator = '<',
+                        ['gear'] = {
+                            --Feet = 'Ninja Kyahan +1'
+                        },
+                    },
+                },
+            },
+            ['Elemental'] = {
+                ['Weather'] = {
+                    ['Earth'] = {
+                        --Feet = 'Desert Boots',
+                    },
+                },
+            },
+        },
+    },
+    ['Movement'] = {
+        --Feet = 'Herald\'s Gaiters',
+        ['Thresholds'] = {
+            ['Area'] = {
+                ['Sandy'] = {
+                    threshold = T{'Southern San d\'Oria', 'Northern San d\'Oria', 'Port San d\'Oria', 'Chateau d\'Oraguille'},
+                    operator = 'contains',
+                    ['gear'] = {
+                        Body = 'Kingdom Aketon',
+                    },
+                },
+            },
+        },
+    },
+    ['Resting'] = {
+        ['VarToggles'] = {
+            ['TPSwaps'] = {
+                Main = 'Gelong Staff',
+            },
+        },
+        Ear1 = 'Sanative Earring',
+        Ear2 = 'Relaxing Earring',
+        Legs = 'Monster Trousers',
+    },
+    ['Engaged'] = {
+        ['VarCycles'] = {
+            ['TP'] = {
+                ['Default'] = {
+                    Head = 'Patroclus\'s Helm',
+                    Neck = 'Chivalrous Chain',
+                    Ear1 = 'Suppanomimi',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Haubergeon',
+                    Hands = 'Dusk Gloves',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Toreador\'s Ring',
+                    Back = 'Amemet Mantle +1',
+                    Waist = 'Speed Belt',
+                    Legs = 'Ryl.Kgt. Breeches',
+                    Feet = 'Fighter\'s Calligae',
+                },
+                ['L55'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Kgt. Chainmail',
+                    Hands = 'Ryl.Kgt. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Toreador\'s Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Speed Belt',
+                    Legs = 'Ryl.Sqr. Breeches',
+                    Feet = 'Fighter\'s Calligae',
+                },
+                ['L50'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Ryl.Kgt. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Life Belt',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L40'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ryl.Sqr. Chainmail',
+                    Hands = 'Ryl.Sqr. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L34'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Peacock Charm',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ctr. Scale Mail',
+                    Hands = 'Ryl.Sqr. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L30'] = {
+                    Head = 'Emperor Hairpin',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Ctr. Scale Mail',
+                    Hands = 'Ryl.Sqr. Mufflers',
+                    Ring1 = 'Rajas Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Republic Subligar',
+                    Feet = 'Leaping Boots',
+                },
+                ['L21'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Spike Necklace',
+                    Ear1 = 'Beetle Earring +1',
+                    Ear2 = 'Beetle Earring +1',
+                    Body = 'Beetle Harness',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Ryl.Ftm. Trousers',
+                    Feet = 'Leaping Boots',
+                },
+                ['L15'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Van Pendant',
+                    Body = 'Worker Tunica',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Balance Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Brass Subligar',
+                    Feet = 'Leaping Boots',                    
+                },
+                ['L13'] = {
+                    Head = 'Ryl.Ftm. Bandana',
+                    Neck = 'Justice Badge',
+                    Body = 'Ryl.Ftm. Vest',
+                    Hands = 'Guerilla Gloves',
+                    Ring1 = 'San d\'Orian Ring',
+                    Ring2 = 'Bastokan Ring',
+                    Back = 'Traveler\'s Mantle',
+                    Waist = 'Warrior\'s Belt +1',
+                    Legs = 'Brass Subligar',
+                    Feet = 'Leaping Boots',                    
+                },
+            },
+        },
+    },
+    ['Omega'] = {
+        ['VarToggles'] = {
+            ['Warp'] = {
+                VarVisible = false,
+                Ring2 = 'Warp Ring',
+            },
+            ['ExpRing'] = {
+                VarVisible = false,
+                Ring2 = 'Empress Band',
+            },
+            ['Sneak'] = {
+                VarVisible = false,
+                Feet = 'Dream Boots +1',
+            },
+            ['JellyRing'] = {
+                VarVisible = false,
+                Ring1 = 'Jelly Ring',
+            },
+            ['BQRing'] = {
+                VarVisible = false,
+                Ring1 = 'Bomb Queen Ring',
+            },
+            ['Trials'] = {
+                Main = 'Sapara of Trials',
+            }
+        },
+    },
+}
+
+-- HandlePrecast
+sets['Precast'] = {
+    ['Alpha'] = {
+    },
+}
+
+-- HandleMidcast
+sets['Midcast'] = {
+    ['Black Magic'] = {
+        ['Enfeebling Magic'] = {
+        },
+    },
+    ['White Magic'] = {
+        ['Enfeebling Magic'] = {
+        },
+    },
+    ['Healing Magic'] = {
+        Neck = 'Justice Badge',
+    },
+}
+
+-- HandlePreshot
+sets['Preshot'] = {
+}
+
+-- HandleMidshot
+sets['Midshot'] = {
+}
+
+-- HandleAbility
+sets['Ability'] = {
+    ['Charm'] = {
+        Neck = 'Bird Whistle',
+        Ring1 = 'Hope Ring',
+        Ring2 = 'Hope Ring',
+    },
+    ['Reward'] = {
+        Neck = 'Justice Badge',
+    },
+    ['Provoke'] = {
+        Head = 'Cache-nez',
+    },
+}
+
+-- HandleWeaponSkill
+-- HandleWeaponSkill
+local WS_STR_LT60 = {
+    Head = 'Ryl.Kgt. Bascinet',
+    Neck = 'Fotia Gorget',
     Neck = 'Spike Necklace',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
-    Body = 'Mrc.Cpt. Doublet',
-    Hands = 'Battle Gloves',
-    Ring1 = 'Balance Ring',
-    Ring2 = 'Balance Ring',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
     Back = 'Traveler\'s Mantle',
-    Waist = 'Warrior\'s Belt +1',
-    Legs = 'Republic Subligar',
-    Feet = 'Wonder Clomps',
+    Waist = 'Ryl.Kgt. Belt',
+    Legs = 'Ryl.Kgt. Breeches',
+    Feet = 'Angler\'s Boots',
 }
-sets['Idle']['Defense'] = {
-    Head = 'Mrc.Cpt. Headgear',
-    Neck = 'Spike Necklace',
+local WS_STR_MND_LT60 = {
+    Head = 'Ryl.Kgt. Bascinet',
+    Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
     Ear2 = 'Beetle Earring +1',
-    Body = 'Mrc.Cpt. Doublet',
-    Hands = 'Battle Gloves',
-    Ring1 = 'Balance Ring',
-    Ring2 = 'Balance Ring',
+    Hands = 'Lgn. Mittens',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
     Back = 'Traveler\'s Mantle',
-    Waist = 'Warrior\'s Belt +1',
-    Legs = 'Republic Subligar',
-    Feet = 'Wonder Clomps',
+    Waist = 'Ryl.Kgt. Belt',
+    Legs = 'Ryl.Kgt. Breeches',
+    Feet = 'Angler\'s Boots',
 }
-
-sets['Idle']['L65'] = {
-    Head = 'Mrc.Cpt. Headgear',
-    Neck = 'Spike Necklace',
+local WS_STR = {
+    Head = 'Hecatomb Cap',
+    Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
-    Ear2 = 'Beetle Earring +1',
-    Body = 'Mrc.Cpt. Doublet',
-    Hands = 'Battle Gloves',
-    Ring1 = 'Balance Ring',
-    Ring2 = 'Balance Ring',
-    Back = 'Traveler\'s Mantle',
-    Waist = 'Warrior\'s Belt +1',
-    Legs = 'Republic Subligar',
-    Feet = 'Wonder Clomps',
+    Ear2 = 'Brutal Earring',
+    Body = 'Haubergeon',
+    Hands = 'Alkyoneus\'s Brc.',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
+    Back = 'Amemet Mantle +1',
+    Waist = 'Warwolf Belt',
+    Legs = 'Valor Breeches',
 }
-
-
-sets['TP']['Default'] = {
-    Head = 'Mrc.Cpt. Headgear',
-    Neck = 'Spike Necklace',
+local WS_STR_MND = {
+    Head = 'Hecatomb Cap',
+    Neck = 'Fotia Gorget',
     Ear1 = 'Beetle Earring +1',
-    Ear2 = 'Beetle Earring +1',
-    Body = 'Mrc.Cpt. Doublet',
-    Hands = 'Battle Gloves',
-    Ring1 = 'Balance Ring',
-    Ring2 = 'Balance Ring',
-    Back = 'Traveler\'s Mantle',
-    Waist = 'Warrior\'s Belt +1',
-    Legs = 'Republic Subligar',
-    Feet = 'Wonder Clomps',
+    Ear2 = 'Brutal Earring',
+    Body = 'Haubergeon',
+    Hands = 'Alkyoneus\'s Brc.',
+    Ring1 = 'Rajas Ring',
+    Ring2 = 'Courage Ring',
+    Back = 'Amemet Mantle +1',
+    Waist = 'Warwolf Belt',
+    Legs = 'Valor Breeches',
 }
-sets['TP']['Acc'] = {
-    Head = 'Mrc.Cpt. Headgear',
-    Neck = 'Spike Necklace',
-    Ear1 = 'Beetle Earring +1',
-    Ear2 = 'Beetle Earring +1',
-    Body = 'Mrc.Cpt. Doublet',
-    Hands = 'Battle Gloves',
-    Ring1 = 'Balance Ring',
-    Ring2 = 'Balance Ring',
-    Back = 'Traveler\'s Mantle',
-    Waist = 'Warrior\'s Belt +1',
-    Legs = 'Republic Subligar',
-    Feet = 'Wonder Clomps',
+sets['WeaponSkill'] = {
+    ['Thresholds'] = {
+        ['MainJobSync'] = {
+            ['LE60'] = {
+                threshold = 60,
+                operator = '<=',
+                ['gear'] = {
+                    ['Alpha'] = WS_STR_LT60,
+                    ['Moonlight'] = WS_STR_MND_LT60,
+                    ['Seraph Strike'] = WS_STR_MND_LT60,
+                },
+            },
+            ['GT60'] = {
+                threshold = 60,
+                operator = '>',
+                ['gear'] = {
+                    ['Alpha'] = WS_STR,
+                    ['Moonlight'] = sets['Default'],
+                    ['Seraph Strike'] = WS_STR_MND,
+                    ['Knights of Round'] = WS_STR_MND,
+                    ['Spirits Within'] = sets['Default'],
+                },
+            },
+        },
+    },
 }
 
+
+-- HandleItem
+sets['Item'] = {
+    ['Orange Juice'] = {
+        Legs = 'Dream Trousers +1',
+    },
+}
 
 profile.Sets = sets;
 
 profile.Packer = {
 };
-
-
-
-local Settings = {
-    --GoFish = false,
-    --IdleVariant = 1,
-    --TPVariant = 1
-};
-
-local NinNukes = T{'Katon: Ichi', 'Katon: Ni', 'Katon: San', 'Hyoton: Ichi', 'Hyoton: Ni', 'Hyoton: San', 'Huton: Ichi', 'Huton: Ni', 'Huton: San', 'Doton: Ichi', 'Doton: Ni', 'Doton: San', 'Raiton: Ichi', 'Raiton: Ni', 'Raiton: San', 'Suiton: Ichi', 'Suiton: Ni', 'Suiton: San'};
-
-local ElementalStaffTable = {
-    ['Fire'] = 'Fire Staff',
-    ['Earth'] = 'Earth Staff',
-    ['Water'] = 'Water Staff',
-    ['Wind'] = 'Auster\'s Staff',
-    ['Ice'] = 'Aquilo\'s Staff',
-    ['Thunder'] = 'Thunder Staff',
-    ['Light'] = 'Light Staff',
-    ['Dark'] = 'Pluto\'s Staff'
-};
-
-profile.OnLoad = function()
-    gSettings.AllowAddSet = true;
-    varhelper.Initialize();
-    varhelper.CreateToggle('GoFish', false);
-    varhelper.CreateToggle('DoWork', false);
-    varhelper.CreateSetCycle('Idle', profile.Sets['Idle']);
-    varhelper.CreateSetCycle('TP', profile.Sets['TP']);
-    varhelper.CreateSetCycle('Weapon', profile.Sets['Weapon']);
-    varhelper.CreateSetCycle('W.Variant', profile.Sets['Weapon'][varhelper.GetCycle('Weapon')]);
-end
-
-profile.OnUnload = function()
-    varhelper.Destroy();
-end
-
-profile.HandleCommand = function(args)
-    --local player = gData.GetPlayer();
-    --for k, v in pairs(player) do
-    --    print(tostring(k))
-    --end
-    --print(player.SubJob)
-    if (args[1] == 'gofish') then
-        varhelper.AdvanceToggle('GoFish');
-    elseif (args[1] == 'dowork') then
-        varhelper.AdvanceToggle('DoWork');
-    elseif (args[1] == 'idleset') then
-        varhelper.AdvanceCycle('Idle');
-    elseif (args[1] == 'tpset') then
-        varhelper.AdvanceCycle('TP');
-    elseif (args[1] == 'weapon') then
-        varhelper.DestroyCycle('W.Variant')
-        varhelper.AdvanceCycle('Weapon');
-        varhelper.CreateSetCycle('W.Variant', profile.Sets['Weapon'][varhelper.GetCycle('Weapon')]);
-    elseif (args[1] == 'weapon_variant') then
-        varhelper.AdvanceCycle('W.Variant');
-    end
-end
-
-profile.HandleDefault = function()
-    local player = gData.GetPlayer();
-    local equip_set = {}
-    --if next(equip_set) ~= nil then
-    --    print('Yes')
-    --end
-    if (player.Status == 'Engaged') then
-        equip_set = gFunc.Combine(equip_set, sets['TP'][varhelper.GetCycle('TP')]);
-        equip_set = gFunc.Combine(
-            equip_set,
-            sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]
-        );
-    elseif (player.Status == 'Resting') then
-        equip_set = gFunc.Combine(equip_set, sets.Resting);
-    else
-        equip_set = gFunc.Combine(equip_set, sets['Idle'][varhelper.GetCycle('Idle')]);
-        equip_set = gFunc.Combine(
-            equip_set,
-            sets['Weapon'][varhelper.GetCycle('Weapon')][varhelper.GetCycle('W.Variant')]
-        );
-        if (varhelper.GetToggle('GoFish') == true)  then
-            equip_set = gFunc.Combine(equip_set, sets.Fishing);
-        elseif (varhelper.GetToggle('DoWork') == true)  then
-            equip_set = gFunc.Combine(equip_set, sets.Working);
-        end
-    end
-    if next(equip_set) ~= nil then
-        gFunc.EquipSet(equip_set);
-    end
-end
-
-profile.HandleAbility = function()
-    local action = gData.GetAction();
-    if sets[action.Name] then
-        gFunc.EquipSet(sets[action.Name]);         
-    end
-end
-
-profile.HandleItem = function()
-end
-
-profile.HandlePrecast = function()
-    gFunc.EquipSet(sets.FastCast);
-end
-
-profile.HandleMidcast = function()
-    local MndDebuffs = T{ 'Slow', 'Paralyze', 'Dia', 'Silence' };
-    local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
-    local action = gData.GetAction();
-    
-    if (action.Skill == 'Ninjutsu') then
-        if (NinNukes:contains(action.Name)) then 
-            gFunc.EquipSet(sets.Nuke);
-        elseif string.match(action.Name, 'Utsusemi') then
-            gFunc.EquipSet(sets.NIN_Utsusemi);
-            -- /cancel doesn't work in HorizonXI
-            --profile.DoShadows(action);
-        else
-            gFunc.EquipSet(sets.NIN_Enfeebling);
-        end
-        gFunc.Equip('main', ElementalStaffTable[action.Element]);
-    elseif (action.Skill == 'Enfeebling Magic') then
-        if (MndDebuffs:contains(action.Name)) then
-            gFunc.EquipSet(sets.DebuffMND);
-        else
-            gFunc.EquipSet(sets.DebuffINT);
-        end
-        gFunc.Equip('main', ElementalStaffTable[action.Element]);
-    elseif (action.Skill == 'Elemental Magic') then
-        if (ElementalDebuffs:contains(action.Name)) then
-            gFunc.EquipSet(sets.ElementalDebuff);
-        else
-            gFunc.EquipSet(sets.Nuke);
-        end
-        gFunc.Equip('main', ElementalStaffTable[action.Element]);
-    elseif (action.Skill == 'Dark Magic') then
-        gFunc.EquipSet(sets.DarkMagic);
-        gFunc.Equip('main', ElementalStaffTable[action.Element]);
-    elseif string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga') then
-        gFunc.EquipSet(sets.Cure);
-        gFunc.Equip('main', ElementalStaffTable[action.Element]);
-    elseif (action.Skill == 'Enhancing Magic') then
-        gFunc.EquipSet(sets.Enhancing);
-        gFunc.Equip('main', ElementalStaffTable[action.Element]);
-    else
-        gFunc.EquipSet(sets.DefaultCast);
-        gFunc.Equip('main', ElementalStaffTable[action.Element]);
-    end
-end
-
-profile.HandlePreshot = function()
-end
-
-profile.HandleMidshot = function()
-end
-
-local WS_STR = T{
-    'Raging Axe',
-    'Smash Axe',
-    'Gale Axe',
-    'Avalanche Axe',
-    'Spinning Axe',
-    'Rampage',
-    'Mistral Axe',
-    'Decimation',
-    'Onslaught',
-    'Slice',
-    'Vorpal Scythe',
-}
-local WS_STR_VIT = T{'Calamity'}
-local WS_HYBRID = T{'Blade: Teki', 'Blade: To', 'Blade: Chi'}
-local WS_ELE = T{'Blade: Ei', 'Blade: Yu'}
-profile.HandleWeaponskill = function()
-    local action = gData.GetAction();
-    if (WS_STR:contains(action.Name)) then
-        gFunc.EquipSet(sets.WS_STR);
-    elseif (WS_STR_VIT:contains(action.Name)) then
-        gFunc.EquipSet(sets.WS_STR_VIT);
-    elseif (WS_HYBRID:contains(action.Name)) then
-        gFunc.EquipSet(sets.WS_HYBRID);
-    elseif (WS_ELE:contains(action.Name)) then
-        gFunc.EquipSet(sets.WS_ELE);
-    else
-        gFunc.EquipSet(sets.WS_STR);
-    end
-end
 
 return profile;
