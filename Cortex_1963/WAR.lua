@@ -47,8 +47,8 @@ sets['Strategy'] = {
         Idle = 'Default',
         TP = 'Default',
         TPSwaps = false,
-        Weapon = 'GreatAxe',
-        ['W.Variant'] = 'Default',
+        Weapon = 'GreatSword',
+        ['W.Variant'] = 'Ragnarok',
         Ranged = 'Fishing',
         ['R.Variant'] = 'Halcyon',
         Ammo = 'S.Minnow',
@@ -218,17 +218,13 @@ sets['Weapon']['Sword']['Trials'] = {
 }
 
 sets['Weapon']['GreatSword'] = {}
-sets['Weapon']['GreatSword']['L75'] = {
-    Main = 'Valhalla',
+sets['Weapon']['GreatSword']['Ragnarok'] = {
+    Main = 'Ragnarok',
     Sub = 'Pole Grip',
 }
 sets['Weapon']['GreatSword']['L20'] = {
     Main = 'Mrc. Greatsword',
     Sub = 'Tenax Strap',
-}
-sets['Weapon']['GreatSword']['DRK'] = {
-    Main = 'Chaosbringer',
-    Sub = 'Sword Strap',
 }
 sets['Weapon']['H2H'] = {}
 sets['Weapon']['H2H']['L10'] = {
@@ -374,8 +370,8 @@ sets['Default'] = {
                     Ring2 = 'Toreador\'s Ring',
                     Back = 'Amemet Mantle +1',
                     Waist = 'Speed Belt',
-                    Legs = 'Warrior\'s Cuisses',
-                    Feet = 'Fighter\'s Calligae',
+                    Legs = 'Byakko\'s Haidate',
+                    Feet = 'Ftr. Calligae +1',
                 },
                 ['Defense'] = {
                     Head = 'Patroclus\'s Helm',
@@ -388,8 +384,8 @@ sets['Default'] = {
                     Ring2 = 'Toreador\'s Ring',
                     Back = 'Amemet Mantle +1',
                     Waist = 'Warrior\'s Belt +1',
-                    Legs = 'Ryl.Kgt. Breeches',
-                    Feet = 'Fighter\'s Calligae',
+                    Legs = 'Byakko\'s Haidate',
+                    Feet = 'Ftr. Calligae +1',
                 },
                 ['L55'] = {
                     Head = 'Emperor Hairpin',
@@ -403,7 +399,7 @@ sets['Default'] = {
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Warrior\'s Belt +1',
                     Legs = 'Ryl.Sqr. Breeches',
-                    Feet = 'Fighter\'s Calligae',
+                    Feet = 'Leaping Boots',
                 },
                 ['L50'] = {
                     Head = 'Emperor Hairpin',
@@ -584,8 +580,8 @@ sets['Default'] = {
                     Ring2 = 'Toreador\'s Ring',
                     Back = 'Amemet Mantle +1',
                     Waist = 'Speed Belt',
-                    Legs = 'Warrior\'s Cuisses',
-                    Feet = 'Fighter\'s Calligae',
+                    Legs = 'Byakko\'s Haidate',
+                    Feet = 'Ftr. Calligae +1',
                 },
                 ['Eva'] = {
                     Head = 'Walahra Turban',
@@ -598,8 +594,8 @@ sets['Default'] = {
                     Ring2 = 'Toreador\'s Ring',
                     Back = 'Amemet Mantle +1',
                     Waist = 'Speed Belt',
-                    Legs = 'Warrior\'s Cuisses',
-                    Feet = 'Fighter\'s Calligae',
+                    Legs = 'Byakko\'s Haidate',
+                    Feet = 'Ftr. Calligae +1',
                 },
                 ['L55'] = {
                     Head = 'Emperor Hairpin',
@@ -613,7 +609,7 @@ sets['Default'] = {
                     Back = 'Traveler\'s Mantle',
                     Waist = 'Speed Belt',
                     Legs = 'Ryl.Sqr. Breeches',
-                    Feet = 'Fighter\'s Calligae',
+                    Feet = 'Leaping Boots',
                 },
                 ['L50'] = {
                     Head = 'Emperor Hairpin',
@@ -824,7 +820,7 @@ local WS_STR = {
     Ring2 = 'Courage Ring',
     Back = 'Amemet Mantle +1',
     Waist = 'Warwolf Belt',
-    Legs = 'Ryl.Kgt. Breeches',
+    Legs = 'Warrior\'s Cuisses',
     Feet = 'Hct. Leggings',
 }
 local WS_STR_MND = {
@@ -838,7 +834,7 @@ local WS_STR_MND = {
     Ring2 = 'Courage Ring',
     Back = 'Amemet Mantle +1',
     Waist = 'Warwolf Belt',
-    Legs = 'Ryl.Kgt. Breeches',
+    Legs = 'Warrior\'s Cuisses',
     Feet = 'Hct. Leggings',
 }
 sets['WeaponSkill'] = {

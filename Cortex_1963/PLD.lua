@@ -861,42 +861,50 @@ sets['Default'] = {
             ['Resist'] = {
                 ['None'] = {},
                 ['Earth'] = {
+                    Head = 'Green Ribbon +1',
                     Body = 'Crm. Scale Mail',
                     Waist = 'Wind Belt',
                     Feet = 'Crimson Greaves',
                 },
                 ['Wind'] = {
+                    Head = 'Green Ribbon +1',
                     Body = 'Crm. Scale Mail',
                     Waist = 'Ice Belt',
                     Feet = 'Crimson Greaves',
                 },
                 ['Ice'] = {
+                    Head = 'Green Ribbon +1',
                     Ear1 = 'Crimson Earring',
                     Body = 'Crm. Scale Mail',
                     Waist = 'Fire Belt',
                     Feet = 'Crimson Greaves',
                 },
                 ['Fire'] = {
+                    Head = 'Green Ribbon +1',
                     Ear1 = 'Crimson Earring',
                     Body = 'Crm. Scale Mail',
                     Waist = 'Water Belt',
                     Legs = 'Crimson Cuisses',
                 },
                 ['Water'] = {
+                    Head = 'Green Ribbon +1',
                     Body = 'Crm. Scale Mail',
                     Waist = 'Thunder Belt',
                     Legs = 'Crimson Cuisses',
                 },
                 ['Thunder'] = {
+                    Head = 'Green Ribbon +1',
                     Body = 'Crm. Scale Mail',
                     Waist = 'Earth Belt',
                     Legs = 'Crimson Cuisses',
                 },
                 ['Light'] = {
+                    Head = 'Green Ribbon +1',
                     Body = 'Crm. Scale Mail',
                     Feet = 'Crimson Greaves',
                 },
                 ['Dark'] = {
+                    Head = 'Green Ribbon +1',
                     Body = 'Crm. Scale Mail',
                     Legs = 'Crimson Cuisses',
                 },

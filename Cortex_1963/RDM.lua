@@ -201,7 +201,7 @@ sets['Default'] = {
                     Ring1 = 'Tamas Ring',
                     Ring2 = 'Serket Ring',
                     Back = 'Errant Cape',
-                    Waist = 'Friar\'s Rope',
+                    Waist = 'Penitent\'s Rope',
                     Legs = 'Crimson Cuisses',
                     Feet = 'Crimson Greaves',
                 },
@@ -381,6 +381,7 @@ sets['Default'] = {
 sets['Precast'] = {
     ['Alpha'] = {
         Head = 'Warlock\'s Chapeau',
+        Body = 'Duelist\'s Tabard',
         Ear1 = 'Loquac. Earring',
     },
     ['Healing Magic'] = {
@@ -483,7 +484,7 @@ sets['Midcast'] = {
                         Ring1 = 'Tamas Ring',
                         Ring2 = 'Vilma\'s Ring',
                         Back = 'Cape',
-                        Waist = 'Friar\'s Rope',
+                        Waist = 'Penitent\'s Rope',
                         Legs = 'Duelist\'s Tights',
                         Feet = 'Duelist\'s Boots',
                     },

@@ -318,11 +318,17 @@ sets['Ranged']['Fishing']['Halcyon'] = {
             ['Fly Lure'] = {
                 Ammo = 'Fly Lure',
             },
+            ['Worm Lure'] = {
+                Ammo = 'Worm Lure',
+            },
             ['Shrimp Lure'] = {
                 Ammo = 'Shrimp Lure',
             },
-            ['Worm Lure'] = {
-                Ammo = 'Worm Lure',
+            ['Minnow'] = {
+                Ammo = 'Minnow',
+            },
+            ['S.Minnow'] = {
+                Ammo = 'Sinking Minnow',
             },
         },
     },
